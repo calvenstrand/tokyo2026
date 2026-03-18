@@ -18,6 +18,8 @@
     "vite": "^6.3.5"
   },
   "dependencies": {
+    "@fontsource/barlow-condensed": "^5.2.8",
+    "@fontsource/bebas-neue": "^5.2.7",
     "@fontsource/dm-sans": "^5.2.8",
     "@fontsource/noto-serif-jp": "^5.2.8",
     "@fontsource/space-mono": "^5.2.9",

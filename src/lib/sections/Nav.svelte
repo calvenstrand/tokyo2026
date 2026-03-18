@@ -5,21 +5,17 @@
   let scrolled = $state(false)
 
   onMount(() => {
-    const onScroll = () => {
-      scrolled = window.scrollY > 80
-    }
+    const onScroll = () => { scrolled = window.scrollY > 80 }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   })
 </script>
 
 <nav class:scrolled>
-  <a href="#top" class="nav-logo">日本 <span>2026</span></a>
+  <a href="#top" class="nav-logo">JAPAN <span>'26</span></a>
   <ul class="nav-links">
     {#each cities as city}
-      <li>
-        <a href="#{city.id}">{city.name}{city.subtitle ? ' ' + city.subtitle : ''}</a>
-      </li>
+      <li><a href="#{city.id}">{city.name}{city.subtitle ? ' — ' + city.subtitle : ''}</a></li>
     {/each}
   </ul>
 </nav>
@@ -34,30 +30,26 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem clamp(1.5rem, 6vw, 6rem);
-    transition: background 0.3s, padding 0.3s, border-color 0.3s;
-    border-bottom: 1px solid transparent;
+    padding: 1.25rem clamp(1.5rem, 5vw, 5rem);
+    transition: background 0.3s, padding 0.3s;
   }
 
   nav.scrolled {
-    background: rgba(245, 242, 237, 0.92);
+    background: rgba(15,15,15,0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border-bottom-color: var(--color-border);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
   }
 
   .nav-logo {
-    font-family: var(--font-serif);
-    font-size: 1rem;
-    color: var(--color-ink);
-    letter-spacing: 0.05em;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: white;
+    letter-spacing: 0.08em;
   }
 
   .nav-logo span {
-    color: var(--color-ink-faint);
-    font-size: 0.8em;
+    color: #ff2d55;
   }
 
   .nav-links {
@@ -67,20 +59,17 @@
   }
 
   .nav-links a {
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
+    font-family: var(--font-condensed);
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-ink-light);
+    color: rgba(255,255,255,0.45);
     transition: color 0.2s;
   }
 
-  .nav-links a:hover {
-    color: var(--color-vermillion);
-  }
+  .nav-links a:hover { color: #ff2d55; }
 
   @media (max-width: 700px) {
-    .nav-links {
-      display: none;
-    }
+    .nav-links { display: none; }
   }
 </style>

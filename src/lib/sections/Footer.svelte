@@ -1,64 +1,50 @@
 <script lang="ts">
-  // nothing needed
 </script>
 
 <footer>
   <div class="inner">
-    <div class="footer-kanji">旅</div>
-    <div class="footer-content">
-      <p class="footer-title">Japan 2026</p>
-      <p class="footer-sub">Oct 17 — Oct 31 · Tokyo · Kyoto · Osaka · Tokyo</p>
-    </div>
-    <p class="footer-note">4 guys. 15 days. No regrets.</p>
+    <p class="footer-title">JAPAN '26</p>
+    <p class="footer-sub">Oct 17 – 31 · Tokyo · Kyoto · Osaka · Tokyo</p>
+    <p class="footer-note">4 guys. No regrets.</p>
   </div>
 </footer>
 
 <style>
   footer {
-    background: var(--color-ink);
-    padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 6vw, 6rem);
-    border-top: 1px solid rgba(255,255,255,0.05);
+    background: #0f0f0f;
+    padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 5rem);
+    border-top: 1px solid rgba(255,255,255,0.06);
   }
 
   .inner {
-    max-width: var(--max-width);
-    margin: 0 auto;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 2rem;
     flex-wrap: wrap;
   }
 
-  .footer-kanji {
-    font-family: var(--font-serif);
-    font-size: 4rem;
-    color: rgba(255,255,255,0.06);
-    line-height: 1;
-    flex-shrink: 0;
-  }
-
-  .footer-content {
-    flex: 1;
-  }
-
   .footer-title {
-    font-family: var(--font-serif);
-    font-size: 1.25rem;
-    color: rgba(255,255,255,0.7);
-    margin-bottom: 0.25rem;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 6vw, 5rem);
+    color: white;
+    letter-spacing: 0.05em;
+    line-height: 1;
   }
 
   .footer-sub {
+    font-family: var(--font-condensed);
     font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.15em;
     text-transform: uppercase;
+    color: rgba(255,255,255,0.25);
+    flex: 1;
   }
 
   .footer-note {
-    font-family: var(--font-serif);
-    font-style: italic;
-    color: rgba(255,255,255,0.15);
-    font-size: 0.9rem;
+    font-family: var(--font-condensed);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    color: #ff2d55;
+    text-transform: uppercase;
   }
 </style>

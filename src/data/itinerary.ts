@@ -17,17 +17,13 @@ export type Day = {
 }
 
 export type CityTheme = {
-  bg: string
-  surface: string
-  ink: string
-  inkFaint: string
-  accent: string
-  accentAlt: string
-  border: string
-  heroGradient: string
-  heroImage?: string  // drop in a local path like '/images/tokyo.jpg' when ready
-  layout: 'default' | 'kyoto' | 'osaka' | 'akihabara'
-  font: string
+  bg: string           // poster background color
+  ink: string          // primary text
+  inkFaint: string     // secondary text
+  accent: string       // highlight color
+  border: string       // divider color
+  image?: string       // hero photo
+  layout: 'tokyo-i' | 'kyoto' | 'osaka' | 'akihabara'
 }
 
 export type City = {
@@ -52,17 +48,13 @@ export const cities: City[] = [
     nights: 3,
     accentChar: '一',
     theme: {
-      bg: '#0d0d0f',
-      surface: '#141418',
-      ink: '#f0ece4',
-      inkFaint: '#7a7570',
-      accent: '#ff2d78',
-      accentAlt: '#ffb347',
-      border: '#2a2830',
-      heroGradient: 'radial-gradient(ellipse at 60% 40%, #3d1a2e 0%, #1a0a1a 40%, #0d0d0f 100%)',
-      heroImage: imgTokyoI,
-      layout: 'default',
-      font: "'DM Sans', system-ui, sans-serif",
+      bg: '#ff2d55',
+      ink: '#0f0f0f',
+      inkFaint: '#5a0a1a',
+      accent: '#ffffff',
+      border: 'rgba(0,0,0,0.15)',
+      image: imgTokyoI,
+      layout: 'tokyo-i',
     },
     days: [
       {
@@ -132,17 +124,13 @@ export const cities: City[] = [
     nights: 3,
     accentChar: '古',
     theme: {
-      bg: '#f0ebe0',
-      surface: '#faf7f2',
-      ink: '#2c2820',
-      inkFaint: '#8a8070',
-      accent: '#5a7a5a',
-      accentAlt: '#8a6a3a',
-      border: '#d8d0c0',
-      heroGradient: 'radial-gradient(ellipse at 40% 60%, #c8b88a 0%, #a09060 30%, #6a7a5a 70%, #f0ebe0 100%)',
-      heroImage: imgKyoto,
+      bg: '#1a3a2a',
+      ink: '#f0ede6',
+      inkFaint: 'rgba(240,237,230,0.45)',
+      accent: '#a8e063',
+      border: 'rgba(255,255,255,0.12)',
+      image: imgKyoto,
       layout: 'kyoto',
-      font: "'Noto Serif JP', Georgia, serif",
     },
     days: [
       {
@@ -217,17 +205,13 @@ export const cities: City[] = [
     nights: 3,
     accentChar: '食',
     theme: {
-      bg: '#130a00',
-      surface: '#1e1000',
-      ink: '#f5e8d0',
-      inkFaint: '#9a7850',
-      accent: '#e8820a',
-      accentAlt: '#ff5522',
-      border: '#3a2a10',
-      heroGradient: 'radial-gradient(ellipse at 50% 30%, #5a2a00 0%, #2e1500 40%, #130a00 100%)',
-      heroImage: imgOsaka,
+      bg: '#ff6a00',
+      ink: '#0f0f0f',
+      inkFaint: 'rgba(15,15,15,0.45)',
+      accent: '#0f0f0f',
+      border: 'rgba(0,0,0,0.15)',
+      image: imgOsaka,
       layout: 'osaka',
-      font: "'DM Sans', system-ui, sans-serif",
     },
     days: [
       {
@@ -297,17 +281,13 @@ export const cities: City[] = [
     nights: 5,
     accentChar: '二',
     theme: {
-      bg: '#05050f',
-      surface: '#0a0a1a',
-      ink: '#d0e8ff',
-      inkFaint: '#505878',
+      bg: '#0a0a1e',
+      ink: '#e0eaff',
+      inkFaint: 'rgba(224,234,255,0.4)',
       accent: '#00f5ff',
-      accentAlt: '#ff00cc',
-      border: '#151535',
-      heroGradient: 'radial-gradient(ellipse at 30% 50%, #001a3d 0%, #05051a 40%, #05050f 100%)',
-      heroImage: imgTokyoII,
+      border: 'rgba(0,245,255,0.15)',
+      image: imgTokyoII,
       layout: 'akihabara',
-      font: "'Space Mono', 'Courier New', monospace",
     },
     days: [
       {

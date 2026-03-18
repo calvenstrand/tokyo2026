@@ -4,56 +4,64 @@
   import { ScrollTrigger } from 'gsap/ScrollTrigger'
   import Countdown from '../components/Countdown.svelte'
 
-  let hero: HTMLElement
-  let kanji: HTMLElement
-
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger)
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
 
-    tl.from('.hero-eyebrow', { y: 20, opacity: 0, duration: 0.8 })
-      .from('.hero-title', { y: 40, opacity: 0, duration: 1 }, '-=0.4')
-      .from('.hero-subtitle', { y: 20, opacity: 0, duration: 0.8 }, '-=0.5')
-      .from('.hero-meta', { y: 20, opacity: 0, duration: 0.8 }, '-=0.5')
-      .from('.hero-countdown', { y: 20, opacity: 0, duration: 0.8 }, '-=0.4')
+    gsap.from('.hero-line', {
+      y: '110%',
+      duration: 1,
+      ease: 'power4.out',
+      stagger: 0.08,
+    })
 
-    gsap.to(kanji, {
-      y: -30,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: hero,
-        start: 'top top',
-        end: 'bottom top',
-        scrub: true,
-      },
+    gsap.from('.hero-meta', {
+      opacity: 0,
+      y: 20,
+      duration: 0.8,
+      ease: 'power3.out',
+      delay: 0.5,
+    })
+
+    gsap.from('.hero-countdown', {
+      opacity: 0,
+      y: 20,
+      duration: 0.8,
+      ease: 'power3.out',
+      delay: 0.7,
     })
   })
 </script>
 
-<section class="hero" bind:this={hero}>
-  <div class="hero-kanji" bind:this={kanji}>日本</div>
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <span class="hero-bg-ja">日本</span>
+  </div>
 
   <div class="hero-content">
-    <p class="hero-eyebrow">4 guys · 15 days · October 2026</p>
+    <div class="hero-tag">4 guys · oct 17 – 31 · 2026</div>
 
-    <h1 class="hero-title">
-      Japan<br />
-      <em>awaits.</em>
-    </h1>
-
-    <p class="hero-subtitle">
-      Tokyo → Kyoto → Osaka → Tokyo
-    </p>
-
-    <div class="hero-meta">
-      <span>Oct 17</span>
-      <span class="dash">—</span>
-      <span>Oct 31</span>
+    <div class="hero-title">
+      <div class="hero-clip"><span class="hero-line">JAPAN</span></div>
+      <div class="hero-clip"><span class="hero-line">TRIP</span></div>
+      <div class="hero-clip hero-line-small"><span class="hero-line">2026</span></div>
     </div>
 
-    <div class="hero-countdown">
-      <p class="countdown-label">Departure in</p>
-      <Countdown />
+    <div class="hero-bottom">
+      <div class="hero-meta">
+        <div class="hero-route">
+          <span>Tokyo</span>
+          <span class="arrow">→</span>
+          <span>Kyoto</span>
+          <span class="arrow">→</span>
+          <span>Osaka</span>
+          <span class="arrow">→</span>
+          <span>Tokyo</span>
+        </div>
+      </div>
+      <div class="hero-countdown">
+        <p class="countdown-label">Departure in</p>
+        <Countdown />
+      </div>
     </div>
   </div>
 
@@ -67,117 +75,140 @@
   .hero {
     position: relative;
     min-height: 100svh;
+    background: #0f0f0f;
     display: flex;
-    align-items: center;
-    padding: 0 clamp(1.5rem, 6vw, 6rem);
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(6rem, 10vw, 10rem) clamp(1.5rem, 5vw, 5rem) clamp(3rem, 6vw, 6rem);
     overflow: hidden;
   }
 
-  .hero-kanji {
+  .hero-bg {
     position: absolute;
-    right: -0.05em;
-    top: 50%;
-    transform: translateY(-50%);
-    font-family: var(--font-serif);
-    font-size: clamp(12rem, 30vw, 28rem);
-    color: var(--color-ink);
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .hero-bg-ja {
+    font-family: var(--font-ja);
+    font-size: clamp(18rem, 40vw, 48rem);
+    color: white;
     opacity: 0.04;
     line-height: 1;
-    pointer-events: none;
+    margin-right: -0.1em;
     user-select: none;
-    letter-spacing: -0.05em;
   }
 
   .hero-content {
     position: relative;
     z-index: 1;
-    max-width: var(--text-max);
+    max-width: var(--max-width);
+    width: 100%;
   }
 
-  .hero-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.25em;
+  .hero-tag {
+    font-family: var(--font-condensed);
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--color-vermillion);
-    margin-bottom: 2rem;
-    font-family: var(--font-sans);
+    color: #ff2d55;
+    margin-bottom: 1.5rem;
   }
 
   .hero-title {
-    font-size: clamp(4rem, 12vw, 10rem);
-    letter-spacing: -0.03em;
-    line-height: 0.95;
-    margin-bottom: 2rem;
-    color: var(--color-ink);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
-  .hero-title em {
-    font-style: italic;
-    color: var(--color-ink-light);
+  .hero-clip {
+    overflow: hidden;
+    line-height: 0.9;
   }
 
-  .hero-subtitle {
-    font-family: var(--font-serif);
-    font-size: clamp(1rem, 2vw, 1.4rem);
-    color: var(--color-ink-light);
-    letter-spacing: 0.05em;
-    margin-bottom: 1rem;
+  .hero-line {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(6rem, 18vw, 22rem);
+    color: white;
+    letter-spacing: -0.01em;
+    line-height: 0.9;
   }
 
-  .hero-meta {
+  .hero-line-small .hero-line {
+    font-size: clamp(3rem, 9vw, 11rem);
+    color: #ff2d55;
+  }
+
+  .hero-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: clamp(2rem, 5vw, 4rem);
+  }
+
+  .hero-route {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    font-size: 0.8rem;
+    font-family: var(--font-condensed);
+    font-size: clamp(1rem, 2vw, 1.4rem);
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--color-ink-faint);
-    margin-bottom: 3rem;
+    color: rgba(255,255,255,0.5);
   }
 
-  .dash {
-    color: var(--color-border);
+  .arrow {
+    color: #ff2d55;
   }
 
   .hero-countdown {
-    border-top: 1px solid var(--color-border);
-    padding-top: 1.5rem;
-    display: inline-block;
+    text-align: right;
   }
 
   .countdown-label {
-    font-size: 0.65rem;
+    font-family: var(--font-condensed);
+    font-size: 0.7rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--color-ink-faint);
-    margin-bottom: 0.75rem;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 0.5rem;
   }
+
+  /* Override countdown colors for dark bg */
+  .hero-countdown :global(strong) { color: white; }
+  .hero-countdown :global(small)  { color: rgba(255,255,255,0.3); }
+  .hero-countdown :global(.sep)   { color: rgba(255,255,255,0.15); }
 
   .hero-scroll {
     position: absolute;
-    bottom: 3rem;
-    right: clamp(1.5rem, 6vw, 6rem);
+    bottom: 2.5rem;
+    left: clamp(1.5rem, 5vw, 5rem);
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
-    font-size: 0.6rem;
+    gap: 1rem;
+    font-family: var(--font-condensed);
+    font-size: 0.65rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--color-ink-faint);
+    color: rgba(255,255,255,0.2);
   }
 
   .scroll-line {
-    width: 1px;
-    height: 60px;
-    background: linear-gradient(to bottom, var(--color-border), transparent);
-    animation: scrollLine 2s ease-in-out infinite;
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(to right, rgba(255,255,255,0.3), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
   }
 
-  @keyframes scrollLine {
-    0% { transform: scaleY(0); transform-origin: top; }
-    50% { transform: scaleY(1); transform-origin: top; }
-    50.001% { transform: scaleY(1); transform-origin: bottom; }
-    100% { transform: scaleY(0); transform-origin: bottom; }
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
   }
 </style>
