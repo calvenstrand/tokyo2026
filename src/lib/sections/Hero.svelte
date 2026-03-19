@@ -7,6 +7,8 @@
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger)
 
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
     gsap.from('.hero-line', {
       y: '110%',
       duration: 1,
@@ -34,7 +36,7 @@
 
 <section class="hero" id="top">
   <div class="hero-bg">
-    <span class="hero-bg-ja">日本</span>
+    <span class="hero-bg-ja" aria-hidden="true">日本</span>
   </div>
 
   <div class="hero-content">
@@ -65,7 +67,7 @@
     </div>
   </div>
 
-  <div class="hero-scroll">
+  <div class="hero-scroll" aria-hidden="true">
     <span>scroll</span>
     <div class="scroll-line"></div>
   </div>

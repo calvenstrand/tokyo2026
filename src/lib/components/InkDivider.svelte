@@ -3,7 +3,7 @@
 </script>
 
 <div class="divider">
-  <svg class="brush" viewBox="0 0 800 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <svg class="brush" viewBox="0 0 800 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <path
       d="M0,12 C50,4 100,18 180,12 C260,6 320,16 400,12 C480,8 560,17 640,12 C700,8 750,15 800,12"
       stroke="currentColor"

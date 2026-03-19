@@ -11,7 +11,9 @@
   const isAkihabara = t.layout === 'akihabara'
 
   onMount(() => {
-    // Staggered reveal
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    // Staggered reveal for itinerary content
     gsap.from(section.querySelectorAll('.reveal'), {
       y: 60,
       opacity: 0,
@@ -23,6 +25,21 @@
         start: 'top 70%',
       },
     })
+
+    // Hero parallax
+    const heroImg = section.querySelector('.hero-img') as HTMLElement
+    if (heroImg) {
+      gsap.to(heroImg, {
+        yPercent: 20,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: section.querySelector('.city-hero'),
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+        },
+      })
+    }
 
     // Scanlines for Akihabara
     if (isAkihabara) {
@@ -40,7 +57,7 @@
 </script>
 
 <section
-  class="poster"
+  class="city-section"
   class:is-akihabara={isAkihabara}
   style:--bg={t.bg}
   style:--ink={t.ink}
@@ -51,82 +68,150 @@
   id={city.id}
 >
 
-  <!-- Top bar -->
-  <div class="poster-topbar reveal">
-    <span class="poster-num">0{index + 1}</span>
-    <span class="poster-dates">{city.dates}</span>
-    <span class="poster-nights">{city.nights} nights</span>
+  <!-- Hero image -->
+  {#if t.image}
+    <div class="city-hero">
+      <img
+        class="hero-img"
+        src={t.image}
+        alt={city.name}
+        loading={index === 0 ? 'eager' : 'lazy'}
+        fetchpriority={index === 0 ? 'high' : 'auto'}
+      />
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="hero-meta">
+          <span class="hero-num">0{index + 1}</span>
+          <span class="hero-dates">{city.dates}</span>
+          <span class="hero-nights">{city.nights} nights</span>
+        </div>
+        <div class="hero-title">
+          <div class="city-name-wrap">
+            <h2 class="city-name">{city.name.toUpperCase()}</h2>
+            {#if city.subtitle}
+              <span class="city-subtitle">{city.subtitle}</span>
+            {/if}
+          </div>
+          <div class="city-ja" aria-hidden="true">{city.nameJa}</div>
+        </div>
+      </div>
+    </div>
+  {:else}
+    <!-- Fallback top bar if no image -->
+    <div class="poster-topbar reveal">
+      <span class="poster-num">0{index + 1}</span>
+      <span class="poster-dates">{city.dates}</span>
+      <span class="poster-nights">{city.nights} nights</span>
+    </div>
+    <div class="poster-heading reveal">
+      <div class="city-name-wrap">
+        <h2 class="city-name">{city.name.toUpperCase()}</h2>
+        {#if city.subtitle}
+          <span class="city-subtitle">{city.subtitle}</span>
+        {/if}
+      </div>
+      <div class="city-ja">{city.nameJa}</div>
+    </div>
+  {/if}
+
+  <!-- Summary -->
+  <div class="city-summary reveal">
+    <p>{city.summary}</p>
   </div>
 
-  <!-- Main poster layout: left content, right image -->
-  <div class="poster-body">
-
-    <div class="poster-left">
-      <!-- City name -->
-      <div class="poster-heading reveal">
-        <div class="city-name-wrap">
-          <h2 class="city-name">{city.name.toUpperCase()}</h2>
-          {#if city.subtitle}
-            <span class="city-subtitle">{city.subtitle}</span>
-          {/if}
-        </div>
-        <div class="city-ja">{city.nameJa}</div>
-      </div>
-
-      <!-- Lineup: all days & activities, no accordion -->
-      <div class="lineup">
-        {#each city.days as day}
-          <div class="lineup-day reveal">
+  <!-- Itinerary -->
+  <div class="city-itinerary">
+    <div class="lineup">
+      {#each city.days as day}
+        <div class="lineup-day reveal" class:has-images={day.images && day.images.length > 0}>
+          <div class="day-content">
             <div class="day-header">
               <span class="day-label">Day {day.day}</span>
               <span class="day-date">{day.date}</span>
               {#if day.label}<span class="day-tag">{day.label}</span>{/if}
             </div>
+
             <ul class="activity-list">
-              {#each day.activities as act, i}
-                <li class="activity-item" style:--i={i}>
+              {#each day.activities as act}
+                <li class="activity-item">
+                  {#if act.time}
+                    <span class="act-time">{act.time}</span>
+                  {/if}
                   <span class="act-name">{act.title}</span>
                   <p class="act-desc">{act.description}</p>
                 </li>
               {/each}
             </ul>
           </div>
-        {/each}
-      </div>
+
+          {#if day.images && day.images.length > 0}
+            <div class="day-images">
+              {#each day.images as img, i}
+                <div class="day-img-wrap" style:--img-i={i}>
+                  <img src={img} alt="" loading="lazy" />
+                </div>
+              {/each}
+            </div>
+          {/if}
+        </div>
+      {/each}
     </div>
-
-    <!-- Photo -->
-    {#if t.image}
-      <div class="poster-image reveal">
-        <img src={t.image} alt={city.name} />
-        <div class="image-overlay"></div>
-      </div>
-    {/if}
-
   </div>
 
 </section>
 
 <style>
-  .poster {
+  .city-section {
     background: var(--bg);
     color: var(--ink);
-    min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 5vw, 5rem);
     position: relative;
     overflow: hidden;
   }
 
-  /* Top bar */
-  .poster-topbar {
+  /* ── Hero ── */
+  .city-hero {
+    position: relative;
+    height: 85svh;
+    overflow: hidden;
+  }
+
+  .hero-img {
+    position: absolute;
+    inset: -10% 0;
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--bg) 15%, transparent) 0%,
+      transparent 30%,
+      transparent 50%,
+      color-mix(in srgb, var(--bg) 70%, transparent) 80%,
+      var(--bg) 100%
+    );
+  }
+
+  .hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 5vw, 5rem);
+  }
+
+  .hero-meta {
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border);
+    margin-bottom: 1rem;
     font-family: var(--font-condensed);
     font-size: 0.8rem;
     letter-spacing: 0.15em;
@@ -134,31 +219,19 @@
     color: var(--ink-faint);
   }
 
-  .poster-num {
+  .hero-num {
     font-family: var(--font-display);
     font-size: 1.2rem;
     color: var(--accent);
     letter-spacing: 0.05em;
   }
 
-  .poster-dates { flex: 1; }
+  .hero-dates { flex: 1; }
 
-  /* Body */
-  .poster-body {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 1fr 38%;
-    gap: clamp(2rem, 4vw, 4rem);
-    align-items: start;
-  }
-
-  /* Heading */
-  .poster-heading {
+  .hero-title {
     display: flex;
     align-items: flex-end;
-    gap: 1rem;
-    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
-    position: relative;
+    gap: 1.5rem;
   }
 
   .city-name-wrap {
@@ -200,13 +273,33 @@
     font-family: var(--font-ja);
     font-size: clamp(3rem, 7vw, 8rem);
     color: var(--ink);
-    opacity: 0.12;
+    opacity: 0.15;
     line-height: 1;
     margin-left: auto;
-    align-self: flex-start;
+    align-self: flex-end;
+    padding-bottom: 0.2em;
   }
 
-  /* Lineup */
+
+  /* ── Summary ── */
+  .city-summary {
+    padding: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 5vw, 5rem);
+    border-bottom: 1px solid var(--border);
+    max-width: 720px;
+  }
+
+  .city-summary p {
+    font-family: var(--font-sans);
+    font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+    line-height: 1.75;
+    color: var(--ink-faint);
+  }
+
+  /* ── Itinerary ── */
+  .city-itinerary {
+    padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 5vw, 5rem) clamp(3rem, 6vw, 6rem);
+  }
+
   .lineup {
     display: flex;
     flex-direction: column;
@@ -215,14 +308,24 @@
 
   .lineup-day {
     border-top: 1px solid var(--border);
-    padding: 1rem 0 1.25rem;
+    padding: 1.5rem 0 2rem;
+  }
+
+  /* Desktop: days with images → two-column layout */
+  @media (min-width: 769px) {
+    .lineup-day.has-images {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: start;
+    }
   }
 
   .day-header {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     flex-wrap: wrap;
   }
 
@@ -259,18 +362,33 @@
     border-radius: 2px;
   }
 
-  /* Activity list — gig poster style */
+  /* Activity list */
   .activity-list {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: 1rem;
+    margin-bottom: 0;
   }
 
   .activity-item {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0.1rem;
+  }
+
+  .act-time {
+    font-family: var(--font-condensed);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    opacity: 0.7;
+  }
+
+  .is-akihabara .act-time {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
   }
 
   .act-name {
@@ -291,52 +409,118 @@
 
   .act-desc {
     font-family: var(--font-sans);
-    font-size: 0.8rem;
+    font-size: 16px;
     color: var(--ink-faint);
     line-height: 1.5;
-    max-width: 52ch;
+    max-width: 56ch;
+    margin-top: 0.15rem;
   }
 
-  /* Image */
-  .poster-image {
-    position: sticky;
-    top: 2rem;
-    border-radius: 4px;
-    overflow: hidden;
+  /* Day photos — mobile: horizontal scroll */
+  .day-images {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .day-images::-webkit-scrollbar { display: none; }
+
+  .day-img-wrap {
+    flex: 0 0 auto;
+    width: clamp(140px, 22vw, 220px);
     aspect-ratio: 3 / 4;
-    max-height: 85svh;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: img-in 0.5s ease forwards;
+    animation-delay: calc(var(--img-i) * 0.08s + 0.2s);
   }
 
-  .poster-image img {
+  @keyframes img-in {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .day-img-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
     display: block;
+    transition: transform 0.4s ease;
   }
 
-  .image-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent 50%,
-      color-mix(in srgb, var(--bg) 60%, transparent) 100%
-    );
+  .day-img-wrap:hover img {
+    transform: scale(1.04);
+  }
+
+  /* Desktop: vertical stack in the right column */
+  @media (min-width: 769px) {
+    .has-images .day-images {
+      flex-direction: column;
+      overflow-x: visible;
+      margin-top: 0;
+      gap: 0.5rem;
+      position: sticky;
+      top: 2rem;
+    }
+
+    .has-images .day-img-wrap {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+    }
+
+    /* When only one image, give it a more landscape crop so it doesn't feel too tall */
+    .has-images .day-images:has(.day-img-wrap:only-child) .day-img-wrap {
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  /* Fallback top bar */
+  .poster-topbar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 5vw, 5rem) 1rem;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font-condensed);
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  .poster-num {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--accent);
+  }
+
+  .poster-dates { flex: 1; }
+
+  .poster-heading {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    padding: 1.5rem clamp(1.5rem, 5vw, 5rem) 0;
   }
 
   /* Responsive */
   @media (max-width: 768px) {
-    .poster-body {
-      grid-template-columns: 1fr;
+    .city-hero {
+      height: 70svh;
     }
-    .poster-image {
-      position: relative;
-      top: 0;
-      aspect-ratio: 16 / 9;
-      max-height: 50vw;
-      order: -1;
+
+    .city-ja {
+      display: none;
     }
-    .city-ja { display: none; }
+
+    .day-img-wrap {
+      width: clamp(120px, 38vw, 200px);
+    }
   }
 </style>

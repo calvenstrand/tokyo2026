@@ -1,7 +1,32 @@
 import imgTokyoI from '../img/photo-1573455494060-c5595004fb6c.avif'
 import imgKyoto from '../img/photo-1558862107-d49ef2a04d72.avif'
-import imgOsaka from '../img/premium_photo-1733342572346-5420c95f7556.avif'
 import imgTokyoII from '../img/photo-1576376365962-1fc6c74d5ff6.avif'
+
+// User photos — Tokyo I
+import imgShibuyaAerial from '../img/IMG_6511.jpeg'
+import imgTokyoStreet from '../img/IMG_6583.jpeg'
+import imgTokyoShow from '../img/IMG_6474.jpeg'
+
+// User photos — Kyoto
+import imgKyotoPagoda from '../img/IMG_6628.jpeg'
+
+// User photos — Osaka
+import imgOsakaHero from '../img/IMG_0883.jpeg'
+import imgShinsekai from '../img/IMG_0841.jpeg'
+import imgDotonboriAsahi from '../img/IMG_0911.jpeg'
+import imgDotonboriAngle from '../img/IMG_0912.jpeg'
+import imgOsakaCastle from '../img/IMG_0886.jpeg'
+import imgWagyuKatsu from '../img/IMG_0638.jpeg'
+import imgWagyuGrill from '../img/IMG_0922.jpeg'
+
+// User photos — Tokyo II
+import imgGameboy from '../img/IMG_1402.jpeg'
+import imgTokyoCatScreen from '../img/IMG_6460.jpeg'
+import imgBaseball from '../img/IMG_7143.jpeg'
+import imgNigiri from '../img/IMG_7047.jpeg'
+import imgChefTuna from '../img/IMG_7061.jpeg'
+import imgRamen from '../img/IMG_6690.jpeg'
+import imgWagyuSlices from '../img/IMG_6669.jpeg'
 
 export type Activity = {
   time?: string
@@ -14,6 +39,7 @@ export type Day = {
   date: string
   label: string
   activities: Activity[]
+  images?: string[]
 }
 
 export type CityTheme = {
@@ -31,6 +57,7 @@ export type City = {
   name: string
   nameJa: string
   subtitle: string
+  summary: string
   dates: string
   nights: number
   accentChar: string
@@ -44,6 +71,7 @@ export const cities: City[] = [
     name: 'Tokyo',
     nameJa: '東京',
     subtitle: 'Shinjuku',
+    summary: 'Three nights in Shinjuku. We land, drop bags, and walk straight to Omoide Yokocho — a smoky yakitori alley two minutes from the station. Cold Sapporo, skewers, strangers. Good start. Days are loose: Meiji Shrine to clear the head, Harajuku and teamLab to get a feel for the place, up to Shibuya Sky to see the crossing from 50 floors. Evenings are the whole point — Golden Gai for as long as it takes, and one proper dinner at a sake bar where the guy behind the bar knows every bottle and will sort you out.',
     dates: 'Oct 17–19',
     nights: 3,
     accentChar: '一',
@@ -61,7 +89,13 @@ export const cities: City[] = [
         day: 1,
         date: 'Saturday, Oct 17',
         label: 'Arrival',
+        images: [imgWagyuGrill],
         activities: [
+          {
+            time: 'Afternoon',
+            title: 'Haneda → Shinjuku',
+            description: 'Keikyu line from Haneda Airport Terminal 3 to Shinjuku — about 35 min, one change at Sengakuji. IC card works, no need to buy a separate ticket. Drop bags at the hotel.',
+          },
           {
             time: 'Evening',
             title: 'Omoide Yokocho',
@@ -78,6 +112,7 @@ export const cities: City[] = [
         day: 2,
         date: 'Sunday, Oct 18',
         label: '',
+        images: [imgTokyoShow, imgTokyoStreet],
         activities: [
           {
             time: 'Morning',
@@ -100,6 +135,7 @@ export const cities: City[] = [
         day: 3,
         date: 'Monday, Oct 19',
         label: '',
+        images: [imgShibuyaAerial],
         activities: [
           {
             time: 'Morning',
@@ -109,7 +145,7 @@ export const cities: City[] = [
           {
             time: 'Evening',
             title: 'Shuko Takigiya + Sasagin',
-            description: 'Bib Gourmand izakaya beloved by local salarymen — go early, walk-ins only. Then Sasagin sake bar: one of the largest sake selections in Tokyo with a mustachioed sommelier who pairs by taste.',
+            description: 'Izakaya packed with local salarymen — go early, walk-ins only, no English menu. Then Sasagin: huge sake list and the guy behind the bar actually knows what he\'s doing. Tell him what you like and let him pick.',
           },
         ],
       },
@@ -120,6 +156,7 @@ export const cities: City[] = [
     name: 'Kyoto',
     nameJa: '京都',
     subtitle: '',
+    summary: 'Slower than Tokyo, which after two and a half days of neon and noise is actually welcome. Fushimi Inari at 7am before anyone else shows up, then straight into the sake district — 30+ breweries in walking distance, cold sake from a vending machine outside one of them. Nintendo Museum in Uji the same day (booked months ago, do not lose the tickets). The last evening is the one properly expensive dinner of the trip: Michelin two-star kaiseki at Kikunoi. Go hungry. This has been booked since Sweden.',
     dates: 'Oct 20–22',
     nights: 3,
     accentChar: '古',
@@ -154,6 +191,7 @@ export const cities: City[] = [
         day: 5,
         date: 'Wednesday, Oct 21',
         label: 'Fushimi Day',
+        images: [imgKyotoPagoda],
         activities: [
           {
             time: '7am',
@@ -176,6 +214,7 @@ export const cities: City[] = [
         day: 6,
         date: 'Thursday, Oct 22',
         label: '',
+        images: [imgWagyuKatsu],
         activities: [
           {
             time: 'Morning',
@@ -201,6 +240,7 @@ export const cities: City[] = [
     name: 'Osaka',
     nameJa: '大阪',
     subtitle: '',
+    summary: 'The food city. Louder than Kyoto, cheaper than Tokyo, completely fine with both. We come in via Nara — bags forwarded straight to the hotel, a few hours with the deer and the big Buddha, then Kintetsu into Osaka Namba in time for dinner. Kushikatsu at a standing bar in Shinsekai on arrival night. Kuromon market for breakfast the next morning — tuna sashimi, oysters, wagyu on a stick before 10am. The Japan Series kicks off while we\'re here, which means either we\'re at the game or we\'re watching it with thousands of Osakans going completely mental in Dotonbori. Both work. Last day is a trip to Kobe — 30 minutes on the train, there for the beef.',
     dates: 'Oct 23–26',
     nights: 3,
     accentChar: '食',
@@ -210,24 +250,30 @@ export const cities: City[] = [
       inkFaint: 'rgba(15,15,15,0.45)',
       accent: '#0f0f0f',
       border: 'rgba(0,0,0,0.15)',
-      image: imgOsaka,
+      image: imgOsakaHero,
       layout: 'osaka',
     },
     days: [
       {
         day: 7,
         date: 'Friday, Oct 23',
-        label: 'Nara + Arrival',
+        label: 'Kyoto → Nara → Osaka',
+        images: [imgShinsekai, imgDotonboriAsahi, imgDotonboriAngle],
         activities: [
           {
             time: 'Morning',
-            title: 'Day Trip to Nara',
-            description: '45 min by train. Todai-ji temple housing Japan\'s largest Buddha statue, hundreds of free-roaming deer throughout the park. Allow 3 hours.',
+            title: 'Check out of Kyoto',
+            description: 'Early checkout, bags with you. Kintetsu line from Kyoto to Nara — 45 min, more convenient than JR for this route.',
+          },
+          {
+            time: 'Late morning',
+            title: 'Nara',
+            description: 'Kintetsu line from Kyoto, 45 min. Todai-ji temple has Japan\'s largest Buddha statue — genuinely massive. The deer are everywhere and will walk up to you. Buy the crackers. Allow 2–3 hours then take the Kintetsu straight to Osaka Namba.',
           },
           {
             time: 'Evening',
             title: 'Dotonbori + Kushikatsu Daruma',
-            description: 'Walk straight to Dotonbori to absorb the madness. First Osaka dinner: standing bar at Kushikatsu Daruma (the original Shinsekai branch). Deep-fried skewers of everything, dip once in the communal sauce. No double dipping — it\'s the law.',
+            description: 'Bags already at the hotel when you check in. Head straight to Dotonbori to take in the chaos, then first Osaka dinner at Kushikatsu Daruma — standing bar, deep-fried skewers of everything, dip once in the communal sauce. No double dipping. It\'s the law.',
           },
         ],
       },
@@ -235,6 +281,7 @@ export const cities: City[] = [
         day: 8,
         date: 'Saturday, Oct 24',
         label: 'Baseball Day',
+        images: [imgOsakaCastle],
         activities: [
           {
             time: 'Morning',
@@ -256,17 +303,27 @@ export const cities: City[] = [
       {
         day: 9,
         date: 'Sunday, Oct 25',
-        label: 'Nintendo World',
+        label: 'Kobe Day Trip',
         activities: [
           {
-            time: 'All day',
-            title: 'Universal Studios Japan',
-            description: 'Arrive at opening. Super Nintendo World — buy express passes well in advance. Mario Kart ride, Bowser\'s Castle, interactive wristband gameplay. Genuinely spectacular even for non-theme-park people.',
+            time: 'Morning',
+            title: 'Train to Kobe',
+            description: '30 min from Osaka on the Hanshin line. Easy. Walk Harborland and the port when you arrive — nicer than it sounds, good views, less touristy than central Osaka.',
+          },
+          {
+            time: 'Lunch',
+            title: 'Kobe Beef Teppanyaki',
+            description: 'The whole point. Sit at the counter and watch the chef cook it in front of you. Ikinari Steak is fine for a quick hit but for the proper experience go to Mouriya or Ishida — both have been doing this for decades. Order the sirloin. You\'ll know when it\'s ready.',
+          },
+          {
+            time: 'Afternoon',
+            title: 'Nankinmachi + wander',
+            description: 'Kobe\'s Chinatown is small but good for a walk and something sweet after lunch. The city has a different feel to Osaka — more European influence from the port history, calmer, easy to spend a few hours in.',
           },
           {
             time: 'Evening',
-            title: 'Easy dinner',
-            description: 'Bowl of ramen or udon near the hotel. One drink in Dotonbori at night if anyone has the energy.',
+            title: 'Back to Osaka',
+            description: 'Last night in Osaka. Dotonbori for a drink, or just find somewhere near the hotel. Early start tomorrow.',
           },
         ],
       },
@@ -277,6 +334,7 @@ export const cities: City[] = [
     name: 'Tokyo',
     nameJa: '東京',
     subtitle: 'Ueno · Akihabara',
+    summary: 'Back in Tokyo for five nights, based in Ueno. Akihabara is the main event — a full day minimum. Super Potato has five floors of retro games, Mandarake has everything else, and the SEGA arcade stays open until midnight. Japanese arcades are nothing like what you\'re imagining: rhythm games, claw machines, fighting game cabinets with actual competition players at them. Wagyu ramen for lunch from a spot run by a former MMA fighter. Go back in the evening if you want. The rest of the trip fills in around it: Senso-ji early, sumo hotpot in Ryogoku, Japan Series at the Dome. Last night is the sushi counter — six seats, direct from Toyosu, the best meal of the trip. Ramen the morning of departure. Then Haneda.',
     dates: 'Oct 26–31',
     nights: 5,
     accentChar: '二',
@@ -291,9 +349,27 @@ export const cities: City[] = [
     },
     days: [
       {
+        day: 10,
+        date: 'Monday, Oct 26',
+        label: 'Travel Day',
+        activities: [
+          {
+            time: 'Morning',
+            title: 'Shinkansen Osaka → Tokyo',
+            description: '~2h30. Last konbini run in Osaka before you leave — get a coffee and something from the hot counter. Window seat on the right side for a clear shot of Fuji.',
+          },
+          {
+            time: 'Afternoon',
+            title: 'Check in — Ueno',
+            description: 'Drop bags, walk Ueno Park. The pond, the market stalls under the tracks, the general organised chaos. Good ramen options directly around the station for a low-key first night.',
+          },
+        ],
+      },
+      {
         day: 11,
         date: 'Tuesday, Oct 27',
         label: 'Akihabara Day',
+        images: [imgGameboy, imgTokyoCatScreen],
         activities: [
           {
             time: 'All day',
@@ -328,6 +404,7 @@ export const cities: City[] = [
         day: 13,
         date: 'Thursday, Oct 29',
         label: 'Baseball Day',
+        images: [imgBaseball],
         activities: [
           {
             time: 'Evening',
@@ -340,6 +417,7 @@ export const cities: City[] = [
         day: 14,
         date: 'Friday, Oct 30',
         label: 'Omakase Night',
+        images: [imgChefTuna, imgNigiri, imgWagyuSlices],
         activities: [
           {
             time: 'Morning',
@@ -354,7 +432,7 @@ export const cities: City[] = [
           {
             time: 'Late',
             title: 'Zoetrope',
-            description: 'Shinjuku whisky bar with 300+ Japanese whiskies. The perfect final night in Tokyo.',
+            description: 'Shinjuku whisky bar, 300+ Japanese whiskies. Good way to end the trip.',
           },
         ],
       },
@@ -362,16 +440,17 @@ export const cities: City[] = [
         day: 15,
         date: 'Saturday, Oct 31',
         label: 'Fly Home',
+        images: [imgRamen],
         activities: [
           {
             time: 'Morning',
             title: 'Last Ramen',
-            description: 'Ramen Kamo to Negi — duck broth made with only duck, spring onions and water. Hauntingly clear and rich. Open from 9am.',
+            description: 'Ramen Kamo to Negi — duck broth, only three ingredients, somehow one of the best things you\'ll eat all trip. Open from 9am. Get there.',
           },
           {
             time: 'Afternoon',
             title: 'Haneda → Home',
-            description: 'Walk Ueno Park one last time. Then the airport. Fly home.',
+            description: 'Ueno to Haneda is about 40 min on the Keikyu line. Allow at least 2.5 hours before departure — international terminal, October is busy. Then home.',
           },
         ],
       },

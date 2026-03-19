@@ -30,23 +30,23 @@
   onDestroy(() => clearInterval(interval))
 </script>
 
-<div class="countdown">
-  <span class="unit">
+<div class="countdown" aria-label="{days} days, {hours} hours, {minutes} minutes, {seconds} seconds until departure">
+  <span class="unit" aria-hidden="true">
     <strong>{days}</strong>
     <small>days</small>
   </span>
-  <span class="sep">:</span>
-  <span class="unit">
+  <span class="sep" aria-hidden="true">:</span>
+  <span class="unit" aria-hidden="true">
     <strong>{String(hours).padStart(2, '0')}</strong>
     <small>hrs</small>
   </span>
-  <span class="sep">:</span>
-  <span class="unit">
+  <span class="sep" aria-hidden="true">:</span>
+  <span class="unit" aria-hidden="true">
     <strong>{String(minutes).padStart(2, '0')}</strong>
     <small>min</small>
   </span>
-  <span class="sep">:</span>
-  <span class="unit">
+  <span class="sep" aria-hidden="true">:</span>
+  <span class="unit" aria-hidden="true">
     <strong>{String(seconds).padStart(2, '0')}</strong>
     <small>sec</small>
   </span>
