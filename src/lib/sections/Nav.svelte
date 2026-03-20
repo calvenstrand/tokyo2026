@@ -11,7 +11,8 @@
   onMount(() => {
     gsap.registerPlugin(ScrollToPlugin)
 
-    const sections = cities.map(c => document.getElementById(c.id)).filter(Boolean) as HTMLElement[]
+    const sectionIds = [...cities.map(c => c.id), 'practical-info']
+    const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[]
 
     const onScroll = () => {
       scrolled = window.scrollY > 80
@@ -61,6 +62,15 @@
         </a>
       </li>
     {/each}
+    <li>
+      <a
+        href="#practical-info"
+        class:active={activeId === 'practical-info'}
+        onclick={(e) => scrollTo(e, 'practical-info')}
+      >
+        Info
+      </a>
+    </li>
   </ul>
 
   <button class="burger" onclick={() => menuOpen = !menuOpen} aria-label="Menu" aria-expanded={menuOpen}>
@@ -85,6 +95,16 @@
           </a>
         </li>
       {/each}
+      <li>
+        <a
+          href="#practical-info"
+          class:active={activeId === 'practical-info'}
+          onclick={(e) => scrollTo(e, 'practical-info')}
+        >
+          <span class="mobile-num">案内</span>
+          Info
+        </a>
+      </li>
     </ul>
   </div>
   <div class="menu-backdrop" onclick={closeMenu} onkeydown={(e) => e.key === 'Escape' && closeMenu()} role="button" tabindex="-1" aria-label="Close menu"></div>
