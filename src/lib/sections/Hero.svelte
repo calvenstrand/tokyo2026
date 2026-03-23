@@ -40,7 +40,7 @@
   </div>
 
   <div class="hero-content">
-    <div class="hero-tag">4 guys · oct 17 – 31 · 2026</div>
+    <div class="hero-tag">oct 17 – 31 · 2026</div>
 
     <div class="hero-title">
       <div class="hero-clip"><span class="hero-line">JAPAN</span></div>

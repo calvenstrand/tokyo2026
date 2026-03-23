@@ -3,30 +3,47 @@ import imgKyoto from '../img/photo-1558862107-d49ef2a04d72.avif'
 import imgTokyoII from '../img/photo-1576376365962-1fc6c74d5ff6.avif'
 
 // User photos — Tokyo I
-import imgShibuyaAerial from '../img/IMG_6511.jpeg'
-import imgTokyoStreet from '../img/IMG_6583.jpeg'
-import imgTokyoShow from '../img/IMG_6474.jpeg'
+import imgShibuyaAerialSrc from '../img/IMG_6511.jpeg'
+import imgShibuyaAerialSrcset from '../img/IMG_6511.jpeg?w=280;560&format=webp&as=srcset'
+import imgTokyoStreetSrc from '../img/IMG_6583.jpeg'
+import imgTokyoStreetSrcset from '../img/IMG_6583.jpeg?w=280;560&format=webp&as=srcset'
+import imgTokyoShowSrc from '../img/IMG_6474.jpeg'
+import imgTokyoShowSrcset from '../img/IMG_6474.jpeg?w=280;560&format=webp&as=srcset'
 
 // User photos — Kyoto
-import imgKyotoPagoda from '../img/IMG_6628.jpeg'
+import imgKyotoPagodaSrc from '../img/IMG_6628.jpeg'
+import imgKyotoPagodaSrcset from '../img/IMG_6628.jpeg?w=280;560&format=webp&as=srcset'
 
 // User photos — Osaka
 import imgOsakaHero from '../img/IMG_0883.jpeg'
-import imgShinsekai from '../img/IMG_0841.jpeg'
-import imgDotonboriAsahi from '../img/IMG_0911.jpeg'
-import imgDotonboriAngle from '../img/IMG_0912.jpeg'
-import imgOsakaCastle from '../img/IMG_0886.jpeg'
-import imgWagyuKatsu from '../img/IMG_0638.jpeg'
-import imgWagyuGrill from '../img/IMG_0922.jpeg'
+import imgShinsekaISrc from '../img/IMG_0841.jpeg'
+import imgShinsekaISrcset from '../img/IMG_0841.jpeg?w=280;560&format=webp&as=srcset'
+import imgDotonboriAsahiSrc from '../img/IMG_0911.jpeg'
+import imgDotonboriAsahiSrcset from '../img/IMG_0911.jpeg?w=280;560&format=webp&as=srcset'
+import imgDotonboriAngleSrc from '../img/IMG_0912.jpeg'
+import imgDotonboriAngleSrcset from '../img/IMG_0912.jpeg?w=280;560&format=webp&as=srcset'
+import imgOsakaCastleSrc from '../img/IMG_0886.jpeg'
+import imgOsakaCastleSrcset from '../img/IMG_0886.jpeg?w=280;560&format=webp&as=srcset'
+import imgWagyuKatsuSrc from '../img/IMG_0638.jpeg'
+import imgWagyuKatsuSrcset from '../img/IMG_0638.jpeg?w=280;560&format=webp&as=srcset'
+import imgWagyuGrillSrc from '../img/IMG_0922.jpeg'
+import imgWagyuGrillSrcset from '../img/IMG_0922.jpeg?w=280;560&format=webp&as=srcset'
 
 // User photos — Tokyo II
-import imgGameboy from '../img/IMG_1402.jpeg'
-import imgTokyoCatScreen from '../img/IMG_6460.jpeg'
-import imgBaseball from '../img/IMG_7143.jpeg'
-import imgNigiri from '../img/IMG_7047.jpeg'
-import imgChefTuna from '../img/IMG_7061.jpeg'
-import imgRamen from '../img/IMG_6690.jpeg'
-import imgWagyuSlices from '../img/IMG_6669.jpeg'
+import imgGameboySrc from '../img/IMG_1402.jpeg'
+import imgGameboySrcset from '../img/IMG_1402.jpeg?w=280;560&format=webp&as=srcset'
+import imgTokyoCatScreenSrc from '../img/IMG_6460.jpeg'
+import imgTokyoCatScreenSrcset from '../img/IMG_6460.jpeg?w=280;560&format=webp&as=srcset'
+import imgBaseballSrc from '../img/IMG_7143.jpeg'
+import imgBaseballSrcset from '../img/IMG_7143.jpeg?w=280;560&format=webp&as=srcset'
+import imgNigiriSrc from '../img/IMG_7047.jpeg'
+import imgNigiriSrcset from '../img/IMG_7047.jpeg?w=280;560&format=webp&as=srcset'
+import imgChefTunaSrc from '../img/IMG_7061.jpeg'
+import imgChefTunaSrcset from '../img/IMG_7061.jpeg?w=280;560&format=webp&as=srcset'
+import imgRamenSrc from '../img/IMG_6690.jpeg'
+import imgRamenSrcset from '../img/IMG_6690.jpeg?w=280;560&format=webp&as=srcset'
+import imgWagyuSlicesSrc from '../img/IMG_6669.jpeg'
+import imgWagyuSlicesSrcset from '../img/IMG_6669.jpeg?w=280;560&format=webp&as=srcset'
 
 export type Activity = {
   time?: string
@@ -34,12 +51,17 @@ export type Activity = {
   description: string
 }
 
+export type DayImage = {
+  src: string
+  srcset: string
+}
+
 export type Day = {
   day: number
   date: string
   label: string
   activities: Activity[]
-  images?: string[]
+  images?: DayImage[]
 }
 
 export type CityTheme = {
@@ -89,7 +111,7 @@ export const cities: City[] = [
         day: 1,
         date: 'Saturday, Oct 17',
         label: 'Arrival',
-        images: [imgWagyuGrill],
+        images: [{ src: imgWagyuGrillSrc, srcset: imgWagyuGrillSrcset }],
         activities: [
           {
             time: 'Afternoon',
@@ -112,7 +134,10 @@ export const cities: City[] = [
         day: 2,
         date: 'Sunday, Oct 18',
         label: '',
-        images: [imgTokyoShow, imgTokyoStreet],
+        images: [
+          { src: imgTokyoShowSrc, srcset: imgTokyoShowSrcset },
+          { src: imgTokyoStreetSrc, srcset: imgTokyoStreetSrcset },
+        ],
         activities: [
           {
             time: 'Morning',
@@ -135,7 +160,7 @@ export const cities: City[] = [
         day: 3,
         date: 'Monday, Oct 19',
         label: '',
-        images: [imgShibuyaAerial],
+        images: [{ src: imgShibuyaAerialSrc, srcset: imgShibuyaAerialSrcset }],
         activities: [
           {
             time: 'Morning',
@@ -191,7 +216,7 @@ export const cities: City[] = [
         day: 5,
         date: 'Wednesday, Oct 21',
         label: 'Fushimi Day',
-        images: [imgKyotoPagoda],
+        images: [{ src: imgKyotoPagodaSrc, srcset: imgKyotoPagodaSrcset }],
         activities: [
           {
             time: '7am',
@@ -214,7 +239,7 @@ export const cities: City[] = [
         day: 6,
         date: 'Thursday, Oct 22',
         label: '',
-        images: [imgWagyuKatsu],
+        images: [{ src: imgWagyuKatsuSrc, srcset: imgWagyuKatsuSrcset }],
         activities: [
           {
             time: 'Morning',
@@ -258,7 +283,11 @@ export const cities: City[] = [
         day: 7,
         date: 'Friday, Oct 23',
         label: 'Kyoto → Nara → Osaka',
-        images: [imgShinsekai, imgDotonboriAsahi, imgDotonboriAngle],
+        images: [
+          { src: imgShinsekaISrc, srcset: imgShinsekaISrcset },
+          { src: imgDotonboriAsahiSrc, srcset: imgDotonboriAsahiSrcset },
+          { src: imgDotonboriAngleSrc, srcset: imgDotonboriAngleSrcset },
+        ],
         activities: [
           {
             time: 'Morning',
@@ -281,7 +310,7 @@ export const cities: City[] = [
         day: 8,
         date: 'Saturday, Oct 24',
         label: 'Baseball Day',
-        images: [imgOsakaCastle],
+        images: [{ src: imgOsakaCastleSrc, srcset: imgOsakaCastleSrcset }],
         activities: [
           {
             time: 'Morning',
@@ -369,7 +398,10 @@ export const cities: City[] = [
         day: 11,
         date: 'Tuesday, Oct 27',
         label: 'Akihabara Day',
-        images: [imgGameboy, imgTokyoCatScreen],
+        images: [
+          { src: imgGameboySrc, srcset: imgGameboySrcset },
+          { src: imgTokyoCatScreenSrc, srcset: imgTokyoCatScreenSrcset },
+        ],
         activities: [
           {
             time: 'All day',
@@ -404,7 +436,7 @@ export const cities: City[] = [
         day: 13,
         date: 'Thursday, Oct 29',
         label: 'Baseball Day',
-        images: [imgBaseball],
+        images: [{ src: imgBaseballSrc, srcset: imgBaseballSrcset }],
         activities: [
           {
             time: 'Evening',
@@ -417,7 +449,11 @@ export const cities: City[] = [
         day: 14,
         date: 'Friday, Oct 30',
         label: 'Omakase Night',
-        images: [imgChefTuna, imgNigiri, imgWagyuSlices],
+        images: [
+          { src: imgChefTunaSrc, srcset: imgChefTunaSrcset },
+          { src: imgNigiriSrc, srcset: imgNigiriSrcset },
+          { src: imgWagyuSlicesSrc, srcset: imgWagyuSlicesSrcset },
+        ],
         activities: [
           {
             time: 'Morning',
@@ -440,7 +476,7 @@ export const cities: City[] = [
         day: 15,
         date: 'Saturday, Oct 31',
         label: 'Fly Home',
-        images: [imgRamen],
+        images: [{ src: imgRamenSrc, srcset: imgRamenSrcset }],
         activities: [
           {
             time: 'Morning',
@@ -456,13 +492,4 @@ export const cities: City[] = [
       },
     ],
   },
-]
-
-export const bookingChecklist = [
-  { item: 'Nintendo Museum', note: 'Lottery system — first priority above everything' },
-  { item: 'Asakusa Sushi Kappō', note: '6 seats — call or email well in advance' },
-  { item: 'Kikunoi Honten (kaiseki)', note: 'International reservations accepted' },
-  { item: 'teamLab Borderless', note: 'Online — sells out' },
-  { item: 'USJ Express Pass', note: 'Online — sells out' },
-  { item: 'Japan Series Tickets', note: 'Move immediately when the matchup drops in mid-October via Japan Sports Ticket' },
 ]

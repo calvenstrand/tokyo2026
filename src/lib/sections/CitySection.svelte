@@ -148,7 +148,13 @@
             <div class="day-images">
               {#each day.images as img, i}
                 <div class="day-img-wrap" style:--img-i={i}>
-                  <img src={img} alt="" loading="lazy" />
+                  <img
+                    src={img.src}
+                    srcset={img.srcset}
+                    sizes="(min-width: 769px) 280px, clamp(120px, 38vw, 200px)"
+                    alt=""
+                    loading="lazy"
+                  />
                 </div>
               {/each}
             </div>

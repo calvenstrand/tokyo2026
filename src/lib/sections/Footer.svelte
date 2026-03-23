@@ -5,15 +5,16 @@
   <div class="inner">
     <p class="footer-title">JAPAN '26</p>
     <p class="footer-sub">Oct 17 – 31 · Tokyo · Kyoto · Osaka · Tokyo</p>
-    <p class="footer-note">4 guys. No regrets.</p>
   </div>
 </footer>
 
 <style>
   footer {
     background: #0f0f0f;
-    padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 5rem);
+    padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 5vw, 5rem) clamp(3rem, 8vw, 6rem);
     border-top: 1px solid rgba(255,255,255,0.06);
+    display: flex;
+    flex-direction: column;
   }
 
   .inner {
@@ -38,13 +39,5 @@
     text-transform: uppercase;
     color: rgba(255,255,255,0.25);
     flex: 1;
-  }
-
-  .footer-note {
-    font-family: var(--font-condensed);
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    color: #ff2d55;
-    text-transform: uppercase;
   }
 </style>
