@@ -421,11 +421,12 @@ export const cities: City[] = [
     nights: 1,
     accentChar: '広',
     theme: {
-      bg: '#1c2333',
-      ink: '#e8e0d8',
-      inkFaint: 'rgba(232,224,216,0.45)',
-      accent: '#c4956a',
-      border: 'rgba(255,255,255,0.1)',
+      bg: '#25201c',
+      ink: '#ede8df',
+      inkFaint: 'rgba(237,232,223,0.45)',
+      accent: '#b89a70',
+      border: 'rgba(237,232,223,0.1)',
+      // image: imgHiroshima — swap in once photo is chosen (Miyajima torii or Genbaku Dome)
       layout: 'hiroshima',
     },
     days: [

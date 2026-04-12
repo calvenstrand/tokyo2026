@@ -4,7 +4,7 @@
 <footer>
   <div class="inner">
     <p class="footer-title">JAPAN '26</p>
-    <p class="footer-sub">Oct 17 – 31 · Tokyo · Kyoto · Osaka · Tokyo</p>
+    <p class="footer-sub">Oct 8 – 24 · Tokyo · Kyoto · Osaka · Hiroshima · Tokyo</p>
   </div>
 </footer>
 
