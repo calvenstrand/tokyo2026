@@ -2,6 +2,36 @@ import imgTokyoI from '../img/photo-1573455494060-c5595004fb6c.avif'
 import imgKyoto from '../img/photo-1558862107-d49ef2a04d72.avif'
 import imgTokyoII from '../img/photo-1576376365962-1fc6c74d5ff6.avif'
 
+// New images
+import imgMiyajimaSrc from '../img/Miyajima.jpeg'
+import imgMiyajimaSrcset from '../img/Miyajima.jpeg?w=280;560&format=webp&as=srcset'
+import imgAlleywaySrc from '../img/alleyway.jpeg'
+import imgAlleywaySrcset from '../img/alleyway.jpeg?w=280;560&format=webp&as=srcset'
+import imgBaseball2Src from '../img/baseball2.jpeg'
+import imgBaseball2Srcset from '../img/baseball2.jpeg?w=280;560&format=webp&as=srcset'
+import imgBeer1Src from '../img/beer1.jpeg'
+import imgBeer1Srcset from '../img/beer1.jpeg?w=280;560&format=webp&as=srcset'
+import imgBeer2Src from '../img/beer2.jpeg'
+import imgBeer2Srcset from '../img/beer2.jpeg?w=280;560&format=webp&as=srcset'
+import imgBeer3Src from '../img/beer3.jpeg'
+import imgBeer3Srcset from '../img/beer3.jpeg?w=280;560&format=webp&as=srcset'
+import imgClawMachineSrc from '../img/claw-machine.jpeg'
+import imgClawMachineSrcset from '../img/claw-machine.jpeg?w=280;560&format=webp&as=srcset'
+import imgFushimiInariSrc from '../img/fushimi-inari.jpeg'
+import imgFushimiInariSrcset from '../img/fushimi-inari.jpeg?w=280;560&format=webp&as=srcset'
+import imgNaraPagodaSrc from '../img/nara-pagoda.jpeg'
+import imgNaraPagodaSrcset from '../img/nara-pagoda.jpeg?w=280;560&format=webp&as=srcset'
+import imgOkonomiyakiSrc from '../img/okonomiyaki.jpeg'
+import imgOkonomiyakiSrcset from '../img/okonomiyaki.jpeg?w=280;560&format=webp&as=srcset'
+import imgRamen2Src from '../img/ramen2.jpeg'
+import imgRamen2Srcset from '../img/ramen2.jpeg?w=280;560&format=webp&as=srcset'
+import imgSushiSrc from '../img/sushi.jpeg'
+import imgSushiSrcset from '../img/sushi.jpeg?w=280;560&format=webp&as=srcset'
+import imgWagyu1Src from '../img/wagyu1.jpeg'
+import imgWagyu1Srcset from '../img/wagyu1.jpeg?w=280;560&format=webp&as=srcset'
+import imgWagyu2Src from '../img/wagyu2.jpeg'
+import imgWagyu2Srcset from '../img/wagyu2.jpeg?w=280;560&format=webp&as=srcset'
+
 // User photos — Tokyo I
 import imgShibuyaAerialSrc from '../img/IMG_6511.jpeg'
 import imgShibuyaAerialSrcset from '../img/IMG_6511.jpeg?w=280;560&format=webp&as=srcset'
@@ -111,6 +141,7 @@ export const cities: City[] = [
         day: 1,
         date: 'Friday, Oct 9',
         label: 'Arrival',
+        images: [{ src: imgAlleywaySrc, srcset: imgAlleywaySrcset }],
         activities: [
           {
             time: 'Morning',
@@ -141,6 +172,7 @@ export const cities: City[] = [
         images: [
           { src: imgTokyoShowSrc, srcset: imgTokyoShowSrcset },
           { src: imgTokyoStreetSrc, srcset: imgTokyoStreetSrcset },
+          { src: imgBeer1Src, srcset: imgBeer1Srcset },
         ],
         activities: [
           {
@@ -192,6 +224,10 @@ export const cities: City[] = [
         day: 4,
         date: 'Monday, Oct 12',
         label: '',
+        images: [
+          { src: imgSushiSrc, srcset: imgSushiSrcset },
+          { src: imgRamen2Src, srcset: imgRamen2Srcset },
+        ],
         activities: [
           {
             time: 'Early morning',
@@ -240,6 +276,7 @@ export const cities: City[] = [
         day: 5,
         date: 'Tuesday, Oct 13',
         label: 'Travel Day',
+        images: [{ src: imgBeer2Src, srcset: imgBeer2Srcset }],
         activities: [
           {
             time: 'Day',
@@ -257,7 +294,10 @@ export const cities: City[] = [
         day: 6,
         date: 'Wednesday, Oct 14',
         label: 'Fushimi + Nintendo',
-        images: [{ src: imgKyotoPagodaSrc, srcset: imgKyotoPagodaSrcset }],
+        images: [
+          { src: imgFushimiInariSrc, srcset: imgFushimiInariSrcset },
+          { src: imgKyotoPagodaSrc, srcset: imgKyotoPagodaSrcset },
+        ],
         activities: [
           {
             time: '6am',
@@ -285,7 +325,10 @@ export const cities: City[] = [
         day: 7,
         date: 'Thursday, Oct 15',
         label: '',
-        images: [{ src: imgWagyuKatsuSrc, srcset: imgWagyuKatsuSrcset }],
+        images: [
+          { src: imgNaraPagodaSrc, srcset: imgNaraPagodaSrcset },
+          { src: imgWagyuKatsuSrc, srcset: imgWagyuKatsuSrcset },
+        ],
         activities: [
           {
             time: 'Morning',
@@ -337,6 +380,7 @@ export const cities: City[] = [
         images: [
           { src: imgOsakaCastleSrc, srcset: imgOsakaCastleSrcset },
           { src: imgDotonboriAngleSrc, srcset: imgDotonboriAngleSrcset },
+          { src: imgBeer3Src, srcset: imgBeer3Srcset },
         ],
         activities: [
           {
@@ -363,6 +407,7 @@ export const cities: City[] = [
         images: [
           { src: imgShinsekaISrc, srcset: imgShinsekaISrcset },
           { src: imgDotonboriAsahiSrc, srcset: imgDotonboriAsahiSrcset },
+          { src: imgBaseball2Src, srcset: imgBaseball2Srcset },
         ],
         activities: [
           {
@@ -386,6 +431,10 @@ export const cities: City[] = [
         day: 10,
         date: 'Sunday, Oct 18',
         label: 'Kobe',
+        images: [
+          { src: imgWagyu1Src, srcset: imgWagyu1Srcset },
+          { src: imgWagyu2Src, srcset: imgWagyu2Srcset },
+        ],
         activities: [
           {
             time: 'Morning',
@@ -426,7 +475,7 @@ export const cities: City[] = [
       inkFaint: 'rgba(237,232,223,0.45)',
       accent: '#b89a70',
       border: 'rgba(237,232,223,0.1)',
-      // image: imgHiroshima — swap in once photo is chosen (Miyajima torii or Genbaku Dome)
+      image: imgMiyajimaSrc,
       layout: 'hiroshima',
     },
     days: [
@@ -434,6 +483,7 @@ export const cities: City[] = [
         day: 11,
         date: 'Monday, Oct 19',
         label: 'Hiroshima',
+        images: [{ src: imgOkonomiyakiSrc, srcset: imgOkonomiyakiSrcset }],
         activities: [
           {
             time: 'Morning',
@@ -477,6 +527,7 @@ export const cities: City[] = [
         day: 12,
         date: 'Tuesday, Oct 20',
         label: 'Miyajima + Travel to Tokyo',
+        images: [{ src: imgMiyajimaSrc, srcset: imgMiyajimaSrcset }],
         activities: [
           {
             time: 'Early morning',
@@ -502,6 +553,7 @@ export const cities: City[] = [
         images: [
           { src: imgGameboySrc, srcset: imgGameboySrcset },
           { src: imgTokyoCatScreenSrc, srcset: imgTokyoCatScreenSrcset },
+          { src: imgClawMachineSrc, srcset: imgClawMachineSrcset },
         ],
         activities: [
           {
