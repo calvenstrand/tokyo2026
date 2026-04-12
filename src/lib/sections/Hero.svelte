@@ -65,6 +65,7 @@
       <div class="hero-countdown">
         <p class="countdown-label">Departure in</p>
         <Countdown />
+        <p class="countdown-note">ARN → HND · Oct 8 · arrive Tokyo Oct 9</p>
       </div>
     </div>
   </div>
@@ -183,6 +184,15 @@
     text-transform: uppercase;
     color: rgba(255,255,255,0.3);
     margin-bottom: 0.5rem;
+  }
+
+  .countdown-note {
+    font-family: var(--font-condensed);
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+    margin-top: 0.6rem;
   }
 
   /* Override countdown colors for dark bg */
