@@ -258,7 +258,7 @@ export const cities: City[] = [
     name: 'Kyoto',
     nameJa: '京都',
     subtitle: '',
-    summary: 'Slower than Tokyo, which after four days of neon and noise is actually welcome. Arrive, hit Nishiki Market, then settle in. Fushimi Inari at 6am before anyone else shows up, then straight into the Fushimi sake district — 30+ breweries in walking distance, cold sake from a vending machine outside one of them. Nintendo Museum in Uji the same day (booked months ago, do not lose the tickets). Last evening is the one properly booked dinner of the trip: yakitori omakase counter. High quality, skewer by skewer, completely drink-friendly. End the night at Funaoka Onsen — 1923 bathhouse, beautiful wooden interior, outdoor bath, almost entirely locals. Book the dinner months before departure.',
+    summary: 'Slower than Tokyo, which after four days of neon and noise is actually welcome. Arrive, hit Nishiki Market, then settle in. Fushimi Inari at 6am before anyone else shows up, then straight into the Fushimi sake district — 30+ breweries in walking distance, cold sake from a vending machine outside one of them. Nintendo Museum in Uji the same day (booked months ago, do not lose the tickets). Last evening is the one properly booked dinner of the trip: yakitori omakase counter. High quality, skewer by skewer, completely drink-friendly. End the night at Funaoka Onsen — 1923 bathhouse, beautiful wooden interior, outdoor bath, almost entirely locals. Book the dinner months before departure. Leaving day: bags go ahead to Osaka via takuhaibin, travel light, Nara on the way.',
     dates: 'Oct 13–16',
     nights: 3,
     accentChar: '古',
@@ -325,10 +325,7 @@ export const cities: City[] = [
         day: 7,
         date: 'Thursday, Oct 15',
         label: '',
-        images: [
-          { src: imgNaraPagodaSrc, srcset: imgNaraPagodaSrcset },
-          { src: imgWagyuKatsuSrc, srcset: imgWagyuKatsuSrcset },
-        ],
+        images: [{ src: imgWagyuKatsuSrc, srcset: imgWagyuKatsuSrcset }],
         activities: [
           {
             time: 'Morning',
@@ -359,7 +356,7 @@ export const cities: City[] = [
     name: 'Osaka',
     nameJa: '大阪',
     subtitle: '',
-    summary: 'The food city. Louder than Kyoto, cheaper than Tokyo, completely fine with both. Arrive from Kyoto and walk straight into it: Osaka Castle in autumn colour, then Kuromon Ichiba for oysters and grilled wagyu on sticks. Evening is Dotonbori takoyaki, then south to Shinsekai for kushikatsu and drinks at Misono Building — Osaka\'s own Golden Gai. Morning two: train to Sakai, 30 minutes south, to buy knives direct from the makers. Back for Hozenji Yokocho in the afternoon. Baseball in the evening if the Climax Series or Japan Series falls right — check the moment the matchup drops. Third day is a full day in Kobe: Kitano district, Kobe beef at the counter, Nada sake breweries, dinner before the last train back.',
+    summary: 'The food city. Louder than Kyoto, cheaper than Tokyo, completely fine with both. Arrive via Nara — bags already at the hotel, sent ahead by takuhaibin while you spent the morning with the deer at Todai-ji. Walk straight into Dotonbori: takoyaki, then Shinsekai for kushikatsu and drinks at Misono Building — Osaka\'s own Golden Gai. Morning two: train to Sakai, 30 minutes south, to buy knives direct from the makers. Back for Hozenji Yokocho in the afternoon. Baseball in the evening if the Climax Series or Japan Series falls right — check the moment the matchup drops. Third day is a full day in Kobe: Kitano district, Kobe beef at the counter, Nada sake breweries, dinner before the last train back.',
     dates: 'Oct 16–19',
     nights: 3,
     accentChar: '食',
@@ -376,17 +373,27 @@ export const cities: City[] = [
       {
         day: 8,
         date: 'Friday, Oct 16',
-        label: 'Arrive from Kyoto',
+        label: 'Nara + Travel to Osaka',
         images: [
-          { src: imgOsakaCastleSrc, srcset: imgOsakaCastleSrcset },
+          { src: imgNaraPagodaSrc, srcset: imgNaraPagodaSrcset },
           { src: imgDotonboriAngleSrc, srcset: imgDotonboriAngleSrcset },
           { src: imgBeer3Src, srcset: imgBeer3Srcset },
         ],
         activities: [
           {
+            time: 'Morning',
+            title: 'Luggage forwarding — Takuhaibin',
+            description: 'Arrange the night before with hotel reception. Bags go direct from Kyoto hotel to Osaka hotel — ¥1,000–2,000 per bag, next-day delivery. Check out light. This is the move.',
+          },
+          {
+            time: 'Late morning',
+            title: 'Nara',
+            description: 'Train from Kyoto to Nara — 45 min on the Kintetsu line or JR. Todai-ji Temple: Japan\'s largest bronze Buddha, inside a wooden hall the size of an aircraft hangar. Then Nara Park — hundreds of deer roam completely freely, they bow, they steal food, they have no interest in personal space. Naramachi district for lunch. Allow 3–4 hours total.',
+          },
+          {
             time: 'Afternoon',
-            title: 'Shinkansen Kyoto → Osaka + Osaka Castle',
-            description: '15 min on the shinkansen. Check in, drop bags. Osaka Castle grounds in autumn colour — no need to go inside, just the exterior and the park. Then Kuromon Ichiba market: fresh oysters, grilled tuna, wagyu on sticks.',
+            title: 'Nara → Osaka',
+            description: 'Kintetsu line direct Nara → Osaka Namba, about 50 min. Check in — bags already waiting at the hotel. Then straight to Dotonbori.',
           },
           {
             time: 'Evening',
