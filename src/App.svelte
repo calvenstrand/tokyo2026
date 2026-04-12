@@ -6,7 +6,6 @@
   import Nav from './lib/sections/Nav.svelte'
   import Hero from './lib/sections/Hero.svelte'
   import CitySection from './lib/sections/CitySection.svelte'
-  import BookingsSection from './lib/sections/BookingsSection.svelte'
   import PracticalInfoSection from './lib/sections/PracticalInfoSection.svelte'
   import Footer from './lib/sections/Footer.svelte'
 
@@ -61,8 +60,15 @@
   {#each cities as city, i}
     <CitySection {city} index={i} />
   {/each}
-  <BookingsSection />
   <PracticalInfoSection />
+
+  <div class="booking-link-bar">
+    <a href="/tokyo26/booking" class="booking-link">
+      <span class="booking-link-label">予約</span>
+      <span class="booking-link-text">Booking checklist →</span>
+    </a>
+  </div>
+
   <Footer />
 </div>
 <div class="credit-spacer" style="height: {creditHeight}px"></div>
@@ -148,6 +154,42 @@
 
   .credit-spacer {
     /* height set dynamically to match credit block */
+  }
+
+  .booking-link-bar {
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    padding: 2.5rem clamp(1.5rem, 6vw, 6rem);
+    display: flex;
+    justify-content: center;
+  }
+
+  .booking-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--font-condensed);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-ink-faint);
+    border: 1px solid var(--color-border);
+    padding: 0.9em 2em;
+    transition: color 0.2s, border-color 0.2s;
+    text-decoration: none;
+  }
+
+  .booking-link:hover {
+    color: var(--color-ink);
+    border-color: var(--color-ink-faint);
+  }
+
+  .booking-link-label {
+    font-family: var(--font-ja);
+    font-size: 1rem;
+    color: var(--color-vermillion);
+    letter-spacing: 0;
+    text-transform: none;
   }
 
   .hero-photos {

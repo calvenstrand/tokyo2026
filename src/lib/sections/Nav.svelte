@@ -11,7 +11,7 @@
   onMount(() => {
     gsap.registerPlugin(ScrollToPlugin)
 
-    const sectionIds = [...cities.map(c => c.id), 'bookings', 'practical-info']
+    const sectionIds = [...cities.map(c => c.id), 'practical-info']
     const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[]
 
     const onScroll = () => {
@@ -64,15 +64,6 @@
     {/each}
     <li>
       <a
-        href="#bookings"
-        class:active={activeId === 'bookings'}
-        onclick={(e) => scrollTo(e, 'bookings')}
-      >
-        Bookings
-      </a>
-    </li>
-    <li>
-      <a
         href="#practical-info"
         class:active={activeId === 'practical-info'}
         onclick={(e) => scrollTo(e, 'practical-info')}
@@ -104,16 +95,6 @@
           </a>
         </li>
       {/each}
-      <li>
-        <a
-          href="#bookings"
-          class:active={activeId === 'bookings'}
-          onclick={(e) => scrollTo(e, 'bookings')}
-        >
-          <span class="mobile-num">予約</span>
-          Bookings
-        </a>
-      </li>
       <li>
         <a
           href="#practical-info"
