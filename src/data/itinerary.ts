@@ -120,7 +120,7 @@ export type City = {
 export const cities: City[] = [
   {
     id: 'tokyo-i',
-    name: 'Tokyo',
+    name: 'Tokyo I',
     nameJa: '東京',
     subtitle: 'Shinjuku',
     summary: 'Four nights in Shinjuku, starting Oct 9. We land at Haneda early morning — sort the JR Pass and Suica at the airport, capsule hotel for a few hours, then head to Shinjuku and get moving. Omoide Yokocho that first evening: smoky yakitori alley two minutes from the station, cold Sapporo, strangers. Good start. Days fill in: Meiji Shrine to clear the head, Thermae-Yu for a proper hot spring reset (outdoor bath, old-school feel, correct for jet lag), Shibuya Sky to see the crossing from 50 floors, teamLab Borderless for the spectacle. One proper izakaya dinner — walk-ins only, packed with salarymen, no English menu — and the best sake bar in Shinjuku after. First taste of Akihabara on day four before the full dive later in the trip.',
@@ -536,7 +536,7 @@ export const cities: City[] = [
   },
   {
     id: 'tokyo-ii',
-    name: 'Tokyo',
+    name: 'Tokyo II',
     nameJa: '東京',
     subtitle: 'Ueno · Akihabara',
     summary: 'Back in Tokyo for five nights, based in Ueno. Arrive late on Tuesday after Miyajima and four hours on the shinkansen — drop bags, walk Ameyoko, early night. Then: sumo stable practice at 6:30am, a full day in Akihabara, Asakusa before the crowds, Nakano Broadway for a serious half-day, wagyu yakiniku for the group, a day trip to Nikko when the autumn foliage is at its peak. Last evening is either baseball or the six-seat sushi counter — ¥20,000+, book before leaving Sweden. Duck ramen on the morning of departure. Then Haneda.',
