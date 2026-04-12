@@ -89,16 +89,16 @@
     {
       icon: 'kr',
       title: 'What It Costs',
-      subtitle: 'Per person · 15 days · estimates in SEK',
+      subtitle: 'Per person · 16 days · estimates in SEK',
       breakdown: [
         { label: 'Flights', note: 'ARN → HND return, economy', range: '9 000 – 13 000 kr' },
-        { label: 'Hotel', note: '14 nights, 4-bed room split four ways', range: '14 000 – 16 000 kr' },
+        { label: 'Hotel', note: '16 nights, 4-bed room split four ways', range: '16 000 – 18 000 kr' },
         { label: 'Food & drink', note: 'Cheap ramen & konbini most days, a few wagyu dinners', range: '15 000 – 22 000 kr' },
-        { label: 'Shinkansen', note: '2 legs: Tokyo → Kyoto & Osaka → Tokyo (local train between Kyoto & Osaka)', range: '~1 800 kr' },
-        { label: 'Activities', note: 'teamLab, USJ Express Pass, baseball, misc entry', range: '2 000 – 3 500 kr' },
-        { label: 'Local transport', note: 'IC card, 15 days of metro & trains', range: '~800 kr' },
+        { label: 'Shinkansen', note: 'Tokyo → Kyoto, Kyoto → Osaka, Osaka → Hiroshima, Hiroshima → Tokyo — JR Pass covers all', range: '~3 500 kr' },
+        { label: 'Activities', note: 'teamLab, Nintendo Museum, baseball, Nikko Pass, misc entry', range: '2 000 – 3 500 kr' },
+        { label: 'Local transport', note: 'IC card, 16 days of metro & trains', range: '~900 kr' },
       ],
-      total: '43 000 – 57 000 kr',
+      total: '46 000 – 61 000 kr',
     },
   ]
 

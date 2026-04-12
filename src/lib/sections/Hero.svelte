@@ -40,7 +40,7 @@
   </div>
 
   <div class="hero-content">
-    <div class="hero-tag">oct 17 – 31 · 2026</div>
+    <div class="hero-tag">oct 9 – 24 · 2026</div>
 
     <div class="hero-title">
       <div class="hero-clip"><span class="hero-line">JAPAN</span></div>
@@ -56,6 +56,8 @@
           <span>Kyoto</span>
           <span class="arrow">→</span>
           <span>Osaka</span>
+          <span class="arrow">→</span>
+          <span>Hiroshima</span>
           <span class="arrow">→</span>
           <span>Tokyo</span>
         </div>
