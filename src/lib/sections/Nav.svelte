@@ -58,7 +58,7 @@
           class:active={activeId === city.id}
           onclick={(e) => scrollTo(e, city.id)}
         >
-          {city.name}{city.subtitle ? ' — ' + city.subtitle : ''}
+          {city.name}
         </a>
       </li>
     {/each}
@@ -100,7 +100,7 @@
             onclick={(e) => scrollTo(e, city.id)}
           >
             <span class="mobile-num">{city.nameJa}</span>
-            {city.name}{city.subtitle ? ' — ' + city.subtitle : ''}
+            {city.name}
           </a>
         </li>
       {/each}
