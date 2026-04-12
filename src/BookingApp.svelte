@@ -1,8 +1,6 @@
 <script lang="ts">
-  import { bookings, logistics } from './data/bookings'
+  import { bookings, hotels, STORAGE_KEY } from './data/bookings'
   import type { BookingStatus } from './data/bookings'
-
-  const STORAGE_KEY = 'tokyo26-bookings'
 
   function loadStatuses(): Record<string, BookingStatus> {
     try {
@@ -24,29 +22,31 @@
 
   function toggle(id: string, defaultStatus: BookingStatus) {
     const current = getStatus(id, defaultStatus)
-    if (current === 'na' || current === 'watching') return
+    if (current === 'watching') return
     const next: BookingStatus = current === 'pending' ? 'done' : 'pending'
     statuses = { ...statuses, [id]: next }
     saveStatuses(statuses)
   }
 
-  const urgencyLabel: Record<string, string> = {
-    'lottery':       'Lottery',
-    'before-sweden': 'Book now',
-    'book-online':   'Book online',
-    'watch':         'Watch',
-    'no-booking':    'No booking',
+  const tierColors: Record<number, string> = {
+    1: '#ff2d55',
+    2: '#ff9600',
+    3: '#4caf82',
+    4: '#c084fc',
   }
 
-  const pendingCount = $derived(
-    bookings.filter(b => getStatus(b.id, b.defaultStatus) === 'pending').length
-  )
+  const tierLabel: Record<number, string> = {
+    1: 'Tier 1 — Book immediately',
+    2: 'Tier 2 — Before leaving Sweden',
+    3: 'Tier 3 — 1–2 months before',
+    4: 'Watch — buy when announced',
+  }
+
   const doneCount = $derived(
-    bookings.filter(b => getStatus(b.id, b.defaultStatus) === 'done').length
+    bookings.filter(b => getStatus(b.id, b.defaultStatus) === 'done').length +
+    hotels.filter(h => getStatus(h.id, h.defaultStatus) === 'done').length
   )
-  const logisticsPendingCount = $derived(
-    logistics.filter(l => getStatus(l.id, l.defaultStatus) === 'pending').length
-  )
+  const totalCount = $derived(bookings.length + hotels.length)
 </script>
 
 <div class="page">
@@ -59,13 +59,13 @@
     </div>
     <div class="header-stats">
       <div class="stat">
-        <span class="stat-num">{pendingCount}</span>
-        <span class="stat-label">pending</span>
+        <span class="stat-num done">{doneCount}</span>
+        <span class="stat-label">confirmed</span>
       </div>
       <span class="stat-sep">/</span>
       <div class="stat">
-        <span class="stat-num done">{doneCount}</span>
-        <span class="stat-label">done</span>
+        <span class="stat-num">{totalCount}</span>
+        <span class="stat-label">total</span>
       </div>
     </div>
   </header>
@@ -76,28 +76,25 @@
     <section class="section">
       <div class="section-header">
         <h2>Priority Bookings</h2>
-        <p>In order. Click a row to mark as done.</p>
+        <p>Click a row to mark as confirmed.</p>
       </div>
 
       <ul class="booking-list">
         {#each bookings as booking}
           {@const status = getStatus(booking.id, booking.defaultStatus)}
-          {@const clickable = status !== 'na' && status !== 'watching'}
+          {@const clickable = status !== 'watching'}
           <li
             class="booking-item"
             class:is-done={status === 'done'}
             class:is-watching={status === 'watching'}
-            class:is-na={status === 'na'}
             class:is-clickable={clickable}
             onclick={() => toggle(booking.id, booking.defaultStatus)}
             role={clickable ? 'button' : 'listitem'}
-            tabindex={clickable ? 0 : -1}
+            tabindex={clickable ? 0 : undefined}
             onkeydown={(e) => e.key === 'Enter' && toggle(booking.id, booking.defaultStatus)}
           >
             <div class="booking-left">
-              <span class="booking-priority">
-                {String(booking.priority).padStart(2, '0')}
-              </span>
+              <span class="booking-tier" style="color: {tierColors[booking.tier]}">T{booking.tier}</span>
             </div>
 
             <div class="booking-body">
@@ -109,14 +106,14 @@
                   {/if}
                 </span>
                 <div class="booking-badges">
-                  <span class="urgency-badge urgency-{booking.urgency}">
-                    {urgencyLabel[booking.urgency]}
+                  <span class="urgency-badge" style="color: {tierColors[booking.tier]}; border-color: {tierColors[booking.tier]}40">
+                    {tierLabel[booking.tier]}
                   </span>
                   <span class="status-badge status-{status}">
                     {#if status === 'pending'}Pending
                     {:else if status === 'done'}Done
                     {:else if status === 'watching'}Watching
-                    {:else}No booking
+                    {:else}Skip
                     {/if}
                   </span>
                 </div>
@@ -124,10 +121,15 @@
 
               <div class="booking-meta">
                 <span class="booking-location">{booking.location}</span>
-                <span class="booking-dates">{booking.dates}</span>
+                <span class="booking-day">{booking.day}</span>
               </div>
 
               <p class="booking-desc">{booking.description}</p>
+
+              <div class="booking-footer">
+                <span class="booking-cost">{booking.cost}</span>
+                <span class="booking-deadline" style="color: {tierColors[booking.tier]}">{booking.deadline}</span>
+              </div>
 
               <div class="booking-how">
                 <span class="how-label">How:</span>
@@ -145,32 +147,51 @@
       </ul>
     </section>
 
-    <!-- Logistics -->
+    <!-- Hotels -->
     <section class="section">
       <div class="section-header">
-        <h2>Before Departure</h2>
-        <p>Logistics to sort before leaving Sweden. {logisticsPendingCount} remaining.</p>
+        <h2>Hotels</h2>
+        <p>Kyoto books out fastest — October is peak foliage season.</p>
       </div>
 
-      <ul class="logistics-list">
-        {#each logistics as item}
-          {@const status = getStatus(item.id, item.defaultStatus)}
+      <ul class="hotel-list">
+        {#each hotels as hotel}
+          {@const status = getStatus(hotel.id, hotel.defaultStatus)}
           <li
-            class="logistics-item"
+            class="hotel-item"
             class:is-done={status === 'done'}
-            onclick={() => toggle(item.id, item.defaultStatus)}
+            onclick={() => toggle(hotel.id, hotel.defaultStatus)}
             role="button"
             tabindex="0"
-            onkeydown={(e) => e.key === 'Enter' && toggle(item.id, item.defaultStatus)}
+            onkeydown={(e) => e.key === 'Enter' && toggle(hotel.id, hotel.defaultStatus)}
           >
-            <div class="logistics-check">
+            <div class="hotel-check">
               <div class="check-box" class:checked={status === 'done'}>
                 {#if status === 'done'}<span>✓</span>{/if}
               </div>
             </div>
-            <div class="logistics-body">
-              <span class="logistics-name">{item.name}</span>
-              <p class="logistics-notes">{item.notes}</p>
+            <div class="hotel-body">
+              <div class="hotel-top">
+                <span class="hotel-name">
+                  {hotel.city}
+                  {#if hotel.area !== '—'}
+                    <span class="hotel-area">{hotel.area}</span>
+                  {/if}
+                </span>
+                <div class="hotel-badges">
+                  {#if hotel.urgent}
+                    <span class="urgency-badge" style="color: #ff9600; border-color: #ff960040">Book first</span>
+                  {/if}
+                  <span class="status-badge status-{status}">
+                    {status === 'done' ? 'Booked' : 'Pending'}
+                  </span>
+                </div>
+              </div>
+              <div class="booking-meta">
+                <span class="booking-location">{hotel.dates}</span>
+                <span class="booking-day">{hotel.nights} nights</span>
+              </div>
+              <p class="booking-desc">{hotel.note}</p>
             </div>
           </li>
         {/each}
@@ -346,10 +367,9 @@
     flex-shrink: 0;
   }
 
-  .booking-priority {
+  .booking-tier {
     font-family: var(--font-display);
     font-size: 1.4rem;
-    color: #ff2d55;
     line-height: 1;
     letter-spacing: 0.05em;
   }
@@ -405,18 +425,17 @@
     padding: 0.2rem 0.5rem;
     border-radius: 2px;
     white-space: nowrap;
+    border: 1px solid;
   }
 
-  .urgency-lottery      { background: rgba(255,45,85,0.15);  color: #ff2d55;  border: 1px solid rgba(255,45,85,0.3); }
-  .urgency-before-sweden{ background: rgba(255,150,0,0.12);  color: #ff9600;  border: 1px solid rgba(255,150,0,0.25); }
-  .urgency-book-online  { background: rgba(0,200,255,0.1);   color: #00c8ff;  border: 1px solid rgba(0,200,255,0.2); }
-  .urgency-watch        { background: rgba(180,180,0,0.1);   color: #c8c800;  border: 1px solid rgba(180,180,0,0.2); }
-  .urgency-no-booking   { background: rgba(255,255,255,0.05);color: rgba(255,255,255,0.3); border: 1px solid rgba(255,255,255,0.1); }
+  .urgency-badge {
+    background: transparent;
+  }
 
-  .status-pending  { background: transparent; color: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.1); }
-  .status-done     { background: rgba(76,175,130,0.15); color: #4caf82; border: 1px solid rgba(76,175,130,0.3); }
-  .status-watching { background: rgba(180,180,0,0.1);   color: #c8c800; border: 1px solid rgba(180,180,0,0.2); }
-  .status-na       { background: transparent; color: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.07); }
+  .status-pending  { background: transparent; color: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.1); }
+  .status-done     { background: rgba(76,175,130,0.15); color: #4caf82; border-color: rgba(76,175,130,0.3); }
+  .status-watching { background: rgba(192,132,252,0.1); color: #c084fc; border-color: rgba(192,132,252,0.25); }
+  .status-na       { background: transparent; color: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.07); }
 
   .booking-meta {
     display: flex;
@@ -428,7 +447,7 @@
   }
 
   .booking-location { color: rgba(255,255,255,0.4); }
-  .booking-dates    { color: rgba(255,255,255,0.25); }
+  .booking-day      { color: rgba(255,255,255,0.25); }
 
   .booking-desc {
     font-family: var(--font-sans);
@@ -436,6 +455,26 @@
     color: rgba(255,255,255,0.5);
     line-height: 1.55;
     max-width: 58ch;
+  }
+
+  .booking-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .booking-cost {
+    font-family: var(--font-condensed);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .booking-deadline {
+    font-family: var(--font-condensed);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 
   .booking-how {
@@ -466,15 +505,15 @@
 
   .booking-how a:hover { color: rgba(255,255,255,0.7); }
 
-  /* ── Logistics ── */
-  .logistics-list {
+  /* ── Hotels ── */
+  .hotel-list {
     list-style: none;
     display: flex;
     flex-direction: column;
     border-top: 1px solid rgba(255,255,255,0.08);
   }
 
-  .logistics-item {
+  .hotel-item {
     display: flex;
     gap: 1.25rem;
     align-items: flex-start;
@@ -484,17 +523,17 @@
     transition: background 0.15s;
   }
 
-  .logistics-item:hover {
+  .hotel-item:hover {
     background: rgba(255,255,255,0.02);
     margin: 0 -1rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
-  .logistics-item.is-done { opacity: 0.4; }
-  .logistics-item.is-done .logistics-name { text-decoration: line-through; text-decoration-color: rgba(255,255,255,0.3); }
+  .hotel-item.is-done { opacity: 0.4; }
+  .hotel-item.is-done .hotel-name { text-decoration: line-through; text-decoration-color: rgba(255,255,255,0.3); }
 
-  .logistics-check { padding-top: 0.15rem; flex-shrink: 0; }
+  .hotel-check { padding-top: 0.15rem; flex-shrink: 0; }
 
   .check-box {
     width: 18px;
@@ -514,27 +553,45 @@
     border-color: #4caf82;
   }
 
-  .logistics-body {
+  .hotel-body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.35rem;
   }
 
-  .logistics-name {
+  .hotel-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hotel-name {
     font-family: var(--font-condensed);
     font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 0.05em;
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    letter-spacing: 0.03em;
     text-transform: uppercase;
     color: white;
+    line-height: 1.1;
   }
 
-  .logistics-notes {
-    font-family: var(--font-sans);
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.4);
-    line-height: 1.5;
+  .hotel-area {
+    font-family: var(--font-condensed);
+    font-weight: 400;
+    font-size: 0.8em;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.08em;
+    margin-left: 0.5rem;
+  }
+
+  .hotel-badges {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    flex-shrink: 0;
   }
 
   /* ── Footer ── */
@@ -563,7 +620,7 @@
   @media (max-width: 600px) {
     .booking-top { flex-direction: column; gap: 0.5rem; }
     .booking-item.is-clickable:hover,
-    .logistics-item:hover {
+    .hotel-item:hover {
       margin: 0;
       padding-left: 0;
       padding-right: 0;

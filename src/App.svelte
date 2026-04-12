@@ -6,6 +6,7 @@
   import Nav from './lib/sections/Nav.svelte'
   import Hero from './lib/sections/Hero.svelte'
   import CitySection from './lib/sections/CitySection.svelte'
+  import BookingsSection from './lib/sections/BookingsSection.svelte'
   import PracticalInfoSection from './lib/sections/PracticalInfoSection.svelte'
   import Footer from './lib/sections/Footer.svelte'
 
@@ -60,6 +61,7 @@
   {#each cities as city, i}
     <CitySection {city} index={i} />
   {/each}
+  <BookingsSection />
   <PracticalInfoSection />
   <Footer />
 </div>

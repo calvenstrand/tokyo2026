@@ -1,159 +1,194 @@
 export type BookingStatus = 'pending' | 'done' | 'watching' | 'na'
-export type BookingUrgency = 'lottery' | 'before-sweden' | 'book-online' | 'watch' | 'no-booking'
 
 export type Booking = {
   id: string
-  priority: number
+  tier: 1 | 2 | 3 | 4
   name: string
   nameJa?: string
   location: string
-  dates: string
-  urgency: BookingUrgency
+  day: string
+  deadline: string
+  cost: string
   description: string
   howTo: string
   url?: string
   defaultStatus: BookingStatus
 }
 
-export type LogisticsItem = {
+export type Hotel = {
   id: string
-  name: string
-  notes: string
-  url?: string
+  city: string
+  area: string
+  dates: string
+  nights: number
+  note: string
+  urgent?: boolean
   defaultStatus: BookingStatus
 }
 
+export const STORAGE_KEY = 'tokyo26-bookings'
+
 export const bookings: Booking[] = [
+  // ── Tier 1 — Book immediately ──
   {
     id: 'nintendo',
-    priority: 1,
+    tier: 1,
     name: 'Nintendo Museum',
     nameJa: '任天堂',
-    location: 'Uji',
-    dates: 'Day 6 · Oct 14',
-    urgency: 'lottery',
-    description: 'Lottery tickets — window opens 1–2 months before the date. Highest priority booking on the entire trip. Do not miss the window.',
-    howTo: 'museum.nintendo.com — lottery system, book the moment the window opens',
-    url: 'https://museum.nintendo.com',
+    location: 'Uji, Kyoto',
+    day: 'Day 6 · Oct 14',
+    deadline: 'Lottery opens ~Aug 2026 — set a reminder now',
+    cost: '¥3,300 × 4 = ¥13,200',
+    description: 'Lottery system. Window opens approximately 1–2 months before visit date. Highest priority booking on the entire trip. Miss the window and you cannot go.',
+    howTo: 'nintendo.com/jp/nintendo-museum — lottery, book the moment it opens',
+    url: 'https://www.nintendo.com/jp/nintendo-museum/',
     defaultStatus: 'pending',
   },
   {
+    id: 'toyosu',
+    tier: 1,
+    name: 'Toyosu Tuna Auction',
+    nameJa: '豊洲',
+    location: 'Tokyo · Toyosu Market',
+    day: 'Day 4 · Oct 12 · 5:30am',
+    deadline: 'Registration opens 2 months before — sells out in minutes',
+    cost: 'Free',
+    description: 'Only 120 spots per day. Registration opens 2 months in advance and sells out almost instantly. Book the moment the window opens.',
+    howTo: 'toyosu-market.or.jp — registration opens 2 months before',
+    url: 'https://www.toyosu-market.or.jp/en/auction/',
+    defaultStatus: 'pending',
+  },
+
+  // ── Tier 2 — Book 2–3 months before ──
+  {
     id: 'sushi-kappo',
-    priority: 2,
+    tier: 2,
     name: 'Asakusa Sushi Kappō',
     nameJa: '鮨割烹',
     location: 'Tokyo · Asakusa',
-    dates: 'Day 16 · Oct 24',
-    urgency: 'before-sweden',
-    description: '6 counter seats. Book the early sitting (6–7pm). ¥20,000+ per person. NOTE: if baseball and omakase clash, move to Oct 23 evening after Nikko.',
-    howTo: 'Book directly or via Tableall / Omakase reservation service — months in advance',
+    day: 'Day 16 · Oct 24 · Early sitting 6–7pm',
+    deadline: 'Book before leaving Sweden — fills months out',
+    cost: '¥20,000+ per person',
+    description: 'Only 6 counter seats. Book the early sitting (6–7pm) given the late flight. NOTE: if baseball and omakase clash, move to Oct 23 after Nikko.',
+    howTo: 'Email or call direct — international reservations accepted. Or via Tableall / Omakase.',
     defaultStatus: 'pending',
   },
   {
     id: 'yakitori-omakase',
-    priority: 3,
+    tier: 2,
     name: 'Yakitori Omakase',
     location: 'Kyoto',
-    dates: 'Day 7 · Oct 15',
-    urgency: 'before-sweden',
-    description: 'Counter seating, skewer by skewer, high quality, drink-friendly. ¥15,000–25,000 per person. The big Kyoto dinner.',
-    howTo: 'Book via Tableall or Omakase — book before leaving Sweden',
+    day: 'Day 7 · Oct 15 · Evening',
+    deadline: 'Book before leaving Sweden',
+    cost: '¥15,000–25,000 per person',
+    description: 'Counter seating, chef-driven, skewer by skewer. High quality, completely drink-friendly. Books out weeks in advance.',
+    howTo: 'tableall.com or omakase.in — book before departure',
+    url: 'https://tableall.com',
     defaultStatus: 'pending',
   },
   {
+    id: 'samurai',
+    tier: 2,
+    name: 'Kyoto Samurai Experience',
+    location: 'Kyoto · Near Nijo Castle',
+    day: 'Day 7 · Oct 15 · Afternoon',
+    deadline: 'Book 2–3 months before',
+    cost: '~¥12,000 per person',
+    description: 'Traditional samurai training in a period setting near Nijo Castle. Book via their website or Viator.',
+    howTo: 'waraku-kyoto.com or Viator',
+    url: 'https://www.waraku-an.co.jp',
+    defaultStatus: 'pending',
+  },
+
+  // ── Tier 3 — Book 1–2 months before ──
+  {
     id: 'teamlab',
-    priority: 4,
+    tier: 3,
     name: 'teamLab Borderless',
     location: 'Tokyo · Azabudai Hills',
-    dates: 'Day 3 · Oct 11',
-    urgency: 'book-online',
-    description: 'Sells out. Timed entry — allow 2–3 hours. Book well in advance.',
+    day: 'Day 3 · Oct 11',
+    deadline: 'Book 1–2 months before — sells out on weekends',
+    cost: '¥3,200 per person',
+    description: 'Timed entry. Sells out especially on weekends. Allow 2–3 hours.',
     howTo: 'borderless.teamlab.art — timed entry tickets online',
     url: 'https://borderless.teamlab.art',
     defaultStatus: 'pending',
   },
   {
-    id: 'toyosu',
-    priority: 5,
-    name: 'Toyosu Tuna Auction',
-    nameJa: '豊洲',
-    location: 'Tokyo · Toyosu',
-    dates: 'Day 4 · Oct 12 (optional)',
-    urgency: 'lottery',
-    description: '5:30am start. Extremely limited spots. Book immediately when the window opens — fills within minutes.',
-    howTo: 'Toyosu Market official website — book immediately when window opens',
-    url: 'https://www.shijou.metro.tokyo.lg.jp/toyosu/english/auction/',
+    id: 'kappodo',
+    tier: 3,
+    name: 'Kappodo Knife Sharpening Class',
+    location: 'Tokyo · Nishiazabu',
+    day: 'Tokyo I — check availability',
+    deadline: 'Email to check October availability',
+    cost: '¥18,000 incl. meal',
+    description: 'Optional — Chris only. Email to check October availability.',
+    howTo: 'Email: front@kappodo.com',
     defaultStatus: 'pending',
   },
+
+  // ── Tier 4 — Watch: buy when matchup announced ──
   {
     id: 'baseball',
-    priority: 6,
+    tier: 4,
     name: 'Baseball — Climax / Japan Series',
     nameJa: '野球',
-    location: 'Osaka + Tokyo',
-    dates: 'Oct 17 + Oct 24',
-    urgency: 'watch',
-    description: 'Two potential games. Buy the moment the matchup is announced. If Game 1 falls in Osaka on Oct 17, you\'re already there. Oct 24 in Tokyo is the dream last night.',
-    howTo: 'japansportsticket.com — move immediately when matchup announced',
+    location: 'Tokyo or Osaka',
+    day: 'Oct 17 + Oct 24',
+    deadline: 'Cannot book until matchup announced — monitor from late September',
+    cost: '¥3,000–8,000 per person',
+    description: 'Two potential games: Oct 17 (Osaka) and Oct 24 (Tokyo — perfect last night). The moment the matchup drops, move immediately — 4 together at a playoff game gone within hours. Climax Series begins Oct 10.',
+    howTo: 'japansportsticket.com — buy the instant matchup is announced',
     url: 'https://www.japansportsticket.com',
     defaultStatus: 'watching',
   },
-  {
-    id: 'sumo',
-    priority: 7,
-    name: 'Arashio-beya Sumo Practice',
-    nameJa: '荒汐部屋',
-    location: 'Tokyo · Ryogoku',
-    dates: 'Day 13 · Oct 21',
-    urgency: 'no-booking',
-    description: 'Free walk-in, no booking required. Check the stable\'s calendar closer to the date — practice isn\'t always open to visitors.',
-    howTo: 'arashio.net — check the schedule once dates are confirmed',
-    url: 'http://www.arashio.net',
-    defaultStatus: 'na',
-  },
-  {
-    id: 'funaoka',
-    priority: 8,
-    name: 'Funaoka Onsen',
-    nameJa: '船岡温泉',
-    location: 'Kyoto · Kuramaguchi',
-    dates: 'Day 7 · Oct 15',
-    urgency: 'no-booking',
-    description: 'No booking needed. Open until midnight, ~¥500. Check tattoo policy on their website before going.',
-    howTo: 'Walk-in only — just verify tattoo policy in advance',
-    defaultStatus: 'na',
-  },
 ]
 
-export const logistics: LogisticsItem[] = [
+export const hotels: Hotel[] = [
   {
-    id: 'flights',
-    name: 'Flights',
-    notes: 'ARN → HND · Oct 8. Return HND → ARN · Oct 25, departs 00:35.',
+    id: 'hotel-tokyo-i',
+    city: 'Tokyo I',
+    area: 'Shinjuku',
+    dates: 'Oct 9–13',
+    nights: 4,
+    note: 'Central Shinjuku — close to Omoide Yokocho and Golden Gai.',
     defaultStatus: 'pending',
   },
   {
-    id: 'hotels',
-    name: 'Hotels — all 5 segments',
-    notes: 'Shinjuku (Oct 9–13) · Kyoto (Oct 13–16) · Osaka (Oct 16–19) · Hiroshima (Oct 19–20) · Ueno (Oct 20–25). Arrange takuhaibin forwarding between Kyoto → Osaka.',
+    id: 'hotel-kyoto',
+    city: 'Kyoto',
+    area: '—',
+    dates: 'Oct 13–16',
+    nights: 3,
+    note: 'Most important to book early. October is peak autumn foliage season — good hotels fill months in advance.',
+    urgent: true,
     defaultStatus: 'pending',
   },
   {
-    id: 'jr-pass',
-    name: 'JR Pass',
-    notes: 'Buy before departure — not available in Japan. Covers all shinkansen legs plus Miyajima ferry.',
+    id: 'hotel-osaka',
+    city: 'Osaka',
+    area: 'Near Dotonbori',
+    dates: 'Oct 16–19',
+    nights: 3,
+    note: 'Central, near Dotonbori. Arrange takuhaibin bag forwarding from Kyoto hotel.',
     defaultStatus: 'pending',
   },
   {
-    id: 'esim',
-    name: 'eSIM — Japan data',
-    notes: 'Airalo or Ubigi Japan plan. Set up before departure so it works from the moment you land.',
+    id: 'hotel-hiroshima',
+    city: 'Hiroshima',
+    area: 'Near Peace Memorial',
+    dates: 'Oct 19–20',
+    nights: 1,
+    note: 'Simple and central. Close to Peace Memorial Park.',
     defaultStatus: 'pending',
   },
   {
-    id: 'suica',
-    name: 'Suica card',
-    notes: 'Add to iPhone Wallet before departure. Works on all local trains, subway, buses, and convenience stores from day one.',
+    id: 'hotel-tokyo-ii',
+    city: 'Tokyo II',
+    area: 'Ueno',
+    dates: 'Oct 20–24',
+    nights: 4,
+    note: 'Ueno area. Easy access to Akihabara, Asakusa, and Ameyoko.',
     defaultStatus: 'pending',
   },
 ]
