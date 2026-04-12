@@ -171,7 +171,7 @@ export const cities: City[] = [
         label: '',
         images: [
           { src: imgTokyoShowSrc, srcset: imgTokyoShowSrcset },
-          { src: imgTokyoStreetSrc, srcset: imgTokyoStreetSrcset },
+          { src: imgTokyoCatScreenSrc, srcset: imgTokyoCatScreenSrcset },
           { src: imgBeer1Src, srcset: imgBeer1Srcset },
         ],
         activities: [
@@ -552,7 +552,7 @@ export const cities: City[] = [
         label: 'Sumo + Akihabara',
         images: [
           { src: imgGameboySrc, srcset: imgGameboySrcset },
-          { src: imgTokyoCatScreenSrc, srcset: imgTokyoCatScreenSrcset },
+          { src: imgTokyoStreetSrc, srcset: imgTokyoStreetSrcset },
           { src: imgClawMachineSrc, srcset: imgClawMachineSrcset },
         ],
         activities: [
