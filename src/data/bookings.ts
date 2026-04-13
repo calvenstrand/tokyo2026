@@ -127,6 +127,20 @@ export const bookings: Booking[] = [
     defaultStatus: 'pending',
   },
 
+  {
+    id: 'yebisu',
+    tier: 3,
+    name: 'Yebisu Museum of Beer — Tasting Tour',
+    location: 'Tokyo II · Ebisu',
+    day: 'Day 14 · Oct 22 · Late afternoon',
+    deadline: 'Book 1–2 months before — slots fill up',
+    cost: '~¥600–1,000 per person',
+    description: 'Guided tasting tour of the historic Yebisu Brewery site. Oct 22 is a Thursday so availability should be fine, but book ahead regardless.',
+    howTo: 'yebisu-museum.jp — book the guided tasting tour online',
+    url: 'https://www.yebisu-museum.jp',
+    defaultStatus: 'pending',
+  },
+
   // ── Tier 4 — Watch: buy when matchup announced ──
   {
     id: 'baseball',

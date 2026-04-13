@@ -600,6 +600,11 @@ export const cities: City[] = [
             description: '20 min on the Chuo line. Four floors of retro game shops, figures, vintage manga, model kits. More authentic and considerably less chaotic than Akihabara — the serious collectors come here. Mandarake has its best branch in this building. Allow a full half-day. Bring cash.',
           },
           {
+            time: 'Late Afternoon',
+            title: 'Yebisu Museum of Beer — Ebisu',
+            description: 'The original Yebisu Brewery site, now a museum and tasting experience. Guided tour of the historic buildings followed by a tasting flight of Yebisu beers. About 90 minutes total. Book the guided tasting tour in advance — it fills up. Then dinner is a short walk away.',
+          },
+          {
             time: 'Evening',
             title: 'Wagyu Yakiniku — Ebisu or Nakameguro',
             description: 'Group dinner. Grill your own wagyu at the table — proper cuts, cold beer throughout, no ceremony. Worth the short train ride from Ueno. Drinks along Nakameguro canal after.',
