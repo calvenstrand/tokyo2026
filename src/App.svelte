@@ -63,7 +63,7 @@
   <PracticalInfoSection />
 
   <div class="booking-link-bar">
-    <a href="/tokyo26/booking" class="booking-link">
+    <a href="/tokyo26/booking/" class="booking-link">
       <span class="booking-link-label">予約</span>
       <span class="booking-link-text">Booking checklist →</span>
     </a>
