@@ -123,7 +123,7 @@ export const cities: City[] = [
     name: 'Tokyo',
     nameJa: '東京',
     subtitle: 'Shinjuku',
-    summary: 'Four nights in Shinjuku, starting Oct 9. We land at Haneda early morning — sort the JR Pass and Suica at the airport, capsule hotel for a few hours, then head to Shinjuku and get moving. Omoide Yokocho that first evening: smoky yakitori alley two minutes from the station, cold Sapporo, strangers. Good start. Days fill in: Meiji Shrine to clear the head, Thermae-Yu for a proper hot spring reset (outdoor bath, old-school feel, correct for jet lag), Shibuya Sky to see the crossing from 50 floors, teamLab Borderless for the spectacle. One proper izakaya dinner — walk-ins only, packed with salarymen, no English menu — and the best sake bar in Shinjuku after. First taste of Akihabara on day four before the full dive later in the trip.',
+    summary: 'Four nights in Shinjuku, starting Oct 9. We land at Haneda early morning — sort the JR Pass and Suica at the airport, capsule hotel for a few hours, then head to Shinjuku and get moving. Omoide Yokocho that first evening: smoky yakitori alley two minutes from the station, cold Sapporo, strangers. Good start. Days fill in: Meiji Shrine to clear the head, Shibuya Sky to see the crossing from 50 floors, teamLab Borderless for the spectacle. One proper izakaya dinner — walk-ins only, packed with salarymen, no English menu — and the best sake bar in Shinjuku after. First taste of Akihabara on day four before the full dive later in the trip.',
     dates: 'Oct 30 – Nov 3',
     nights: 4,
     accentChar: '一',
@@ -182,8 +182,8 @@ export const cities: City[] = [
           },
           {
             time: 'Afternoon',
-            title: 'Thermae-Yu',
-            description: 'Natural hot spring in Shinjuku, rooftop outdoor bath, old-school feel. This is the jet lag reset. Allow a couple of hours — the outdoor bath on the roof is the one.',
+            title: 'Shinjuku wander — no agenda',
+            description: 'Explore on foot. Kabukicho and the east side, department store basement floors (Takashimaya, Isetan) for the food halls, or just find a coffee and decompress. Day 2 doesn\'t need a plan.',
           },
           {
             time: 'Evening',
@@ -236,8 +236,8 @@ export const cities: City[] = [
           },
           {
             time: 'Morning',
-            title: 'Tsukiji Outer Market',
-            description: 'Breakfast regardless of whether you made the auction. Tuna sashimi, tamagoyaki straight off the grill, uni on rice. This is how you eat in the morning in Tokyo.',
+            title: 'Free morning',
+            description: 'If you skipped the auction, sleep in. Day 4 is the last Tokyo I morning before Shinkansen west tomorrow — keep it relaxed. Akihabara first pass in the afternoon as planned.',
           },
           {
             time: 'Afternoon',
