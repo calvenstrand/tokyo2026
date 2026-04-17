@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte'
 
-  const departure = new Date('2026-10-08T00:00:00')
+  const departure = new Date('2026-10-29T09:35:00')
 
   let days = $state(0)
   let hours = $state(0)

@@ -124,7 +124,7 @@ export const cities: City[] = [
     nameJa: '東京',
     subtitle: 'Shinjuku',
     summary: 'Four nights in Shinjuku, starting Oct 9. We land at Haneda early morning — sort the JR Pass and Suica at the airport, capsule hotel for a few hours, then head to Shinjuku and get moving. Omoide Yokocho that first evening: smoky yakitori alley two minutes from the station, cold Sapporo, strangers. Good start. Days fill in: Meiji Shrine to clear the head, Thermae-Yu for a proper hot spring reset (outdoor bath, old-school feel, correct for jet lag), Shibuya Sky to see the crossing from 50 floors, teamLab Borderless for the spectacle. One proper izakaya dinner — walk-ins only, packed with salarymen, no English menu — and the best sake bar in Shinjuku after. First taste of Akihabara on day four before the full dive later in the trip.',
-    dates: 'Oct 9–13',
+    dates: 'Oct 30 – Nov 3',
     nights: 4,
     accentChar: '一',
     theme: {
@@ -139,7 +139,7 @@ export const cities: City[] = [
     days: [
       {
         day: 1,
-        date: 'Friday, Oct 9',
+        date: 'Friday, Oct 30',
         label: 'Arrival',
         images: [{ src: imgAlleywaySrc, srcset: imgAlleywaySrcset }],
         activities: [
@@ -167,7 +167,7 @@ export const cities: City[] = [
       },
       {
         day: 2,
-        date: 'Saturday, Oct 10',
+        date: 'Saturday, Oct 31',
         label: '',
         images: [
           { src: imgTokyoShowSrc, srcset: imgTokyoShowSrcset },
@@ -194,7 +194,7 @@ export const cities: City[] = [
       },
       {
         day: 3,
-        date: 'Sunday, Oct 11',
+        date: 'Sunday, Nov 1',
         label: '',
         images: [{ src: imgShibuyaAerialSrc, srcset: imgShibuyaAerialSrcset }],
         activities: [
@@ -222,7 +222,7 @@ export const cities: City[] = [
       },
       {
         day: 4,
-        date: 'Monday, Oct 12',
+        date: 'Monday, Nov 2',
         label: '',
         images: [
           { src: imgSushiSrc, srcset: imgSushiSrcset },
@@ -259,7 +259,7 @@ export const cities: City[] = [
     nameJa: '京都',
     subtitle: '',
     summary: 'Slower than Tokyo, which after four days of neon and noise is actually welcome. Arrive, hit Nishiki Market, then settle in. Fushimi Inari at 6am before anyone else shows up, then straight into the Fushimi sake district — 30+ breweries in walking distance, cold sake from a vending machine outside one of them. Nintendo Museum in Uji the same day (booked months ago, do not lose the tickets). Last evening is the one properly booked dinner of the trip: yakitori omakase counter. High quality, skewer by skewer, completely drink-friendly. End the night at Funaoka Onsen — 1923 bathhouse, beautiful wooden interior, outdoor bath, almost entirely locals. Book the dinner months before departure. Leaving day: bags go ahead to Osaka via takuhaibin, travel light, Nara on the way.',
-    dates: 'Oct 13–16',
+    dates: 'Nov 3–6',
     nights: 3,
     accentChar: '古',
     theme: {
@@ -274,7 +274,7 @@ export const cities: City[] = [
     days: [
       {
         day: 5,
-        date: 'Tuesday, Oct 13',
+        date: 'Tuesday, Nov 3',
         label: 'Travel Day',
         images: [{ src: imgBeer2Src, srcset: imgBeer2Srcset }],
         activities: [
@@ -292,7 +292,7 @@ export const cities: City[] = [
       },
       {
         day: 6,
-        date: 'Wednesday, Oct 14',
+        date: 'Wednesday, Nov 4',
         label: 'Fushimi + Nintendo',
         images: [
           { src: imgFushimiInariSrc, srcset: imgFushimiInariSrcset },
@@ -323,7 +323,7 @@ export const cities: City[] = [
       },
       {
         day: 7,
-        date: 'Thursday, Oct 15',
+        date: 'Thursday, Nov 5',
         label: '',
         images: [{ src: imgWagyuKatsuSrc, srcset: imgWagyuKatsuSrcset }],
         activities: [
@@ -357,7 +357,7 @@ export const cities: City[] = [
     nameJa: '大阪',
     subtitle: '',
     summary: 'The food city. Louder than Kyoto, cheaper than Tokyo, completely fine with both. Arrive via Nara — bags already at the hotel, sent ahead by takuhaibin while you spent the morning with the deer at Todai-ji. Walk straight into Dotonbori: takoyaki, then Shinsekai for kushikatsu and drinks at Misono Building — Osaka\'s own Golden Gai. Morning two: train to Sakai, 30 minutes south, to buy knives direct from the makers. Back for Hozenji Yokocho in the afternoon. Baseball in the evening if the Climax Series or Japan Series falls right — check the moment the matchup drops. Third day is a full day in Kobe: Kitano district, Kobe beef at the counter, Nada sake breweries, dinner before the last train back.',
-    dates: 'Oct 16–19',
+    dates: 'Nov 6–9',
     nights: 3,
     accentChar: '食',
     theme: {
@@ -372,7 +372,7 @@ export const cities: City[] = [
     days: [
       {
         day: 8,
-        date: 'Friday, Oct 16',
+        date: 'Friday, Nov 6',
         label: 'Nara + Travel to Osaka',
         images: [
           { src: imgNaraPagodaSrc, srcset: imgNaraPagodaSrcset },
@@ -409,7 +409,7 @@ export const cities: City[] = [
       },
       {
         day: 9,
-        date: 'Saturday, Oct 17',
+        date: 'Saturday, Nov 7',
         label: 'Sakai + Baseball',
         images: [
           { src: imgShinsekaISrc, srcset: imgShinsekaISrcset },
@@ -436,7 +436,7 @@ export const cities: City[] = [
       },
       {
         day: 10,
-        date: 'Sunday, Oct 18',
+        date: 'Sunday, Nov 8',
         label: 'Kobe',
         images: [
           { src: imgWagyu1Src, srcset: imgWagyu1Srcset },
@@ -473,7 +473,7 @@ export const cities: City[] = [
     nameJa: '広島',
     subtitle: '',
     summary: 'One night. Worth the detour. The Peace Memorial Museum is the whole reason to come — allow two to three hours, don\'t rush it. The Atomic Bomb Dome is ten minutes\' walk. Hiroshima-style okonomiyaki for dinner: layered noodles, cabbage, egg, completely different from the Osaka version. Quieter, more reflective evening — let it be that. Morning is Miyajima: floating torii gate, deer roaming freely, maple trees just turning red. Then four hours on the shinkansen north and you\'re back in Tokyo.',
-    dates: 'Oct 19–20',
+    dates: 'Nov 9–10',
     nights: 1,
     accentChar: '広',
     theme: {
@@ -488,7 +488,7 @@ export const cities: City[] = [
     days: [
       {
         day: 11,
-        date: 'Monday, Oct 19',
+        date: 'Monday, Nov 9',
         label: 'Hiroshima',
         images: [{ src: imgOkonomiyakiSrc, srcset: imgOkonomiyakiSrcset }],
         activities: [
@@ -511,7 +511,7 @@ export const cities: City[] = [
       },
       {
         day: 12,
-        date: 'Tuesday, Oct 20',
+        date: 'Tuesday, Nov 10',
         label: 'Miyajima + Travel to Tokyo',
         images: [{ src: imgMiyajimaSrc, srcset: imgMiyajimaSrcset }],
         activities: [
@@ -540,8 +540,8 @@ export const cities: City[] = [
     nameJa: '東京',
     subtitle: 'Ueno · Akihabara',
     summary: 'Back in Tokyo for five nights, based in Ueno. Arrive late on Tuesday after Miyajima and four hours on the shinkansen — drop bags, walk Ameyoko, early night. Then: sumo stable practice at 6:30am, a full day in Akihabara, Asakusa before the crowds, Nakano Broadway for a serious half-day, wagyu yakiniku for the group, a day trip to Nikko when the autumn foliage is at its peak. Last evening is either baseball or the six-seat sushi counter — ¥20,000+, book before leaving Sweden. Duck ramen on the morning of departure. Then Haneda.',
-    dates: 'Oct 20–25',
-    nights: 5,
+    dates: 'Nov 10–14',
+    nights: 4,
     accentChar: '二',
     theme: {
       bg: '#0a0a1e',
@@ -555,7 +555,7 @@ export const cities: City[] = [
     days: [
       {
         day: 13,
-        date: 'Wednesday, Oct 21',
+        date: 'Wednesday, Nov 11',
         label: 'Sumo + Akihabara',
         images: [
           { src: imgGameboySrc, srcset: imgGameboySrcset },
@@ -582,7 +582,7 @@ export const cities: City[] = [
       },
       {
         day: 14,
-        date: 'Thursday, Oct 22',
+        date: 'Thursday, Nov 12',
         label: 'Asakusa + Nakano + Wagyu',
         images: [
           { src: imgWagyuGrillSrc, srcset: imgWagyuGrillSrcset },
@@ -613,7 +613,7 @@ export const cities: City[] = [
       },
       {
         day: 15,
-        date: 'Friday, Oct 23',
+        date: 'Friday, Nov 13',
         label: 'Nikko Day Trip',
         images: [{ src: imgBaseballSrc, srcset: imgBaseballSrcset }],
         activities: [
@@ -636,7 +636,7 @@ export const cities: City[] = [
       },
       {
         day: 16,
-        date: 'Saturday, Oct 24',
+        date: 'Saturday, Nov 14',
         label: 'Last Day',
         images: [
           { src: imgChefTunaSrc, srcset: imgChefTunaSrcset },
@@ -662,12 +662,12 @@ export const cities: City[] = [
           {
             time: 'Evening',
             title: 'Asakusa Sushi Kappō',
-            description: '6 counter seats. Book the early sitting (6–7pm) before leaving Sweden. ¥20,000+. Sit at the counter, watch the chef work, eat the best sushi of your life. NOTE: if baseball and omakase clash, move omakase to Oct 23 after returning from Nikko.',
+            description: '6 counter seats. Book the early sitting (6–7pm) before leaving Sweden. ¥20,000+. Sit at the counter, watch the chef work, eat the best sushi of your life. NOTE: if baseball and omakase clash, move omakase to Nov 13 after returning from Nikko.',
           },
           {
             time: 'Late',
             title: 'One final cold Sapporo — then Haneda',
-            description: 'Bags from hotel. Ueno to Haneda is 40 min on the Keikyu line. Allow at least 2.5 hours before the 00:35 departure — international terminal, October is busy. Then home.',
+            description: 'Bags from hotel. Ueno to Haneda is 40 min on the Keikyu line. Allow at least 2.5 hours before the 00:30 departure — international terminal, November is busy. Then home.',
           },
         ],
       },

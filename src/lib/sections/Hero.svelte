@@ -40,7 +40,7 @@
   </div>
 
   <div class="hero-content">
-    <div class="hero-tag">oct 9 – 24 · 2026</div>
+    <div class="hero-tag">oct 30 – nov 14 · 2026</div>
 
     <div class="hero-title">
       <div class="hero-clip"><span class="hero-line">JAPAN</span></div>
@@ -65,7 +65,7 @@
       <div class="hero-countdown">
         <p class="countdown-label">Departure in</p>
         <Countdown />
-        <p class="countdown-note">ARN → HND · Oct 8 · arrive Tokyo Oct 9</p>
+        <p class="countdown-note">ARN → HND · Oct 29 · arrive Tokyo Oct 30</p>
       </div>
     </div>
   </div>
