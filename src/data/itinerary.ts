@@ -123,7 +123,7 @@ export const cities: City[] = [
     name: 'Tokyo',
     nameJa: '東京',
     subtitle: 'Shinjuku',
-    summary: 'Four nights in Shinjuku, starting Oct 9. We land at Haneda early morning — sort the JR Pass and Suica at the airport, capsule hotel for a few hours, then head to Shinjuku and get moving. Omoide Yokocho that first evening: smoky yakitori alley two minutes from the station, cold Sapporo, strangers. Good start. Days fill in: Meiji Shrine to clear the head, Shibuya Sky to see the crossing from 50 floors, teamLab Borderless for the spectacle. One proper izakaya dinner — walk-ins only, packed with salarymen, no English menu — and the best sake bar in Shinjuku after. First taste of Akihabara on day four before the full dive later in the trip.',
+    summary: 'Four nights in Shinjuku, starting Oct 30. We land at Haneda early morning — sort the JR Pass and Suica at the airport, capsule hotel for a few hours, then head to Shinjuku and get moving. Omoide Yokocho that first evening: smoky yakitori alley two minutes from the station, cold Sapporo, strangers. Good start. Days fill in: Meiji Shrine to clear the head, Shibuya Sky to see the crossing from 50 floors, teamLab Borderless for the spectacle. One proper izakaya dinner — walk-ins only, packed with salarymen, no English menu — and the best sake bar in Shinjuku after. First taste of Akihabara on day four before the full dive later in the trip.',
     dates: 'Oct 30 – Nov 3',
     nights: 4,
     accentChar: '一',
