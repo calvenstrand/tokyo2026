@@ -107,7 +107,7 @@
     <div class="bookings-header reveal">
       <span class="eyebrow">Action required</span>
       <h2>Bookings</h2>
-      <p class="subtitle">Everything that needs to be locked in before you land. Nintendo Museum lottery and Toyosu Auction open approximately August 2026 — set reminders now.</p>
+      <p class="subtitle">Everything that needs to be locked in before you land. Nintendo Museum lottery opens approximately August 2026 — set a reminder now.</p>
     </div>
 
     <div class="counter-bar reveal">
