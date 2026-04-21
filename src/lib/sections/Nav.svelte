@@ -17,6 +17,7 @@
     page.url.pathname === base + '/' || page.url.pathname === base
   )
   const isInfo = $derived(page.url.pathname.startsWith(base + '/info'))
+  const isExplore = $derived(page.url.pathname.startsWith(base + '/explore'))
 
   $effect(() => {
     if (!isHome) activeId = ''
@@ -111,6 +112,9 @@
     <li>
       <a href="{base}/info" class:active={isInfo}>Info</a>
     </li>
+    <li>
+      <a href="{base}/explore" class:active={isExplore}>Explore</a>
+    </li>
   </ul>
 
   <button
@@ -155,6 +159,12 @@
         <a href="{base}/info" class:active={isInfo} onclick={closeMenu}>
           <span class="mobile-num" aria-hidden="true">案内</span>
           Info
+        </a>
+      </li>
+      <li>
+        <a href="{base}/explore" class:active={isExplore} onclick={closeMenu}>
+          <span class="mobile-num" aria-hidden="true">探索</span>
+          Explore
         </a>
       </li>
     </ul>
