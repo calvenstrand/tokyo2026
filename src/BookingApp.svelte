@@ -1,6 +1,7 @@
 <script lang="ts">
   import { bookings, hotels, STORAGE_KEY } from './data/bookings'
   import type { BookingStatus } from './data/bookings'
+  import PracticalInfoSection from './lib/sections/PracticalInfoSection.svelte'
 
   function loadStatuses(): Record<string, BookingStatus> {
     try {
@@ -55,20 +56,11 @@
     <a href="/tokyo26/" class="back-link">← Itinerary</a>
     <div class="header-title">
       <span class="header-eyebrow">Japan '26</span>
-      <h1>Bookings</h1>
-    </div>
-    <div class="header-stats">
-      <div class="stat">
-        <span class="stat-num done">{doneCount}</span>
-        <span class="stat-label">confirmed</span>
-      </div>
-      <span class="stat-sep">/</span>
-      <div class="stat">
-        <span class="stat-num">{totalCount}</span>
-        <span class="stat-label">total</span>
-      </div>
+      <h1>Info & Bookings</h1>
     </div>
   </header>
+
+  <PracticalInfoSection />
 
   <main>
 
@@ -76,6 +68,17 @@
     <section class="section">
       <div class="section-header">
         <h2>Priority Bookings</h2>
+        <div class="booking-stats">
+          <div class="stat">
+            <span class="stat-num done">{doneCount}</span>
+            <span class="stat-label">confirmed</span>
+          </div>
+          <span class="stat-sep">/</span>
+          <div class="stat">
+            <span class="stat-num">{totalCount}</span>
+            <span class="stat-label">total</span>
+          </div>
+        </div>
         <p>Click a row to mark as confirmed.</p>
       </div>
 
@@ -201,7 +204,7 @@
   </main>
 
   <footer class="page-footer">
-    <span>Japan '26 · Oct 8–24</span>
+    <span>Japan '26 · Oct 29 – Nov 14</span>
     <a href="/tokyo26/">← Back to itinerary</a>
   </footer>
 
@@ -258,22 +261,22 @@
     letter-spacing: 0.02em;
   }
 
-  .header-stats {
+  .booking-stats {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
   }
 
   .stat {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.15rem;
+    align-items: baseline;
+    gap: 0.35rem;
   }
 
   .stat-num {
     font-family: var(--font-display);
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: 1.4rem;
     color: white;
     line-height: 1;
   }
@@ -289,10 +292,8 @@
   }
 
   .stat-sep {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: rgba(255,255,255,0.15);
-    align-self: center;
-    padding-bottom: 1rem;
   }
 
   /* ── Main ── */

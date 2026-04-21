@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
+  import { onMount, tick } from 'svelte'
   import { gsap } from 'gsap'
   import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
   import { cities } from '../../data/itinerary'
@@ -8,16 +8,17 @@
   let menuOpen = $state(false)
   let activeId = $state('')
 
+  let burgerEl: HTMLButtonElement
+  let menuEl: HTMLElement
+
   onMount(() => {
     gsap.registerPlugin(ScrollToPlugin)
 
-    const sectionIds = [...cities.map(c => c.id), 'practical-info']
+    const sectionIds = [...cities.map(c => c.id)]
     const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[]
 
     const onScroll = () => {
       scrolled = window.scrollY > 80
-
-      // Active section: last one whose top is above 40% down the viewport
       const trigger = window.scrollY + window.innerHeight * 0.4
       let current = ''
       for (const s of sections) {
@@ -32,9 +33,16 @@
     return () => window.removeEventListener('scroll', onScroll)
   })
 
+  $effect(() => {
+    if (!menuOpen) return
+    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') closeMenu() }
+    document.addEventListener('keydown', handler)
+    return () => document.removeEventListener('keydown', handler)
+  })
+
   function scrollTo(e: MouseEvent, id: string) {
     e.preventDefault()
-    menuOpen = false
+    closeMenu()
     const target = id === 'top' ? document.body : document.getElementById(id)
     if (!target) return
     gsap.to(window, {
@@ -44,10 +52,31 @@
     })
   }
 
-  function closeMenu() { menuOpen = false }
+  async function openMenu() {
+    menuOpen = true
+    await tick()
+    menuEl?.querySelector<HTMLElement>('a, button')?.focus()
+  }
+
+  function closeMenu() {
+    menuOpen = false
+    burgerEl?.focus()
+  }
+
+  function trapFocus(e: KeyboardEvent) {
+    if (e.key !== 'Tab') return
+    const focusable = Array.from(menuEl.querySelectorAll<HTMLElement>('a, button'))
+    const first = focusable[0]
+    const last = focusable[focusable.length - 1]
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus() }
+    } else {
+      if (document.activeElement === last) { e.preventDefault(); first.focus() }
+    }
+  }
 </script>
 
-<nav class:scrolled class:menu-open={menuOpen}>
+<nav class:scrolled class:menu-open={menuOpen} aria-label="Main navigation">
   <a href="#top" class="nav-logo" onclick={(e) => scrollTo(e, 'top')}>JAPAN <span>'26</span></a>
 
   <ul class="nav-links">
@@ -63,17 +92,14 @@
       </li>
     {/each}
     <li>
-      <a
-        href="#practical-info"
-        class:active={activeId === 'practical-info'}
-        onclick={(e) => scrollTo(e, 'practical-info')}
-      >
-        Info
-      </a>
+      <a href="/tokyo26/booking/">Bookings</a>
+    </li>
+    <li>
+      <a href="/tokyo26/booking/#practical-info">Info</a>
     </li>
   </ul>
 
-  <button class="burger" onclick={() => menuOpen = !menuOpen} aria-label="Menu" aria-expanded={menuOpen}>
+  <button class="burger" bind:this={burgerEl} onclick={() => menuOpen ? closeMenu() : openMenu()} aria-label="Toggle navigation menu" aria-expanded={menuOpen} aria-controls="mobile-menu">
     <span></span>
     <span></span>
     <span></span>
@@ -81,7 +107,7 @@
 </nav>
 
 {#if menuOpen}
-  <div class="mobile-menu">
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu" bind:this={menuEl} onkeydown={trapFocus}>
     <ul>
       {#each cities as city}
         <li>
@@ -90,24 +116,26 @@
             class:active={activeId === city.id}
             onclick={(e) => scrollTo(e, city.id)}
           >
-            <span class="mobile-num">{city.nameJa}</span>
+            <span class="mobile-num" aria-hidden="true">{city.nameJa}</span>
             {city.name}
           </a>
         </li>
       {/each}
       <li>
-        <a
-          href="#practical-info"
-          class:active={activeId === 'practical-info'}
-          onclick={(e) => scrollTo(e, 'practical-info')}
-        >
-          <span class="mobile-num">案内</span>
+        <a href="/tokyo26/booking/" onclick={closeMenu}>
+          <span class="mobile-num" aria-hidden="true">予約</span>
+          Bookings
+        </a>
+      </li>
+      <li>
+        <a href="/tokyo26/booking/#practical-info" onclick={closeMenu}>
+          <span class="mobile-num" aria-hidden="true">案内</span>
           Info
         </a>
       </li>
     </ul>
   </div>
-  <div class="menu-backdrop" onclick={closeMenu} onkeydown={(e) => e.key === 'Escape' && closeMenu()} role="button" tabindex="-1" aria-label="Close menu"></div>
+  <div class="menu-backdrop" onclick={closeMenu} aria-hidden="true"></div>
 {/if}
 
 <style>
@@ -151,7 +179,7 @@
     font-size: 0.75rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.6);
     transition: color 0.2s;
     position: relative;
     padding-bottom: 2px;

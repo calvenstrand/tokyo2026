@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import { slide } from 'svelte/transition'
   import { gsap } from 'gsap'
   import { ScrollTrigger } from 'gsap/ScrollTrigger'
   import type { City } from '../../data/itinerary'
@@ -10,7 +11,31 @@
   const t = city.theme
   const isAkihabara = t.layout === 'akihabara'
 
+  let openDays = $state(new Set<number>())
+  function toggleDay(i: number) {
+    const next = new Set(openDays)
+    if (next.has(i)) next.delete(i); else next.add(i)
+    openDays = next
+  }
+
+  let mounted = $state(index === 0)
+
   onMount(() => {
+    if (!mounted) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            mounted = true
+            observer.disconnect()
+            // Let Svelte render the new content before refreshing trigger positions
+            requestAnimationFrame(() => ScrollTrigger.refresh())
+          }
+        },
+        { rootMargin: '800px' }
+      )
+      observer.observe(section)
+    }
+
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
     // Staggered reveal for itinerary content
@@ -66,6 +91,7 @@
   style:--border={t.border}
   bind:this={section}
   id={city.id}
+  aria-labelledby="{city.id}-heading"
 >
 
   <!-- Hero image -->
@@ -74,7 +100,7 @@
       <img
         class="hero-img"
         src={t.image}
-        alt={city.name}
+        alt=""
         loading={index === 0 ? 'eager' : 'lazy'}
         fetchpriority={index === 0 ? 'high' : 'auto'}
       />
@@ -87,7 +113,7 @@
         </div>
         <div class="hero-title">
           <div class="city-name-wrap">
-            <h2 class="city-name">{city.name.toUpperCase()}</h2>
+            <h2 class="city-name" id="{city.id}-heading">{city.name.toUpperCase()}</h2>
             {#if city.subtitle}
               <span class="city-subtitle">{city.subtitle}</span>
             {/if}
@@ -114,6 +140,7 @@
     </div>
   {/if}
 
+  {#if mounted}
   <!-- Summary -->
   <div class="city-summary reveal">
     <p>{city.summary}</p>
@@ -122,47 +149,58 @@
   <!-- Itinerary -->
   <div class="city-itinerary">
     <div class="lineup">
-      {#each city.days as day}
-        <div class="lineup-day reveal" class:has-images={day.images && day.images.length > 0}>
-          <div class="day-content">
-            <div class="day-header">
+      {#each city.days as day, i}
+        <div class="lineup-day reveal" class:has-images={day.images && day.images.length > 0} class:is-open={openDays.has(i)}>
+          <button class="day-header" onclick={() => toggleDay(i)} aria-expanded={openDays.has(i)} aria-controls="{city.id}-day-{i}">
+            <div class="day-header-top">
               <span class="day-label">Day {day.day}</span>
               <span class="day-date">{day.date}</span>
               {#if day.label}<span class="day-tag">{day.label}</span>{/if}
+              <span class="day-toggle" aria-hidden="true">{openDays.has(i) ? '−' : '+'}</span>
             </div>
+            {#if !openDays.has(i)}
+              <div class="day-highlights">{day.activities.map(a => a.title).join(' · ')}</div>
+            {/if}
+          </button>
 
-            <ul class="activity-list">
-              {#each day.activities as act}
-                <li class="activity-item">
-                  {#if act.time}
-                    <span class="act-time">{act.time}</span>
-                  {/if}
-                  <span class="act-name">{act.title}</span>
-                  <p class="act-desc">{act.description}</p>
-                </li>
-              {/each}
-            </ul>
-          </div>
+          {#if openDays.has(i)}
+            <div class="day-body" id="{city.id}-day-{i}" transition:slide={{ duration: 220 }}>
+              <div class="day-content">
+                <ul class="activity-list">
+                  {#each day.activities as act}
+                    <li class="activity-item">
+                      {#if act.time}
+                        <span class="act-time">{act.time}</span>
+                      {/if}
+                      <h3 class="act-name">{act.title}</h3>
+                      <p class="act-desc">{act.description}</p>
+                    </li>
+                  {/each}
+                </ul>
+              </div>
 
-          {#if day.images && day.images.length > 0}
-            <div class="day-images">
-              {#each day.images as img, i}
-                <div class="day-img-wrap" style:--img-i={i}>
-                  <img
-                    src={img.src}
-                    srcset={img.srcset}
-                    sizes="(min-width: 769px) 280px, clamp(120px, 38vw, 200px)"
-                    alt=""
-                    loading="lazy"
-                  />
+              {#if day.images && day.images.length > 0}
+                <div class="day-images">
+                  {#each day.images as img, j}
+                    <div class="day-img-wrap" style:--img-i={j}>
+                      <img
+                        src={img.src}
+                        srcset={img.srcset}
+                        sizes="(min-width: 769px) 280px, clamp(120px, 38vw, 200px)"
+                        alt=""
+                        loading="lazy"
+                      />
+                    </div>
+                  {/each}
                 </div>
-              {/each}
+              {/if}
             </div>
           {/if}
         </div>
       {/each}
     </div>
   </div>
+  {/if}
 
 </section>
 
@@ -185,7 +223,7 @@
     position: absolute;
     inset: -10% 0;
     width: 100%;
-    height: 120%;
+    height: 110%;
     object-fit: cover;
     object-position: center;
     display: block;
@@ -314,25 +352,64 @@
 
   .lineup-day {
     border-top: 1px solid var(--border);
-    padding: 1.5rem 0 2rem;
+  }
+
+  .day-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.25rem 0;
+    width: 100%;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    text-align: left;
+    transition: opacity 0.15s ease;
+  }
+
+  .day-header:hover { opacity: 0.75; }
+
+  .day-header-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .day-toggle {
+    margin-left: auto;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--accent);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .day-highlights {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--ink-faint);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .day-body {
+    padding-bottom: 2rem;
+    overflow: hidden;
   }
 
   /* Desktop: days with images → two-column layout */
   @media (min-width: 769px) {
-    .lineup-day.has-images {
+    .lineup-day.has-images .day-body {
       display: grid;
       grid-template-columns: 1fr 280px;
       gap: clamp(2rem, 4vw, 4rem);
       align-items: start;
     }
-  }
-
-  .day-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
   }
 
   .day-label {
@@ -389,7 +466,9 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--accent);
-    opacity: 0.7;
+    opacity: 0.85;
+    border-left: 2px solid var(--accent);
+    padding-left: 0.5rem;
   }
 
   .is-akihabara .act-time {
@@ -466,7 +545,7 @@
 
   /* Desktop: vertical stack in the right column */
   @media (min-width: 769px) {
-    .has-images .day-images {
+    .has-images .day-body .day-images {
       flex-direction: column;
       overflow-x: visible;
       margin-top: 0;
@@ -475,13 +554,12 @@
       top: 2rem;
     }
 
-    .has-images .day-img-wrap {
+    .has-images .day-body .day-img-wrap {
       width: 100%;
       aspect-ratio: 3 / 4;
     }
 
-    /* When only one image, give it a more landscape crop so it doesn't feel too tall */
-    .has-images .day-images:has(.day-img-wrap:only-child) .day-img-wrap {
+    .has-images .day-body .day-images:has(.day-img-wrap:only-child) .day-img-wrap {
       aspect-ratio: 4 / 3;
     }
   }
@@ -522,7 +600,9 @@
     }
 
     .city-ja {
-      display: none;
+      font-size: clamp(2.5rem, 12vw, 4rem);
+      opacity: 0.08;
+      align-self: center;
     }
 
     .day-img-wrap {

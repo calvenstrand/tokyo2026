@@ -34,7 +34,7 @@
   })
 </script>
 
-<section class="hero" id="top">
+<section class="hero" id="top" aria-label="Japan Trip 2026 overview">
   <div class="hero-bg">
     <span class="hero-bg-ja" aria-hidden="true">日本</span>
   </div>
@@ -42,7 +42,9 @@
   <div class="hero-content">
     <div class="hero-tag">oct 30 – nov 14 · 2026</div>
 
-    <div class="hero-title">
+    <h1 class="sr-only">Japan Trip 2026</h1>
+
+    <div class="hero-title" aria-hidden="true">
       <div class="hero-clip"><span class="hero-line">JAPAN</span></div>
       <div class="hero-clip"><span class="hero-line">TRIP</span></div>
       <div class="hero-clip hero-line-small"><span class="hero-line">2026</span></div>
@@ -50,21 +52,21 @@
 
     <div class="hero-bottom">
       <div class="hero-meta">
-        <div class="hero-route">
+        <div class="hero-route" aria-label="Route: Tokyo, Kyoto, Osaka, Fukuoka, Tokyo">
           <span>Tokyo</span>
-          <span class="arrow">→</span>
+          <span class="arrow" aria-hidden="true">→</span>
           <span>Kyoto</span>
-          <span class="arrow">→</span>
+          <span class="arrow" aria-hidden="true">→</span>
           <span>Osaka</span>
-          <span class="arrow">→</span>
-          <span>Hiroshima</span>
-          <span class="arrow">→</span>
+          <span class="arrow" aria-hidden="true">→</span>
+          <span>Fukuoka</span>
+          <span class="arrow" aria-hidden="true">→</span>
           <span>Tokyo</span>
         </div>
       </div>
       <div class="hero-countdown">
         <p class="countdown-label">Departure in</p>
-        <Countdown />
+        <Countdown theme="dark" />
         <p class="countdown-note">ARN → HND · Oct 29 · arrive Tokyo Oct 30</p>
       </div>
     </div>
@@ -86,6 +88,16 @@
     justify-content: center;
     padding: clamp(6rem, 10vw, 10rem) clamp(1.5rem, 5vw, 5rem) clamp(3rem, 6vw, 6rem);
     overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
   }
 
   .hero-bg {
@@ -113,6 +125,7 @@
     z-index: 1;
     max-width: var(--max-width);
     width: 100%;
+    margin: 0 auto;
   }
 
   .hero-tag {
@@ -182,7 +195,7 @@
     font-size: 0.7rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.5);
     margin-bottom: 0.5rem;
   }
 
@@ -191,14 +204,9 @@
     font-size: 0.6rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.45);
     margin-top: 0.6rem;
   }
-
-  /* Override countdown colors for dark bg */
-  .hero-countdown :global(strong) { color: white; }
-  .hero-countdown :global(small)  { color: rgba(255,255,255,0.3); }
-  .hero-countdown :global(.sep)   { color: rgba(255,255,255,0.15); }
 
   .hero-scroll {
     position: absolute;

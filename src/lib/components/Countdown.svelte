@@ -1,6 +1,8 @@
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte'
 
+  let { theme = 'light' }: { theme?: 'light' | 'dark' } = $props()
+
   const departure = new Date('2026-10-29T09:35:00')
 
   let days = $state(0)
@@ -30,7 +32,7 @@
   onDestroy(() => clearInterval(interval))
 </script>
 
-<div class="countdown" aria-label="{days} days, {hours} hours, {minutes} minutes, {seconds} seconds until departure">
+<div class="countdown" class:dark={theme === 'dark'} aria-label="{days} days, {hours} hours, {minutes} minutes, {seconds} seconds until departure">
   <span class="unit" aria-hidden="true">
     <strong>{days}</strong>
     <small>days</small>
@@ -91,4 +93,8 @@
     line-height: 1;
     font-family: var(--font-serif);
   }
+
+  .dark strong { color: white; }
+  .dark small  { color: rgba(255,255,255,0.3); }
+  .dark .sep   { color: rgba(255,255,255,0.15); }
 </style>

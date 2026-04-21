@@ -58,12 +58,12 @@
     },
     {
       icon: '🌤',
-      title: 'October Weather',
+      title: 'November Weather',
       items: [
-        'Daytime 18–24 °C, evenings down to 14 °C — pack layers',
-        'Typhoon season is winding down but check forecasts',
-        'Light rain jacket is essential — don\'t rely on umbrellas alone',
-        'Peak autumn colour starts late October in Kyoto — perfect timing',
+        'Daytime 14–20 °C, evenings down to 8–10 °C — bring a proper jacket',
+        'Typhoon season is over — dry, crisp, ideal travel weather',
+        'Light rain jacket still worth packing, but rain is less common',
+        'Peak autumn foliage in Kyoto hits mid-to-late November — perfect timing',
       ],
     },
     {
@@ -91,14 +91,14 @@
       title: 'What It Costs',
       subtitle: 'Per person · 16 days · estimates in SEK',
       breakdown: [
-        { label: 'Flights', note: 'ARN → HND return, economy', range: '9 000 – 13 000 kr' },
-        { label: 'Hotel', note: '16 nights, 4-bed room split four ways', range: '16 000 – 18 000 kr' },
+        { label: 'Flights', note: 'ARN → HND return, economy', range: '11 000 kr' },
+        { label: 'Hotel', note: '15 nights, 4-bed room split four ways', range: '16 000 – 18 000 kr' },
         { label: 'Food & drink', note: 'Cheap ramen & konbini most days, a few wagyu dinners', range: '15 000 – 22 000 kr' },
-        { label: 'Shinkansen', note: 'Tokyo → Kyoto, Kyoto → Osaka, Osaka → Hiroshima, Hiroshima → Tokyo — JR Pass covers all', range: '~3 500 kr' },
-        { label: 'Activities', note: 'teamLab, Nintendo Museum, baseball, Nikko Pass, misc entry', range: '2 000 – 3 500 kr' },
+        { label: 'Shinkansen', note: 'Tokyo → Kyoto (~¥13 850), Osaka → Fukuoka (~¥14 720), Fukuoka → Tokyo (~¥22 220) — book via Smart EX', range: '~3 600 kr' },
+        { label: 'Activities', note: 'Sumo Tournament, Nintendo Museum, teamLab, baseball, misc entry', range: '2 000 – 3 500 kr' },
         { label: 'Local transport', note: 'IC card, 16 days of metro & trains', range: '~900 kr' },
       ],
-      total: '46 000 – 61 000 kr',
+      total: '45 500 – 59 500 kr',
     },
   ]
 
@@ -316,7 +316,7 @@
     font-family: var(--font-condensed);
     font-size: 0.85rem;
     letter-spacing: 0.05em;
-    color: var(--color-ink);
+    color: var(--color-vermillion);
     white-space: nowrap;
     flex-shrink: 0;
   }
@@ -360,8 +360,5 @@
       align-items: flex-start;
     }
 
-    .breakdown-range {
-      color: var(--color-vermillion);
-    }
   }
 </style>
