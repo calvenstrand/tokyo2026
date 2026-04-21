@@ -10,7 +10,7 @@ export default {
       strict: true,
     }),
     paths: {
-      base: '/tokyo26',
+      base: process.env.NODE_ENV === 'production' ? '/tokyo26' : '',
     },
   },
   preprocess: vitePreprocess(),

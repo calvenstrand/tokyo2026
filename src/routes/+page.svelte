@@ -1,7 +1,4 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
-  import { gsap } from 'gsap'
-  import { ScrollTrigger } from 'gsap/ScrollTrigger'
   import { cities } from '../data/itinerary'
   import CitySection from '$lib/sections/CitySection.svelte'
   import Hero from '$lib/sections/Hero.svelte'
@@ -23,9 +20,7 @@
     { src: img4Src, srcset: img4Srcset },
   ]
 
-  onMount(() => {
-    gsap.registerPlugin(ScrollTrigger)
-  })
+
 </script>
 
 <svelte:head>

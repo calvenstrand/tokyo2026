@@ -108,7 +108,7 @@
       <a href="{base}/bookings" class:active={isBookings}>Bookings</a>
     </li>
     <li>
-      <a href="{base}/bookings#practical-info" class:active={false}>Info</a>
+      <a href="{base}/bookings#practical-info" class:active={isBookings}>Info</a>
     </li>
     <li>
       <a href="{base}/explore" class:active={isExplore}>Explore</a>
