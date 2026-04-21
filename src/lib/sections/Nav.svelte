@@ -18,14 +18,19 @@
   )
   const isInfo = $derived(page.url.pathname.startsWith(base + '/info'))
 
+  $effect(() => {
+    if (!isHome) activeId = ''
+  })
+
   onMount(() => {
     gsap.registerPlugin(ScrollToPlugin)
 
     const sectionIds = [...cities.map(c => c.id)]
-    const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[]
 
     const onScroll = () => {
       scrolled = window.scrollY > 80
+      if (!isHome) return
+      const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[]
       const trigger = window.scrollY + window.innerHeight * 0.4
       let current = ''
       for (const s of sections) {

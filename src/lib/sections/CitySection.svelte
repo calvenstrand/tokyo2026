@@ -18,24 +18,7 @@
     openDays = next
   }
 
-  let mounted = $state(index === 0)
-
   onMount(() => {
-    if (!mounted) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            mounted = true
-            observer.disconnect()
-            // Let Svelte render the new content before refreshing trigger positions
-            requestAnimationFrame(() => ScrollTrigger.refresh())
-          }
-        },
-        { rootMargin: '800px' }
-      )
-      observer.observe(section)
-    }
-
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
     // Staggered reveal for itinerary content
@@ -94,53 +77,33 @@
   aria-labelledby="{city.id}-heading"
 >
 
-  <!-- Hero image -->
-  {#if t.image}
-    <div class="city-hero">
-      <img
-        class="hero-img"
-        src={t.image}
-        alt=""
-        loading={index === 0 ? 'eager' : 'lazy'}
-        fetchpriority={index === 0 ? 'high' : 'auto'}
-      />
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <div class="hero-meta">
-          <span class="hero-num">0{index + 1}</span>
-          <span class="hero-dates">{city.dates}</span>
-          <span class="hero-nights">{city.nights} nights</span>
+  <div class="city-hero">
+    <img
+      class="hero-img"
+      src={t.image}
+      alt=""
+      loading={index === 0 ? 'eager' : 'lazy'}
+      fetchpriority={index === 0 ? 'high' : 'auto'}
+    />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-meta">
+        <span class="hero-num">0{index + 1}</span>
+        <span class="hero-dates">{city.dates}</span>
+        <span class="hero-nights">{city.nights} nights</span>
+      </div>
+      <div class="hero-title">
+        <div class="city-name-wrap">
+          <h2 class="city-name" id="{city.id}-heading">{city.name.toUpperCase()}</h2>
+          {#if city.subtitle}
+            <span class="city-subtitle">{city.subtitle}</span>
+          {/if}
         </div>
-        <div class="hero-title">
-          <div class="city-name-wrap">
-            <h2 class="city-name" id="{city.id}-heading">{city.name.toUpperCase()}</h2>
-            {#if city.subtitle}
-              <span class="city-subtitle">{city.subtitle}</span>
-            {/if}
-          </div>
-          <div class="city-ja" aria-hidden="true">{city.nameJa}</div>
-        </div>
+        <div class="city-ja" aria-hidden="true">{city.nameJa}</div>
       </div>
     </div>
-  {:else}
-    <!-- Fallback top bar if no image -->
-    <div class="poster-topbar reveal">
-      <span class="poster-num">0{index + 1}</span>
-      <span class="poster-dates">{city.dates}</span>
-      <span class="poster-nights">{city.nights} nights</span>
-    </div>
-    <div class="poster-heading reveal">
-      <div class="city-name-wrap">
-        <h2 class="city-name">{city.name.toUpperCase()}</h2>
-        {#if city.subtitle}
-          <span class="city-subtitle">{city.subtitle}</span>
-        {/if}
-      </div>
-      <div class="city-ja">{city.nameJa}</div>
-    </div>
-  {/if}
+  </div>
 
-  {#if mounted}
   <!-- Summary -->
   <div class="city-summary reveal">
     <p>{city.summary}</p>
@@ -200,7 +163,6 @@
       {/each}
     </div>
   </div>
-  {/if}
 
 </section>
 
@@ -562,35 +524,6 @@
     .has-images .day-body .day-images:has(.day-img-wrap:only-child) .day-img-wrap {
       aspect-ratio: 4 / 3;
     }
-  }
-
-  /* Fallback top bar */
-  .poster-topbar {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 5vw, 5rem) 1rem;
-    border-bottom: 1px solid var(--border);
-    font-family: var(--font-condensed);
-    font-size: 0.8rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--ink-faint);
-  }
-
-  .poster-num {
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    color: var(--accent);
-  }
-
-  .poster-dates { flex: 1; }
-
-  .poster-heading {
-    display: flex;
-    align-items: flex-end;
-    gap: 1rem;
-    padding: 1.5rem clamp(1.5rem, 5vw, 5rem) 0;
   }
 
   /* Responsive */
