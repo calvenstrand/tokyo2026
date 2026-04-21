@@ -74,8 +74,10 @@ img { display: block; max-width: 100%; }
   }
 }
 
-scrollbar-width: thin;
-scrollbar-color: #333 #0f0f0f;
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #0f0f0f;
+}
 
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #0f0f0f; }
