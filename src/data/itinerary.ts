@@ -229,12 +229,22 @@ export const cities: City[] = [
       {
         day: 4,
         date: 'Monday, Nov 2',
-        label: 'teamLab + Last Tokyo I Day',
+        label: 'Tsukiji + Ginza + teamLab',
         activities: [
+          {
+            time: 'Early morning',
+            title: 'Tsukiji Outer Market',
+            description: 'Stalls open from 6am. Fresh tuna, sea urchin, tamagoyaki, grilled scallops — eat standing at the counter or on the street. The inner market moved to Toyosu but the outer market is still the best breakfast in Tokyo. Get there early, it gets crowded fast.',
+          },
+          {
+            time: 'Lunch',
+            title: 'Ginza Lion Beer Hall',
+            description: '1934 Sapporo beer hall, one of the oldest in Japan. The interior — original mosaic tiles, vaulted ceilings, stained glass — looks exactly the same as it did 90 years ago. Draft Sapporo poured properly. Opens at 11:30am. A 10-minute walk from Tsukiji.',
+          },
           {
             time: 'Afternoon',
             title: 'teamLab Borderless — Azabudai Hills',
-            description: 'Book tickets well in advance — allow 2–3 hours. Immersive digital art at a scale that\'s hard to describe. Azabudai Hills is in Minato-ku, a natural fit for the final Tokyo I afternoon before heading west. Buy timed entry at borderless.teamlab.art.',
+            description: 'Book tickets well in advance — allow 2–3 hours. Immersive digital art at a scale that\'s hard to describe. Azabudai Hills is in Minato-ku, a 15-minute walk from Ginza. Buy timed entry at borderless.teamlab.art.',
           },
           {
             time: 'Evening',
