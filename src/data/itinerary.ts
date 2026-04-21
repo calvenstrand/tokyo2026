@@ -360,7 +360,7 @@ export const cities: City[] = [
     name: 'Osaka',
     nameJa: '大阪',
     subtitle: '',
-    summary: 'The food city. Louder than Kyoto, cheaper than Tokyo, completely fine with both. Two nights arriving via Nara — bags already at the hotel, sent ahead by takuhaibin while you spent the morning with the deer at Todai-ji. Walk straight into Dotonbori: takoyaki, then Shinsekai for kushikatsu and drinks at Misono Building — Osaka\'s own Golden Gai. Second day: train to Sakai, 30 minutes south, to buy knives direct from the makers. Back for Hozenji Yokocho in the afternoon. Baseball in the evening if the Climax Series or Japan Series falls right — check the moment the matchup drops.',
+    summary: 'The food city. Louder than Kyoto, cheaper than Tokyo, completely fine with both. Two nights is enough to do it properly — arrive via Nara, walk straight into Dotonbori, eat everything. Morning two is Sakai for knives — the real thing, direct from the makers, nothing like Kappabashi. Afternoon is Nipponbashi, Osaka\'s answer to Akihabara. Evening back in Shinsekai before the Shinkansen south to Fukuoka.',
     dates: 'Nov 6–8',
     nights: 2,
     accentChar: '食',
@@ -377,7 +377,7 @@ export const cities: City[] = [
       {
         day: 8,
         date: 'Friday, Nov 6',
-        label: 'Nara + Travel to Osaka',
+        label: 'Arrive via Nara',
         images: [
           { src: imgNaraPagodaSrc, srcset: imgNaraPagodaSrcset },
           { src: imgDotonboriAngleSrc, srcset: imgDotonboriAngleSrcset },
@@ -387,17 +387,17 @@ export const cities: City[] = [
           {
             time: 'Morning',
             title: 'Luggage forwarding — Takuhaibin',
-            description: 'Arrange the night before with hotel reception. Bags go direct from Kyoto hotel to Osaka hotel — ¥1,000–2,000 per bag, next-day delivery. Check out light. This is the move.',
+            description: 'Arrange the night before with Kyoto hotel reception. Bags go direct from Kyoto hotel to Osaka hotel — ¥1,000–2,000 per bag, next-day delivery. Check out light. Travel with day bags only.',
           },
           {
-            time: 'Late morning',
-            title: 'Nara',
-            description: 'Train from Kyoto to Nara — 45 min on the Kintetsu line or JR. Todai-ji Temple: Japan\'s largest bronze Buddha, inside a wooden hall the size of an aircraft hangar. Then Nara Park — hundreds of deer roam completely freely, they bow, they steal food, they have no interest in personal space. Naramachi district for lunch. Allow 3–4 hours total.',
+            time: 'Morning',
+            title: 'Kyoto → Nara',
+            description: '45 min on the Kintetsu line. Quick visit — Todai-ji for the giant Buddha, then Nara Park for the deer. Hundreds of them roaming completely freely — they bow, they steal food, they have zero respect for personal space. Grab lunch in Naramachi district before leaving. Keep it to 2–3 hours total — you\'re not staying, just passing through.',
           },
           {
             time: 'Afternoon',
             title: 'Nara → Osaka',
-            description: 'Kintetsu line direct Nara → Osaka Namba, about 50 min. Check in — bags already waiting at the hotel. Then straight to Dotonbori.',
+            description: 'Kintetsu line direct Nara → Osaka Namba (~50 min). Check in — bags already waiting at the hotel. Freshen up, head straight out.',
           },
           {
             time: 'Evening',
@@ -407,14 +407,14 @@ export const cities: City[] = [
           {
             time: 'Late',
             title: 'Shinsekai — Kushikatsu Daruma + Misono Building',
-            description: 'Short taxi or subway to Shinsekai. Kushikatsu Daruma: original branch, standing bar, deep-fried skewers of everything, dip once in the communal sauce. No double dipping. It\'s the law. Drinks after at Misono Building — Osaka\'s answer to Golden Gai, small bars stacked on every floor.',
+            description: 'Short taxi or subway to Shinsekai. Kushikatsu Daruma — original branch, standing bar, deep-fried skewers of everything, dip once in the communal sauce. No double dipping. It\'s the law. Cold Asahi on draught. Drinks at Misono Building after — Osaka\'s answer to Golden Gai, small bars stacked on every floor.',
           },
         ],
       },
       {
         day: 9,
         date: 'Saturday, Nov 7',
-        label: 'Sakai + Baseball',
+        label: 'Sakai + Nipponbashi',
         images: [
           { src: imgShinsekaISrc, srcset: imgShinsekaISrcset },
           { src: imgDotonboriAsahiSrc, srcset: imgDotonboriAsahiSrcset },
@@ -424,17 +424,17 @@ export const cities: City[] = [
           {
             time: 'Morning',
             title: 'Sakai — Knife District',
-            description: '30 min south on the Nankai line. Sakai Traditional Crafts Museum knife store first — buy direct from the makers\' guild, much cheaper than Kappabashi. Then walk between the workshops: Ashi Hamono, Konosuke, Baba Hamono. Working knife-makers, not tourist shops. Note: some close on weekends — verify opening days before going. Allow the full morning.',
+            description: '30 min south on the Nankai line. Sakai Traditional Crafts Museum knife store first — buy direct from the makers\' guild, significantly cheaper than Kappabashi. Then walk between the workshops: Ashi Hamono, Konosuke, Baba Hamono. Working knife-makers, not tourist shops. Note: some close on weekends — verify opening days before going. Allow the full morning.',
           },
           {
             time: 'Afternoon',
-            title: 'Hozenji Yokocho',
-            description: 'Back to Osaka. Moss-covered stone alley, 60+ small restaurants, far less touristy than Dotonbori. Good place to graze and wander.',
+            title: 'Nipponbashi — Osaka\'s Akihabara',
+            description: 'Back to Osaka. Nipponbashi (Den Den Town) is Osaka\'s electronics and anime district — retro games, figures, manga, electronics, everything Akihabara has but less crowded and more local. Good for a few hours of browsing. Hozenji Yokocho nearby for a relaxed late lunch — moss-covered stone alley, 60+ small restaurants, far less touristy than Dotonbori.',
           },
           {
             time: 'Evening',
-            title: 'Baseball — Climax Series / Japan Series',
-            description: 'Buy tickets immediately when the matchup is announced via Japan Sports Ticket (japansportsticket.com). If the game\'s in Osaka, you\'re already there. If there\'s no game: Misono Building drinks, more Dotonbori.',
+            title: 'Shinsekai — Last Osaka Night',
+            description: 'Back to Shinsekai for the evening — explore the neighbourhood properly, retro pachinko parlours, street food, local izakayas. Very different feel from Dotonbori — older, grittier, more authentic. Early night. Shinkansen to Fukuoka tomorrow morning.',
           },
         ],
       },
@@ -460,8 +460,8 @@ export const cities: City[] = [
     },
     days: [
       {
-        day: 11,
-        date: 'Monday, Nov 9',
+        day: 10,
+        date: 'Sunday, Nov 8',
         label: 'Fukuoka',
         images: [{ src: imgFukuokaContentSrc, srcset: imgFukuokaContentSrcset }],
         activities: [
@@ -483,8 +483,8 @@ export const cities: City[] = [
         ],
       },
       {
-        day: 12,
-        date: 'Tuesday, Nov 10',
+        day: 11,
+        date: 'Monday, Nov 9',
         label: 'Hakata + Tenjin',
         images: [{ src: imgRamen2Src, srcset: imgRamen2Srcset }],
         activities: [
@@ -517,7 +517,7 @@ export const cities: City[] = [
     name: 'Tokyo II',
     nameJa: '東京',
     subtitle: 'Ueno · Akihabara',
-    summary: 'Back in Tokyo for four nights, based in Ueno. Arrive Tuesday after the Shinkansen from Fukuoka — drop bags, walk Ameyoko, early night. Then: a full day in Akihabara. Senso-ji before the crowds, Kappabashi Kitchen Town, wagyu yakiniku, the Yebisu tasting tour. Day five is a Nikko day trip — Tobu limited express from Asakusa, full day among the shrines and November foliage, chanko-nabe dinner in Ryogoku. Last evening is either baseball or the six-seat sushi counter — ¥20,000+, book before leaving Sweden. Duck ramen on the morning of departure. Then Haneda.',
+    summary: 'Back in Tokyo for the final leg, based in Ueno. Five nights but four full days — the last one ends at Haneda. Akihabara gets the full day it deserves, no first-pass compromises. Senso-ji before the crowds, Kappabashi for knives, Yebisu for beer. Nikko on day four when the mountain foliage is at its absolute peak — one of the best day trips in Japan in mid-November. Last evening is the six-seat sushi counter in Asakusa. Book it before leaving Sweden.',
     dates: 'Nov 10–14',
     nights: 4,
     accentChar: '二',
@@ -534,22 +534,17 @@ export const cities: City[] = [
       {
         day: 12,
         date: 'Tuesday, Nov 10',
-        label: 'Travel Day',
+        label: 'Shinkansen from Fukuoka',
         activities: [
           {
-            time: 'Morning',
-            title: 'Check out Fukuoka — Shinkansen to Tokyo',
-            description: '~5 hours on the Nozomi from Hakata to Tokyo Station. Grab a station bento before boarding. Window seat on the left for Fuji.',
-          },
-          {
-            time: 'Afternoon',
-            title: 'Arrive Ueno',
-            description: 'Check in, drop bags. Ueno Park is five minutes from the hotel if you need air. Station area is compact and well-supplied.',
+            time: 'Day',
+            title: 'Shinkansen Fukuoka → Tokyo',
+            description: '~5 hours. Long but comfortable. Window seat on the right side for Mt Fuji views — mid-November is one of the best times to see it with clear skies and snow on the peak. Buy a proper bento at Hakata Station before boarding.',
           },
           {
             time: 'Evening',
-            title: 'Ameyoko — short wander',
-            description: 'Open-air market under the train tracks. Food stalls, izakayas, cheap eats. Good for a low-key first evening back in Tokyo. Early night — full days ahead.',
+            title: 'Arrive Ueno — Ameyoko + early night',
+            description: 'Check in. Walk Ameyoko market street — food stalls, street vendors, cold beer under the train tracks. Easy first Ueno evening. Early night — full day tomorrow.',
           },
         ],
       },
@@ -566,38 +561,58 @@ export const cities: City[] = [
           {
             time: 'All day',
             title: 'Akihabara',
-            description: 'Super Potato for retro games, Yodobashi Akiba for electronics, Mandarake for vintage anime merch and figures. Lunch at Menzin — wagyu paitan ramen at ¥1,000, opened 2025. Taito Station arcade in the afternoon.',
+            description: 'The full day. No first-pass compromises this time. Super Potato — multi-floor retro game shop, Famicom to N64, everything you remember and things you\'ve never seen. Take your time. Yodobashi Akiba — eight-floor electronics megastore, cameras, components, arcade floors. Mandarake — retro games, figures, vintage anime merchandise across multiple floors. The serious stuff is here. Taito Station arcade — claw machines, rhythm games, fighting game cabinets. Put some coins in.',
           },
           {
-            time: 'Night',
-            title: 'SEGA Arcade + Ameyoko izakayas',
-            description: 'SEGA arcade until late. Then izakayas under the Ameyoko train tracks — cheap, local, extremely good.',
+            time: 'Lunch',
+            title: 'Menzin Ramen',
+            description: 'Wagyu Paitan ramen ¥1,000. Opened 2025, run by a former MMA champion. Akihabara.',
+          },
+          {
+            time: 'Evening',
+            title: 'SEGA Arcade',
+            description: 'Stay until late. This is Japanese arcades at their best — floors of games, UFO catchers, rhythm games, the works.',
+          },
+          {
+            time: 'Late',
+            title: 'Ameyoko Izakayas',
+            description: 'Under the train tracks. Cheap, local, extremely cold beer. Perfect end to the day.',
           },
         ],
       },
       {
         day: 14,
         date: 'Thursday, Nov 12',
-        label: 'Asakusa + Wagyu',
+        label: 'Asakusa + Yebisu + Wagyu',
         images: [
           { src: imgWagyuGrillSrc, srcset: imgWagyuGrillSrcset },
           { src: imgWagyuSlicesSrc, srcset: imgWagyuSlicesSrcset },
         ],
         activities: [
           {
-            time: 'Morning',
-            title: 'Senso-ji → Kappabashi',
-            description: 'Before 8am — completely different before the crowds. Walk through Kappabashi Kitchen Town after: Kama-Asa for anyone wanting a serious knife (better selection than Sakai for certain styles).',
+            time: 'Early morning',
+            title: 'Senso-ji — Asakusa',
+            description: 'Before 8am — completely different before the crowds. 10 min walk from Ueno. Mid-November maple trees in the grounds will be turning. The main gate and five-storey pagoda in the early morning light with autumn colour is one of the best things you\'ll see all trip.',
           },
           {
-            time: 'Late Afternoon',
+            time: 'Morning',
+            title: 'Kappabashi — Knife Street',
+            description: '15 min walk from Senso-ji. Kama-Asa is the knife shop — serious blades, knowledgeable staff, good selection. Anyone wanting a Tokyo knife to complement what they bought in Sakai, this is the place. Also worth browsing the cookware shops along the street.',
+          },
+          {
+            time: 'Late afternoon',
             title: 'Yebisu Museum of Beer — Ebisu',
-            description: 'The original Yebisu Brewery site, now a museum and tasting experience. Guided tour of the historic buildings followed by a tasting flight of Yebisu beers. About 90 minutes total. Book the guided tasting tour in advance — it fills up. Then dinner is a short walk away.',
+            description: 'Historic Yebisu brewery site, now a museum and tasting experience. Guided tour of the original buildings followed by a tasting flight of Yebisu beers. About 90 minutes total. Book the guided tasting tour in advance at yebisu-museum.jp — it fills up. Then dinner is a short walk away.',
           },
           {
             time: 'Evening',
-            title: 'Wagyu Yakiniku — Ebisu or Nakameguro',
-            description: 'Group dinner. Grill your own wagyu at the table — proper cuts, cold beer throughout, no ceremony. Worth the short train ride from Ueno. Drinks along Nakameguro canal after.',
+            title: 'Wagyu Yakiniku — Ebisu / Nakameguro',
+            description: 'Grill your own wagyu at the table — proper cuts, cold beer throughout, no ceremony. One of the best group dinners of the trip.',
+          },
+          {
+            time: 'Late',
+            title: 'Nakameguro Canal',
+            description: 'Drinks along the canal after dinner. Good bars, good atmosphere, easy walk from the restaurant. Mid-November the canal-side trees will be turning — one of Tokyo\'s best autumn spots.',
           },
         ],
       },
@@ -609,17 +624,22 @@ export const cities: City[] = [
           {
             time: '7am',
             title: 'Tobu Asakusa → Nikko',
-            description: 'Leave Ueno by 7am to Tobu Asakusa Station. Limited express to Tobu-Nikko (~1h50). Buy the Nikko Pass at Asakusa Station — cheaper than a return ticket and includes all local buses in Nikko.',
+            description: 'Leave Ueno by 7am to Tobu Asakusa Station. Limited express to Tobu-Nikko (~1h50). Buy the Nikko Pass at Asakusa Station — cheaper than a return ticket and includes all local buses. No advance booking needed, buy on the day.',
           },
           {
             time: 'All day',
-            title: 'Nikko',
-            description: 'Shinkyo Bridge — vermillion bridge at the entrance to the sacred area. Toshogu Shrine: Japan\'s most lavishly decorated shrine, gold-leaf accents, 55 buildings, extraordinary craftsmanship. Taiyuin Temple: companion mausoleum, less crowded, very atmospheric. Kanmangafuchi Abyss: riverside walk lined with 70+ red-hatted Jizo statues. Mid-November foliage in the mountains — potentially the best autumn colour of the entire trip. Nikko at altitude peaks earlier than Tokyo city, the timing is perfect. Lunch in Nikko town — bring snacks as backup.',
+            title: 'Shinkyo Bridge + Toshogu Shrine',
+            description: 'Shinkyo Bridge — vermillion bridge at the entrance to the sacred area, the classic opening shot. Toshogu Shrine: Japan\'s most lavishly decorated shrine, gold-leaf accents, intricate carvings, 55 buildings across a forested hillside. Extraordinary craftsmanship — nothing else in Japan looks like this.',
+          },
+          {
+            time: 'All day',
+            title: 'Taiyuin Temple + Kanmangafuchi Abyss',
+            description: 'Taiyuin Temple — companion mausoleum to Toshogu, less crowded, more atmospheric. Worth the extra 20 minutes. Kanmangafuchi Abyss: riverside walk lined with 70+ moss-covered red-hatted Jizo statues. Quiet, slightly otherworldly. Good contrast to the shrine. Mid-November foliage in the Nikko mountains will be at or near peak — potentially the best autumn colour of the entire trip. Lunch in Nikko town — bring snacks as backup. Yuba (tofu skin) is the local specialty if you find it.',
           },
           {
             time: 'Evening',
             title: 'Chanko-nabe — Ryogoku',
-            description: 'Back in Ueno by early evening. Dinner at Tomoegata in Ryogoku — run by a former sumo stable, proper and excellent. 5 min by train from Ueno. Sumo museum wander after if there\'s time (free, inside Kokugikan arena). Early night before last day.',
+            description: 'Back in Ueno by early evening. Dinner at Tomoegata in Ryogoku — run by a former sumo stable, wrestler\'s protein hotpot, proper and excellent. 5 min by train from Ueno. Sumo museum wander after — free, inside Kokugikan arena. Easy walk around the sumo neighbourhood. Early night before the last full day.',
           },
         ],
       },
@@ -636,27 +656,32 @@ export const cities: City[] = [
           {
             time: 'Morning',
             title: 'Ramen Kamo to Negi',
-            description: 'Duck broth, Ueno, open from 9am. Only three ingredients. One of the best things you\'ll eat all trip. Get there.',
+            description: 'Duck broth made with only three ingredients: duck, spring onions, water. Open from 9am. One of the best things you\'ll eat all trip. Last proper ramen in Japan.',
+          },
+          {
+            time: 'Morning',
+            title: 'Ameyoko Market',
+            description: 'Final wander under the train tracks. Last souvenirs, no rush, no agenda.',
           },
           {
             time: 'Afternoon',
-            title: 'Ameyoko + last sweep',
-            description: 'Last souvenirs, Ameyoko market wander. Final Akihabara run if anyone wants it. Or just sit somewhere and enjoy Tokyo. Pack and store bags at the hotel.',
+            title: 'Ueno Park',
+            description: 'Mid-November foliage in Tokyo will be peaking — Ueno Park is one of the best spots in the city for autumn colour. Walk slowly. You\'re leaving tonight. Pack, store bags at hotel.',
           },
           {
             time: 'Evening',
-            title: 'Baseball or Golden Gai',
-            description: 'If the Climax Series or Japan Series has a game tonight — perfect last evening. Buy tickets the moment the matchup is announced via Japan Sports Ticket. If no game: Golden Gai one last time, or Shibuya / Ebisu.',
-          },
-          {
-            time: 'Evening',
-            title: 'Asakusa Sushi Kappō',
-            description: '6 counter seats. Book the early sitting (6–7pm) before leaving Sweden. ¥20,000+. Sit at the counter, watch the chef work, eat the best sushi of your life. NOTE: if baseball and omakase clash, move omakase to Nov 12.',
+            title: 'Asakusa Sushi Kappō — Omakase Farewell',
+            description: '6 counter seats. Book the early sitting 6–7pm before leaving Sweden. ¥20,000+ per person. Sit at the counter, watch the chef, eat the best sushi of your lives. Seasonal fish from Toyosu and direct from fishermen. This is the farewell meal — book it before anything else after the Nintendo Museum lottery. NOTE: this dinner does not move. It is the anchor of the last evening.',
           },
           {
             time: 'Late',
-            title: 'One final cold Sapporo — then Haneda',
-            description: 'Bags from hotel. Ueno to Haneda is 40 min on the Keikyu line. Allow at least 2.5 hours before the 00:30 departure — international terminal, November is busy. Then home.',
+            title: 'One final cold Sapporo',
+            description: 'Somewhere simple and nearby. No agenda. Just sit with it.',
+          },
+          {
+            time: 'Night',
+            title: 'Haneda — Fly Home',
+            description: 'Bags from hotel. Keikyu line from Ueno to Haneda Terminal 3 — about 40 min, allow at least 2.5 hours before departure. At the airport by 9:30–10pm. Fly home Nov 15 00:30.',
           },
         ],
       },
