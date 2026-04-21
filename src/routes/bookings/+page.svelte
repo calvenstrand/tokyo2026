@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { bookings, hotels, STORAGE_KEY } from './data/bookings'
-  import type { BookingStatus } from './data/bookings'
-  import PracticalInfoSection from './lib/sections/PracticalInfoSection.svelte'
+  import { base } from '$app/paths'
+  import { bookings, hotels, STORAGE_KEY } from '../../data/bookings'
+  import type { BookingStatus } from '../../data/bookings'
+  import PracticalInfoSection from '$lib/sections/PracticalInfoSection.svelte'
 
   function loadStatuses(): Record<string, BookingStatus> {
     try {
@@ -50,10 +51,15 @@
   const totalCount = $derived(bookings.length + hotels.length)
 </script>
 
+<svelte:head>
+  <title>Bookings — Japan 2026</title>
+  <meta name="robots" content="noindex" />
+</svelte:head>
+
 <div class="page">
 
   <header class="header">
-    <a href="/tokyo26/" class="back-link">← Itinerary</a>
+    <a href="{base}/" class="back-link">← Itinerary</a>
     <div class="header-title">
       <span class="header-eyebrow">Japan '26</span>
       <h1>Info & Bookings</h1>
@@ -205,7 +211,7 @@
 
   <footer class="page-footer">
     <span>Japan '26 · Oct 29 – Nov 14</span>
-    <a href="/tokyo26/">← Back to itinerary</a>
+    <a href="{base}/">← Back to itinerary</a>
   </footer>
 
 </div>
@@ -215,6 +221,7 @@
     min-height: 100vh;
     background: #0f0f0f;
     color: #e0e0e0;
+    padding-top: 4rem;
   }
 
   /* ── Header ── */

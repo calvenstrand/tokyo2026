@@ -2,6 +2,8 @@
   import { onMount, tick } from 'svelte'
   import { gsap } from 'gsap'
   import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
+  import { page } from '$app/state'
+  import { base } from '$app/paths'
   import { cities } from '../../data/itinerary'
 
   let scrolled = $state(false)
@@ -10,6 +12,12 @@
 
   let burgerEl: HTMLButtonElement
   let menuEl: HTMLElement
+
+  const isHome = $derived(
+    page.url.pathname === base + '/' || page.url.pathname === base
+  )
+  const isBookings = $derived(page.url.pathname.startsWith(base + '/bookings'))
+  const isExplore = $derived(page.url.pathname.startsWith(base + '/explore'))
 
   onMount(() => {
     gsap.registerPlugin(ScrollToPlugin)
@@ -41,6 +49,7 @@
   })
 
   function scrollTo(e: MouseEvent, id: string) {
+    if (!isHome) return
     e.preventDefault()
     closeMenu()
     const target = id === 'top' ? document.body : document.getElementById(id)
@@ -77,13 +86,17 @@
 </script>
 
 <nav class:scrolled class:menu-open={menuOpen} aria-label="Main navigation">
-  <a href="#top" class="nav-logo" onclick={(e) => scrollTo(e, 'top')}>JAPAN <span>'26</span></a>
+  <a
+    href={isHome ? '#top' : `${base}/`}
+    class="nav-logo"
+    onclick={(e) => scrollTo(e, 'top')}
+  >JAPAN <span>'26</span></a>
 
   <ul class="nav-links">
     {#each cities as city}
       <li>
         <a
-          href="#{city.id}"
+          href={isHome ? `#${city.id}` : `${base}/#${city.id}`}
           class:active={activeId === city.id}
           onclick={(e) => scrollTo(e, city.id)}
         >
@@ -92,14 +105,24 @@
       </li>
     {/each}
     <li>
-      <a href="/tokyo26/booking/">Bookings</a>
+      <a href="{base}/bookings" class:active={isBookings}>Bookings</a>
     </li>
     <li>
-      <a href="/tokyo26/booking/#practical-info">Info</a>
+      <a href="{base}/bookings#practical-info" class:active={false}>Info</a>
+    </li>
+    <li>
+      <a href="{base}/explore" class:active={isExplore}>Explore</a>
     </li>
   </ul>
 
-  <button class="burger" bind:this={burgerEl} onclick={() => menuOpen ? closeMenu() : openMenu()} aria-label="Toggle navigation menu" aria-expanded={menuOpen} aria-controls="mobile-menu">
+  <button
+    class="burger"
+    bind:this={burgerEl}
+    onclick={() => menuOpen ? closeMenu() : openMenu()}
+    aria-label="Toggle navigation menu"
+    aria-expanded={menuOpen}
+    aria-controls="mobile-menu"
+  >
     <span></span>
     <span></span>
     <span></span>
@@ -107,12 +130,21 @@
 </nav>
 
 {#if menuOpen}
-  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu" bind:this={menuEl} onkeydown={trapFocus}>
+  <div
+    class="mobile-menu"
+    id="mobile-menu"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Navigation menu"
+    bind:this={menuEl}
+    onkeydown={trapFocus}
+    tabindex="-1"
+  >
     <ul>
       {#each cities as city}
         <li>
           <a
-            href="#{city.id}"
+            href={isHome ? `#${city.id}` : `${base}/#${city.id}`}
             class:active={activeId === city.id}
             onclick={(e) => scrollTo(e, city.id)}
           >
@@ -122,15 +154,21 @@
         </li>
       {/each}
       <li>
-        <a href="/tokyo26/booking/" onclick={closeMenu}>
+        <a href="{base}/bookings" class:active={isBookings} onclick={closeMenu}>
           <span class="mobile-num" aria-hidden="true">予約</span>
           Bookings
         </a>
       </li>
       <li>
-        <a href="/tokyo26/booking/#practical-info" onclick={closeMenu}>
+        <a href="{base}/bookings#practical-info" onclick={closeMenu}>
           <span class="mobile-num" aria-hidden="true">案内</span>
           Info
+        </a>
+      </li>
+      <li>
+        <a href="{base}/explore" class:active={isExplore} onclick={closeMenu}>
+          <span class="mobile-num" aria-hidden="true">探索</span>
+          Explore
         </a>
       </li>
     </ul>
