@@ -16,8 +16,7 @@
   const isHome = $derived(
     page.url.pathname === base + '/' || page.url.pathname === base
   )
-  const isBookings = $derived(page.url.pathname.startsWith(base + '/bookings'))
-  const isExplore = $derived(page.url.pathname.startsWith(base + '/explore'))
+  const isInfo = $derived(page.url.pathname.startsWith(base + '/info'))
 
   onMount(() => {
     gsap.registerPlugin(ScrollToPlugin)
@@ -105,13 +104,7 @@
       </li>
     {/each}
     <li>
-      <a href="{base}/bookings" class:active={isBookings}>Bookings</a>
-    </li>
-    <li>
-      <a href="{base}/bookings#practical-info" class:active={isBookings}>Info</a>
-    </li>
-    <li>
-      <a href="{base}/explore" class:active={isExplore}>Explore</a>
+      <a href="{base}/info" class:active={isInfo}>Info</a>
     </li>
   </ul>
 
@@ -154,21 +147,9 @@
         </li>
       {/each}
       <li>
-        <a href="{base}/bookings" class:active={isBookings} onclick={closeMenu}>
-          <span class="mobile-num" aria-hidden="true">予約</span>
-          Bookings
-        </a>
-      </li>
-      <li>
-        <a href="{base}/bookings#practical-info" onclick={closeMenu}>
+        <a href="{base}/info" class:active={isInfo} onclick={closeMenu}>
           <span class="mobile-num" aria-hidden="true">案内</span>
           Info
-        </a>
-      </li>
-      <li>
-        <a href="{base}/explore" class:active={isExplore} onclick={closeMenu}>
-          <span class="mobile-num" aria-hidden="true">探索</span>
-          Explore
         </a>
       </li>
     </ul>

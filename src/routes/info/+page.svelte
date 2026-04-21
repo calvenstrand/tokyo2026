@@ -54,7 +54,7 @@
 </script>
 
 <svelte:head>
-  <title>Bookings — Japan 2026</title>
+  <title>Info & Bookings — Japan 2026</title>
   <meta name="robots" content="noindex" />
 </svelte:head>
 
