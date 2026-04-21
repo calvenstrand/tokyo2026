@@ -3,4 +3,7 @@ import { imagetools } from 'vite-imagetools'
 
 export default {
   plugins: [sveltekit(), imagetools()],
+  ssr: {
+    noExternal: ['gsap'],
+  },
 }
