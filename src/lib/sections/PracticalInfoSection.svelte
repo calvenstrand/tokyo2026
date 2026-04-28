@@ -95,7 +95,7 @@
         { label: 'Hotel', note: '15 nights, 4-bed room split four ways', range: '16 000 – 18 000 kr' },
         { label: 'Food & drink', note: 'Cheap ramen & konbini most days, a few wagyu dinners', range: '15 000 – 22 000 kr' },
         { label: 'Shinkansen', note: 'Tokyo → Kyoto (~¥13 850), Osaka → Fukuoka (~¥14 720), Fukuoka → Tokyo (~¥22 220) — book via Smart EX', range: '~3 600 kr' },
-        { label: 'Activities', note: 'Sumo Tournament, Nintendo Museum, teamLab, baseball, misc entry', range: '2 000 – 3 500 kr' },
+        { label: 'Activities', note: 'Sumo Tournament, Nintendo Museum, teamLab, Shibuya Sky, misc entry', range: '2 000 – 3 500 kr' },
         { label: 'Local transport', note: 'IC card, 16 days of metro & trains', range: '~900 kr' },
       ],
       total: '45 500 – 59 500 kr',

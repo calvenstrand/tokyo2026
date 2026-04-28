@@ -36,7 +36,7 @@ export const bookings: Booking[] = [
     name: 'Fukuoka Grand Sumo Tournament',
     nameJa: '大相撲',
     location: 'Fukuoka · Fukuoka Kokusai Center',
-    day: 'Day 11 · Nov 9 · Afternoon bouts from 2:30pm',
+    day: 'Day 10 · Nov 8 · Afternoon bouts from 2:30pm',
     deadline: 'Tickets go on sale Sept 19 — buy immediately',
     cost: '¥3,500–8,000 per person',
     description: 'November basho at Fukuoka Kokusai Center. Top-division bouts from 2:30pm, final bout around 5:30–6pm. Tickets sell out fast for top-division sessions once the sale opens.',
@@ -92,8 +92,8 @@ export const bookings: Booking[] = [
     location: 'Kyoto',
     day: 'Day 7 · Nov 5 · Afternoon',
     deadline: 'Book 2–3 months before — research options and confirm group size',
-    cost: '~¥25,000 (Nishiki option, includes Sakai knife) — varies by venue',
-    description: 'Three options to research before departure: Tsuneshin\'s at Furukawacho Shopping Arcade (30-year veteran artisan), workshop near Nishiki Market via whereandwander.com (includes Sakai knife, ¥25,000), or Shirakawa Japanese Culture Experiences (knife sharpening + sake tasting combined). Allow 2 hours. Decide and book before leaving Sweden.',
+    cost: '~¥25,000 (Nishiki option) — varies by venue',
+    description: 'Three options to research before departure: Tsuneshin\'s at Furukawacho Shopping Arcade (30-year veteran artisan), workshop near Nishiki Market via whereandwander.com (¥25,000), or Shirakawa Japanese Culture Experiences (knife sharpening + sake tasting combined). Allow 2 hours. Decide and book before leaving Sweden.',
     howTo: 'whereandwander.com for Nishiki option · Shirakawa Japanese Culture Experiences for combo · Tsuneshin\'s direct booking',
     defaultStatus: 'pending',
   },
@@ -165,21 +165,6 @@ export const bookings: Booking[] = [
     defaultStatus: 'pending',
   },
 
-  // ── Tier 4 — Watch: buy when matchup announced ──
-  {
-    id: 'baseball',
-    tier: 4,
-    name: 'Baseball — Climax / Japan Series',
-    nameJa: '野球',
-    location: 'Tokyo or Osaka',
-    day: 'Nov 7 · Osaka',
-    deadline: 'Cannot book until matchup announced — monitor from late September',
-    cost: '¥3,000–8,000 per person',
-    description: 'Nov 7 in Osaka — if a Japan Series or Climax Series game falls that night, you\'re already there. The moment the matchup drops, move immediately — 4 together at a playoff game gone within hours. Climax Series begins Oct 10.',
-    howTo: 'japansportsticket.com — buy the instant matchup is announced',
-    url: 'https://www.japansportsticket.com',
-    defaultStatus: 'watching',
-  },
 ]
 
 export const hotels: Hotel[] = [

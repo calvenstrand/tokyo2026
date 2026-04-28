@@ -183,9 +183,9 @@
 
   .hero-img {
     position: absolute;
-    inset: -10% 0;
+    inset: -25% 0 0 0;
     width: 100%;
-    height: 110%;
+    height: 125%;
     object-fit: cover;
     object-position: center;
     display: block;
