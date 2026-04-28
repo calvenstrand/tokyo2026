@@ -657,7 +657,7 @@ export const cities: City[] = [
           {
             time: 'Evening',
             title: 'Chanko-nabe — Ryogoku',
-            description: 'Back in Ueno by early evening. Dinner at Tomoegata in Ryogoku — run by a former sumo stable, wrestler\'s protein hotpot, proper and excellent. 5 min by train from Ueno. Sumo museum wander after — free, inside Kokugikan arena. Easy walk around the sumo neighbourhood. Early night before the last full day.',
+            description: 'Back in Ueno by early evening. Dinner at Chanko Kawasaki in Ryogoku — one of the oldest chanko restaurants in the sumo district, run by a former wrestler. Wrestler\'s protein hotpot, proper and excellent. 5 min by train from Ueno. Sumo museum wander after — free, inside Kokugikan arena. Easy walk around the sumo neighbourhood. Early night before the last full day.',
           },
         ],
       },
