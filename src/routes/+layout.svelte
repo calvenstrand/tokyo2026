@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import { afterNavigate } from '$app/navigation'
   import '../app.css'
   import Nav from '$lib/sections/Nav.svelte'
 
@@ -7,6 +8,15 @@
 
   let creditEl: HTMLDivElement
   let creditHeight = $state(0)
+  let firstNav = true
+
+  afterNavigate(() => {
+    if (firstNav) {
+      firstNav = false
+      return
+    }
+    ;(window as unknown as { goatcounter?: { count?: () => void } }).goatcounter?.count?.()
+  })
 
   onMount(() => {
     const ro = new ResizeObserver(() => {
