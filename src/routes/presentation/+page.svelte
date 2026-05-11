@@ -175,11 +175,36 @@
       <div class="corner-mark top-right">FIVE STOPS · FIFTEEN NIGHTS</div>
 
       <ul class="route">
-        <li><span class="rt-num">01</span><span class="rt-name">TOKYO</span><span class="rt-sub">Shinjuku</span><span class="rt-nights">4 nights</span><span class="rt-dates">Oct 30 — Nov 3</span></li>
-        <li><span class="rt-num">02</span><span class="rt-name">KYOTO</span><span class="rt-sub"></span><span class="rt-nights">3 nights</span><span class="rt-dates">Nov 3 — 6</span></li>
-        <li><span class="rt-num">03</span><span class="rt-name">OSAKA</span><span class="rt-sub"></span><span class="rt-nights">2 nights</span><span class="rt-dates">Nov 6 — 8</span></li>
-        <li><span class="rt-num">04</span><span class="rt-name">FUKUOKA</span><span class="rt-sub"></span><span class="rt-nights">2 nights</span><span class="rt-dates">Nov 8 — 10</span></li>
-        <li><span class="rt-num">05</span><span class="rt-name">TOKYO</span><span class="rt-sub">Ueno</span><span class="rt-nights">4 nights</span><span class="rt-dates">Nov 10 — 14</span></li>
+        <li>
+          <span class="rt-num">01</span>
+          <span class="rt-name">TOKYO <em class="rt-sub">Shinjuku</em></span>
+          <span class="rt-nights">4 nights</span>
+          <span class="rt-dates">Oct 30 — Nov 3</span>
+        </li>
+        <li>
+          <span class="rt-num">02</span>
+          <span class="rt-name">KYOTO</span>
+          <span class="rt-nights">3 nights</span>
+          <span class="rt-dates">Nov 3 — 6</span>
+        </li>
+        <li>
+          <span class="rt-num">03</span>
+          <span class="rt-name">OSAKA</span>
+          <span class="rt-nights">2 nights</span>
+          <span class="rt-dates">Nov 6 — 8</span>
+        </li>
+        <li>
+          <span class="rt-num">04</span>
+          <span class="rt-name">FUKUOKA</span>
+          <span class="rt-nights">2 nights</span>
+          <span class="rt-dates">Nov 8 — 10</span>
+        </li>
+        <li>
+          <span class="rt-num">05</span>
+          <span class="rt-name">TOKYO <em class="rt-sub">Ueno</em></span>
+          <span class="rt-nights">4 nights</span>
+          <span class="rt-dates">Nov 10 — 14</span>
+        </li>
       </ul>
 
       <div class="corner-mark bottom-right">FLY HOME · NOV 15 · 00:30</div>
@@ -431,15 +456,15 @@
     list-style: none;
     padding: 0;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1400px;
     width: 100%;
   }
   .route li {
     display: grid;
-    grid-template-columns: 5rem 1fr auto auto;
+    grid-template-columns: 4rem 1fr auto auto;
     gap: clamp(1rem, 3vw, 3rem);
     align-items: baseline;
-    padding: clamp(1rem, 2vw, 1.75rem) 0;
+    padding: clamp(0.8rem, 1.5vw, 1.4rem) 0;
     border-bottom: 1.5px solid rgba(15, 15, 15, 0.2);
     font-family: 'Bebas Neue', sans-serif;
   }
@@ -447,39 +472,40 @@
 
   .rt-num {
     font-family: 'Space Mono', monospace;
-    font-size: clamp(1rem, 1.4vw, 1.5rem);
+    font-size: clamp(0.9rem, 1.2vw, 1.3rem);
     color: rgba(15, 15, 15, 0.45);
     letter-spacing: 0.15em;
   }
   .rt-name {
-    font-size: clamp(2.5rem, 5.5vw, 6rem);
+    font-size: clamp(2.2rem, 4.5vw, 5rem);
     letter-spacing: 0.04em;
     line-height: 1;
+    white-space: nowrap;
   }
   .rt-sub {
-    grid-column: 2;
-    align-self: end;
     font-family: 'DM Sans', sans-serif;
     font-style: italic;
-    font-size: clamp(0.95rem, 1.3vw, 1.4rem);
-    color: rgba(15, 15, 15, 0.55);
-    padding-left: 0.5rem;
-    transform: translateY(-0.3em);
+    font-weight: 400;
+    font-size: 0.35em;
+    letter-spacing: 0.02em;
+    color: rgba(15, 15, 15, 0.5);
+    margin-left: 0.4em;
+    vertical-align: 0.55em;
   }
   .rt-nights {
     font-family: 'Space Mono', monospace;
-    font-size: clamp(1rem, 1.3vw, 1.4rem);
+    font-size: clamp(0.95rem, 1.2vw, 1.3rem);
     color: #c8362a;
     letter-spacing: 0.1em;
     justify-self: end;
   }
   .rt-dates {
     font-family: 'Space Mono', monospace;
-    font-size: clamp(0.85rem, 1.1vw, 1.2rem);
+    font-size: clamp(0.85rem, 1.05vw, 1.15rem);
     color: rgba(15, 15, 15, 0.55);
     letter-spacing: 0.12em;
     justify-self: end;
-    min-width: 10ch;
+    min-width: 11ch;
     text-align: right;
   }
 
