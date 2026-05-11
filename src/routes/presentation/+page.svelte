@@ -161,7 +161,6 @@
       <div class="welcome-rule"></div>
 
       <p class="welcome-line">OCT 30 — NOV 14 · 16 DAYS · 5 CITIES</p>
-      <p class="welcome-pull">Nothing here is locked.<br/>Let's talk through it.</p>
 
       <div class="corner-mark bottom-left">FOR THE BOYS</div>
       <div class="corner-mark bottom-right">PRESENTED BY CHRIS</div>
@@ -434,17 +433,6 @@
     font-size: clamp(1rem, 1.4vw, 1.6rem);
     letter-spacing: 0.25em;
     color: #2a2a2a;
-    margin-bottom: clamp(2rem, 4vw, 4rem);
-  }
-
-  .welcome-pull {
-    font-family: 'Noto Serif JP', serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: clamp(1.4rem, 2.4vw, 2.8rem);
-    color: #1a1a1a;
-    line-height: 1.4;
-    max-width: 28ch;
   }
 
   /* ============ OVERVIEW ============ */
