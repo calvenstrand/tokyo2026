@@ -5,6 +5,10 @@
   import { page } from '$app/state'
   import { base } from '$app/paths'
   import { cities } from '../../data/itinerary'
+  import { now } from '../now.svelte'
+  import { tripStatus, dayId } from '../../data/trip'
+
+  const status = $derived(tripStatus(now()))
 
   let scrolled = $state(false)
   let menuOpen = $state(false)
@@ -97,6 +101,17 @@
   >JAPAN <span>'26</span></a>
 
   <ul class="nav-links">
+    {#if status.phase === 'live'}
+      <li>
+        <a
+          class="nav-today"
+          href={isHome ? `#${dayId(status.day.day)}` : `${base}/#${dayId(status.day.day)}`}
+          onclick={(e) => scrollTo(e, dayId(status.day.day))}
+        >
+          Today
+        </a>
+      </li>
+    {/if}
     {#each cities as city}
       <li>
         <a
@@ -139,6 +154,18 @@
     tabindex="-1"
   >
     <ul>
+      {#if status.phase === 'live'}
+        <li>
+          <a
+            class="nav-today"
+            href={isHome ? `#${dayId(status.day.day)}` : `${base}/#${dayId(status.day.day)}`}
+            onclick={(e) => scrollTo(e, dayId(status.day.day))}
+          >
+            <span class="mobile-num" aria-hidden="true">今日</span>
+            Today
+          </a>
+        </li>
+      {/if}
       {#each cities as city}
         <li>
           <a
@@ -228,6 +255,12 @@
 
   .nav-links a.active::after {
     transform: scaleX(1);
+  }
+
+  .nav-links .nav-today,
+  .mobile-menu .nav-today {
+    color: #ff2d55;
+    font-weight: 700;
   }
 
   .nav-links a:hover::after {

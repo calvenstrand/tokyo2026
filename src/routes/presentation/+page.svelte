@@ -160,7 +160,7 @@
 
       <div class="welcome-rule"></div>
 
-      <p class="welcome-line">OCT 30 — NOV 14 · 16 DAYS · 5 CITIES</p>
+      <p class="welcome-line">OCT 29 — NOV 15 · 15 NIGHTS · 5 CITIES</p>
 
       <div class="corner-mark bottom-left">FOR THE BOYS</div>
       <div class="corner-mark bottom-right">PRESENTED BY CHRIS</div>
@@ -206,6 +206,7 @@
         </li>
       </ul>
 
+      <div class="corner-mark bottom-left">FLY OUT · OCT 29 · 09:35</div>
       <div class="corner-mark bottom-right">FLY HOME · NOV 15 · 00:30</div>
     </div>
   </section>

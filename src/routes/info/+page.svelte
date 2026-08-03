@@ -212,7 +212,7 @@
   </main>
 
   <footer class="page-footer">
-    <span>Japan '26 · Oct 29 – Nov 14</span>
+    <span>Japan '26 · Oct 29 – Nov 15</span>
     <a href="{base}/">← Back to itinerary</a>
   </footer>
 

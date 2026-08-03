@@ -3,6 +3,10 @@
   import { gsap } from 'gsap'
   import { ScrollTrigger } from 'gsap/ScrollTrigger'
   import Countdown from '../components/Countdown.svelte'
+  import { now } from '../now.svelte'
+  import { tripStatus, tripDays, dayId } from '../../data/trip'
+
+  const status = $derived(tripStatus(now()))
 
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -40,7 +44,7 @@
   </div>
 
   <div class="hero-content">
-    <div class="hero-tag">oct 30 – nov 14 · 2026</div>
+    <div class="hero-tag">oct 29 – nov 15 · 2026</div>
 
     <h1 class="sr-only">Japan Trip 2026</h1>
 
@@ -65,9 +69,24 @@
         </div>
       </div>
       <div class="hero-countdown">
-        <p class="countdown-label">Departure in</p>
-        <Countdown theme="dark" />
-        <p class="countdown-note">ARN → HND · Oct 29 · arrive Tokyo Oct 30</p>
+        {#if status.phase === 'before'}
+          <p class="countdown-label">Departure in</p>
+          <Countdown theme="dark" />
+          <p class="countdown-note">ARN 09:35 · Thu Oct 29 · land Tokyo Fri Oct 30</p>
+        {:else if status.phase === 'live'}
+          <p class="countdown-label">You are here</p>
+          <a class="live-day" href="#{dayId(status.day.day)}">
+            <span class="live-num">{status.day.dayName ?? `Day ${status.day.day}`}</span>
+            <span class="live-city">{status.day.cityName}</span>
+          </a>
+          <p class="countdown-note">
+            {status.day.date} · {status.day.label} · day {status.index + 1} of {tripDays.length}
+          </p>
+        {:else}
+          <p class="countdown-label">That's a wrap</p>
+          <p class="live-num">Home</p>
+          <p class="countdown-note">15 nights · 5 cities · Oct 29 – Nov 15 2026</p>
+        {/if}
       </div>
     </div>
   </div>
@@ -197,6 +216,29 @@
     text-transform: uppercase;
     color: rgba(255,255,255,0.5);
     margin-bottom: 0.5rem;
+  }
+
+  .live-day {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.1rem;
+  }
+
+  .live-num {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    color: white;
+  }
+
+  .live-city {
+    font-family: var(--font-condensed);
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #ff2d55;
   }
 
   .countdown-note {
