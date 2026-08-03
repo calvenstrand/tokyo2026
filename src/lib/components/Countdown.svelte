@@ -1,35 +1,15 @@
 <script lang="ts">
-  import { onMount, onDestroy } from 'svelte'
+  import { now } from '../now.svelte'
+  import { DEPARTURE } from '../../data/trip'
 
-  let { theme = 'light' }: { theme?: 'light' | 'dark' } = $props()
+  let { theme = 'light', target = DEPARTURE }: { theme?: 'light' | 'dark'; target?: Date } = $props()
 
-  const departure = new Date('2026-10-29T09:35:00')
+  const diff = $derived(Math.max(0, target.getTime() - now().getTime()))
 
-  let days = $state(0)
-  let hours = $state(0)
-  let minutes = $state(0)
-  let seconds = $state(0)
-  let interval: ReturnType<typeof setInterval>
-
-  function update() {
-    const now = new Date()
-    const diff = departure.getTime() - now.getTime()
-    if (diff <= 0) {
-      days = hours = minutes = seconds = 0
-      return
-    }
-    days = Math.floor(diff / (1000 * 60 * 60 * 24))
-    hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-    minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
-    seconds = Math.floor((diff % (1000 * 60)) / 1000)
-  }
-
-  onMount(() => {
-    update()
-    interval = setInterval(update, 1000)
-  })
-
-  onDestroy(() => clearInterval(interval))
+  const days = $derived(Math.floor(diff / (1000 * 60 * 60 * 24)))
+  const hours = $derived(Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)))
+  const minutes = $derived(Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)))
+  const seconds = $derived(Math.floor((diff % (1000 * 60)) / 1000))
 </script>
 
 <div class="countdown" class:dark={theme === 'dark'} aria-label="{days} days, {hours} hours, {minutes} minutes, {seconds} seconds until departure">

@@ -87,8 +87,12 @@ export type DayImage = {
 
 export type Day = {
   day: number
+  /** Machine-readable date (YYYY-MM-DD) — drives the "today" highlight on the trip. */
+  isoDate: string
   date: string
   label: string
+  /** Overrides the "Day N" heading. Used by the travel day out of Stockholm. */
+  dayName?: string
   activities: Activity[]
   images?: DayImage[]
 }
@@ -122,8 +126,8 @@ export const cities: City[] = [
     name: 'Tokyo',
     nameJa: '東京',
     subtitle: 'Shinjuku',
-    summary: 'Four nights in Shinjuku, starting Oct 30. Land at Haneda early morning — Suica at the airport, capsule hotel for a few hours, then Shinjuku. Omoide Yokocho that first evening: smoky yakitori alley, cold Sapporo, strangers. Day two hits hard: Meiji Shrine first thing, Harajuku and Omotesando through the morning, tonkatsu at Maisen, then Shibuya in the evening — cross the scramble at street level and up to Shibuya Sky for the city lights from 50 floors. Book timed entry in advance. Day three is the gaming deep-dive: Akihabara in the morning — Super Potato, Yodobashi, Mandarake — then Nakano Broadway in the afternoon for the serious collectors\' version of the same. Evening: small-bar karaoke near Golden Gai, then the crawl itself. Day four: teamLab Borderless at Azabudai Hills in the morning, then Ginza — draught Sapporo at Ginza Lion in that original 1934 interior, yakitori under the Yurakucho train tracks, Yamanote back to Shinjuku. Last evening before the Shinkansen west.',
-    dates: 'Oct 30 – Nov 3',
+    summary: 'It starts at Arlanda, 09:35 on Thursday Oct 29 — you land in Tokyo the next morning. Four nights in Shinjuku from there. Suica at the airport, capsule hotel for a few hours, then Shinjuku. Omoide Yokocho that first evening: smoky yakitori alley, cold Sapporo, strangers. Day two hits hard: Meiji Shrine first thing, Harajuku and Omotesando through the morning, tonkatsu at Maisen, then Shibuya in the evening — cross the scramble at street level and up to Shibuya Sky for the city lights from 50 floors. Book timed entry in advance. Day three is the gaming deep-dive: Akihabara in the morning — Super Potato, Yodobashi, Mandarake — then Nakano Broadway in the afternoon for the serious collectors\' version of the same. Evening: small-bar karaoke near Golden Gai, then the crawl itself. Day four: teamLab Borderless at Azabudai Hills in the morning, then Ginza — draught Sapporo at Ginza Lion in that original 1934 interior, yakitori under the Yurakucho train tracks, Yamanote back to Shinjuku. Last evening before the Shinkansen west.',
+    dates: 'Oct 29 – Nov 3',
     nights: 4,
     accentChar: '一',
     theme: {
@@ -137,8 +141,38 @@ export const cities: City[] = [
     },
     days: [
       {
+        day: 0,
+        dayName: 'Departure',
+        date: 'Thursday, Oct 29',
+        isoDate: '2026-10-29',
+        label: 'ARN → Tokyo',
+        activities: [
+          {
+            time: '06:30',
+            title: 'Arlanda — be early',
+            description: 'Meet at Terminal 5, three hours before the wheels leave the ground. Long-haul check-in and security on a Thursday morning is not the queue to gamble on. Nothing sharp in hand luggage — the knives get bought in Japan and flown home in the hold.',
+          },
+          {
+            time: '09:35',
+            title: 'Wheels up — ARN → Tokyo',
+            description: 'The trip starts here. Japan is 8 hours ahead of Sweden, so you leave Thursday morning and land Friday morning. Set your watch to Tokyo time the moment you sit down and start living on it — sleep the back half of the flight, not the front.',
+          },
+          {
+            time: 'Before you fly',
+            title: 'Visit Japan Web',
+            description: 'Register at vjw-lp.digital.go.jp and generate your immigration and customs QR codes before leaving home. Two minutes on the sofa saves twenty in the arrivals hall. Screenshot the codes — airport wifi is not a plan.',
+          },
+          {
+            time: 'Overnight',
+            title: 'In the air',
+            description: 'Eat when they feed you, drink water, then sleep. You land into a full day — Friday in Tokyo is not a rest day, and Omoide Yokocho is waiting that same evening.',
+          },
+        ],
+      },
+      {
         day: 1,
         date: 'Friday, Oct 30',
+        isoDate: '2026-10-30',
         label: 'Arrival',
         images: [{ src: imgAlleywaySrc, srcset: imgAlleywaySrcset }],
         activities: [
@@ -167,6 +201,7 @@ export const cities: City[] = [
       {
         day: 2,
         date: 'Saturday, Oct 31',
+        isoDate: '2026-10-31',
         label: 'Harajuku + Shibuya Sky',
         images: [{ src: imgShibuyaAerialSrc, srcset: imgShibuyaAerialSrcset }],
         activities: [
@@ -200,6 +235,7 @@ export const cities: City[] = [
       {
         day: 3,
         date: 'Sunday, Nov 1',
+        isoDate: '2026-11-01',
         label: 'Akihabara + Nakano Broadway',
         images: [
           { src: imgTokyoShowSrc, srcset: imgTokyoShowSrcset },
@@ -227,6 +263,7 @@ export const cities: City[] = [
       {
         day: 4,
         date: 'Monday, Nov 2',
+        isoDate: '2026-11-02',
         label: 'teamLab + Ginza',
         activities: [
           {
@@ -275,6 +312,7 @@ export const cities: City[] = [
       {
         day: 5,
         date: 'Tuesday, Nov 3',
+        isoDate: '2026-11-03',
         label: 'Arrival',
         images: [
           { src: imgWagyuKatsuSrc, srcset: imgWagyuKatsuSrcset },
@@ -306,6 +344,7 @@ export const cities: City[] = [
       {
         day: 6,
         date: 'Wednesday, Nov 4',
+        isoDate: '2026-11-04',
         label: 'Fushimi + Nintendo',
         images: [
           { src: imgFushimiInariSrc, srcset: imgFushimiInariSrcset },
@@ -337,6 +376,7 @@ export const cities: City[] = [
       {
         day: 7,
         date: 'Thursday, Nov 5',
+        isoDate: '2026-11-05',
         label: 'Kyoto',
         activities: [
           {
@@ -385,6 +425,7 @@ export const cities: City[] = [
       {
         day: 8,
         date: 'Friday, Nov 6',
+        isoDate: '2026-11-06',
         label: 'Arrive via Nara',
         images: [
           { src: imgNaraPagodaSrc, srcset: imgNaraPagodaSrcset },
@@ -422,6 +463,7 @@ export const cities: City[] = [
       {
         day: 9,
         date: 'Saturday, Nov 7',
+        isoDate: '2026-11-07',
         label: 'Osaka',
         images: [
           { src: imgOsakaCastleSrc, srcset: imgOsakaCastleSrcset },
@@ -475,6 +517,7 @@ export const cities: City[] = [
       {
         day: 10,
         date: 'Sunday, Nov 8',
+        isoDate: '2026-11-08',
         label: 'Fukuoka',
         images: [{ src: imgFukuokaContentSrc, srcset: imgFukuokaContentSrcset }],
         activities: [
@@ -498,6 +541,7 @@ export const cities: City[] = [
       {
         day: 11,
         date: 'Monday, Nov 9',
+        isoDate: '2026-11-09',
         label: 'Hakata + Tenjin',
         images: [{ src: imgRamen2Src, srcset: imgRamen2Srcset }],
         activities: [
@@ -547,6 +591,7 @@ export const cities: City[] = [
       {
         day: 12,
         date: 'Tuesday, Nov 10',
+        isoDate: '2026-11-10',
         label: 'Shinkansen from Fukuoka',
         activities: [
           {
@@ -564,6 +609,7 @@ export const cities: City[] = [
       {
         day: 13,
         date: 'Wednesday, Nov 11',
+        isoDate: '2026-11-11',
         label: 'Akihabara',
         images: [
           { src: imgGameboySrc, srcset: imgGameboySrcset },
@@ -596,6 +642,7 @@ export const cities: City[] = [
       {
         day: 14,
         date: 'Thursday, Nov 12',
+        isoDate: '2026-11-12',
         label: 'Asakusa + Yebisu + Wagyu',
         images: [
           { src: imgWagyuGrillSrc, srcset: imgWagyuGrillSrcset },
@@ -637,6 +684,7 @@ export const cities: City[] = [
       {
         day: 15,
         date: 'Friday, Nov 13',
+        isoDate: '2026-11-13',
         label: 'Nikko Day Trip',
         activities: [
           {
@@ -664,6 +712,7 @@ export const cities: City[] = [
       {
         day: 16,
         date: 'Saturday, Nov 14',
+        isoDate: '2026-11-14',
         label: 'Last Day',
         images: [
           { src: imgChefTunaSrc, srcset: imgChefTunaSrcset },

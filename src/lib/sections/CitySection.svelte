@@ -4,6 +4,8 @@
   import { gsap } from 'gsap'
   import { ScrollTrigger } from 'gsap/ScrollTrigger'
   import type { City } from '../../data/itinerary'
+  import { now } from '../now.svelte'
+  import { tripStatus, dayId } from '../../data/trip'
 
   let { city, index }: { city: City; index: number } = $props()
 
@@ -11,14 +13,38 @@
   const t = city.theme
   const isAkihabara = t.layout === 'akihabara'
 
+  const status = $derived(tripStatus(now()))
+  const todayIso = $derived(status.phase === 'live' ? status.day.isoDate : null)
+
   let openDays = $state(new Set<number>())
+  const allOpen = $derived(openDays.size === city.days.length)
+
   function toggleDay(i: number) {
     const next = new Set(openDays)
     if (next.has(i)) next.delete(i); else next.add(i)
     openDays = next
   }
 
+  function toggleAll() {
+    openDays = allOpen ? new Set() : new Set(city.days.map((_, i) => i))
+  }
+
+  // Open today's card by itself so nobody has to hunt for it mid-trip.
+  let autoOpened = ''
+  $effect(() => {
+    if (!todayIso || autoOpened === todayIso) return
+    const i = city.days.findIndex((d) => d.isoDate === todayIso)
+    if (i === -1) return
+    autoOpened = todayIso
+    openDays = new Set(openDays).add(i)
+  })
+
   onMount(() => {
+    // Deep link straight to a single day: /#day-7
+    const hash = window.location.hash.slice(1)
+    const linked = city.days.findIndex((d) => dayId(d.day) === hash)
+    if (linked !== -1) openDays = new Set(openDays).add(linked)
+
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
     // Staggered reveal for itinerary content
@@ -111,15 +137,31 @@
 
   <!-- Itinerary -->
   <div class="city-itinerary">
+    <div class="lineup-bar reveal">
+      <span class="lineup-count">{city.days.length} days · {city.nights} nights</span>
+      <button class="lineup-toggle-all" onclick={toggleAll}>
+        {allOpen ? 'Collapse all' : 'Expand all'}
+      </button>
+    </div>
+
     <div class="lineup">
       {#each city.days as day, i}
-        <div class="lineup-day reveal" class:has-images={day.images && day.images.length > 0} class:is-open={openDays.has(i)}>
+        <div
+          class="lineup-day reveal"
+          class:has-images={day.images && day.images.length > 0}
+          class:is-open={openDays.has(i)}
+          class:is-today={day.isoDate === todayIso}
+          id={dayId(day.day)}
+        >
           <button class="day-header" onclick={() => toggleDay(i)} aria-expanded={openDays.has(i)} aria-controls="{city.id}-day-{i}">
             <div class="day-header-top">
-              <span class="day-label">Day {day.day}</span>
+              <span class="day-label">{day.dayName ?? `Day ${day.day}`}</span>
               <span class="day-date">{day.date}</span>
-              {#if day.label}<span class="day-tag">{day.label}</span>{/if}
               <span class="day-toggle" aria-hidden="true">{openDays.has(i) ? '−' : '+'}</span>
+              <span class="day-badges">
+                {#if day.isoDate === todayIso}<span class="day-today">Today</span>{/if}
+                {#if day.label}<span class="day-tag">{day.label}</span>{/if}
+              </span>
             </div>
             {#if !openDays.has(i)}
               <div class="day-highlights">{day.activities.map(a => a.title).join(' · ')}</div>
@@ -306,6 +348,39 @@
     padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 5vw, 5rem) clamp(3rem, 6vw, 6rem);
   }
 
+  .lineup-bar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+    font-family: var(--font-condensed);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .lineup-count {
+    color: var(--ink-faint);
+  }
+
+  .lineup-toggle-all {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 0.35rem 0.8rem;
+    font: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    color: var(--accent);
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  .lineup-toggle-all:hover {
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+  }
+
   .lineup {
     display: flex;
     flex-direction: column;
@@ -314,6 +389,26 @@
 
   .lineup-day {
     border-top: 1px solid var(--border);
+    scroll-margin-top: 5rem;
+  }
+
+  .lineup-day.is-today {
+    border-top-color: var(--accent);
+    box-shadow: inset 3px 0 0 var(--accent);
+    padding-left: 0.9rem;
+    margin-left: -0.9rem;
+  }
+
+  .day-today {
+    font-family: var(--font-condensed);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    background: var(--accent);
+    color: var(--bg);
+    flex-shrink: 0;
   }
 
   .day-header {
@@ -339,8 +434,17 @@
     flex-wrap: wrap;
   }
 
+  .day-badges {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    order: 2;
+  }
+
   .day-toggle {
     margin-left: auto;
+    order: 3;
     font-family: var(--font-display);
     font-size: 1.2rem;
     color: var(--accent);
@@ -540,6 +644,17 @@
 
     .day-img-wrap {
       width: clamp(120px, 38vw, 200px);
+    }
+  }
+
+  /* Narrow screens: day + date + toggle on one line, badges on their own. */
+  @media (max-width: 600px) {
+    .day-date { white-space: nowrap; }
+
+    .day-badges {
+      order: 4;
+      flex-basis: 100%;
+      margin-top: 0.1rem;
     }
   }
 </style>

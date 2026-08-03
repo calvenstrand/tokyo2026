@@ -25,17 +25,17 @@
 
 <svelte:head>
   <title>Japan 2026 — Tokyo · Kyoto · Osaka · Fukuoka</title>
-  <meta name="description" content="16 days in Japan — Oct 30 – Nov 14, 2026. Shinkansen, sake, sumo, sushi and everything in between." />
+  <meta name="description" content="Leave Stockholm Oct 29, home Nov 15. 15 nights in Japan — shinkansen, sake, sumo, sushi and everything in between." />
   <link rel="canonical" href="https://riverbeach.se/tokyo26/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://riverbeach.se/tokyo26/" />
   <meta property="og:title" content="Japan 2026 — Tokyo · Kyoto · Osaka · Fukuoka" />
-  <meta property="og:description" content="16 days in Japan — Oct 30 – Nov 14, 2026. Shinkansen, sake, sumo, sushi and everything in between." />
+  <meta property="og:description" content="Leave Stockholm Oct 29, home Nov 15. 15 nights in Japan — shinkansen, sake, sumo, sushi and everything in between." />
   <meta property="og:locale" content="en_GB" />
   <meta property="og:image" content="https://riverbeach.se/tokyo26/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Japan 2026 — Tokyo · Kyoto · Osaka · Fukuoka" />
-  <meta name="twitter:description" content="16 days in Japan — Oct 30 – Nov 14, 2026. Shinkansen, sake, sumo, sushi and everything in between." />
+  <meta name="twitter:description" content="Leave Stockholm Oct 29, home Nov 15. 15 nights in Japan — shinkansen, sake, sumo, sushi and everything in between." />
   <meta name="twitter:image" content="https://riverbeach.se/tokyo26/og-image.jpg" />
 </svelte:head>
 

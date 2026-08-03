@@ -1,12 +1,14 @@
 # Tokyo26 — Trip Context
 
 ## The project
-Website for a 15-night Japan trip, Oct 30 – Nov 14 2026 (16 days, fly home Nov 15 00:30).
+Website for a 15-night Japan trip, Oct 29 – Nov 15 2026.
 Built with Svelte + Vite + TypeScript. Deployed as static files.
 Live at riverbeach.se/tokyo26.
 Itinerary data lives in src/data/itinerary.ts — that is the source of truth.
+Dates and trip phase (before / live / after) come from src/data/trip.ts.
 
 Trip structure:
+- Departure · Oct 29 · ARN 09:35, lands Tokyo the morning of Oct 30
 - Tokyo I (Shinjuku) · 4 nights · Oct 30 – Nov 3
 - Kyoto · 3 nights · Nov 3 – 6
 - Osaka · 2 nights · Nov 6 – 8
