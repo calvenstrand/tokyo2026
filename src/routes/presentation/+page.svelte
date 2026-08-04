@@ -30,7 +30,7 @@
       nights: 4,
       bg: '#c8362a',
       ink: '#fbf4dc',
-      accent: '#f5c563',
+      accent: '#fff3c4',
       keywords: [
         'Omoide Yokocho — yakitori, first night',
         'Shibuya Sky — city lights from 50 floors',
@@ -49,7 +49,7 @@
       nights: 3,
       bg: '#1f3a2e',
       ink: '#f0ede0',
-      accent: '#d97c4f',
+      accent: '#e8956c',
       keywords: [
         'Nishiki Market on arrival',
         'Kiyomizu-dera — maples turning',
@@ -69,7 +69,7 @@
       nights: 2,
       bg: '#e8b526',
       ink: '#1a1a1a',
-      accent: '#c8362a',
+      accent: '#7a1810',
       keywords: [
         'Dotonbori at night',
         'Wagyu — top tier',
@@ -374,7 +374,7 @@
     font-family: 'Space Mono', ui-monospace, monospace;
     font-size: clamp(0.7rem, 0.95vw, 1.1rem);
     letter-spacing: 0.18em;
-    color: rgba(15, 15, 15, 0.55);
+    color: rgba(15, 15, 15, 0.62);
     text-transform: uppercase;
     z-index: 2;
   }
@@ -462,7 +462,7 @@
   .rt-num {
     font-family: 'Space Mono', monospace;
     font-size: clamp(0.9rem, 1.2vw, 1.3rem);
-    color: rgba(15, 15, 15, 0.45);
+    color: rgba(15, 15, 15, 0.62);
     letter-spacing: 0.15em;
   }
   .rt-name {
@@ -477,7 +477,7 @@
     font-weight: 400;
     font-size: 0.35em;
     letter-spacing: 0.02em;
-    color: rgba(15, 15, 15, 0.5);
+    color: rgba(15, 15, 15, 0.62);
     margin-left: 0.4em;
     vertical-align: 0.55em;
   }
@@ -491,7 +491,7 @@
   .rt-dates {
     font-family: 'Space Mono', monospace;
     font-size: clamp(0.85rem, 1.05vw, 1.15rem);
-    color: rgba(15, 15, 15, 0.55);
+    color: rgba(15, 15, 15, 0.62);
     letter-spacing: 0.12em;
     justify-self: end;
     min-width: 11ch;
@@ -519,7 +519,7 @@
 
   .poster .corner-mark {
     color: var(--ink);
-    opacity: 0.7;
+    opacity: 1;
   }
 
   .kanji-watermark {
@@ -636,7 +636,7 @@
     font-family: 'Space Mono', monospace;
     font-size: clamp(0.85rem, 1.1vw, 1.2rem);
     letter-spacing: 0.2em;
-    color: rgba(15, 15, 15, 0.5);
+    color: rgba(15, 15, 15, 0.62);
     margin-bottom: clamp(0.5rem, 1vw, 1rem);
   }
   .ticket-name {
@@ -722,7 +722,7 @@
     font-family: 'Space Mono', monospace;
     font-size: clamp(0.9rem, 1.3vw, 1.4rem);
     letter-spacing: 0.2em;
-    color: rgba(15, 15, 15, 0.55);
+    color: rgba(15, 15, 15, 0.62);
     line-height: 1.8;
     text-transform: uppercase;
   }
@@ -761,23 +761,23 @@
     font-family: 'Space Mono', monospace;
     font-size: 0.7rem;
     letter-spacing: 0.2em;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.92);
     padding: 0.4rem 0.7rem;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
     border-radius: 2px;
     transition: color 0.2s, background 0.2s;
   }
-  .hud-exit:hover { color: rgba(255, 255, 255, 0.85); background: rgba(0, 0, 0, 0.5); }
+  .hud-exit:hover { color: #ffffff; background: rgba(0, 0, 0, 0.75); }
 
   .hud-counter {
     pointer-events: none;
     font-family: 'Space Mono', monospace;
     font-size: 0.7rem;
     letter-spacing: 0.2em;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.92);
     padding: 0.4rem 0.7rem;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
     border-radius: 2px;
   }
@@ -834,7 +834,7 @@
     .rt-name { grid-column: 2; grid-row: 1; }
     .rt-sub { grid-column: 2; grid-row: 1; align-self: end; transform: none; padding-left: 0; margin-left: 0.5em; }
     .rt-nights, .rt-dates { grid-column: 2; grid-row: 2; justify-self: start; }
-    .rt-dates { color: rgba(15, 15, 15, 0.4); }
+    .rt-dates { color: rgba(15, 15, 15, 0.62); }
     .tickets { grid-template-columns: 1fr; }
   }
 </style>

@@ -246,7 +246,7 @@
     font-size: 0.75rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.5);
     transition: color 0.2s;
     white-space: nowrap;
   }
@@ -302,7 +302,7 @@
     font-size: 0.6rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.5);
   }
 
   .stat-sep {
@@ -337,7 +337,7 @@
     font-size: 0.75rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.5);
   }
 
   /* ── Booking list ── */
@@ -419,7 +419,7 @@
     font-weight: 400;
     font-size: 0.8em;
     letter-spacing: 0.05em;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.5);
     text-transform: none;
     margin-left: 0.5rem;
   }
@@ -447,10 +447,10 @@
     background: transparent;
   }
 
-  .status-pending  { background: transparent; color: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.1); }
+  .status-pending  { background: transparent; color: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.1); }
   .status-done     { background: rgba(76,175,130,0.15); color: #4caf82; border-color: rgba(76,175,130,0.3); }
   .status-watching { background: rgba(192,132,252,0.1); color: #c084fc; border-color: rgba(192,132,252,0.25); }
-  .status-na       { background: transparent; color: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.07); }
+  .status-na       { background: transparent; color: rgba(255,255,255,0.5); border-color: rgba(255,255,255,0.07); }
 
   .booking-meta {
     display: flex;
@@ -461,8 +461,8 @@
     text-transform: uppercase;
   }
 
-  .booking-location { color: rgba(255,255,255,0.4); }
-  .booking-day      { color: rgba(255,255,255,0.25); }
+  .booking-location { color: rgba(255,255,255,0.5); }
+  .booking-day      { color: rgba(255,255,255,0.5); }
 
   .booking-desc {
     font-family: var(--font-sans);
@@ -495,7 +495,7 @@
   .booking-how {
     font-family: var(--font-sans);
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.5);
     display: flex;
     gap: 0.4rem;
     flex-wrap: wrap;
@@ -507,12 +507,12 @@
     font-size: 0.65rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.5);
     flex-shrink: 0;
   }
 
   .booking-how a {
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.5);
     text-decoration: underline;
     text-decoration-color: rgba(255,255,255,0.15);
     transition: color 0.15s;
@@ -597,7 +597,7 @@
     font-family: var(--font-condensed);
     font-weight: 400;
     font-size: 0.8em;
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.5);
     letter-spacing: 0.08em;
     margin-left: 0.5rem;
   }
@@ -628,11 +628,11 @@
     font-size: 0.7rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.5);
   }
 
   .page-footer a {
-    color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.5);
     transition: color 0.2s;
   }
 

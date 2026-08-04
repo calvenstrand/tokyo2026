@@ -116,7 +116,7 @@
   .explore-header p {
     font-family: var(--font-sans);
     font-size: clamp(0.9rem, 1.4vw, 1.05rem);
-    color: rgba(255,255,255,0.35);
+    color: rgba(255,255,255,0.5);
     max-width: 44ch;
     line-height: 1.65;
   }
@@ -137,7 +137,7 @@
     font-size: 0.65rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.5);
     margin-bottom: 1rem;
   }
 
@@ -182,7 +182,7 @@
     font-size: 0.7rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.5);
     margin-bottom: 1.5rem;
   }
 
@@ -221,12 +221,12 @@
 
   .place-tag--activity  { background: rgba(255,200,0,0.1);  color: #ffc800; border: 1px solid rgba(255,200,0,0.2); }
   .place-tag--restaurant{ background: rgba(255,100,50,0.1); color: #ff6432; border: 1px solid rgba(255,100,50,0.2); }
-  .place-tag--bar       { background: rgba(130,80,255,0.1); color: #8250ff; border: 1px solid rgba(130,80,255,0.2); }
+  .place-tag--bar       { background: rgba(130,80,255,0.1); color: #9d7fff; border: 1px solid rgba(130,80,255,0.2); }
   .place-tag--shop      { background: rgba(0,200,180,0.1);  color: #00c8b4; border: 1px solid rgba(0,200,180,0.2); }
 
   .empty {
     font-family: var(--font-sans);
-    color: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.5);
     font-size: 0.9rem;
     padding: 2rem 0;
   }

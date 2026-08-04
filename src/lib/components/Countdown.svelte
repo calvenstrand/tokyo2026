@@ -75,6 +75,6 @@
   }
 
   .dark strong { color: white; }
-  .dark small  { color: rgba(255,255,255,0.3); }
+  .dark small  { color: rgba(255,255,255,0.55); }
   .dark .sep   { color: rgba(255,255,255,0.15); }
 </style>
