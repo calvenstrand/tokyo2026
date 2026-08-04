@@ -592,7 +592,7 @@ export const cities: City[] = [
     name: 'Tokyo II',
     nameJa: '東京',
     subtitle: 'Ueno · Akihabara',
-    summary: 'Back in Tokyo for the final leg, based in Ueno. Three nights, four days — the last one ends at Haneda. Akihabara gets the full day it deserves, no first-pass compromises. Senso-ji before the crowds, Kappabashi for knives, Yebisu for beer. A Nikko day trip — Toshogu shrine, mountain foliage at the lower elevations — is on the table for the last day if energy allows, otherwise a calmer pace around Ueno. Last evening either way is the six-seat sushi counter in Asakusa. Book it before leaving Sweden.',
+    summary: 'Back in Tokyo for the final leg, based in Ueno. Three nights, four days — the last one ends at Haneda. A semi-early Shinkansen out of Fukuoka gets you back in time for Ryogoku — sumo museum, chanko-nabe dinner, a fitting follow-up after Fukuoka. Akihabara gets the full day it deserves, no first-pass compromises. Senso-ji before the crowds, Kappabashi for knives, Yebisu for beer. Last day is a calm one — ramen, Ameyoko, Ueno Park — before the six-seat sushi counter in Asakusa. Book it before leaving Sweden.',
     dates: 'Nov 11–14',
     nights: 3,
     accentChar: '二',
@@ -613,14 +613,24 @@ export const cities: City[] = [
         label: 'Travel to Tokyo',
         activities: [
           {
-            time: 'Day',
-            title: 'Shinkansen Fukuoka → Tokyo',
-            description: '~5 hours. Long but comfortable. Window seat on the right side for Mt Fuji views — mid-November is one of the best times to see it with clear skies and snow on the peak. Buy a proper bento at Hakata Station before boarding.',
+            time: 'Morning',
+            title: 'Semi-early Shinkansen Fukuoka → Tokyo',
+            description: 'Catch a semi-early train out of Hakata — ~5 hours, but landing early-to-mid afternoon in Tokyo instead of burning the whole day. Window seat on the right side for Mt Fuji views — mid-November is one of the best times to see it with clear skies and snow on the peak. Buy a proper bento at Hakata Station before boarding.',
+          },
+          {
+            time: 'Afternoon',
+            title: 'Check in — Ryogoku',
+            description: 'Check into the Tokyo II hotel, drop bags. Ryogoku is 5 min by train from Ueno — an easy first stop. Sumo Museum inside Kokugikan arena, free entry, a nice follow-up to Fukuoka. Easy walk around the sumo neighbourhood.',
           },
           {
             time: 'Evening',
-            title: 'Arrive Ueno — Ameyoko + early night',
-            description: 'Check into the Tokyo II hotel. Walk Ameyoko market street — food stalls, street vendors, cold beer under the train tracks. Easy first Ueno evening. Early night — full day tomorrow.',
+            title: 'Chanko-nabe — Ryogoku',
+            description: 'Dinner at Chanko Kawasaki — one of the oldest chanko restaurants in the sumo district, run by a former wrestler. Wrestler\'s protein hotpot, proper and excellent.',
+          },
+          {
+            time: 'Late',
+            title: 'Back to Ueno — Ameyoko nightcap',
+            description: 'Walk Ameyoko market street — food stalls, cold beer under the train tracks. Early night — full day tomorrow.',
           },
         ],
       },
@@ -711,19 +721,19 @@ export const cities: City[] = [
         ],
         activities: [
           {
-            time: 'Morning — Option A',
-            title: 'OPTIONAL — Nikko Day Trip',
-            description: 'If energy allows. Leave Ueno by 7am to Tobu Asakusa Station, limited express to Tobu-Nikko (~1h50). Toshogu Shrine — Japan\'s most lavishly decorated shrine, gold-leaf accents, intricate carvings, 55 buildings across a forested hillside. Taiyuin Temple and Kanmangafuchi Abyss — 70+ moss-covered red-hatted Jizo statues along the river — if there\'s time. Peak November mountain foliage. Buy the Nikko Pass at Asakusa Station on the day, no advance booking needed. This is a long day and it\'s the last one before the flight home — decide as a group the night before based on how everyone\'s feeling after Fukuoka.',
+            time: 'Morning',
+            title: 'Ramen Kamo to Negi',
+            description: 'Duck broth made with only three ingredients: duck, spring onions, water. Open from 9am. One of the best things you\'ll eat all trip. Last proper ramen in Japan.',
           },
           {
-            time: 'Morning — Option B',
-            title: 'Calmer pace in Tokyo',
-            description: 'If Nikko gets skipped, use the day for this instead: Ramen Kamo to Negi for breakfast (duck broth, three ingredients: duck, spring onions, water, open from 9am), a final wander through Ameyoko Market, then Ueno Park — mid-November foliage will be peaking, one of the best autumn-colour spots in the city. Revisit a favourite neighbourhood or just rest. No agenda.',
+            time: 'Morning',
+            title: 'Ameyoko Market',
+            description: 'Final wander under the train tracks. Last souvenirs, no rush, no agenda.',
           },
           {
-            time: 'Late afternoon',
-            title: 'Back to Ueno — pack up',
-            description: 'Either way, back in Ueno by late afternoon. Pack, store bags at the hotel — you\'re leaving tonight.',
+            time: 'Afternoon',
+            title: 'Ueno Park',
+            description: 'Mid-November foliage in Tokyo will be peaking — Ueno Park is one of the best spots in the city for autumn colour. Walk slowly. You\'re leaving tonight. Pack, store bags at hotel.',
           },
           {
             time: 'Evening',

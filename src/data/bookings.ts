@@ -167,19 +167,6 @@ export const bookings: Booking[] = [
     defaultStatus: 'pending',
   },
 
-  {
-    id: 'nikko-pass',
-    tier: 3,
-    name: 'Nikko Pass — OPTIONAL',
-    location: 'Tokyo II · Tobu Asakusa Station',
-    day: 'Day 16 · Nov 14 · Buy on the day, if the group decides to do Nikko',
-    deadline: 'No advance booking — decide as a group the night before, buy at Tobu Asakusa Station ticket window on the morning',
-    cost: '~¥4,780 per person (2-day pass)',
-    description: 'Nikko is now optional rather than fixed — folded into the last day, alternative to a calmer pace around Ueno. If the group goes: buy at Tobu Asakusa Station on the morning of Day 16. Covers the Tobu limited express to Tobu-Nikko (~1h50) and all local buses in Nikko — cheaper than separate return tickets. No need to book in advance.',
-    howTo: 'Buy at Tobu Asakusa Station ticket window on departure morning — no reservation needed',
-    defaultStatus: 'pending',
-  },
-
 ]
 
 export const hotels: Hotel[] = [
