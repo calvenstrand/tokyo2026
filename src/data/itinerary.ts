@@ -133,8 +133,8 @@ export const cities: City[] = [
     theme: {
       bg: '#ff2d55',
       ink: '#0f0f0f',
-      inkFaint: '#5a0a1a',
-      accent: '#ffffff',
+      inkFaint: '#2e0510',
+      accent: '#1a0304',
       border: 'rgba(0,0,0,0.15)',
       image: imgTokyoI,
       layout: 'tokyo-i',
@@ -302,7 +302,7 @@ export const cities: City[] = [
     theme: {
       bg: '#1a3a2a',
       ink: '#f0ede6',
-      inkFaint: 'rgba(240,237,230,0.45)',
+      inkFaint: 'rgba(240,237,230,0.6)',
       accent: '#a8e063',
       border: 'rgba(255,255,255,0.12)',
       image: imgKyoto,
@@ -415,7 +415,7 @@ export const cities: City[] = [
     theme: {
       bg: '#ff6a00',
       ink: '#0f0f0f',
-      inkFaint: 'rgba(15,15,15,0.45)',
+      inkFaint: 'rgba(15,15,15,0.78)',
       accent: '#0f0f0f',
       border: 'rgba(0,0,0,0.15)',
       image: imgOsakaHero,
@@ -530,7 +530,7 @@ export const cities: City[] = [
     theme: {
       bg: '#1a1650',
       ink: '#ede8ff',
-      inkFaint: 'rgba(237,232,255,0.45)',
+      inkFaint: 'rgba(237,232,255,0.55)',
       accent: '#f5c842',
       border: 'rgba(237,232,255,0.1)',
       image: imgFukuoka,
@@ -599,7 +599,7 @@ export const cities: City[] = [
     theme: {
       bg: '#0a0a1e',
       ink: '#e0eaff',
-      inkFaint: 'rgba(224,234,255,0.4)',
+      inkFaint: 'rgba(224,234,255,0.55)',
       accent: '#00f5ff',
       border: 'rgba(0,245,255,0.15)',
       image: imgTokyoII,

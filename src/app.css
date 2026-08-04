@@ -12,9 +12,9 @@
 :root {
   --color-bg: #f5f0e8;
   --color-ink: #0f0f0f;
-  --color-ink-faint: rgba(15, 15, 15, 0.45);
+  --color-ink-faint: rgba(15, 15, 15, 0.62);
   --color-border: rgba(15, 15, 15, 0.12);
-  --color-vermillion: #ff2d55;
+  --color-vermillion: #c2002e;
 
   --font-display: 'Bebas Neue', 'Barlow Condensed', impact, sans-serif;
   --font-condensed: 'Barlow Condensed', sans-serif;
