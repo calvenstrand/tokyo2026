@@ -198,9 +198,14 @@
                   </span>
                 </div>
               </div>
+              {#if hotel.name}
+                <span class="hotel-hotelname">{hotel.name}</span>
+              {/if}
               <div class="booking-meta">
                 <span class="booking-location">{hotel.dates}</span>
                 <span class="booking-day">{hotel.nights} nights</span>
+                {#if hotel.checkIn}<span class="booking-day">Check-in {hotel.checkIn}</span>{/if}
+                {#if hotel.checkOut}<span class="booking-day">Check-out {hotel.checkOut}</span>{/if}
               </div>
               <p class="booking-desc">{hotel.note}</p>
             </div>
@@ -595,6 +600,12 @@
     color: rgba(255,255,255,0.35);
     letter-spacing: 0.08em;
     margin-left: 0.5rem;
+  }
+
+  .hotel-hotelname {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.55);
   }
 
   .hotel-badges {
