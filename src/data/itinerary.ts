@@ -184,7 +184,7 @@ export const cities: City[] = [
           {
             time: 'Afternoon',
             title: 'Shinjuku',
-            description: 'Keikyu line from Haneda Terminal 3 to Shinjuku — about 35 min, one change at Sengakuji. Drop bags at the hotel. Convenience store lunch, slow wander. No agenda.',
+            description: 'Keikyu line from Haneda Terminal 3 to Shinjuku — about 35 min, one change at Sengakuji. Check into &Here SHINJUKU, check-in from 15:00, drop bags. Convenience store lunch, slow wander. No agenda.',
           },
           {
             time: 'Evening',
@@ -284,7 +284,7 @@ export const cities: City[] = [
           {
             time: 'Late',
             title: 'Last Shinjuku Evening',
-            description: 'Pack for the morning. Shinkansen west on Day 5. One last drink in Golden Gai if there\'s energy.',
+            description: 'Pack for the morning — &Here SHINJUKU checkout is 11:00. Shinkansen west on Day 5. One last drink in Golden Gai if there\'s energy.',
           },
         ],
       },
@@ -295,7 +295,7 @@ export const cities: City[] = [
     name: 'Kyoto',
     nameJa: '京都',
     subtitle: '',
-    summary: 'Three nights arriving Tuesday Nov 3 — quieter than the weekend, good timing. Straight from the station to Nishiki Market, then up to Kiyomizu-dera as the maple trees begin to turn — one of the best moments of the trip. Evening: wagyu counter in Pontocho, drinks at Bar Pontostand. Day two is the full day: Fushimi Inari at 6am before anyone shows up, sake district after, Nintendo Museum in Uji (lottery — highest booking priority of the trip). Day three: Nijo Castle in the morning, knife sharpening class in the afternoon, then the one properly booked dinner — yakitori omakase, skewer by skewer, completely drink-friendly. End the night at Funaoka Onsen, 1923 bathhouse, outdoor bath. Leaving day: bags go ahead to Osaka via takuhaibin, travel light, Nara on the way.',
+    summary: 'Three nights arriving Tuesday Nov 3 — quieter than the weekend, good timing. Straight from the station to Nishiki Market, then up to Kiyomizu-dera as the maple trees begin to turn — one of the best moments of the trip. Evening: wagyu counter in Pontocho, drinks at Bar Pontostand. Day two is the full day: Fushimi Inari at 6am before anyone shows up, sake district after, Nijo Castle in the afternoon, knife sharpening class, then the one properly booked dinner — yakitori omakase, skewer by skewer, completely drink-friendly. End the night at Funaoka Onsen, 1923 bathhouse, outdoor bath. Day three: Nintendo Museum in Uji — lottery, highest booking priority of the trip, still preliminary for this date — then an evening walk through Gion. Leaving day: bags go ahead to Osaka via takuhaibin, travel light, Nara on the way.',
     dates: 'Nov 3–6',
     nights: 3,
     accentChar: '古',
@@ -322,7 +322,7 @@ export const cities: City[] = [
           {
             time: 'Day',
             title: 'Shinkansen Tokyo → Kyoto',
-            description: '~2h15. Grab an ekiben at Shinjuku before boarding. Arriving Tuesday — good timing, main sites quieter than the weekend.',
+            description: '~2h15. Grab an ekiben at Shinjuku before boarding. Arriving Tuesday — good timing, main sites quieter than the weekend. Check into TSUGU Kyoto Sanjo by THE SHARE HOTELS, check-in from 15:00 (bags can go ahead if you arrive earlier).',
           },
           {
             time: 'Afternoon',
@@ -345,7 +345,7 @@ export const cities: City[] = [
         day: 6,
         date: 'Wednesday, Nov 4',
         isoDate: '2026-11-04',
-        label: 'Fushimi + Nintendo',
+        label: 'Nijo Castle + Knife Class',
         images: [
           { src: imgFushimiInariSrc, srcset: imgFushimiInariSrcset },
           { src: imgKyotoPagodaSrc, srcset: imgKyotoPagodaSrcset },
@@ -354,33 +354,15 @@ export const cities: City[] = [
           {
             time: '6am',
             title: 'Fushimi Inari',
-            description: 'Thousands of torii gates winding up a forested mountain. Otherworldly in the early morning mist. Heaviest day of the trip — turn back at the Yotsutsuji intersection (~30 min up) rather than going to the summit, save the legs for Nintendo Museum later.',
+            description: 'Thousands of torii gates winding up a forested mountain. Otherworldly in the early morning mist. Turn back at the Yotsutsuji intersection (~30 min up) rather than going to the summit — plenty more day ahead.',
           },
           {
             time: 'Morning',
             title: 'Fushimi Sake District',
-            description: 'Over 30 breweries within walking distance. Gekkeikan Okura Museum, then Kizakura and Kinshi Masamune. Buy a cold cup of nigori from a brewery vending machine and drink it in the street. Keep it to one or two breweries — Nintendo Museum next.',
+            description: 'Over 30 breweries within walking distance. Gekkeikan Okura Museum, then Kizakura and Kinshi Masamune. Buy a cold cup of nigori from a brewery vending machine and drink it in the street. Keep it to one or two breweries — Nijo Castle this afternoon.',
           },
           {
             time: 'Afternoon',
-            title: 'Nintendo Museum — Uji',
-            description: '15 min by train. Interactive exhibits spanning Nintendo\'s entire history, playable installations, exclusive merch. Allow 3 hours minimum. Lottery tickets must be booked months in advance — highest booking priority of the entire trip.',
-          },
-          {
-            time: 'Evening',
-            title: 'Gion walk + dinner',
-            description: 'Back to Kyoto. Evening walk through Gion, dinner somewhere in Pontocho or Gion. Decompress after a full day.',
-          },
-        ],
-      },
-      {
-        day: 7,
-        date: 'Thursday, Nov 5',
-        isoDate: '2026-11-05',
-        label: 'Kyoto',
-        activities: [
-          {
-            time: 'Morning',
             title: 'Nijo Castle',
             description: 'One of Kyoto\'s most impressive and undervisited sites. Ninomaru Palace interior is beautifully preserved — famous for the nightingale floors that squeak deliberately to detect intruders. The autumn gardens in early November will be starting to colour. Allow 2 hours.',
           },
@@ -401,6 +383,24 @@ export const cities: City[] = [
           },
         ],
       },
+      {
+        day: 7,
+        date: 'Thursday, Nov 5',
+        isoDate: '2026-11-05',
+        label: 'Nintendo Museum (preliminary)',
+        activities: [
+          {
+            time: 'Day',
+            title: 'Nintendo Museum — Uji · PRELIMINARY',
+            description: 'Entered the lottery for this date — tickets not yet confirmed. 15 min by train from Kyoto. Interactive exhibits spanning Nintendo\'s entire history, playable installations, exclusive merch. Allow 3 hours minimum. Highest booking priority of the entire trip — if tickets aren\'t secured for Nov 5, this slot may need to be reworked. Update once the lottery result is known.',
+          },
+          {
+            time: 'Evening',
+            title: 'Gion walk + dinner',
+            description: 'Back to Kyoto. Evening walk through Gion, dinner somewhere in Pontocho or Gion. Decompress after a full day.',
+          },
+        ],
+      },
     ],
   },
   {
@@ -408,9 +408,9 @@ export const cities: City[] = [
     name: 'Osaka',
     nameJa: '大阪',
     subtitle: '',
-    summary: 'The food city. Louder than Kyoto, cheaper than Tokyo, completely fine with both. Arrive via Nara on day one, walk straight into Dotonbori, eat everything. Day two has two modes depending on energy — either a morning trip up to Katsuoji Temple in the Minoh mountains, covered in thousands of daruma dolls and autumn foliage, or a relaxed morning at Osaka Castle before heading to Nipponbashi. Either way the evening ends in Shinsekai before the Shinkansen south to Fukuoka.',
-    dates: 'Nov 6–8',
-    nights: 2,
+    summary: 'The food city. Louder than Kyoto, cheaper than Tokyo, completely fine with both. Arrive via Nara on day one, walk straight into Dotonbori, eat everything. Day two has two modes depending on energy — either a morning trip up to Katsuoji Temple in the Minoh mountains, covered in thousands of daruma dolls and autumn foliage, or a relaxed morning at Osaka Castle before heading to Nipponbashi. Third day is the Osaka Derby — Gamba Osaka vs Cerezo Osaka at Panasonic Stadium Suita, one of the most intense football atmospheres in Japan — before the group splits for the run down to Fukuoka via Hiroshima.',
+    dates: 'Nov 6–9',
+    nights: 3,
     accentChar: '食',
     theme: {
       bg: '#ff6a00',
@@ -436,7 +436,7 @@ export const cities: City[] = [
           {
             time: 'Morning',
             title: 'Luggage forwarding — Takuhaibin',
-            description: 'Arrange the night before with Kyoto hotel reception. Bags go direct from Kyoto hotel to Osaka hotel — ¥1,000–2,000 per bag, next-day delivery. Check out light. Travel with day bags only.',
+            description: 'Arrange the night before with TSUGU Kyoto Sanjo reception (checkout 10:00). Bags go direct from Kyoto hotel to Osaka hotel — ¥1,000–2,000 per bag, next-day delivery. Check out light. Travel with day bags only.',
           },
           {
             time: 'Morning',
@@ -488,8 +488,31 @@ export const cities: City[] = [
           },
           {
             time: 'Evening',
-            title: 'Tennoji izakayas — Last Osaka Night',
-            description: 'Different angle for the second night. Tennoji is the next neighbourhood over from Shinsekai — local salaryman izakayas, no English menus, almost no tourists. Pick somewhere that looks busy, point at what the next table is having. Cheap beer, grilled fish, end the night before midnight. Shinkansen to Fukuoka tomorrow.',
+            title: 'Tennoji izakayas',
+            description: 'Different angle for the second night. Tennoji is the next neighbourhood over from Shinsekai — local salaryman izakayas, no English menus, almost no tourists. Pick somewhere that looks busy, point at what the next table is having. Cheap beer, grilled fish, end the night before midnight. One more day in Osaka tomorrow — the derby.',
+          },
+        ],
+      },
+      {
+        day: 10,
+        date: 'Sunday, Nov 8',
+        isoDate: '2026-11-08',
+        label: 'Osaka Derby',
+        activities: [
+          {
+            time: 'Morning',
+            title: 'Free morning',
+            description: 'Whichever of Katsuoji Temple or Osaka Castle wasn\'t done yesterday, or just a relaxed morning in Namba — coffee, a last wander, no rush before the derby.',
+          },
+          {
+            time: 'Afternoon',
+            title: 'OSAKA DERBY — Gamba Osaka vs Cerezo Osaka',
+            description: 'Panasonic Stadium Suita. One of the most intense football atmospheres in Japan — the stadium was funded by 45,000 individual supporter donations. Kick-off typically 14:00–15:00, check the exact time closer to the date. Buy tickets via the J.League ticket system once fixtures are confirmed.',
+          },
+          {
+            time: 'Evening',
+            title: 'Extra night in Osaka',
+            description: 'Hotel booking extended by one night for the derby — &Here OSAKA NAMBA now runs through Nov 9. Post-match food and drinks around Namba, take it easy — travel day to Fukuoka tomorrow.',
           },
         ],
       },
@@ -500,8 +523,8 @@ export const cities: City[] = [
     name: 'Fukuoka',
     nameJa: '福岡',
     subtitle: '',
-    summary: 'Two nights on Kyushu. The Grand Sumo Tournament is the reason to come — Fukuoka Kokusai Center, November basho, top-division bouts from 2:30pm on arrival day. Day two: Yanagibashi Rengo Market at dawn, ramen at the source, then an afternoon walking Tenjin and Yakuin — Fukuoka\'s best neighborhoods, good bars, good energy. Evenings on the yatai stalls along Nakasu — open-air food carts on the river, cold Asahi, Hakata beef skewers, shochu.',
-    dates: 'Nov 8–10',
+    summary: 'Two nights on Kyushu. Getting here is a split day — three of you take the Shinkansen via Hiroshima for Peace Memorial Park and okonomiyaki, Chris runs straight down to stake out the neighbourhood, everyone regroups in Hakata for yatai on the Naka River. Day two is the reason to come: the Grand Sumo Tournament, a full day at Fukuoka Kokusai Center from the lower-division bouts in the morning through to makuuchi finishing around 6pm — the only tournament day on the trip, so make the most of it. Ramen or mentaiko in Nakasu after.',
+    dates: 'Nov 9–11',
     nights: 2,
     accentChar: '福',
     theme: {
@@ -515,55 +538,50 @@ export const cities: City[] = [
     },
     days: [
       {
-        day: 10,
-        date: 'Sunday, Nov 8',
-        isoDate: '2026-11-08',
-        label: 'Fukuoka',
+        day: 11,
+        date: 'Monday, Nov 9',
+        isoDate: '2026-11-09',
+        label: 'Hiroshima / Travel Day',
         images: [{ src: imgFukuokaContentSrc, srcset: imgFukuokaContentSrcset }],
         activities: [
           {
-            time: 'Morning',
-            title: 'Check out Osaka — Shinkansen to Fukuoka',
-            description: '~2h30 on the Nozomi to Hakata Station. Check in, drop bags. Fukuoka is compact — Hakata and Tenjin are the two central areas, 10 min apart.',
+            time: 'Day',
+            title: 'The group splits',
+            description: 'A travel day, done two ways. Bags checked out of &Here OSAKA NAMBA in the morning.',
           },
           {
-            time: 'Afternoon',
-            title: 'Grand Sumo Tournament',
-            description: 'Fukuoka Kokusai Center, November basho. Top-division bouts from around 2:30–3pm, final bout (Yokozuna or Ozeki) around 5:30–6pm. Book tickets via sumo.or.jp as soon as they go on sale. Get there for the entry of the top-ranked wrestlers.',
+            time: 'Day',
+            title: 'Friends (3) — via Hiroshima',
+            description: 'Shinkansen Osaka → Hiroshima (~1h25). Peace Memorial Park, A-Bomb Dome, Peace Memorial Museum. Okonomiyaki lunch, Hiroshima-style. Shinkansen Hiroshima → Fukuoka (~1hr) in the afternoon.',
+          },
+          {
+            time: 'Day',
+            title: 'Chris — direct',
+            description: 'Shinkansen Osaka → Fukuoka direct (~2h15). Arrive early, check into & Hotel Hakata, check-in from 15:00, scope out the neighbourhood, find the first yatai stall.',
           },
           {
             time: 'Evening',
-            title: 'Yatai — Nakasu River',
-            description: 'Open-air food stalls along the Naka River. Pull up a plastic stool under the lanterns — Hakata ramen, beef skewers, gyoza, cold Asahi. This is Fukuoka\'s most distinctive thing. The stalls start filling from 6pm.',
+            title: 'Regroup — Yatai, Nakasu River',
+            description: 'Everyone meets in Hakata by evening. Open-air food stalls along the Naka River — Hakata ramen, beef skewers, gyoza, cold Asahi. First taste of Fukuoka, and Fukuoka\'s most distinctive thing. The stalls start filling from 6pm.',
           },
         ],
       },
       {
-        day: 11,
-        date: 'Monday, Nov 9',
-        isoDate: '2026-11-09',
-        label: 'Hakata + Tenjin',
+        day: 12,
+        date: 'Tuesday, Nov 10',
+        isoDate: '2026-11-10',
+        label: 'Grand Sumo Tournament — Full Day',
         images: [{ src: imgRamen2Src, srcset: imgRamen2Srcset }],
         activities: [
           {
-            time: 'Early morning',
-            title: 'Yanagibashi Rengo Market',
-            description: 'Hakata\'s oldest market — 6am start, fishmongers, vegetable sellers, local food stalls. The city\'s kitchen. Coffee and a snack here — save the proper appetite for ramen straight after.',
-          },
-          {
-            time: 'Morning',
-            title: 'Hakata Ramen — Shin-Shin or Ichiran original',
-            description: 'Tonkotsu ramen was invented in Fukuoka. Thin noodles, rich pork bone broth, chashu, pickled ginger. Shin-Shin is the locals\' choice; Ichiran\'s original Hakata branch if you want the full solo-booth experience.',
-          },
-          {
-            time: 'Afternoon',
-            title: 'Tenjin + Yakuin',
-            description: 'Walk from Hakata to Tenjin — Fukuoka\'s main commercial district, good for a wander. Then south to Yakuin: quieter, more residential, lined with independent cafés and local bars. The right place to spend an afternoon with cold beer before dinner. Craft beer stop at one of the Yakuin spots, then walk back toward Nakasu for the evening.',
+            time: 'All day',
+            title: 'Fukuoka Kokusai Center',
+            description: 'A full day at the November basho — the only tournament day on the trip, so go early and watch the full arc of it. Lower-division bouts run from the morning, building through the afternoon to the top-division makuuchi bouts finishing around 18:00. Book tickets as soon as they go on sale (Sept 19) via a foreigner-friendly ticket firm.',
           },
           {
             time: 'Evening',
-            title: 'Mentaiko dinner — Hakata Ikkyuu',
-            description: 'Spicy cod roe — Fukuoka\'s most famous export. Hakata Ikkyuu is the specialist: mentaiko in everything, served with rice and miso. Stock up on mentaiko to bring home from Yanagibashi or AMU Plaza.',
+            title: 'Hakata ramen or mentaiko — Nakasu',
+            description: 'Tonkotsu ramen was invented in Fukuoka — Shin-Shin is the locals\' choice, Ichiran\'s original Hakata branch for the full solo-booth experience. Or mentaiko at Hakata Ikkyuu, spicy cod roe in everything. Nakasu district, easy walk from the arena.',
           },
         ],
       },
@@ -574,9 +592,9 @@ export const cities: City[] = [
     name: 'Tokyo II',
     nameJa: '東京',
     subtitle: 'Ueno · Akihabara',
-    summary: 'Back in Tokyo for the final leg, based in Ueno. Four nights, five days — the last one ends at Haneda. Akihabara gets the full day it deserves, no first-pass compromises. Senso-ji before the crowds, Kappabashi for knives, Yebisu for beer. Nikko on day four — Toshogu shrine, mountain foliage at the lower elevations, one of the best day trips out of Tokyo. Last evening is the six-seat sushi counter in Asakusa. Book it before leaving Sweden.',
-    dates: 'Nov 10–14',
-    nights: 4,
+    summary: 'Back in Tokyo for the final leg, based in Ueno. Three nights, four days — the last one ends at Haneda. A semi-early Shinkansen out of Fukuoka gets you back in time for Ryogoku — sumo museum, chanko-nabe dinner, a fitting follow-up after Fukuoka. Akihabara gets the full day it deserves, no first-pass compromises. Senso-ji before the crowds, Kappabashi for knives, Yebisu for beer. Last day is a calm one — ramen, Ameyoko, Ueno Park — before the six-seat sushi counter in Asakusa. Book it before leaving Sweden.',
+    dates: 'Nov 11–14',
+    nights: 3,
     accentChar: '二',
     theme: {
       bg: '#0a0a1e',
@@ -589,27 +607,37 @@ export const cities: City[] = [
     },
     days: [
       {
-        day: 12,
-        date: 'Tuesday, Nov 10',
-        isoDate: '2026-11-10',
-        label: 'Shinkansen from Fukuoka',
+        day: 13,
+        date: 'Wednesday, Nov 11',
+        isoDate: '2026-11-11',
+        label: 'Travel to Tokyo',
         activities: [
           {
-            time: 'Day',
-            title: 'Shinkansen Fukuoka → Tokyo',
-            description: '~5 hours. Long but comfortable. Window seat on the right side for Mt Fuji views — mid-November is one of the best times to see it with clear skies and snow on the peak. Buy a proper bento at Hakata Station before boarding.',
+            time: 'Morning',
+            title: 'Semi-early Shinkansen Fukuoka → Tokyo',
+            description: 'Catch a semi-early train out of Hakata — ~5 hours, but landing early-to-mid afternoon in Tokyo instead of burning the whole day. Window seat on the right side for Mt Fuji views — mid-November is one of the best times to see it with clear skies and snow on the peak. Buy a proper bento at Hakata Station before boarding.',
+          },
+          {
+            time: 'Afternoon',
+            title: 'Check in — Ryogoku',
+            description: 'Check into the Tokyo II hotel, drop bags. Ryogoku is 5 min by train from Ueno — an easy first stop. Sumo Museum inside Kokugikan arena, free entry, a nice follow-up to Fukuoka. Easy walk around the sumo neighbourhood.',
           },
           {
             time: 'Evening',
-            title: 'Arrive Ueno — Ameyoko + early night',
-            description: 'Check in. Walk Ameyoko market street — food stalls, street vendors, cold beer under the train tracks. Easy first Ueno evening. Early night — full day tomorrow.',
+            title: 'Chanko-nabe — Ryogoku',
+            description: 'Dinner at Chanko Kawasaki — one of the oldest chanko restaurants in the sumo district, run by a former wrestler. Wrestler\'s protein hotpot, proper and excellent.',
+          },
+          {
+            time: 'Late',
+            title: 'Back to Ueno — Ameyoko nightcap',
+            description: 'Walk Ameyoko market street — food stalls, cold beer under the train tracks. Early night — full day tomorrow.',
           },
         ],
       },
       {
-        day: 13,
-        date: 'Wednesday, Nov 11',
-        isoDate: '2026-11-11',
+        day: 14,
+        date: 'Thursday, Nov 12',
+        isoDate: '2026-11-12',
         label: 'Akihabara',
         images: [
           { src: imgGameboySrc, srcset: imgGameboySrcset },
@@ -640,9 +668,9 @@ export const cities: City[] = [
         ],
       },
       {
-        day: 14,
-        date: 'Thursday, Nov 12',
-        isoDate: '2026-11-12',
+        day: 15,
+        date: 'Friday, Nov 13',
+        isoDate: '2026-11-13',
         label: 'Asakusa + Yebisu + Wagyu',
         images: [
           { src: imgWagyuGrillSrc, srcset: imgWagyuGrillSrcset },
@@ -678,34 +706,6 @@ export const cities: City[] = [
             time: 'Late',
             title: 'Nakameguro Canal',
             description: 'Drinks along the canal after dinner. Good bars, good atmosphere, easy walk from the restaurant. Mid-November the canal-side trees will be turning — one of Tokyo\'s best autumn spots.',
-          },
-        ],
-      },
-      {
-        day: 15,
-        date: 'Friday, Nov 13',
-        isoDate: '2026-11-13',
-        label: 'Nikko Day Trip',
-        activities: [
-          {
-            time: '7am',
-            title: 'Tobu Asakusa → Nikko',
-            description: 'Leave Ueno by 7am to Tobu Asakusa Station. Limited express to Tobu-Nikko (~1h50). Buy the Nikko Pass at Asakusa Station — cheaper than a return ticket and includes all local buses. No advance booking needed, buy on the day.',
-          },
-          {
-            time: 'All day',
-            title: 'Shinkyo Bridge + Toshogu Shrine',
-            description: 'Shinkyo Bridge — vermillion bridge at the entrance to the sacred area, the classic opening shot. Toshogu Shrine: Japan\'s most lavishly decorated shrine, gold-leaf accents, intricate carvings, 55 buildings across a forested hillside. Extraordinary craftsmanship — nothing else in Japan looks like this.',
-          },
-          {
-            time: 'All day',
-            title: 'Taiyuin Temple + Kanmangafuchi Abyss',
-            description: 'Taiyuin Temple — companion mausoleum to Toshogu, less crowded, more atmospheric. Worth the extra 20 minutes. Kanmangafuchi Abyss: riverside walk lined with 70+ moss-covered red-hatted Jizo statues. Quiet, slightly otherworldly. Good contrast to the shrine. Mid-November foliage at the higher elevations will likely be past peak, but the lower-elevation areas around the shrines and Kanmangafuchi should still hold colour. Lunch in Nikko town — bring snacks as backup. Yuba (tofu skin) is the local specialty if you find it.',
-          },
-          {
-            time: 'Evening',
-            title: 'Chanko-nabe — Ryogoku',
-            description: 'Back in Ueno by early evening. Dinner at Chanko Kawasaki in Ryogoku — one of the oldest chanko restaurants in the sumo district, run by a former wrestler. Wrestler\'s protein hotpot, proper and excellent. 5 min by train from Ueno. Sumo museum wander after — free, inside Kokugikan arena. Easy walk around the sumo neighbourhood. Early night before the last full day.',
           },
         ],
       },
