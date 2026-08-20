@@ -446,7 +446,7 @@ export const cities: City[] = [
           {
             time: 'Afternoon',
             title: 'Nara → Osaka',
-            description: 'Kintetsu line direct Nara → Osaka Namba (~50 min). Check in — bags already waiting at the hotel. Freshen up, head straight out.',
+            description: 'Kintetsu line direct Nara → Osaka Namba (~50 min). Check into &Here OSAKA NAMBA, check-in from 15:00 — bags already waiting at the hotel. Freshen up, head straight out.',
           },
           {
             time: 'Evening',
@@ -511,8 +511,8 @@ export const cities: City[] = [
           },
           {
             time: 'Evening',
-            title: 'Extra night in Osaka',
-            description: 'Hotel booking extended by one night for the derby — &Here OSAKA NAMBA now runs through Nov 9. Post-match food and drinks around Namba, take it easy — travel day to Fukuoka tomorrow.',
+            title: 'Third night in Osaka',
+            description: '&Here OSAKA NAMBA is booked through Nov 9 regardless of how the derby tickets land. Post-match food and drinks around Namba, take it easy — travel day to Fukuoka tomorrow.',
           },
         ],
       },
@@ -620,7 +620,7 @@ export const cities: City[] = [
           {
             time: 'Afternoon',
             title: 'Check in — Ryogoku',
-            description: 'Check into the Tokyo II hotel, drop bags. Ryogoku is 5 min by train from Ueno — an easy first stop. Sumo Museum inside Kokugikan arena, free entry, a nice follow-up to Fukuoka. Easy walk around the sumo neighbourhood.',
+            description: 'Check into &Here TOKYO UENO, check-in from 15:00, drop bags. Ryogoku is 5 min by train from Ueno — an easy first stop. Sumo Museum inside Kokugikan arena, free entry, a nice follow-up to Fukuoka. Easy walk around the sumo neighbourhood.',
           },
           {
             time: 'Evening',
@@ -733,7 +733,7 @@ export const cities: City[] = [
           {
             time: 'Afternoon',
             title: 'Ueno Park',
-            description: 'Mid-November foliage in Tokyo will be peaking — Ueno Park is one of the best spots in the city for autumn colour. Walk slowly. You\'re leaving tonight. Pack, store bags at hotel.',
+            description: '&Here TOKYO UENO checkout is 11:00 — pack before heading out, the hotel will hold bags for the day. Mid-November foliage in Tokyo will be peaking — Ueno Park is one of the best spots in the city for autumn colour. Walk slowly. You\'re leaving tonight.',
           },
           {
             time: 'Evening',
