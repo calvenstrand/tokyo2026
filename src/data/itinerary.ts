@@ -408,7 +408,7 @@ export const cities: City[] = [
     name: 'Osaka',
     nameJa: '大阪',
     subtitle: '',
-    summary: 'The food city. Louder than Kyoto, cheaper than Tokyo, completely fine with both. Arrive via Nara on day one, walk straight into Dotonbori, eat everything. Day two has two modes depending on energy — either a morning trip up to Katsuoji Temple in the Minoh mountains, covered in thousands of daruma dolls and autumn foliage, or a relaxed morning at Osaka Castle before heading to Nipponbashi. Third day is the Osaka Derby — Gamba Osaka vs Cerezo Osaka at Panasonic Stadium Suita, one of the most intense football atmospheres in Japan — before the group splits for the run down to Fukuoka via Hiroshima.',
+    summary: 'The food city. Louder than Kyoto, cheaper than Tokyo, completely fine with both. Arrive via Nara on day one, walk straight into Dotonbori, eat everything. Day two: Katsuoji Temple in the Minoh mountains, covered in thousands of daruma dolls and autumn foliage, then Nipponbashi in the afternoon and a proper wagyu dinner at night. Third day is a relaxed morning at Osaka Castle before the Osaka Derby — Gamba Osaka vs Cerezo Osaka at Panasonic Stadium Suita, one of the most intense football atmospheres in Japan — then the group splits for the run down to Fukuoka via Hiroshima.',
     dates: 'Nov 6–9',
     nights: 3,
     accentChar: '食',
@@ -472,14 +472,9 @@ export const cities: City[] = [
         ],
         activities: [
           {
-            time: 'Morning — Option A',
+            time: 'Morning',
             title: 'Katsuoji Temple — Temple of Winner\'s Luck',
-            description: 'Leave hotel by 8am. Midosuji line to Minoh-Kayano Station (~35 min), then bus 30 to the temple (~25 min). ¥500 entry. 1,300-year-old temple known as the Temple of Winner\'s Luck, set high in the Minoh mountains. Thousands of daruma dolls covering every surface — walls, trees, lanterns, stacked as far as you can see. Scenic mountain setting with koi ponds, vermillion pagoda and mist-covered bridges. Early November autumn foliage in the surrounding mountains will be spectacular — go early before the crowds arrive, buses fill up fast on weekends. Allow 3–4 hours on site. Back in Osaka by 1pm. Worth the effort if the group has energy — nothing else on the trip looks like this.',
-          },
-          {
-            time: 'Morning — Option B',
-            title: 'Osaka Castle (Relaxed Morning)',
-            description: '15 min from the hotel. Don\'t bother going inside — the exterior and grounds are the thing. Early-November autumn colour in the surrounding park will be starting to turn. Walk the moat, find a coffee, take your time. Back by noon with energy to spare. Good option if anyone needs a slower morning after two weeks of travel.',
+            description: 'Leave hotel by 8am. Midosuji line to Minoh-Kayano Station (~35 min), then bus 30 to the temple (~25 min). ¥500 entry. 1,300-year-old temple known as the Temple of Winner\'s Luck, set high in the Minoh mountains. Thousands of daruma dolls covering every surface — walls, trees, lanterns, stacked as far as you can see. Scenic mountain setting with koi ponds, vermillion pagoda and mist-covered bridges. Early November autumn foliage in the surrounding mountains will be spectacular — go early before the crowds arrive, buses fill up fast on weekends. Allow 3–4 hours on site. Back in Osaka by 1pm. Nothing else on the trip looks like this.',
           },
           {
             time: 'Afternoon',
@@ -506,8 +501,8 @@ export const cities: City[] = [
         activities: [
           {
             time: 'Morning',
-            title: 'Free morning',
-            description: 'Whichever of Katsuoji Temple or Osaka Castle wasn\'t done yesterday, or just a relaxed morning in Namba — coffee, a last wander, no rush before the derby.',
+            title: 'Osaka Castle (Relaxed Morning)',
+            description: '15 min from the hotel. Don\'t bother going inside — the exterior and grounds are the thing. Early-November autumn colour in the surrounding park will be starting to turn. Walk the moat, find a coffee, take your time. Back by 11:30 with plenty of room before the 12:00–12:15 departure for Suita — a derby day is not the morning to overdo it.',
           },
           {
             time: 'Afternoon',
@@ -528,7 +523,7 @@ export const cities: City[] = [
     name: 'Fukuoka',
     nameJa: '福岡',
     subtitle: '',
-    summary: 'Two nights on Kyushu. Getting here is a split day — three of you take the Shinkansen via Hiroshima for Peace Memorial Park and okonomiyaki, Chris runs straight down to stake out the neighbourhood, everyone regroups in Hakata for yatai on the Naka River. Day two is the reason to come: the Grand Sumo Tournament, a full day at Fukuoka Kokusai Center from the lower-division bouts in the morning through to makuuchi finishing around 6pm — the only tournament day on the trip, so make the most of it. Ramen or mentaiko in Nakasu after.',
+    summary: 'Two nights on Kyushu. Getting here is a split day — three of you take the Shinkansen via Hiroshima for Peace Memorial Park and okonomiyaki, Chris runs straight down for a solo loop through Hakata\'s Old Town temples and a bowl of tonkotsu ramen, everyone regroups in Hakata for yatai on the Naka River. Day two is the reason to come: the Grand Sumo Tournament, a full day at Fukuoka Kokusai Center from the lower-division bouts in the morning through to makuuchi finishing around 6pm — the only tournament day on the trip, so make the most of it. Ramen or mentaiko in Nakasu after.',
     dates: 'Nov 9–11',
     nights: 2,
     accentChar: '福',
@@ -562,7 +557,22 @@ export const cities: City[] = [
           {
             time: 'Day',
             title: 'Chris — direct',
-            description: 'Shinkansen Osaka → Fukuoka direct (~2h15). Arrive early, check into & Hotel Hakata, check-in from 15:00, scope out the neighbourhood, find the first yatai stall.',
+            description: 'Shinkansen Osaka → Fukuoka direct (~2h15). Lands early afternoon — bags into a station locker if it\'s still before the 15:00 check-in at & Hotel Hakata.',
+          },
+          {
+            time: 'Afternoon',
+            title: 'Solo — Hakata Old Town',
+            description: 'Tochoji first, five minutes from the station — home to the Fukuoka Daibutsu, one of Japan\'s largest wooden seated Buddhas, and a five-storey pagoda. Next door, Shofukuji: Japan\'s oldest Zen temple, quiet and nearly empty. Walk on to Kushida Shrine — Hakata\'s guardian shrine, famous for the towering Yamakasa festival floats on permanent display — then Kawabata Shopping Arcade right beside it, one of the city\'s oldest covered shopping streets. The whole loop is under an hour on foot.',
+          },
+          {
+            time: 'Afternoon',
+            title: 'Solo Ramen — Hakata Tonkotsu',
+            description: 'Hakata invented tonkotsu ramen, so have a bowl alone before the group descends on it tomorrow night. Hakata Issou is a solid bet near Old Town, or just follow the queue at whichever counter looks right.',
+          },
+          {
+            time: 'Late afternoon',
+            title: 'Check in + Nakasu walk',
+            description: 'Check into & Hotel Hakata, check-in from 15:00. From Kawabata it\'s a couple of minutes over the bridge to Nakasu — walk the riverside promenade in daylight, before it fills with yatai stalls tonight.',
           },
           {
             time: 'Evening',
