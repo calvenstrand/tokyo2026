@@ -484,7 +484,7 @@ export const cities: City[] = [
           {
             time: 'Afternoon',
             title: 'Nipponbashi — Den Den Town',
-            description: 'Osaka\'s electronics and anime district. Retro games, figures, manga, electronics — everything Akihabara has but less crowded and more local. Good for a few hours of browsing. Hozenji Yokocho nearby for a late lunch — moss-covered stone alley, 60+ small restaurants, far less touristy than Dotonbori.',
+            description: 'Osaka\'s electronics and anime district. Retro games, figures, manga, electronics — everything Akihabara has but less crowded and more local. Good for a few hours of browsing. For lunch, Kuromon Ichiba Market is a short walk away — a proper Osaka food market, graze the stalls for sushi, wagyu skewers, oysters. Keep it light — the big wagyu dinner is tonight.',
           },
           {
             time: 'Evening',
@@ -512,7 +512,7 @@ export const cities: City[] = [
           {
             time: 'Afternoon',
             title: 'OSAKA DERBY — Gamba Osaka vs Cerezo Osaka',
-            description: 'Panasonic Stadium Suita. One of the most intense football atmospheres in Japan — the stadium was funded by 45,000 individual supporter donations. Kick-off typically 14:00–15:00, check the exact time closer to the date. Buy tickets via the J.League ticket system once fixtures are confirmed.',
+            description: 'Panasonic Stadium Suita. One of the most intense football atmospheres in Japan — the stadium was funded by 45,000 individual supporter donations. Kick-off typically 14:00–15:00, check the exact time closer to the date. Not walking distance from the hotel — Midosuji line from Namba to Senri-Chuo (~30 min), then the Osaka Monorail to Banpaku-kinen-koen (~10 min), then a 15-min walk or match-day shuttle bus to the stadium. Roughly 60–70 min door to door. Leave Namba by 12:00–12:15 for a 14:00 kickoff — gets you there with time to soak the atmosphere rather than sprinting in late. Buy tickets via the J.League ticket system once fixtures are confirmed.',
           },
           {
             time: 'Evening',
