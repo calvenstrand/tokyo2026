@@ -336,8 +336,8 @@ export const cities: City[] = [
           },
           {
             time: 'Evening',
-            title: 'Wagyu Dinner — Pontocho',
-            description: 'Pontocho has several excellent wagyu options with intimate counter seating. Book in advance — a strong start to Kyoto\'s food. Drinks at Bar Pontostand after — bilingual sake bar, run by Mako and Taku, rotating Kyoto sake selection.',
+            title: 'Wagyu Dinner — Kyo-Yakiniku HIRO Pontocho Annex',
+            description: 'Kyoto wagyu beef restaurant, Pontocho. Not yet booked — book soon. A strong start to Kyoto\'s food scene on arrival night. Bar Pontostand nearby afterward for a nightcap — bilingual sake bar, run by Mako and Taku, rotating Kyoto sake selection.',
           },
         ],
       },
@@ -488,8 +488,13 @@ export const cities: City[] = [
           },
           {
             time: 'Evening',
+            title: 'Wagyu Dinner — Matsuzaka Gyu Yakiniku M',
+            description: 'Hozenji-Yokocho, 19:00. Booked in advance. Grill-your-own Matsuzaka beef, one of Japan\'s most prized wagyu grades alongside Kobe and Omi. A proper anchor dinner for the Osaka leg.',
+          },
+          {
+            time: 'Late',
             title: 'Tennoji izakayas',
-            description: 'Different angle for the second night. Tennoji is the next neighbourhood over from Shinsekai — local salaryman izakayas, no English menus, almost no tourists. Pick somewhere that looks busy, point at what the next table is having. Cheap beer, grilled fish, end the night before midnight. One more day in Osaka tomorrow — the derby.',
+            description: 'Different angle after dinner. Tennoji is the next neighbourhood over from Shinsekai — local salaryman izakayas, no English menus, almost no tourists. Pick somewhere that looks busy, point at what the next table is having. Cheap beer, end the night before midnight. One more day in Osaka tomorrow — the derby.',
           },
         ],
       },
