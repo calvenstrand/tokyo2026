@@ -295,7 +295,7 @@ export const cities: City[] = [
     name: 'Kyoto',
     nameJa: '京都',
     subtitle: '',
-    summary: 'Three nights arriving Tuesday Nov 3 — quieter than the weekend, good timing. Straight from the station to Nishiki Market, then up to Kiyomizu-dera as the maple trees begin to turn — one of the best moments of the trip. Evening: wagyu counter in Pontocho, drinks at Bar Pontostand. Day two is the full day: Fushimi Inari at 6am before anyone shows up, sake district after, Nijo Castle in the afternoon, knife sharpening class, then the one properly booked dinner — yakitori omakase, skewer by skewer, completely drink-friendly. End the night at Funaoka Onsen, 1923 bathhouse, outdoor bath. Day three: Nintendo Museum in Uji — lottery, highest booking priority of the trip, still preliminary for this date — then an evening walk through Gion. Leaving day: bags go ahead to Osaka via takuhaibin, travel light, Nara on the way.',
+    summary: 'Three nights arriving Tuesday Nov 3 — quieter than the weekend, good timing. Drop bags at TSUGU Kyoto Sanjo first, then Nishiki Market for lunch and a soft landing into the city — Teramachi arcades or the Manga Museum after, depending on energy. Evening: wagyu counter in Pontocho (booked), drinks at Bar Pontostand. Day two is the full day: Fushimi Inari at 6am before anyone shows up, sake district after, Kiyomizu-dera as the maples begin to turn, knife sharpening class, then the one properly booked dinner — yakitori omakase, skewer by skewer, completely drink-friendly. End the night at Funaoka Onsen, 1923 bathhouse, outdoor bath. Day three: a possible Yamazaki Distillery morning, then Nintendo Museum in Uji — confirmed and paid, 15:30 entry — followed by an evening walk through Gion. Leaving day: bags go ahead to Osaka via takuhaibin, travel light, Nara on the way.',
     dates: 'Nov 3–6',
     nights: 3,
     accentChar: '古',
@@ -320,24 +320,39 @@ export const cities: City[] = [
         ],
         activities: [
           {
-            time: 'Day',
+            time: 'Morning',
             title: 'Shinkansen Tokyo → Kyoto',
-            description: '~2h15. Grab an ekiben at Shinjuku before boarding. Arriving Tuesday — good timing, main sites quieter than the weekend. Check into TSUGU Kyoto Sanjo by THE SHARE HOTELS, check-in from 15:00 (bags can go ahead if you arrive earlier).',
+            description: 'Aim for a ~9:00 departure from Tokyo, arriving Kyoto around 11:00. Good timing — plenty of daylight left on arrival. Grab an ekiben at Shinjuku before boarding.',
           },
           {
-            time: 'Afternoon',
+            time: 'Midday',
+            title: 'Drop Bags at Hotel First',
+            description: 'Head straight to TSUGU Kyoto Sanjo to drop luggage before doing anything else — Nishiki Market is narrow and crowded, not the place to be hauling suitcases. Most hotels will hold bags even before the official 15:00 check-in.',
+          },
+          {
+            time: 'Midday',
             title: 'Nishiki Market',
-            description: 'Graze through on arrival — Kyoto pickles, yuba, skewered octopus, sweet potato ice cream. This is lunch. Early November the maples will be beginning to colour, Kyoto starting to look spectacular.',
+            description: 'Covered food market, walking distance from the hotel. Graze through — Kyoto pickles, yuba, skewered octopus, sweet potato ice cream. This is lunch. Light and easy after a train journey, not a heavy "sight" — a good soft landing into Kyoto.',
           },
           {
-            time: 'Afternoon',
-            title: 'Kiyomizu-dera',
-            description: '20 min walk or short taxi from Nishiki Market, up on the hillside east of the city. Early November the surrounding maple trees will be starting to turn — one of the best times to visit. The wooden stage looking out over the city is genuinely spectacular. Allow 1.5–2 hours.',
+            time: 'Midday',
+            title: 'Nishiki Tenmangu Shrine',
+            description: 'Small shrine right at one end of the market itself. A few minutes, easy to fold in without taking time from anything else.',
+          },
+          {
+            time: 'Afternoon — Option A',
+            title: 'Teramachi & Shinkyogoku Arcades',
+            description: 'Covered shopping streets connected directly to Nishiki. Good for continuing to stroll and browse without anything scheduled.',
+          },
+          {
+            time: 'Afternoon — Option B',
+            title: 'Kyoto International Manga Museum',
+            description: '15–20 min walk from Nishiki, open Tuesdays. Large manga collection, lawn to sit and relax on, much slower pace than a castle. Fits the gaming/pop-culture theme of the trip.',
           },
           {
             time: 'Evening',
             title: 'Wagyu Dinner — Kyo-Yakiniku HIRO Pontocho Annex',
-            description: 'Kyoto wagyu beef restaurant, Pontocho. Not yet booked — book soon. A strong start to Kyoto\'s food scene on arrival night. Bar Pontostand nearby afterward for a nightcap — bilingual sake bar, run by Mako and Taku, rotating Kyoto sake selection.',
+            description: '19:00. Booked — 4 adults, Omakase Hiro course (¥8,000). Pontocho. A strong, relaxed start to Kyoto\'s food scene. Bar Pontostand nearby afterward for a nightcap if there\'s energy — bilingual sake bar, run by Mako and Taku, rotating Kyoto sake selection.',
           },
         ],
       },
@@ -345,7 +360,7 @@ export const cities: City[] = [
         day: 6,
         date: 'Wednesday, Nov 4',
         isoDate: '2026-11-04',
-        label: 'Nijo Castle + Knife Class',
+        label: 'Fushimi + Kiyomizu + Nintendo Prep',
         images: [
           { src: imgFushimiInariSrc, srcset: imgFushimiInariSrcset },
           { src: imgKyotoPagodaSrc, srcset: imgKyotoPagodaSrcset },
@@ -359,12 +374,12 @@ export const cities: City[] = [
           {
             time: 'Morning',
             title: 'Fushimi Sake District',
-            description: 'Over 30 breweries within walking distance. Gekkeikan Okura Museum, then Kizakura and Kinshi Masamune. Buy a cold cup of nigori from a brewery vending machine and drink it in the street. Keep it to one or two breweries — Nijo Castle this afternoon.',
+            description: 'Over 30 breweries within walking distance. Gekkeikan Okura Museum, then Kizakura and Kinshi Masamune. Buy a cold cup of nigori from a brewery vending machine and drink it in the street. Keep it to one or two breweries — Kiyomizu-dera next.',
           },
           {
-            time: 'Afternoon',
-            title: 'Nijo Castle',
-            description: 'One of Kyoto\'s most impressive and undervisited sites. Ninomaru Palace interior is beautifully preserved — famous for the nightingale floors that squeak deliberately to detect intruders. The autumn gardens in early November will be starting to colour. Allow 2 hours.',
+            time: 'Late Morning / Early Afternoon',
+            title: 'Kiyomizu-dera',
+            description: 'Natural continuation from the Fushimi Inari area — both sit on Kyoto\'s eastern side. Early November maples will be starting to turn. The wooden stage looking out over the city is genuinely spectacular. Allow 1.5–2 hours.',
           },
           {
             time: 'Afternoon',
@@ -387,12 +402,17 @@ export const cities: City[] = [
         day: 7,
         date: 'Thursday, Nov 5',
         isoDate: '2026-11-05',
-        label: 'Nintendo Museum (preliminary)',
+        label: 'Nintendo Museum (Confirmed)',
         activities: [
           {
-            time: 'Day',
-            title: 'Nintendo Museum — Uji · PRELIMINARY',
-            description: 'Entered the lottery for this date — tickets not yet confirmed. 15 min by train from Kyoto. Interactive exhibits spanning Nintendo\'s entire history, playable installations, exclusive merch. Allow 3 hours minimum. Highest booking priority of the entire trip — if tickets aren\'t secured for Nov 5, this slot may need to be reworked. Update once the lottery result is known.',
+            time: 'Morning — Open',
+            title: 'Possible Yamazaki Distillery',
+            description: 'Morning is currently unplanned. Possible Yamazaki Distillery visit if a tour slot becomes available — Suntory reservations reopen for reallocated spots around late September/early October. Otherwise, a relaxed Kyoto morning. TBD.',
+          },
+          {
+            time: 'Afternoon',
+            title: 'Nintendo Museum — Uji · CONFIRMED',
+            description: 'Entry timing 15:30–16:00 JST. Confirmed and paid — tickets secured via waitlist selection. 15 min by train from Kyoto. Interactive exhibits spanning Nintendo\'s entire history, playable installations, exclusive merch. Allow 3 hours minimum.',
           },
           {
             time: 'Evening',
