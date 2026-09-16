@@ -88,6 +88,18 @@ export const bookings: Booking[] = [
     defaultStatus: 'pending',
   },
   {
+    id: 'samurai-restaurant',
+    tier: 2,
+    name: 'Samurai Restaurant — Kabukicho',
+    location: 'Tokyo I · Kabukicho, Shinjuku',
+    day: 'Day 4 · Nov 2 · Evening',
+    deadline: 'Not yet booked — book in advance',
+    cost: 'TBD — show + drinks or show + meal package',
+    description: 'High-energy dinner show, spiritual successor to the old Robot Restaurant. Glittering costumes, choreographed sword fights, dance, lights, noise. Book a show + drinks package (or show + meal) in advance — treat it as spectacle, not dinner. 18+, bring ID.',
+    howTo: 'Book direct online — show + drinks or show + meal package',
+    defaultStatus: 'pending',
+  },
+  {
     id: 'wagyu-kyoto',
     tier: 2,
     name: 'Wagyu Dinner — Kyo-Yakiniku HIRO Pontocho Annex',
@@ -163,19 +175,6 @@ export const bookings: Booking[] = [
     defaultStatus: 'pending',
   },
   // ── Tier 3 — Book 1–2 months before ──
-  {
-    id: 'teamlab',
-    tier: 3,
-    name: 'teamLab Borderless',
-    location: 'Tokyo I · Azabudai Hills',
-    day: 'Day 4 · Nov 2 · Afternoon',
-    deadline: 'Book 1–2 months before — weekday afternoon, availability should be fine',
-    cost: '¥3,200 per person',
-    description: 'Timed entry. Allow 2–3 hours. Azabudai Hills is in Minato-ku — fits the Tokyo I leg naturally on the final afternoon before the Shinkansen west.',
-    howTo: 'borderless.teamlab.art — timed entry tickets online',
-    url: 'https://borderless.teamlab.art',
-    defaultStatus: 'pending',
-  },
   {
     id: 'kappodo',
     tier: 3,
