@@ -79,19 +79,19 @@
     },
     {
       eyebrow: 'STOP 04',
-      name: 'HIROSHIMA',
+      name: 'FUKUOKA',
       subtitle: '',
-      nameJa: '広島',
-      dates: 'NOV 09 — NOV 10',
-      nights: 1,
+      nameJa: '福岡',
+      dates: 'NOV 09 — NOV 11',
+      nights: 2,
       bg: '#1a3a5c',
       ink: '#fbf4dc',
       accent: '#e8a23a',
       keywords: [
-        'Peace Memorial Park + A-Bomb Dome',
-        'Hiroshima-style okonomiyaki',
-        'Miyajima — the floating torii',
-        'Nozomi back to Tokyo'
+        'Sumo tournament — Day 12',
+        'Tonkotsu — the origin',
+        'Yatai street stalls on the river',
+        'Hakata calm',
       ],
     },
     {
@@ -99,8 +99,8 @@
       name: 'TOKYO',
       subtitle: 'UENO',
       nameJa: '東京',
-      dates: 'NOV 10 — NOV 14',
-      nights: 4,
+      dates: 'NOV 11 — NOV 14',
+      nights: 3,
       bg: '#4a1f3a',
       ink: '#fbf4dc',
       accent: '#e8a23a',
@@ -193,15 +193,15 @@
         </li>
         <li>
           <span class="rt-num">04</span>
-          <span class="rt-name">HIROSHIMA</span>
-          <span class="rt-nights">1 night</span>
-          <span class="rt-dates">Nov 9 — 10</span>
+          <span class="rt-name">FUKUOKA</span>
+          <span class="rt-nights">2 nights</span>
+          <span class="rt-dates">Nov 9 — 11</span>
         </li>
         <li>
           <span class="rt-num">05</span>
           <span class="rt-name">TOKYO <em class="rt-sub">Ueno</em></span>
-          <span class="rt-nights">4 nights</span>
-          <span class="rt-dates">Nov 10 — 14</span>
+          <span class="rt-nights">3 nights</span>
+          <span class="rt-dates">Nov 11 — 14</span>
         </li>
       </ul>
 

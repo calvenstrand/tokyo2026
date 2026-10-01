@@ -12,8 +12,8 @@ Trip structure:
 - Tokyo I (Shinjuku) · 4 nights · Oct 30 – Nov 3
 - Kyoto · 3 nights · Nov 3 – 6
 - Osaka · 3 nights · Nov 6 – 9
-- Hiroshima · 1 night · Nov 9 – 10 (Miyajima the morning after)
-- Tokyo II (Ueno) · 4 nights · Nov 10 – 14
+- Fukuoka · 2 nights · Nov 9 – 11 (Nov 9 split day: friends via Hiroshima, Chris direct)
+- Tokyo II (Ueno) · 3 nights · Nov 11 – 14
 - Fly home Sun Nov 15, 00:30 from Haneda
 - Day 1 = Fri Oct 30 … Day 16 = Sat Nov 14 (departure day is Day 0)
 
@@ -30,8 +30,8 @@ Assumes the group can navigate independently.
 ## Key decisions already made
 - Ueno over Akihabara as Tokyo II base (better neighborhood,
   one stop away)
+- Sumo in Fukuoka on Nov 10 (booked)
 - Knives bought at Kappabashi (Tokyo II) — Sakai cut from Osaka
-- Fukuoka and sumo dropped — Hiroshima + Miyajima instead
 - Knife sharpening class and yakitori omakase in Kyoto dropped
 - No USJ (too touristy, long queues)
 - Osaka is 3 nights (derby on Nov 8); Kobe day trip dropped
@@ -40,5 +40,5 @@ Assumes the group can navigate independently.
 
 ## Booking priorities
 Nintendo Museum is confirmed and paid (Nov 5, 15:30–16:00).
-Still to book: 3× Shinkansen via SmartEX (seats open one month ahead, 10:00 JST),
+Still to book: Shinkansen via SmartEX (seats open one month ahead, 10:00 JST),
 Osaka Derby tickets (on sale Oct 3), Shibuya Sky sunset slot, teamLab Biovortex.

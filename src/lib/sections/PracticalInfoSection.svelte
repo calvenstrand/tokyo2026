@@ -105,11 +105,11 @@
         { label: 'Flights', note: 'ARN → HND return, economy', range: '11 000 kr' },
         { label: 'Hotel', note: '15 nights, 4-bed room split four ways', range: '16 000 – 18 000 kr' },
         { label: 'Food & drink', note: 'Cheap ramen & konbini most days, a few wagyu dinners', range: '15 000 – 22 000 kr' },
-        { label: 'Shinkansen', note: 'Tokyo → Kyoto (~¥14 200), Shin-Osaka → Hiroshima (~¥10 500), Hiroshima → Tokyo (~¥19 400) — book via Smart EX', range: '~3 100 kr' },
-        { label: 'Activities', note: 'Nintendo Museum, Samurai Restaurant, teamLab Biovortex, Shibuya Sky, Osaka Derby, misc entry', range: '2 000 – 3 500 kr' },
+        { label: 'Shinkansen', note: 'Tokyo → Kyoto (~¥14 200), Osaka → Fukuoka (~¥14 720), Fukuoka → Tokyo (~¥22 220) — book via Smart EX', range: '~3 600 kr' },
+        { label: 'Activities', note: 'Sumo Tournament, Nintendo Museum, Samurai Restaurant, teamLab Biovortex, Shibuya Sky, Osaka Derby, misc entry', range: '2 000 – 3 500 kr' },
         { label: 'Local transport', note: 'IC card, two weeks of metro & trains', range: '~900 kr' },
       ],
-      total: '45 000 – 59 000 kr',
+      total: '45 500 – 59 500 kr',
     },
   ]
 
