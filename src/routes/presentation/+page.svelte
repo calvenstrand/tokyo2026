@@ -54,9 +54,8 @@
         'Nishiki Market on arrival',
         'Kiyomizu-dera — maples turning',
         'Fushimi Inari at 6am',
-        'Nintendo Museum — the lottery',
-        'Knife sharpening class',
-        'Yakitori omakase',
+        'teamLab Biovortex',
+        'Nintendo Museum — confirmed',
         'Funaoka Onsen — 1923 bathhouse',
       ],
     },
@@ -65,34 +64,34 @@
       name: 'OSAKA',
       subtitle: '',
       nameJa: '大阪',
-      dates: 'NOV 06 — NOV 08',
-      nights: 2,
+      dates: 'NOV 06 — NOV 09',
+      nights: 3,
       bg: '#e8b526',
       ink: '#1a1a1a',
       accent: '#7a1810',
       keywords: [
         'Dotonbori at night',
         'Wagyu — top tier',
-        'Sakai knives, cut to fit',
+        'Osaka Derby — Gamba vs Cerezo',
         'Shinsekai retro Osaka',
         'Osaka Castle',
       ],
     },
     {
       eyebrow: 'STOP 04',
-      name: 'FUKUOKA',
+      name: 'HIROSHIMA',
       subtitle: '',
-      nameJa: '福岡',
-      dates: 'NOV 08 — NOV 10',
-      nights: 2,
+      nameJa: '広島',
+      dates: 'NOV 09 — NOV 10',
+      nights: 1,
       bg: '#1a3a5c',
       ink: '#fbf4dc',
       accent: '#e8a23a',
       keywords: [
-        'Sumo tournament — Day 10',
-        'Tonkotsu — the origin',
-        'Yatai street stalls on the river',
-        'Hakata calm',
+        'Peace Memorial Park + A-Bomb Dome',
+        'Hiroshima-style okonomiyaki',
+        'Miyajima — the floating torii',
+        'Nozomi back to Tokyo'
       ],
     },
     {
@@ -189,14 +188,14 @@
         <li>
           <span class="rt-num">03</span>
           <span class="rt-name">OSAKA</span>
-          <span class="rt-nights">2 nights</span>
-          <span class="rt-dates">Nov 6 — 8</span>
+          <span class="rt-nights">3 nights</span>
+          <span class="rt-dates">Nov 6 — 9</span>
         </li>
         <li>
           <span class="rt-num">04</span>
-          <span class="rt-name">FUKUOKA</span>
-          <span class="rt-nights">2 nights</span>
-          <span class="rt-dates">Nov 8 — 10</span>
+          <span class="rt-name">HIROSHIMA</span>
+          <span class="rt-nights">1 night</span>
+          <span class="rt-dates">Nov 9 — 10</span>
         </li>
         <li>
           <span class="rt-num">05</span>
@@ -221,7 +220,7 @@
     >
       <div class="poster-frame">
         <div class="corner-mark top-left">{p.eyebrow}</div>
-        <div class="corner-mark top-right">{p.nights} NIGHTS · {p.dates}</div>
+        <div class="corner-mark top-right">{p.nights} {p.nights === 1 ? 'NIGHT' : 'NIGHTS'} · {p.dates}</div>
 
         <div class="kanji-watermark" aria-hidden="true">{p.nameJa}</div>
 
@@ -256,15 +255,15 @@
         <div class="ticket">
           <div class="ticket-no">N° 01</div>
           <div class="ticket-name">NINTENDO MUSEUM</div>
-          <div class="ticket-meta">Kyoto · Day 6 · Nov 5</div>
-          <div class="ticket-action">LOTTERY — apply the moment it opens</div>
+          <div class="ticket-meta">Kyoto · Day 7 · Nov 5</div>
+          <div class="ticket-action">CONFIRMED — 15:30 entry, bring passports</div>
           <div class="ticket-stamp">PRIORITY</div>
         </div>
         <div class="ticket">
           <div class="ticket-no">N° 02</div>
-          <div class="ticket-name">SUMO · KYUSHU BASHO</div>
-          <div class="ticket-meta">Fukuoka · Day 10 · Nov 8</div>
-          <div class="ticket-action">SALE OPENS SEPT 19 — buy at 10:00</div>
+          <div class="ticket-name">OSAKA DERBY</div>
+          <div class="ticket-meta">Osaka · Day 10 · Nov 8</div>
+          <div class="ticket-action">ON SALE OCT 3 — 03:00 Swedish time</div>
           <div class="ticket-stamp">PRIORITY</div>
         </div>
       </div>

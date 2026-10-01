@@ -56,14 +56,14 @@
 
     <div class="hero-bottom">
       <div class="hero-meta">
-        <div class="hero-route" aria-label="Route: Tokyo, Kyoto, Osaka, Fukuoka, Tokyo">
+        <div class="hero-route" aria-label="Route: Tokyo, Kyoto, Osaka, Hiroshima, Tokyo">
           <span>Tokyo</span>
           <span class="arrow" aria-hidden="true">→</span>
           <span>Kyoto</span>
           <span class="arrow" aria-hidden="true">→</span>
           <span>Osaka</span>
           <span class="arrow" aria-hidden="true">→</span>
-          <span>Fukuoka</span>
+          <span>Hiroshima</span>
           <span class="arrow" aria-hidden="true">→</span>
           <span>Tokyo</span>
         </div>

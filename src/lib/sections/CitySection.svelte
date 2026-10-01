@@ -116,7 +116,7 @@
       <div class="hero-meta">
         <span class="hero-num">0{index + 1}</span>
         <span class="hero-dates">{city.dates}</span>
-        <span class="hero-nights">{city.nights} nights</span>
+        <span class="hero-nights">{city.nights} {city.nights === 1 ? 'night' : 'nights'}</span>
       </div>
       <div class="hero-title">
         <div class="city-name-wrap">
@@ -138,7 +138,7 @@
   <!-- Itinerary -->
   <div class="city-itinerary">
     <div class="lineup-bar reveal">
-      <span class="lineup-count">{city.days.length} days · {city.nights} nights</span>
+      <span class="lineup-count">{city.days.length} days · {city.nights} {city.nights === 1 ? 'night' : 'nights'}</span>
       <button class="lineup-toggle-all" onclick={toggleAll}>
         {allOpen ? 'Collapse all' : 'Expand all'}
       </button>

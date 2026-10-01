@@ -203,7 +203,7 @@
               {/if}
               <div class="booking-meta">
                 <span class="booking-location">{hotel.dates}</span>
-                <span class="booking-day">{hotel.nights} nights</span>
+                <span class="booking-day">{hotel.nights} {hotel.nights === 1 ? 'night' : 'nights'}</span>
                 {#if hotel.checkIn}<span class="booking-day">Check-in {hotel.checkIn}</span>{/if}
                 {#if hotel.checkOut}<span class="booking-day">Check-out {hotel.checkOut}</span>{/if}
               </div>
