@@ -683,7 +683,7 @@ export const cities: City[] = [
           {
             time: 'Morning',
             title: 'Semi-early Shinkansen Fukuoka → Tokyo',
-            description: 'Catch a semi-early train out of Hakata — ~5 hours, but landing early-to-mid afternoon in Tokyo instead of burning the whole day. Window seat on the right side for Mt Fuji views — mid-November is one of the best times to see it with clear skies and snow on the peak. Buy a proper bento at Hakata Station before boarding.',
+            description: 'Catch a semi-early train out of Hakata — ~5 hours, but landing early-to-mid afternoon in Tokyo instead of burning the whole day. Window seat on the left side (E seat) for Mt Fuji views — mid-November is one of the best times to see it with clear skies and snow on the peak. Buy a proper bento at Hakata Station before boarding.',
           },
           {
             time: 'Afternoon',
@@ -802,7 +802,7 @@ export const cities: City[] = [
           {
             time: 'Night',
             title: 'Haneda — Fly Home',
-            description: 'Bags from hotel. Keikyu line from Ueno to Haneda Terminal 3 — about 40 min, allow at least 2.5 hours before departure. At the airport by 9:30–10pm. Fly home Nov 15 00:30.',
+            description: 'Bags from hotel. JR from Ueno to Shinagawa, then Keikyu to Haneda Terminal 3 — allow ~50 min, and at least 2.5 hours before departure. At the airport by 9:30–10pm. Fly home Nov 15 00:30.',
           },
         ],
       },
