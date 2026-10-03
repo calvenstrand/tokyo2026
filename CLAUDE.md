@@ -28,17 +28,29 @@ Not a travel guide. Beer and food energy throughout.
 Assumes the group can navigate independently.
 
 ## Key decisions already made
-- Ueno over Akihabara as Tokyo II base (better neighborhood,
-  one stop away)
-- Sumo in Fukuoka on Nov 10 (booked)
-- Knives bought at Kappabashi (Tokyo II) — Sakai cut from Osaka
+- Ueno over Akihabara as Tokyo II base (better neighborhood, one stop away)
+- Sumo tickets NOT secured (BuySumoTickets refunded); trying official resale
+- Knives bought at Kappabashi (Tokyo II, Day 14)
 - Knife sharpening class and yakitori omakase in Kyoto dropped
 - No USJ (too touristy, long queues)
-- Osaka is 3 nights (derby on Nov 8); Kobe day trip dropped
+- Osaka is 3 nights (derby on Nov 8, tickets secured); Kobe day trip dropped
 - Nikko dropped
-- Baseball booking removed — Japan Series fixtures didn't align
+- Baseball BOOKED: Japan vs South Korea, Tokyo Dome, Nov 13 19:00
+- Sushi Kappo farewell dinner dropped; farewell dinner Nov 14 unbooked
 
-## Booking priorities
-Nintendo Museum is confirmed and paid (Nov 5, 15:30–16:00).
-Still to book: Shinkansen via SmartEX (seats open one month ahead, 10:00 JST),
-Osaka Derby tickets (on sale Oct 3), Shibuya Sky sunset slot, teamLab Biovortex.
+## Confirmed bookings
+- Flights (ARN→HND, HND→ARN)
+- All 5 hotels
+- Shinkansen Tokyo→Kyoto Nov 3 (Nozomi 21, 09:30→11:44, SmartEX)
+- Samurai Restaurant Oct 30 16:20
+- Kyo-Yakiniku HIRO Nov 3 19:00
+- Nintendo Museum Nov 5 15:30–16:00 (PAID)
+- Matsuzaka Gyu Yakiniku M Nov 7 19:00
+- Osaka Derby Nov 8 15:00
+- Japan–Korea at Tokyo Dome Nov 13 19:00
+
+## Still to book
+- Shinkansen Osaka→Fukuoka Nov 9 (opens Oct 9; friends Osaka→Hiroshima+Hiroshima→Hakata, Chris direct)
+- Shinkansen Fukuoka→Tokyo Nov 11 (opens Oct 11)
+- Shibuya Sky Oct 31 sunset (~Oct 17 opening, verify)
+- teamLab Biovortex Nov 5 morning
