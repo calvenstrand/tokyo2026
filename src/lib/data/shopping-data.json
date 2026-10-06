@@ -1,0 +1,2541 @@
+{
+ "areas": [
+  {
+   "id": "omotesando",
+   "city": "tokyo",
+   "label": "Omotesando"
+  },
+  {
+   "id": "shinjuku",
+   "city": "tokyo",
+   "label": "Shinjuku"
+  },
+  {
+   "id": "harajuku",
+   "city": "tokyo",
+   "label": "Harajuku"
+  },
+  {
+   "id": "ueno",
+   "city": "tokyo",
+   "label": "Ueno"
+  },
+  {
+   "id": "tokyo-dome",
+   "city": "tokyo",
+   "label": "Tokyo Dome City"
+  },
+  {
+   "id": "ochanomizu",
+   "city": "tokyo",
+   "label": "Ochanomizu"
+  },
+  {
+   "id": "shibuya",
+   "city": "tokyo",
+   "label": "Shibuya"
+  },
+  {
+   "id": "nishi-shinjuku",
+   "city": "tokyo",
+   "label": "Nishi-Shinjuku"
+  },
+  {
+   "id": "yushima",
+   "city": "tokyo",
+   "label": "Yushima"
+  },
+  {
+   "id": "yoyogi",
+   "city": "tokyo",
+   "label": "Yoyogi"
+  },
+  {
+   "id": "jimbocho",
+   "city": "tokyo",
+   "label": "Jimbocho"
+  },
+  {
+   "id": "akihabara",
+   "city": "tokyo",
+   "label": "Akihabara"
+  },
+  {
+   "id": "ikebukuro",
+   "city": "tokyo",
+   "label": "Ikebukuro"
+  },
+  {
+   "id": "kappabashi",
+   "city": "tokyo",
+   "label": "Kappabashi"
+  },
+  {
+   "id": "gion",
+   "city": "kyoto",
+   "label": "Gion"
+  },
+  {
+   "id": "kawaramachi",
+   "city": "kyoto",
+   "label": "Kawaramachi"
+  },
+  {
+   "id": "nishiki",
+   "city": "kyoto",
+   "label": "Nishiki"
+  },
+  {
+   "id": "doguyasuji",
+   "city": "osaka",
+   "label": "Doguyasuji (Namba)"
+  },
+  {
+   "id": "shinsekai",
+   "city": "osaka",
+   "label": "Shinsekai"
+  },
+  {
+   "id": "nakatsu",
+   "city": "osaka",
+   "label": "Nakatsu"
+  },
+  {
+   "id": "chayamachi",
+   "city": "osaka",
+   "label": "Chayamachi (Umeda)"
+  },
+  {
+   "id": "namba",
+   "city": "osaka",
+   "label": "Namba"
+  },
+  {
+   "id": "shinsaibashi",
+   "city": "osaka",
+   "label": "Shinsaibashi"
+  },
+  {
+   "id": "amerikamura",
+   "city": "osaka",
+   "label": "Amerikamura"
+  },
+  {
+   "id": "umeda",
+   "city": "osaka",
+   "label": "Umeda"
+  },
+  {
+   "id": "nipponbashi",
+   "city": "osaka",
+   "label": "Nipponbashi"
+  },
+  {
+   "id": "hommachi",
+   "city": "osaka",
+   "label": "Hommachi"
+  },
+  {
+   "id": "minami-horie",
+   "city": "osaka",
+   "label": "Minami-Horie"
+  },
+  {
+   "id": "yamazaki",
+   "city": "osaka",
+   "label": "Yamazaki (Shimamoto)"
+  },
+  {
+   "id": "daimyo",
+   "city": "fukuoka",
+   "label": "Daimyo"
+  },
+  {
+   "id": "tenjin",
+   "city": "fukuoka",
+   "label": "Tenjin"
+  },
+  {
+   "id": "unsorted-tokyo",
+   "city": "tokyo",
+   "label": "Ej placerad"
+  },
+  {
+   "id": "unsorted-kyoto",
+   "city": "kyoto",
+   "label": "Ej placerad"
+  },
+  {
+   "id": "unsorted-osaka",
+   "city": "osaka",
+   "label": "Ej placerad"
+  },
+  {
+   "id": "unsorted-fukuoka",
+   "city": "fukuoka",
+   "label": "Ej placerad"
+  }
+ ],
+ "shops": [
+  {
+   "id": "tokyo-yodobashi-camera-akihabara",
+   "name": "Yodobashi Camera Akihabara",
+   "chain": "Yodobashi Camera",
+   "city": "tokyo",
+   "area": "akihabara",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-01"
+   ],
+   "tentative": true,
+   "tip": "Skivspelartillbehör/elektronik.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-beams-harajuku",
+   "name": "BEAMS Harajuku",
+   "chain": "BEAMS",
+   "city": "tokyo",
+   "area": "harajuku",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-10-31"
+   ],
+   "tentative": true,
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-beams-plus-harajuku",
+   "name": "BEAMS PLUS Harajuku",
+   "chain": "BEAMS",
+   "city": "tokyo",
+   "area": "harajuku",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-10-31"
+   ],
+   "tentative": true,
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-beams-t",
+   "name": "BEAMS T",
+   "chain": "BEAMS",
+   "city": "tokyo",
+   "area": "harajuku",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-10-31"
+   ],
+   "tentative": true,
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-pure-blue-japan-harajuku",
+   "name": "Pure Blue Japan Harajuku",
+   "chain": "Pure Blue Japan",
+   "city": "tokyo",
+   "area": "harajuku",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "jeans"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-10-31"
+   ],
+   "tentative": true,
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-star-wars-store-by-benelic",
+   "name": "STAR WARS STORE by BENELIC",
+   "chain": "BENELIC",
+   "city": "tokyo",
+   "area": "ikebukuro",
+   "kind": [
+    "clothes",
+    "things"
+   ],
+   "categories": [
+    "merch",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "I Ikebukuro PARCO.",
+   "hours": {
+    "weekly": {
+     "0": [
+      "11:00",
+      "21:00"
+     ],
+     "1": [
+      "11:00",
+      "21:00"
+     ],
+     "2": [
+      "11:00",
+      "21:00"
+     ],
+     "3": [
+      "11:00",
+      "21:00"
+     ],
+     "4": [
+      "11:00",
+      "21:00"
+     ],
+     "5": [
+      "11:00",
+      "21:00"
+     ],
+     "6": [
+      "11:00",
+      "21:00"
+     ]
+    },
+    "note": "Från tidigare chatt, ej verifierat."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-komiyama-book-store",
+   "name": "Komiyama Book Store",
+   "city": "tokyo",
+   "area": "jimbocho",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "posters",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-14"
+   ],
+   "tentative": true,
+   "tip": "Böcker och konstmaterial.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-magnif",
+   "name": "Magnif",
+   "city": "tokyo",
+   "area": "jimbocho",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "posters",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-14"
+   ],
+   "tentative": true,
+   "tip": "Äldre design- och modemagasin.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-ohya-shobo",
+   "name": "Ohya Shobo",
+   "city": "tokyo",
+   "area": "jimbocho",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "posters",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-14"
+   ],
+   "tentative": true,
+   "tip": "Äldre kartor och ukiyo-e.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-tacto",
+   "name": "Tacto",
+   "city": "tokyo",
+   "area": "jimbocho",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-14"
+   ],
+   "tentative": true,
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-vintage-jinbocho",
+   "name": "Vintage Jinbocho",
+   "city": "tokyo",
+   "area": "jimbocho",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "posters",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-14"
+   ],
+   "tentative": true,
+   "tip": "Äldre film-/reklamtryck och ephemera.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-zinebocho",
+   "name": "Zinebocho",
+   "city": "tokyo",
+   "area": "jimbocho",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "posters",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-14"
+   ],
+   "tentative": true,
+   "tip": "Äldre designmagasin; butiksidentitet bör kontrolleras.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-kama-asa-kappabashi",
+   "name": "Kama-Asa Kappabashi",
+   "city": "tokyo",
+   "area": "kappabashi",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "knives"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Reserv för knivar. De flesta butiker på Kappabashi är stängda söndagar.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-red-ring-records",
+   "name": "Red Ring Records",
+   "city": "tokyo",
+   "area": "nishi-shinjuku",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Om det passar.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-disk-union-ochanomizu",
+   "name": "Disk Union Ochanomizu",
+   "chain": "Disk Union",
+   "city": "tokyo",
+   "area": "ochanomizu",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-11"
+   ],
+   "tentative": true,
+   "alternativeIds": [
+    "tokyo-disk-union-shinjuku-heavy-metal-cd-record-store"
+   ],
+   "tip": "Flera Disk Union-filialer inom några kvarter; målet är Hard Rock / Heavy Metal.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-porter-omotesando",
+   "name": "PORTER Omotesando",
+   "chain": "PORTER",
+   "city": "tokyo",
+   "area": "omotesando",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-10-31"
+   ],
+   "tentative": true,
+   "tip": "Väskor och japanskt hantverk; första Tokyo-rundan.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-face-records-shibuya",
+   "name": "Face Records Shibuya",
+   "chain": "Face Records",
+   "city": "tokyo",
+   "area": "shibuya",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-12"
+   ],
+   "tentative": true,
+   "address": "10-2 Udagawacho",
+   "tip": "Även skrivet Face Record Shibuya.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   },
+   "mapsQuery": "Face Records Shibuya 10-2 Udagawacho"
+  },
+  {
+   "id": "tokyo-hmv-record-shop-shibuya",
+   "name": "HMV Record Shop Shibuya",
+   "chain": "HMV",
+   "city": "tokyo",
+   "area": "shibuya",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-12"
+   ],
+   "tentative": true,
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-recofan-magnet-by-shibuya109",
+   "name": "RECOfan MAGNET by SHIBUYA109",
+   "chain": "RECOfan",
+   "city": "tokyo",
+   "area": "shibuya",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-12"
+   ],
+   "tentative": true,
+   "tip": "Även skrivet Recofan/RECOfan.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-tower-records-shibuya",
+   "name": "Tower Records Shibuya",
+   "chain": "Tower Records",
+   "city": "tokyo",
+   "area": "shibuya",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-12"
+   ],
+   "tentative": true,
+   "address": "1-22-14 Jinnan",
+   "floor": "6F",
+   "tip": "TOWER VINYL är vinylavdelningen, inte en separat butik.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   },
+   "mapsQuery": "Tower Records Shibuya 1-22-14 Jinnan"
+  },
+  {
+   "id": "tokyo-union-record-shibuya-parco",
+   "name": "Union Record Shibuya Parco",
+   "chain": "Disk Union",
+   "city": "tokyo",
+   "area": "shibuya",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-12"
+   ],
+   "tentative": true,
+   "tip": "Bredare allgenre-butik; bra för spontanfynd.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-diskunion-rock-in-tokyo-shibuya",
+   "name": "diskunion ROCK in TOKYO Shibuya",
+   "chain": "Disk Union",
+   "city": "tokyo",
+   "area": "shibuya",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-12"
+   ],
+   "tentative": true,
+   "tip": "Rock, prog, heavy metal, punk och J-pop.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-disk-union-shinjuku-heavy-metal-cd-record-store",
+   "name": "Disk Union Shinjuku Heavy Metal CD Record Store",
+   "chain": "Disk Union",
+   "city": "tokyo",
+   "area": "shinjuku",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "must",
+   "plannedDates": [
+    "2026-11-12"
+   ],
+   "tentative": true,
+   "alternativeIds": [
+    "tokyo-disk-union-ochanomizu",
+    "osaka-s-a-music"
+   ],
+   "address": "3-34-12 Shinjuku (uppgift ej verifierad)",
+   "station": "Shinjuku-sanchome",
+   "tip": "Högsta prioritet för metal; även CD.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   },
+   "mapsQuery": "Disk Union Shinjuku Heavy Metal CD Record Store, Shinjuku"
+  },
+  {
+   "id": "tokyo-disk-union-shinjuku-rock-record-store",
+   "name": "Disk Union Shinjuku Rock Record Store",
+   "chain": "Disk Union",
+   "city": "tokyo",
+   "area": "shinjuku",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "must",
+   "plannedDates": [
+    "2026-11-12"
+   ],
+   "tentative": true,
+   "tip": "Högsta prioritet för äldre rockpressningar.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-disk-union-cd-record-accessories-storage-store",
+   "name": "Disk Union CD/Record Accessories & Storage Store",
+   "chain": "Disk Union",
+   "city": "tokyo",
+   "area": "shinjuku",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-12"
+   ],
+   "tentative": true,
+   "address": "3-17-5 T&T III",
+   "floor": "3F",
+   "tip": "Skivtillbehör och förvaring.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   },
+   "mapsQuery": "Disk Union CD/Record Accessories & Storage Store 3-17-5 T&T III"
+  },
+  {
+   "id": "tokyo-disk-union-shinjuku-main",
+   "name": "Disk Union Shinjuku (huvudbutik)",
+   "chain": "Disk Union",
+   "city": "tokyo",
+   "area": "shinjuku",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-12"
+   ],
+   "tentative": true,
+   "address": "3-31-4 Shinjuku (Yamada Building)",
+   "station": "Shinjuku-sanchome",
+   "tip": "Åtta våningar med olika genrer. 1F: anime- och spelmusik.",
+   "hours": {
+    "weekly": {
+     "1": [
+      "11:00",
+      "21:00"
+     ],
+     "2": [
+      "11:00",
+      "21:00"
+     ],
+     "3": [
+      "11:00",
+      "21:00"
+     ],
+     "4": [
+      "11:00",
+      "21:00"
+     ],
+     "5": [
+      "11:00",
+      "21:00"
+     ],
+     "6": [
+      "11:00",
+      "21:00"
+     ],
+     "0": [
+      "11:00",
+      "20:00"
+     ]
+    },
+    "holidays": "as-sunday"
+   },
+   "verified": {
+    "hours": true,
+    "checkedOn": "2026-10"
+   },
+   "mapsQuery": "Disk Union Shinjuku, 3-31-4 Shinjuku"
+  },
+  {
+   "id": "tokyo-hmv-record-shop-shinjuku",
+   "name": "HMV Record Shop Shinjuku",
+   "chain": "HMV",
+   "city": "tokyo",
+   "area": "shinjuku",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-12"
+   ],
+   "tentative": true,
+   "tip": "Backup nära Disk Union-klustret.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-beams-f-shinjuku",
+   "name": "BEAMS F Shinjuku",
+   "chain": "BEAMS",
+   "city": "tokyo",
+   "area": "shinjuku",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-beams-japan-shinjuku",
+   "name": "BEAMS JAPAN Shinjuku",
+   "chain": "BEAMS",
+   "city": "tokyo",
+   "area": "shinjuku",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Japanutgåvor och särskilda samarbeten.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-new-era-shinjuku-south",
+   "name": "New Era Shinjuku South",
+   "chain": "New Era",
+   "city": "tokyo",
+   "area": "shinjuku",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "merch"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-sakazen-shinjuku",
+   "name": "SAKAZEN Shinjuku",
+   "chain": "SAKAZEN",
+   "city": "tokyo",
+   "area": "shinjuku",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Alternativ klädbutik i Shinjuku.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-giants-store",
+   "name": "GIANTS STORE",
+   "chain": "Yomiuri Giants",
+   "city": "tokyo",
+   "area": "tokyo-dome",
+   "kind": [
+    "clothes",
+    "things"
+   ],
+   "categories": [
+    "merch"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-13"
+   ],
+   "tentative": true,
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-giants-store-new-era",
+   "name": "GIANTS STORE NEW ERA",
+   "chain": "New Era",
+   "city": "tokyo",
+   "area": "tokyo-dome",
+   "kind": [
+    "clothes",
+    "things"
+   ],
+   "categories": [
+    "merch"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-13"
+   ],
+   "tentative": true,
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-hinoya-ueno",
+   "name": "HINOYA Ueno",
+   "chain": "HINOYA",
+   "city": "tokyo",
+   "area": "ueno",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "jeans",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Backup/slutköp för denim och overshirts.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-book-off",
+   "name": "BOOK OFF",
+   "chain": "BOOK OFF",
+   "city": "tokyo",
+   "area": "unsorted-tokyo",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl",
+    "posters",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Kedja; filial ej vald.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-batoner",
+   "name": "Batoner",
+   "chain": "Batoner",
+   "city": "tokyo",
+   "area": "unsorted-tokyo",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Filial ej bekräftad.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-bic-camera",
+   "name": "Bic Camera",
+   "chain": "Bic Camera",
+   "city": "tokyo",
+   "area": "unsorted-tokyo",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Butikskedja nämnd som alternativ; filial ej angiven.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-kaptain-sunshine",
+   "name": "Kaptain Sunshine",
+   "city": "tokyo",
+   "area": "unsorted-tokyo",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Möjlig klädbutik; filial ej bekräftad.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-urban-research",
+   "name": "Urban Research",
+   "chain": "URBAN RESEARCH",
+   "city": "tokyo",
+   "area": "unsorted-tokyo",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-urban-research-doors",
+   "name": "Urban Research DOORS",
+   "chain": "URBAN RESEARCH",
+   "city": "tokyo",
+   "area": "unsorted-tokyo",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-nanamica",
+   "name": "nanamica",
+   "city": "tokyo",
+   "area": "unsorted-tokyo",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "tokyo-knapford-poster-market",
+   "name": "KNAPFORD POSTER MARKET",
+   "city": "tokyo",
+   "area": "yoyogi",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "posters"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "address": "4 Chome-12-6 Yoyogi, Shibuya, Tokyo 151-0053",
+   "tip": "Vintageaffischer och reklam.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   },
+   "mapsQuery": "KNAPFORD POSTER MARKET 4 Chome-12-6 Yoyogi, Shibuya, Tokyo 151-0053"
+  },
+  {
+   "id": "tokyo-tohto-records-books",
+   "name": "TOHTO records & books",
+   "city": "tokyo",
+   "area": "yushima",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl",
+    "posters",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-11"
+   ],
+   "tentative": true,
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "kyoto-beams-japan-gion",
+   "name": "BEAMS JAPAN Gion",
+   "chain": "BEAMS",
+   "city": "kyoto",
+   "area": "gion",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "kyoto-tower-vinyl-kyoto",
+   "name": "TOWER VINYL Kyoto",
+   "chain": "Tower Records",
+   "city": "kyoto",
+   "area": "kawaramachi",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Även skrivet TOWER VINYL京都店.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "kyoto-nishiki-market",
+   "name": "Nishiki Market",
+   "city": "kyoto",
+   "area": "nishiki",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-03"
+   ],
+   "tentative": true,
+   "tip": "Marknad med livsmedel och souvenirer; förlagd nära första Kyoto-dagen.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "kyoto-100000t",
+   "name": "100000tアローントコ",
+   "city": "kyoto",
+   "area": "unsorted-kyoto",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "kyoto-art-rock-no-1",
+   "name": "ART ROCK NO.1",
+   "city": "kyoto",
+   "area": "unsorted-kyoto",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "kyoto-beams-japan-kyoto",
+   "name": "BEAMS JAPAN KYOTO",
+   "chain": "BEAMS",
+   "city": "kyoto",
+   "area": "unsorted-kyoto",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "kyoto-blue-blue-kyoto",
+   "name": "BLUE BLUE Kyoto",
+   "chain": "BLUE BLUE",
+   "city": "kyoto",
+   "area": "unsorted-kyoto",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "jeans",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "kyoto-banana-record-kyoto-store",
+   "name": "Banana Record Kyoto Store",
+   "chain": "Banana Record",
+   "city": "kyoto",
+   "area": "unsorted-kyoto",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "kyoto-happy-jack",
+   "name": "Happy Jack",
+   "city": "kyoto",
+   "area": "unsorted-kyoto",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Andrahandsalternativ; läge ej bekräftat.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "kyoto-joes-garage",
+   "name": "Joe’s Garage",
+   "city": "kyoto",
+   "area": "unsorted-kyoto",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "kyoto-momotaro-jeans-kyoto",
+   "name": "Momotaro Jeans Kyoto",
+   "chain": "Momotaro",
+   "city": "kyoto",
+   "area": "unsorted-kyoto",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "jeans",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Möjligt stopp; filial ej bekräftad.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "kyoto-workshop-records",
+   "name": "WORKSHOP Records",
+   "city": "kyoto",
+   "area": "unsorted-kyoto",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "osaka-maru-ka-batsu",
+   "name": "Maru Ka Batsu",
+   "city": "osaka",
+   "area": "amerikamura",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-07"
+   ],
+   "tentative": true,
+   "tip": "Mindre begagnatbutik för vinyl (Amerikamura).",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "osaka-japan-blue-jeans-osaka",
+   "name": "Japan Blue Jeans OSAKA",
+   "chain": "Japan Blue Jeans",
+   "city": "osaka",
+   "area": "chayamachi",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "jeans",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "address": "Chayamachi 4-6",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   },
+   "mapsQuery": "Japan Blue Jeans OSAKA Chayamachi 4-6"
+  },
+  {
+   "id": "osaka-sakai-ichimonji-mitsuhide",
+   "name": "Sakai Ichimonji Mitsuhide",
+   "city": "osaka",
+   "area": "doguyasuji",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "knives"
+   ],
+   "priority": "must",
+   "plannedDates": [
+    "2026-11-06"
+   ],
+   "tentative": true,
+   "alternativeIds": [
+    "osaka-tower-knives-osaka",
+    "tokyo-kama-asa-kappabashi"
+   ],
+   "tip": "Vid Doguyasuji; en av två huvudkandidater för knivar. Gravyr går att beställa, fråga hur lång tid det tar.",
+   "hours": {
+    "weekly": {
+     "1": [
+      "09:30",
+      "18:30"
+     ],
+     "2": [
+      "09:30",
+      "18:30"
+     ],
+     "3": [
+      "09:30",
+      "18:30"
+     ],
+     "4": [
+      "09:30",
+      "18:30"
+     ],
+     "5": [
+      "09:30",
+      "18:30"
+     ],
+     "6": [
+      "10:30",
+      "18:30"
+     ],
+     "0": [
+      "10:30",
+      "18:30"
+     ]
+    },
+    "holidays": "as-sunday"
+   },
+   "verified": {
+    "hours": true,
+    "checkedOn": "2026-10"
+   }
+  },
+  {
+   "id": "osaka-clubhaus-osaka",
+   "name": "CLUBHAUS Osaka",
+   "chain": "CLUBHAUS",
+   "city": "osaka",
+   "area": "hommachi",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "golf",
+    "merch",
+    "other"
+   ],
+   "priority": "must",
+   "plannedDates": [
+    "2026-11-07"
+   ],
+   "tentative": true,
+   "address": "1-15-14 Utsubo-honmachi, Nishi-ku, Osaka",
+   "station": "Hommachi, utgång 28, ~3 min",
+   "tip": "Golfkläder och tillbehör.",
+   "hours": {
+    "weekly": {
+     "2": [
+      "12:00",
+      "19:00"
+     ],
+     "3": [
+      "12:00",
+      "19:00"
+     ],
+     "4": [
+      "12:00",
+      "19:00"
+     ],
+     "5": [
+      "12:00",
+      "19:00"
+     ],
+     "6": [
+      "12:00",
+      "19:00"
+     ],
+     "0": [
+      "12:00",
+      "19:00"
+     ],
+     "1": "closed"
+    },
+    "note": "Äldre källa, kolla."
+   },
+   "verified": {
+    "hours": false
+   },
+   "mapsQuery": "CLUBHAUS Osaka 1-15-14 Utsubo-honmachi, Nishi-ku, Osaka"
+  },
+  {
+   "id": "osaka-warehouse-osaka",
+   "name": "Warehouse Osaka",
+   "chain": "Warehouse",
+   "city": "osaka",
+   "area": "hommachi",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "jeans",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-07"
+   ],
+   "tentative": true,
+   "tip": "Sweatshirts, tees, flannel och workwear. Område (Hommachi) från tidigare research — verifiera.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "osaka-studio-dartisan-osaka",
+   "name": "Studio D’Artisan Osaka",
+   "chain": "Studio D’Artisan",
+   "city": "osaka",
+   "area": "minami-horie",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "jeans",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-07"
+   ],
+   "tentative": true,
+   "tip": "Klassiskt Osaka-denimmärke; alternativ till Samurai. Område (Minami-Horie) från tidigare research — verifiera.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "osaka-fullcount-osaka",
+   "name": "Fullcount Osaka",
+   "chain": "Fullcount",
+   "city": "osaka",
+   "area": "minami-horie",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "jeans"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Område (Horie) från tidigare research — verifiera.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "osaka-samurai-jeans-osaka",
+   "name": "Samurai Jeans Osaka",
+   "chain": "Samurai Jeans",
+   "city": "osaka",
+   "area": "nakatsu",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "jeans",
+    "other"
+   ],
+   "priority": "must",
+   "plannedDates": [
+    "2026-11-07"
+   ],
+   "tentative": true,
+   "alternativeIds": [
+    "osaka-studio-dartisan-osaka",
+    "osaka-japan-blue-jeans-osaka",
+    "osaka-fullcount-osaka"
+   ],
+   "address": "2-5-5 Nakatsu, Kita-ku, Osaka",
+   "station": "Nakatsu (Midosuji-linjen)",
+   "floor": "2F",
+   "tip": "Huvudmål för jeans. Skylten är lätt att missa, ingång på 2:a våningen. Fråga om hemming samma dag.",
+   "hours": {
+    "weekly": {
+     "0": [
+      "11:00",
+      "19:00"
+     ],
+     "1": [
+      "11:00",
+      "19:00"
+     ],
+     "2": [
+      "11:00",
+      "19:00"
+     ],
+     "3": [
+      "11:00",
+      "19:00"
+     ],
+     "4": [
+      "11:00",
+      "19:00"
+     ],
+     "5": [
+      "11:00",
+      "19:00"
+     ],
+     "6": [
+      "11:00",
+      "19:00"
+     ]
+    },
+    "holidays": "as-sunday"
+   },
+   "verified": {
+    "hours": true,
+    "checkedOn": "2026-10"
+   },
+   "mapsQuery": "Samurai Jeans Osaka 2-5-5 Nakatsu, Kita-ku, Osaka"
+  },
+  {
+   "id": "osaka-beams-namba",
+   "name": "BEAMS Namba",
+   "chain": "BEAMS",
+   "city": "osaka",
+   "area": "namba",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "must",
+   "plannedDates": [
+    "2026-11-07"
+   ],
+   "tentative": true,
+   "tip": "Samarbeten och specialplagg.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "osaka-kingram-liquor-namba",
+   "name": "Kingram Liquor Namba",
+   "city": "osaka",
+   "area": "namba",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "whisky"
+   ],
+   "priority": "must",
+   "plannedDates": [
+    "2026-11-07"
+   ],
+   "tentative": true,
+   "tip": "Förslutna flaskor i incheckat bagage. EU: 1 L sprit per person tullfritt.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "osaka-record-shop-naka-second-shop",
+   "name": "Record Shop Naka Second Shop",
+   "city": "osaka",
+   "area": "namba",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "must",
+   "plannedDates": [
+    "2026-11-07"
+   ],
+   "tentative": true,
+   "tip": "Nära Namba; mer spontant vinylstopp.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "osaka-wild-one",
+   "name": "Wild One",
+   "city": "osaka",
+   "area": "namba",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Möjligt extra stopp.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "osaka-s-a-music",
+   "name": "S.A.MUSIC",
+   "city": "osaka",
+   "area": "nipponbashi",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl",
+    "merch"
+   ],
+   "priority": "must",
+   "plannedDates": [
+    "2026-11-06"
+   ],
+   "tentative": true,
+   "tip": "Metalspecialist. Viktigaste vinylstoppet i Osaka. Ligger i Den Den Town, på vägen mellan Doguyasuji och Shinsekai.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "osaka-hmv-record-shop-shinsaibashi",
+   "name": "HMV Record Shop Shinsaibashi",
+   "chain": "HMV",
+   "city": "osaka",
+   "area": "shinsaibashi",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "must",
+   "plannedDates": [
+    "2026-11-07"
+   ],
+   "tentative": true,
+   "alternativeIds": [
+    "osaka-record-shop-naka-second-shop",
+    "osaka-maru-ka-batsu"
+   ],
+   "address": "1-3-3 Nishishinsaibashi, Chuo-ku, Osaka",
+   "station": "Shinsaibashi, utgång 8, direkt",
+   "floor": "B1F",
+   "tip": "Nytt och begagnat. Begagnade skivor tax-free. Sällsynta skivor på lördagar. Säljer skivväskor för handbagage.",
+   "hours": {
+    "weekly": {
+     "0": [
+      "11:00",
+      "20:00"
+     ],
+     "1": [
+      "11:00",
+      "20:00"
+     ],
+     "2": [
+      "11:00",
+      "20:00"
+     ],
+     "3": [
+      "11:00",
+      "20:00"
+     ],
+     "4": [
+      "11:00",
+      "20:00"
+     ],
+     "5": [
+      "11:00",
+      "20:00"
+     ],
+     "6": [
+      "11:00",
+      "20:00"
+     ]
+    },
+    "holidays": "as-sunday"
+   },
+   "verified": {
+    "hours": true,
+    "checkedOn": "2026-10"
+   },
+   "taxFree": "yes",
+   "mapsQuery": "HMV Record Shop Shinsaibashi 1-3-3 Nishishinsaibashi, Chuo-ku, Osaka"
+  },
+  {
+   "id": "osaka-tower-knives-osaka",
+   "name": "Tower Knives Osaka",
+   "city": "osaka",
+   "area": "shinsekai",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "knives"
+   ],
+   "priority": "must",
+   "plannedDates": [
+    "2026-11-06"
+   ],
+   "tentative": true,
+   "alternativeIds": [
+    "osaka-sakai-ichimonji-mitsuhide",
+    "tokyo-kama-asa-kappabashi"
+   ],
+   "station": "Ebisucho, ~4 min",
+   "tip": "Knivar, gravyr och slipning. Engelsktalande personal. Ligger i Shinsekai.",
+   "hours": {
+    "weekly": {
+     "0": [
+      "10:00",
+      "18:00"
+     ],
+     "1": [
+      "10:00",
+      "18:00"
+     ],
+     "2": [
+      "10:00",
+      "18:00"
+     ],
+     "3": [
+      "10:00",
+      "18:00"
+     ],
+     "4": [
+      "10:00",
+      "18:00"
+     ],
+     "5": [
+      "10:00",
+      "18:00"
+     ],
+     "6": [
+      "10:00",
+      "18:00"
+     ]
+    },
+    "note": "Stängda dagar okända — kolla."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "osaka-hanshin-tigers-shop",
+   "name": "Hanshin Tigers shop",
+   "chain": "Hanshin Tigers",
+   "city": "osaka",
+   "area": "umeda",
+   "kind": [
+    "clothes",
+    "things"
+   ],
+   "categories": [
+    "merch"
+   ],
+   "priority": "maybe",
+   "plannedDates": [
+    "2026-11-07"
+   ],
+   "tentative": true,
+   "tip": "Keps/merch som Osaka-souvenir. Butiksnamn/filial att bekräfta.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "osaka-rock-stakk-records",
+   "name": "Rock Stakk Records",
+   "city": "osaka",
+   "area": "umeda",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl",
+    "merch"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Metal, vinyl, CD och merch.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "osaka-disk-union-osaka",
+   "name": "Disk Union Osaka",
+   "chain": "Disk Union",
+   "city": "osaka",
+   "area": "unsorted-osaka",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "osaka-porter-osaka",
+   "name": "PORTER Osaka",
+   "chain": "PORTER",
+   "city": "osaka",
+   "area": "unsorted-osaka",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "osaka-revenge-records",
+   "name": "Revenge Records",
+   "city": "osaka",
+   "area": "unsorted-osaka",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Underground metal/punk.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "osaka-time-bomb-records",
+   "name": "Time Bomb Records",
+   "city": "osaka",
+   "area": "unsorted-osaka",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "unknown-yamazaki-distillery-shop",
+   "name": "Yamazaki Distillery shop",
+   "city": "osaka",
+   "area": "yamazaki",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "whisky"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Ligger i Shimamoto (Osaka-prefekturen, vid Kyoto-gränsen). Troligen krävs bokad tur/museiplats; ej bekräftat. Lång chans.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "fukuoka-border-line-records-fukuoka",
+   "name": "Border Line Records Fukuoka",
+   "nameJa": "ボーダーラインレコーズ福岡店",
+   "city": "fukuoka",
+   "area": "daimyo",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Även Borderline Records / Border Line Records / ボーダーラインレコーズ福岡店; äldre UK/US-rock och japanska pressningar.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "fukuoka-momotaro-jeans-fukuoka",
+   "name": "Momotaro Jeans Fukuoka",
+   "chain": "Momotaro",
+   "city": "fukuoka",
+   "area": "daimyo",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "jeans",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Föreslagen flagship; stoppet inte låst.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "fukuoka-ticro-market",
+   "name": "TICRO MARKET",
+   "nameJa": "チクロマーケット",
+   "city": "fukuoka",
+   "area": "daimyo",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Även Record Store TICRO MARKET.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "fukuoka-bookoff-super-bazaar-tenjin",
+   "name": "BOOKOFF SUPER BAZAAR Tenjin",
+   "chain": "BOOKOFF",
+   "city": "fukuoka",
+   "area": "tenjin",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl",
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "fukuoka-face-records-tenjin-one-fukuoka-bldg",
+   "name": "Face Records TENJIN ONE FUKUOKA BLDG.",
+   "nameJa": "フェイスレコード 福岡天神 ワンビル店",
+   "chain": "Face Records",
+   "city": "fukuoka",
+   "area": "tenjin",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "station": "Tenjin Station",
+   "tip": "Även Face Records Fukuoka / Face Records Tenjin ONE BLDG.; viktigt för japanska pressningar.",
+   "hours": {
+    "weekly": {
+     "1": [
+      "11:00",
+      "20:00"
+     ],
+     "2": [
+      "11:00",
+      "20:00"
+     ],
+     "3": [
+      "11:00",
+      "20:00"
+     ],
+     "4": [
+      "11:00",
+      "20:00"
+     ],
+     "5": [
+      "11:00",
+      "20:00"
+     ],
+     "6": [
+      "10:00",
+      "20:00"
+     ],
+     "0": [
+      "10:00",
+      "20:00"
+     ]
+    },
+    "note": "Från tidigare chatt, ej verifierat."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "fukuoka-beams-fukuoka",
+   "name": "BEAMS Fukuoka",
+   "chain": "BEAMS",
+   "city": "fukuoka",
+   "area": "unsorted-fukuoka",
+   "kind": [
+    "clothes"
+   ],
+   "categories": [
+    "other"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "fukuoka-groovin-fukuoka",
+   "name": "Groovin' Fukuoka",
+   "city": "fukuoka",
+   "area": "unsorted-fukuoka",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "fukuoka-living-stereo-music-bar-record-store",
+   "name": "LIVING STEREO MUSIC BAR & RECORD STORE",
+   "city": "fukuoka",
+   "area": "unsorted-fukuoka",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Nämnd både som musikbar och skivbutik.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  },
+  {
+   "id": "fukuoka-record-polis",
+   "name": "RECORD POLIS",
+   "city": "fukuoka",
+   "area": "unsorted-fukuoka",
+   "kind": [
+    "things"
+   ],
+   "categories": [
+    "vinyl"
+   ],
+   "priority": "maybe",
+   "plannedDates": [],
+   "tip": "Lägre prioritet; kan skippas.",
+   "hours": {
+    "weekly": {},
+    "note": "Kolla öppettider på Google Maps."
+   },
+   "verified": {
+    "hours": false
+   }
+  }
+ ]
+}
