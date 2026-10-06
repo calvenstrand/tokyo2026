@@ -38,7 +38,6 @@ export interface Shop {
   lng?: number
   mapsQuery?: string // overrides default query
   hours: Hours
-  taxFree?: 'yes' | 'no' | 'unknown'
   tip?: string
   verified: { hours: boolean; checkedOn?: string }
 }
@@ -119,10 +118,10 @@ const data = shoppingData as unknown as { areas: Area[]; shops: Shop[] }
 /** Catch-all area per city ("unsorted-tokyo", …) for shops without a confirmed branch. */
 export const isUnsortedArea = (id: string) => id.startsWith('unsorted-')
 
-// Unsorted areas always read "Ej placerad" and sit last within their city.
+// Unsorted areas always read "Not placed yet" and sit last within their city.
 export const AREAS: Area[] = [
   ...data.areas.filter((a) => !isUnsortedArea(a.id)),
-  ...data.areas.filter((a) => isUnsortedArea(a.id)).map((a) => ({ ...a, label: 'Ej placerad' })),
+  ...data.areas.filter((a) => isUnsortedArea(a.id)).map((a) => ({ ...a, label: 'Not placed yet' })),
 ]
 
 export const shops: Shop[] = data.shops

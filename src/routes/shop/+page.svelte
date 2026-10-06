@@ -3,14 +3,14 @@
   import { base } from '$app/paths'
   import { dev } from '$app/environment'
   import { replaceState } from '$app/navigation'
-  import { AREAS, CATEGORY_LABELS, CITY_LABELS, TRIP_DATES, isUnsortedArea, shops } from '../../data/shopping'
+  import { AREAS, CATEGORY_LABELS, CITY_LABELS, STAGES, TRIP_DATES, isUnsortedArea, shops } from '../../data/shopping'
   import type { Category, City, Kind, Shop } from '../../data/shopping'
   import ShopCard from '$lib/components/ShopCard.svelte'
   import { now } from '$lib/now.svelte'
   import { describeOpenState, getOpenState } from '$lib/shopping/hours'
   import { loadStatuses, saveStatuses } from '$lib/shopping/storage'
   import type { ShopStatus, ShopStatuses } from '$lib/shopping/storage'
-  import { formatDay, resolveSelectedDate, stageFor, tokyoNow } from '$lib/shopping/time'
+  import { formatDay, resolveSelectedDate, stageFor, tokyoNow, weekdayShort } from '$lib/shopping/time'
   import { validateShoppingData } from '$lib/shopping/validate'
 
   const CITIES: City[] = ['tokyo', 'kyoto', 'osaka', 'fukuoka']
@@ -119,13 +119,20 @@
   )
   const nearby = $derived.by(() => {
     if (!selectedDate) return []
-    // "Ej placerad" isn't a place, so it can't make anything nearby.
+    // "Not placed yet" isn't a place, so it can't make anything nearby.
     const areas = new Set(planned.map((s) => s.area).filter((a) => !isUnsortedArea(a)))
     return shops
       .filter((s) => areas.has(s.area) && !s.plannedDates.includes(selectedDate!) && !statuses[s.id])
       .sort(byPriorityThenDate)
   })
   const plannedCount = (d: string) => shops.filter((s) => s.plannedDates.includes(d)).length
+
+  // Day picker grouped by stage, so all 16 days fit without sideways scrolling.
+  const dayGroups = STAGES.map((stage) => ({
+    stage,
+    dates: TRIP_DATES.filter((d) => d >= stage.start && d < stage.end),
+  }))
+  const monthShort = (d: string) => (d.slice(5, 7) === '10' ? 'Oct' : 'Nov')
 
   // ── City list ──
   const cityCounts = $derived(
@@ -172,20 +179,6 @@
 
   <main>
 
-    <details class="info-card">
-      <summary>
-        <span class="info-title">Tax refund from 1 Nov 2026</span>
-        <span class="info-toggle" aria-hidden="true">+</span>
-      </summary>
-      <ul>
-        <li>Purchases on or after 1 Nov: pay the price including 10% tax and show your passport at the till.</li>
-        <li>Claim the refund at the departure airport. Customs may ask to see the goods — keep receipts, and don't use consumables.</li>
-        <li>Minimum ¥5,000 per shop per day, excluding tax.</li>
-        <li>The refund may be reduced by a fee.</li>
-        <li>Purchases on 30–31 Oct still use the old system — tax removed at the till.</li>
-        <li>Arrive early at Haneda and keep purchases accessible until the refund is done.</li>
-      </ul>
-    </details>
 
     <!-- Day picker + today -->
     <section class="section" aria-labelledby="today-heading">
@@ -206,19 +199,27 @@
       </div>
 
       <div class="days" role="group" aria-label="Trip day">
-        {#each TRIP_DATES as d}
-          {@const count = plannedCount(d)}
-          <button
-            type="button"
-            class="day"
-            class:is-today={clock?.date === d}
-            aria-pressed={selectedDate === d}
-            onclick={() => pickDate(d)}
-          >
-            <span class="day-wd">{formatDay(d).split(' ')[0]}</span>
-            <span class="day-num">{d.slice(8).replace(/^0/, '')}</span>
-            <span class="day-count" class:empty={!count}>{count || '·'}</span>
-          </button>
+        {#each dayGroups as group (group.stage.id)}
+          <div class="day-group">
+            <span class="day-group-label">{group.stage.label}</span>
+            <div class="day-row">
+              {#each group.dates as d}
+                {@const count = plannedCount(d)}
+                <button
+                  type="button"
+                  class="day"
+                  class:is-today={clock?.date === d}
+                  aria-pressed={selectedDate === d}
+                  aria-label="{formatDay(d)}, {count || 'no'} {count === 1 ? 'shop' : 'shops'} planned"
+                  onclick={() => pickDate(d)}
+                >
+                  <span class="day-wd">{weekdayShort(d)}</span>
+                  <span class="day-num">{monthShort(d)} {Number(d.slice(8))}</span>
+                  <span class="day-count" class:none={!count}>{count ? `${count} shop${count === 1 ? '' : 's'}` : '—'}</span>
+                </button>
+              {/each}
+            </div>
+          </div>
         {/each}
       </div>
 
@@ -337,7 +338,7 @@
   </main>
 
   <footer class="page-footer">
-    <span>Japan '26 · Oct 29 – Nov 15</span>
+    <span>Japan '26 · Shopping days Oct 30 – Nov 14</span>
     <a href="{base}/">← Back to itinerary</a>
   </footer>
 
@@ -489,89 +490,43 @@
     padding: 1.5rem 0;
   }
 
-  /* ── Info card ── */
-  .info-card {
-    border: 1px solid rgba(255,150,0,0.3);
-    background: rgba(255,150,0,0.04);
-    border-radius: 2px;
-  }
-
-  .info-card summary {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    min-height: 44px;
-    padding: 0.75rem 1.1rem;
-    cursor: pointer;
-  }
-
-  .info-card summary::-webkit-details-marker { display: none; }
-
-  .info-title {
-    font-family: var(--font-condensed);
-    font-weight: 700;
-    font-size: 0.95rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #ff9600;
-  }
-
-  .info-toggle {
-    font-family: var(--font-condensed);
-    font-size: 1.3rem;
-    color: #ff9600;
-    transition: transform 0.2s;
-  }
-
-  .info-card[open] .info-toggle { transform: rotate(45deg); }
-
-  .info-card ul {
-    list-style: none;
-    padding: 0 1.1rem 1.1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .info-card li {
-    font-family: var(--font-sans);
-    font-size: 0.88rem;
-    line-height: 1.55;
-    color: rgba(255,255,255,0.7);
-    padding-left: 1rem;
-    position: relative;
-  }
-
-  .info-card li::before {
-    content: '—';
-    position: absolute;
-    left: 0;
-    color: rgba(255,150,0,0.6);
-  }
-
-  .info-card li:last-child { color: white; }
-
   /* ── Day picker ── */
   .days {
     display: flex;
-    gap: 0.35rem;
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 1rem 1.25rem;
+    align-items: flex-start;
     margin-bottom: 0.5rem;
-    scrollbar-width: thin;
+  }
+
+  .day-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .day-group-label {
+    font-family: var(--font-condensed);
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .day-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.35rem;
   }
 
   .day {
-    flex: 0 0 auto;
-    min-width: 48px;
+    width: 58px;
     min-height: 64px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.1rem;
+    gap: 0.15rem;
     border: 1px solid rgba(255,255,255,0.12);
     border-radius: 2px;
     background: none;
@@ -583,25 +538,23 @@
 
   .day:hover { border-color: rgba(255,255,255,0.3); color: rgba(255,255,255,0.85); }
 
-  .day-wd {
+  .day-wd,
+  .day-count {
     font-size: 0.6rem;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
   }
 
   .day-num {
     font-family: var(--font-display);
-    font-size: 1.3rem;
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
     line-height: 1;
+    white-space: nowrap;
   }
 
-  .day-count {
-    font-size: 0.6rem;
-    letter-spacing: 0.1em;
-    color: #ff2d55;
-  }
-
-  .day-count.empty { color: rgba(255,255,255,0.2); }
+  .day-count { color: #ff2d55; }
+  .day-count.none { color: rgba(255,255,255,0.25); }
 
   .day.is-today { border-color: rgba(255,45,85,0.5); }
 

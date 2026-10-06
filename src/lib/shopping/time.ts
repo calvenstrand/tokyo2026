@@ -55,8 +55,13 @@ export function stageFor(iso: string): Stage | undefined {
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
-/** '2026-11-12' → 'Thu 12 Nov' */
+/** '2026-11-12' → 'Thu, Nov 12' — month first, like the itinerary. */
 export function formatDay(iso: string): string {
   const [, m, d] = iso.split('-').map(Number)
-  return `${WEEKDAYS[weekdayOf(iso)]} ${d} ${MONTHS[m - 1]}`
+  return `${WEEKDAYS[weekdayOf(iso)]}, ${MONTHS[m - 1]} ${d}`
+}
+
+/** '2026-11-12' → 'Thu' */
+export function weekdayShort(iso: string): string {
+  return WEEKDAYS[weekdayOf(iso)]
 }

@@ -158,22 +158,22 @@
   {
    "id": "unsorted-tokyo",
    "city": "tokyo",
-   "label": "Ej placerad"
+   "label": "Not placed yet"
   },
   {
    "id": "unsorted-kyoto",
    "city": "kyoto",
-   "label": "Ej placerad"
+   "label": "Not placed yet"
   },
   {
    "id": "unsorted-osaka",
    "city": "osaka",
-   "label": "Ej placerad"
+   "label": "Not placed yet"
   },
   {
    "id": "unsorted-fukuoka",
    "city": "fukuoka",
-   "label": "Ej placerad"
+   "label": "Not placed yet"
   }
  ],
  "shops": [
@@ -195,10 +195,9 @@
     "2026-11-01"
    ],
    "tentative": true,
-   "tip": "Skivspelartillbehör/elektronik.",
+   "tip": "Turntable accessories and electronics.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -222,8 +221,7 @@
    ],
    "tentative": true,
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -247,8 +245,7 @@
    ],
    "tentative": true,
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -272,8 +269,7 @@
    ],
    "tentative": true,
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -297,8 +293,7 @@
    ],
    "tentative": true,
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -320,7 +315,7 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "I Ikebukuro PARCO.",
+   "tip": "Inside Ikebukuro PARCO.",
    "hours": {
     "weekly": {
      "0": [
@@ -352,7 +347,7 @@
       "21:00"
      ]
     },
-    "note": "Från tidigare chatt, ej verifierat."
+    "note": "From an earlier chat, not verified."
    },
    "verified": {
     "hours": false
@@ -375,10 +370,9 @@
     "2026-11-14"
    ],
    "tentative": true,
-   "tip": "Böcker och konstmaterial.",
+   "tip": "Books and art supplies.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -401,10 +395,9 @@
     "2026-11-14"
    ],
    "tentative": true,
-   "tip": "Äldre design- och modemagasin.",
+   "tip": "Vintage design and fashion magazines.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -427,10 +420,9 @@
     "2026-11-14"
    ],
    "tentative": true,
-   "tip": "Äldre kartor och ukiyo-e.",
+   "tip": "Old maps and ukiyo-e prints.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -453,8 +445,7 @@
    ],
    "tentative": true,
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -477,10 +468,9 @@
     "2026-11-14"
    ],
    "tentative": true,
-   "tip": "Äldre film-/reklamtryck och ephemera.",
+   "tip": "Vintage film and ad prints, ephemera.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -503,10 +493,9 @@
     "2026-11-14"
    ],
    "tentative": true,
-   "tip": "Äldre designmagasin; butiksidentitet bör kontrolleras.",
+   "tip": "Vintage design magazines. Double-check it's the right shop.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -525,10 +514,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Reserv för knivar. De flesta butiker på Kappabashi är stängda söndagar.",
+   "tip": "Knife backup. Most Kappabashi shops are closed on Sundays.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -547,10 +535,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Om det passar.",
+   "tip": "If it fits the day.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -576,10 +563,9 @@
    "alternativeIds": [
     "tokyo-disk-union-shinjuku-heavy-metal-cd-record-store"
    ],
-   "tip": "Flera Disk Union-filialer inom några kvarter; målet är Hard Rock / Heavy Metal.",
+   "tip": "Several Disk Union branches within a few blocks. The target is the Hard Rock / Heavy Metal one.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -602,10 +588,9 @@
     "2026-10-31"
    ],
    "tentative": true,
-   "tip": "Väskor och japanskt hantverk; första Tokyo-rundan.",
+   "tip": "Bags and Japanese craftsmanship. First Tokyo leg.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -629,10 +614,9 @@
    ],
    "tentative": true,
    "address": "10-2 Udagawacho",
-   "tip": "Även skrivet Face Record Shibuya.",
+   "tip": "Also listed as Face Record Shibuya.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -657,8 +641,7 @@
    ],
    "tentative": true,
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -681,10 +664,9 @@
     "2026-11-12"
    ],
    "tentative": true,
-   "tip": "Även skrivet Recofan/RECOfan.",
+   "tip": "Also listed as Recofan / RECOfan.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -709,10 +691,9 @@
    "tentative": true,
    "address": "1-22-14 Jinnan",
    "floor": "6F",
-   "tip": "TOWER VINYL är vinylavdelningen, inte en separat butik.",
+   "tip": "TOWER VINYL is the vinyl floor, not a separate shop.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -736,10 +717,9 @@
     "2026-11-12"
    ],
    "tentative": true,
-   "tip": "Bredare allgenre-butik; bra för spontanfynd.",
+   "tip": "Broad all-genre shop. Good for random finds.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -762,10 +742,9 @@
     "2026-11-12"
    ],
    "tentative": true,
-   "tip": "Rock, prog, heavy metal, punk och J-pop.",
+   "tip": "Rock, prog, heavy metal, punk and J-pop.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -792,12 +771,11 @@
     "tokyo-disk-union-ochanomizu",
     "osaka-s-a-music"
    ],
-   "address": "3-34-12 Shinjuku (uppgift ej verifierad)",
+   "address": "3-34-12 Shinjuku (unverified)",
    "station": "Shinjuku-sanchome",
-   "tip": "Högsta prioritet för metal; även CD.",
+   "tip": "Top priority for metal. CDs too.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -821,10 +799,9 @@
     "2026-11-12"
    ],
    "tentative": true,
-   "tip": "Högsta prioritet för äldre rockpressningar.",
+   "tip": "Top priority for vintage rock pressings.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -850,10 +827,9 @@
    "tentative": true,
    "address": "3-17-5 T&T III",
    "floor": "3F",
-   "tip": "Skivtillbehör och förvaring.",
+   "tip": "Record accessories and storage.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -879,7 +855,7 @@
    "tentative": true,
    "address": "3-31-4 Shinjuku (Yamada Building)",
    "station": "Shinjuku-sanchome",
-   "tip": "Åtta våningar med olika genrer. 1F: anime- och spelmusik.",
+   "tip": "Eight floors, a genre each. 1F: anime and game music.",
    "hours": {
     "weekly": {
      "1": [
@@ -936,10 +912,9 @@
     "2026-11-12"
    ],
    "tentative": true,
-   "tip": "Backup nära Disk Union-klustret.",
+   "tip": "Backup near the Disk Union cluster.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -960,8 +935,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -981,10 +955,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Japanutgåvor och särskilda samarbeten.",
+   "tip": "Japan-only releases and special collabs.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1005,8 +978,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1026,10 +998,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Alternativ klädbutik i Shinjuku.",
+   "tip": "Alternative clothing stop in Shinjuku.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1054,8 +1025,7 @@
    ],
    "tentative": true,
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1080,8 +1050,7 @@
    ],
    "tentative": true,
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1102,10 +1071,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Backup/slutköp för denim och overshirts.",
+   "tip": "Backup or last-chance buy for denim and overshirts.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1127,10 +1095,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Kedja; filial ej vald.",
+   "tip": "Chain, no branch picked yet.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1150,10 +1117,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Filial ej bekräftad.",
+   "tip": "Branch not confirmed.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1174,10 +1140,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Butikskedja nämnd som alternativ; filial ej angiven.",
+   "tip": "Chain mentioned as a backup, no branch picked.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1196,10 +1161,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Möjlig klädbutik; filial ej bekräftad.",
+   "tip": "Possible clothing stop, branch not confirmed.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1220,8 +1184,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1242,8 +1205,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1263,8 +1225,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1284,10 +1245,9 @@
    "priority": "maybe",
    "plannedDates": [],
    "address": "4 Chome-12-6 Yoyogi, Shibuya, Tokyo 151-0053",
-   "tip": "Vintageaffischer och reklam.",
+   "tip": "Vintage posters and advertising.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1313,8 +1273,7 @@
    ],
    "tentative": true,
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1335,8 +1294,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1356,10 +1314,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Även skrivet TOWER VINYL京都店.",
+   "tip": "Also listed as TOWER VINYL京都店.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1381,10 +1338,9 @@
     "2026-11-03"
    ],
    "tentative": true,
-   "tip": "Marknad med livsmedel och souvenirer; förlagd nära första Kyoto-dagen.",
+   "tip": "Food and souvenir market. Slotted near the first Kyoto day.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1404,8 +1360,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1425,8 +1380,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1447,8 +1401,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1470,8 +1423,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1492,8 +1444,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1512,10 +1463,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Andrahandsalternativ; läge ej bekräftat.",
+   "tip": "Second choice, location not confirmed.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1535,8 +1485,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1557,10 +1506,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Möjligt stopp; filial ej bekräftad.",
+   "tip": "Possible stop, branch not confirmed.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1580,8 +1528,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1603,10 +1550,9 @@
     "2026-11-07"
    ],
    "tentative": true,
-   "tip": "Mindre begagnatbutik för vinyl (Amerikamura).",
+   "tip": "Small used vinyl shop in Amerikamura.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1629,8 +1575,7 @@
    "plannedDates": [],
    "address": "Chayamachi 4-6",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1657,7 +1602,7 @@
     "osaka-tower-knives-osaka",
     "tokyo-kama-asa-kappabashi"
    ],
-   "tip": "Vid Doguyasuji; en av två huvudkandidater för knivar. Gravyr går att beställa, fråga hur lång tid det tar.",
+   "tip": "On Doguyasuji, one of the two main knife candidates. Engraving available — ask how long it takes.",
    "hours": {
     "weekly": {
      "1": [
@@ -1716,8 +1661,8 @@
    ],
    "tentative": true,
    "address": "1-15-14 Utsubo-honmachi, Nishi-ku, Osaka",
-   "station": "Hommachi, utgång 28, ~3 min",
-   "tip": "Golfkläder och tillbehör.",
+   "station": "Hommachi, exit 28, ~3 min",
+   "tip": "Golf apparel and gear.",
    "hours": {
     "weekly": {
      "2": [
@@ -1746,7 +1691,7 @@
      ],
      "1": "closed"
     },
-    "note": "Äldre källa, kolla."
+    "note": "Old source — check."
    },
    "verified": {
     "hours": false
@@ -1771,10 +1716,9 @@
     "2026-11-07"
    ],
    "tentative": true,
-   "tip": "Sweatshirts, tees, flannel och workwear. Område (Hommachi) från tidigare research — verifiera.",
+   "tip": "Sweatshirts, tees, flannel and workwear. Hommachi location from earlier research — verify.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1798,10 +1742,9 @@
     "2026-11-07"
    ],
    "tentative": true,
-   "tip": "Klassiskt Osaka-denimmärke; alternativ till Samurai. Område (Minami-Horie) från tidigare research — verifiera.",
+   "tip": "Classic Osaka denim brand, alternative to Samurai. Minami-Horie location from earlier research — verify.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1821,10 +1764,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Område (Horie) från tidigare research — verifiera.",
+   "tip": "Horie location from earlier research — verify.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1854,9 +1796,9 @@
     "osaka-fullcount-osaka"
    ],
    "address": "2-5-5 Nakatsu, Kita-ku, Osaka",
-   "station": "Nakatsu (Midosuji-linjen)",
+   "station": "Nakatsu (Midosuji Line)",
    "floor": "2F",
-   "tip": "Huvudmål för jeans. Skylten är lätt att missa, ingång på 2:a våningen. Fråga om hemming samma dag.",
+   "tip": "Main jeans target. Easy-to-miss sign, entrance on the 2nd floor. Ask about same-day hemming.",
    "hours": {
     "weekly": {
      "0": [
@@ -1913,10 +1855,9 @@
     "2026-11-07"
    ],
    "tentative": true,
-   "tip": "Samarbeten och specialplagg.",
+   "tip": "Collabs and special pieces.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1938,10 +1879,9 @@
     "2026-11-07"
    ],
    "tentative": true,
-   "tip": "Förslutna flaskor i incheckat bagage. EU: 1 L sprit per person tullfritt.",
+   "tip": "Sealed bottles go in checked luggage. EU allowance: 1 L of spirits per person.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1963,10 +1903,9 @@
     "2026-11-07"
    ],
    "tentative": true,
-   "tip": "Nära Namba; mer spontant vinylstopp.",
+   "tip": "Near Namba. More of a spontaneous vinyl stop.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -1985,10 +1924,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Möjligt extra stopp.",
+   "tip": "Possible extra stop.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -2011,10 +1949,9 @@
     "2026-11-06"
    ],
    "tentative": true,
-   "tip": "Metalspecialist. Viktigaste vinylstoppet i Osaka. Ligger i Den Den Town, på vägen mellan Doguyasuji och Shinsekai.",
+   "tip": "Metal specialist and the key vinyl stop in Osaka. In Den Den Town, between Doguyasuji and Shinsekai.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -2042,9 +1979,9 @@
     "osaka-maru-ka-batsu"
    ],
    "address": "1-3-3 Nishishinsaibashi, Chuo-ku, Osaka",
-   "station": "Shinsaibashi, utgång 8, direkt",
+   "station": "Shinsaibashi, exit 8, direct",
    "floor": "B1F",
-   "tip": "Nytt och begagnat. Begagnade skivor tax-free. Sällsynta skivor på lördagar. Säljer skivväskor för handbagage.",
+   "tip": "New and used. Rare records come out on Saturdays. Sells record bags for carry-on.",
    "hours": {
     "weekly": {
      "0": [
@@ -2082,7 +2019,6 @@
     "hours": true,
     "checkedOn": "2026-10"
    },
-   "taxFree": "yes",
    "mapsQuery": "HMV Record Shop Shinsaibashi 1-3-3 Nishishinsaibashi, Chuo-ku, Osaka"
   },
   {
@@ -2106,7 +2042,7 @@
     "tokyo-kama-asa-kappabashi"
    ],
    "station": "Ebisucho, ~4 min",
-   "tip": "Knivar, gravyr och slipning. Engelsktalande personal. Ligger i Shinsekai.",
+   "tip": "Knives, engraving and sharpening. English-speaking staff. In Shinsekai.",
    "hours": {
     "weekly": {
      "0": [
@@ -2138,7 +2074,7 @@
       "18:00"
      ]
     },
-    "note": "Stängda dagar okända — kolla."
+    "note": "Closed days unknown — check."
    },
    "verified": {
     "hours": false
@@ -2162,10 +2098,9 @@
     "2026-11-07"
    ],
    "tentative": true,
-   "tip": "Keps/merch som Osaka-souvenir. Butiksnamn/filial att bekräfta.",
+   "tip": "Cap or merch as the Osaka souvenir. Shop name and branch to confirm.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -2185,10 +2120,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Metal, vinyl, CD och merch.",
+   "tip": "Metal on vinyl, CD and merch.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -2209,8 +2143,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -2231,8 +2164,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -2251,10 +2183,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Underground metal/punk.",
+   "tip": "Underground metal and punk.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -2274,8 +2205,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -2294,10 +2224,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Ligger i Shimamoto (Osaka-prefekturen, vid Kyoto-gränsen). Troligen krävs bokad tur/museiplats; ej bekräftat. Lång chans.",
+   "tip": "In Shimamoto, on the Osaka–Kyoto border. Probably needs a booked tour or museum slot — not confirmed. Long shot.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -2317,10 +2246,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Även Borderline Records / Border Line Records / ボーダーラインレコーズ福岡店; äldre UK/US-rock och japanska pressningar.",
+   "tip": "Also listed as Borderline Records / ボーダーラインレコーズ福岡店. Vintage UK/US rock and Japanese pressings.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -2341,10 +2269,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Föreslagen flagship; stoppet inte låst.",
+   "tip": "Suggested flagship, stop not locked in.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -2364,10 +2291,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Även Record Store TICRO MARKET.",
+   "tip": "Also listed as Record Store TICRO MARKET.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -2389,8 +2315,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -2412,7 +2337,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "station": "Tenjin Station",
-   "tip": "Även Face Records Fukuoka / Face Records Tenjin ONE BLDG.; viktigt för japanska pressningar.",
+   "tip": "Also listed as Face Records Fukuoka / Tenjin ONE BLDG. Key for Japanese pressings.",
    "hours": {
     "weekly": {
      "1": [
@@ -2444,7 +2369,7 @@
       "20:00"
      ]
     },
-    "note": "Från tidigare chatt, ej verifierat."
+    "note": "From an earlier chat, not verified."
    },
    "verified": {
     "hours": false
@@ -2465,8 +2390,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -2486,8 +2410,7 @@
    "priority": "maybe",
    "plannedDates": [],
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -2506,10 +2429,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Nämnd både som musikbar och skivbutik.",
+   "tip": "Listed as both a music bar and a record shop.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false
@@ -2528,10 +2450,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
-   "tip": "Lägre prioritet; kan skippas.",
+   "tip": "Lower priority, can be skipped.",
    "hours": {
-    "weekly": {},
-    "note": "Kolla öppettider på Google Maps."
+    "weekly": {}
    },
    "verified": {
     "hours": false

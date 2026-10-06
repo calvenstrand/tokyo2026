@@ -39,7 +39,6 @@
       .map((id) => shops.find((s) => s.id === id))
       .filter((s): s is Shop => !!s)
   )
-  const taxFree = $derived(shop.taxFree ?? 'unknown')
   const meta = $derived([shop.floor, shop.station, shop.address].filter(Boolean) as string[])
 
   const actions: { id: ShopStatus; label: string }[] = [
@@ -80,12 +79,12 @@
     <ul class="dates" aria-label="Planned">
       {#each shop.plannedDates as d}
         <li class="date-chip" class:tentative={shop.tentative}>
-          {stageFor(d)?.label ?? ''} · {formatDay(d)}{#if shop.tentative}<span class="tentative-mark"> · tentative</span>{/if}
+          {[stageFor(d)?.label, formatDay(d), shop.tentative ? 'tentative' : null].filter(Boolean).join(' · ')}
         </li>
       {/each}
     </ul>
   {:else}
-    <p class="shop-sub">No day planned — fallback</p>
+    <p class="shop-sub">No day planned</p>
   {/if}
 
   {#if open && openLabel}
@@ -105,10 +104,6 @@
   {#if shop.tip}
     <p class="tip">{shop.tip}</p>
   {/if}
-
-  <p class="taxfree taxfree-{taxFree}">
-    {taxFree === 'yes' ? 'Tax-free eligible' : taxFree === 'no' ? 'Not tax-free' : 'Tax-free unknown'}
-  </p>
 
   {#if alternatives.length}
     <p class="alts">
@@ -287,17 +282,6 @@
 
   .hours-note { color: rgba(255,255,255,0.45); }
   .tip        { color: rgba(255,255,255,0.7); }
-
-  .taxfree {
-    font-family: var(--font-condensed);
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-  }
-
-  .taxfree-yes     { color: #4caf82; }
-  .taxfree-no      { color: #ff9600; }
-  .taxfree-unknown { color: rgba(255,255,255,0.35); }
 
   .alts {
     font-family: var(--font-sans);
