@@ -3,7 +3,7 @@
   import { base } from '$app/paths'
   import { dev } from '$app/environment'
   import { replaceState } from '$app/navigation'
-  import { AREAS, CATEGORY_LABELS, CITY_LABELS, STAGES, TRIP_DATES, isUnsortedArea, shops } from '../../data/shopping'
+  import { AREAS, CATEGORY_LABELS, CITY_LABELS, DAY_NOTES, STAGES, TRIP_DATES, areaRank, shops } from '../../data/shopping'
   import type { Category, City, Kind, Shop } from '../../data/shopping'
   import ShopCard from '$lib/components/ShopCard.svelte'
   import { now } from '$lib/now.svelte'
@@ -140,15 +140,18 @@
           .sort((a, b) => priorityRank(a) - priorityRank(b))
       : []
   )
-  const nearby = $derived.by(() => {
-    if (!selectedDate) return []
-    // "Not placed yet" isn't a place, so it can't make anything nearby.
-    const areas = new Set(planned.map((s) => s.area).filter((a) => !isUnsortedArea(a)))
-    return shops
-      .filter((s) => areas.has(s.area) && !s.plannedDates.includes(selectedDate!) && !statuses[s.id])
-      .sort(byPriorityThenDate)
-  })
-  const plannedCount = (d: string) => shops.filter((s) => s.plannedDates.includes(d)).length
+  // Nice-to-haves come only from optionalDates — being nearby or interesting doesn't schedule a shop.
+  // Sorted in route order (area), priority first within an area.
+  const optional = $derived(
+    selectedDate
+      ? shops
+          .filter((s) => s.optionalDates?.includes(selectedDate!))
+          .sort((a, b) => areaRank(a.area) - areaRank(b.area) || priorityRank(a) - priorityRank(b))
+      : []
+  )
+  const targetCount = (d: string) => shops.filter((s) => s.plannedDates.includes(d)).length
+  const optionalCount = (d: string) => shops.filter((s) => s.optionalDates?.includes(d)).length
+  const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? '' : 's'}`
 
   // Day picker grouped by stage, so all 16 days fit without sideways scrolling.
   const dayGroups = STAGES.map((stage) => ({
@@ -192,7 +195,7 @@
       </span>
     </span>
     <span class="row-badges">
-      {#if shop.priority === 'must'}<span class="row-badge row-must">Must</span>{/if}
+      {#if shop.priority === 'must'}<span class="row-badge row-must">Priority</span>{/if}
       {#if statuses[shop.id]}<span class="row-badge row-status">{statusLabel[statuses[shop.id]]}</span>{/if}
       <span class="row-arrow" aria-hidden="true">↓</span>
     </span>
@@ -207,12 +210,12 @@
       <span class="header-eyebrow">Japan '26 · 買物</span>
       <h1>Shopping</h1>
       <p class="progress" aria-live="polite">
-        <span class="progress-num">{mustDone}</span> of {mustShops.length} must-visit shops done
+        <span class="progress-num">{mustDone}</span> of {mustShops.length} priority shops done
       </p>
       <div
         class="progress-bar"
         role="progressbar"
-        aria-label="Must-visit shops done"
+        aria-label="Priority shops done"
         aria-valuemin="0"
         aria-valuemax={mustShops.length}
         aria-valuenow={mustDone}
@@ -224,21 +227,14 @@
 
   <main>
 
-
-    <!-- Day picker + today -->
+    <!-- Day picker + the selected day's targets and nice-to-haves -->
     <section class="section" aria-labelledby="today-heading">
       <div class="section-header">
-        <h2 id="today-heading">
-          {#if selectedDate}
-            {isToday ? 'Today' : formatDay(selectedDate)}
-          {:else}
-            Today
-          {/if}
-        </h2>
+        <h2 id="today-heading">By day</h2>
         {#if selectedDate}
           <p>
-            {stage?.label ?? ''}{#if isToday} · {formatDay(selectedDate)}{/if}
-            {#if !isToday}<span class="preview">· Preview — no live hours</span>{/if}
+            {formatDay(selectedDate)}{#if stage} · {stage.label}{/if}
+            {#if isToday}<span class="today-mark">· Today</span>{:else}<span class="preview">· Preview — no live hours</span>{/if}
           </p>
         {/if}
       </div>
@@ -249,18 +245,24 @@
             <span class="day-group-label">{group.stage.label}</span>
             <div class="day-row">
               {#each group.dates as d}
-                {@const count = plannedCount(d)}
+                {@const t = targetCount(d)}
+                {@const o = optionalCount(d)}
                 <button
                   type="button"
                   class="day"
                   class:is-today={clock?.date === d}
                   aria-pressed={selectedDate === d}
-                  aria-label="{formatDay(d)}, {count || 'no'} {count === 1 ? 'shop' : 'shops'} planned"
+                  aria-label="{formatDay(d)}: {plural(t, 'target')} · {o} optional"
                   onclick={() => pickDate(d)}
                 >
                   <span class="day-wd">{weekdayShort(d)}</span>
                   <span class="day-num">{monthShort(d)} {Number(d.slice(8))}</span>
-                  <span class="day-count" class:none={!count}>{count ? `${count} shop${count === 1 ? '' : 's'}` : '—'}</span>
+                  {#if t || o}
+                    <span class="day-count" class:none={!t}>{plural(t, 'target')}</span>
+                    <span class="day-count day-count-opt" class:none={!o}>{o} optional</span>
+                  {:else}
+                    <span class="day-count none">—</span>
+                  {/if}
                 </button>
               {/each}
             </div>
@@ -269,24 +271,35 @@
       </div>
 
       {#if selectedDate}
+        {#if DAY_NOTES[selectedDate]}
+          <p class="day-note">{DAY_NOTES[selectedDate]}</p>
+        {/if}
+
+        <h3 class="sub-heading">Targets · {planned.length}</h3>
         {#if planned.length}
-          <h3 class="sub-heading">Planned · {planned.length}</h3>
           <ul class="rows">
             {#each planned as shop (shop.id)}
               <li>{@render row(shop)}</li>
             {/each}
           </ul>
         {:else}
-          <p class="empty">No shops planned for {formatDay(selectedDate)}.</p>
+          <p class="empty">No target shops on {formatDay(selectedDate)}.</p>
         {/if}
 
-        {#if nearby.length}
-          <h3 class="sub-heading">Still on your list nearby · {nearby.length}</h3>
-          <ul class="rows">
-            {#each nearby as shop (shop.id)}
-              <li>{@render row(shop)}</li>
-            {/each}
-          </ul>
+        {#if optional.length}
+          {#key selectedDate}
+            <details class="optional">
+              <summary>
+                <span>Nice to have / If time allows · {optional.length}</span>
+                <span class="optional-toggle" aria-hidden="true">+</span>
+              </summary>
+              <ul class="rows">
+                {#each optional as shop (shop.id)}
+                  <li>{@render row(shop)}</li>
+                {/each}
+              </ul>
+            </details>
+          {/key}
         {/if}
       {/if}
     </section>
@@ -295,7 +308,7 @@
     <section class="section" aria-labelledby="all-heading">
       <div class="section-header">
         <h2 id="all-heading">All shops</h2>
-        <p>Grouped by area · must first</p>
+        <p>Grouped by area · priority first</p>
       </div>
 
       <div class="tabs" role="group" aria-label="City">
@@ -339,7 +352,7 @@
         <div class="filter-row">
           <button type="button" class="pill pill-toggle" aria-pressed={mustOnly} onclick={() => (mustOnly = !mustOnly)}>
             <span class="check" aria-hidden="true">{mustOnly ? '✓' : ''}</span>
-            Must only
+            Priority only
           </button>
           <button type="button" class="pill pill-toggle" aria-pressed={hideDone} onclick={() => (hideDone = !hideDone)}>
             <span class="check" aria-hidden="true">{hideDone ? '✓' : ''}</span>
@@ -530,6 +543,55 @@
     padding: 1.5rem 0;
   }
 
+  .today-mark { color: #ff2d55; }
+
+  .day-note {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.75);
+    max-width: 60ch;
+    margin-top: 1.25rem;
+    padding-left: 0.9rem;
+    border-left: 2px solid rgba(255,45,85,0.5);
+  }
+
+  /* ── Nice to have (collapsed, visually secondary) ── */
+  .optional {
+    margin-top: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 2px;
+  }
+
+  .optional summary {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 44px;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    font-family: var(--font-condensed);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .optional summary::-webkit-details-marker { display: none; }
+  .optional summary:hover { color: rgba(255,255,255,0.8); }
+
+  .optional-toggle {
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+  }
+
+  .optional[open] .optional-toggle { transform: rotate(45deg); }
+
+  .optional .rows { padding: 0 1rem 0.5rem; }
+  .optional .row-name { font-size: 0.95rem; color: rgba(255,255,255,0.75); }
+
   /* ── Day rows ── */
   .rows { list-style: none; }
 
@@ -646,7 +708,7 @@
   }
 
   .day {
-    width: 58px;
+    width: 62px;
     min-height: 64px;
     display: flex;
     flex-direction: column;
@@ -679,7 +741,8 @@
     white-space: nowrap;
   }
 
-  .day-count { color: #ff2d55; }
+  .day-count { color: #ff2d55; font-size: 0.55rem; }
+  .day-count-opt { color: rgba(255,255,255,0.55); }
   .day-count.none { color: rgba(255,255,255,0.25); }
 
   .day.is-today { border-color: rgba(255,45,85,0.5); }

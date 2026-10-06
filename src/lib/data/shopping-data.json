@@ -191,10 +191,11 @@
     "other"
    ],
    "priority": "maybe",
-   "plannedDates": [
-    "2026-11-01"
+   "plannedDates": [],
+   "optionalDates": [
+    "2026-11-01",
+    "2026-11-13"
    ],
-   "tentative": true,
    "tip": "Turntable accessories and electronics.",
    "hours": {
     "weekly": {}
@@ -216,10 +217,10 @@
     "other"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-10-31"
    ],
-   "tentative": true,
    "hours": {
     "weekly": {}
    },
@@ -240,10 +241,10 @@
     "other"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-10-31"
    ],
-   "tentative": true,
    "hours": {
     "weekly": {}
    },
@@ -264,10 +265,10 @@
     "other"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-10-31"
    ],
-   "tentative": true,
    "hours": {
     "weekly": {}
    },
@@ -288,10 +289,10 @@
     "jeans"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-10-31"
    ],
-   "tentative": true,
    "hours": {
     "weekly": {}
    },
@@ -366,10 +367,10 @@
     "other"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-14"
    ],
-   "tentative": true,
    "tip": "Books and art supplies.",
    "hours": {
     "weekly": {}
@@ -391,10 +392,10 @@
     "other"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-14"
    ],
-   "tentative": true,
    "tip": "Vintage design and fashion magazines.",
    "hours": {
     "weekly": {}
@@ -416,10 +417,10 @@
     "other"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-14"
    ],
-   "tentative": true,
    "tip": "Old maps and ukiyo-e prints.",
    "hours": {
     "weekly": {}
@@ -440,10 +441,10 @@
     "vinyl"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-14"
    ],
-   "tentative": true,
    "hours": {
     "weekly": {}
    },
@@ -464,10 +465,10 @@
     "other"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-14"
    ],
-   "tentative": true,
    "tip": "Vintage film and ad prints, ephemera.",
    "hours": {
     "weekly": {}
@@ -489,10 +490,10 @@
     "other"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-14"
    ],
-   "tentative": true,
    "tip": "Vintage design magazines. Double-check it's the right shop.",
    "hours": {
     "weekly": {}
@@ -535,6 +536,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
+   "optionalDates": [
+    "2026-11-12"
+   ],
    "tip": "If it fits the day.",
    "hours": {
     "weekly": {}
@@ -556,10 +560,10 @@
     "vinyl"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-11"
    ],
-   "tentative": true,
    "alternativeIds": [
     "tokyo-disk-union-shinjuku-heavy-metal-cd-record-store"
    ],
@@ -584,10 +588,10 @@
     "other"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-10-31"
    ],
-   "tentative": true,
    "tip": "Bags and Japanese craftsmanship. First Tokyo leg.",
    "hours": {
     "weekly": {}
@@ -609,10 +613,10 @@
     "vinyl"
    ],
    "priority": "maybe",
-   "plannedDates": [
-    "2026-11-12"
+   "plannedDates": [],
+   "optionalDates": [
+    "2026-11-14"
    ],
-   "tentative": true,
    "address": "10-2 Udagawacho",
    "tip": "Also listed as Face Record Shibuya.",
    "hours": {
@@ -636,10 +640,10 @@
     "vinyl"
    ],
    "priority": "maybe",
-   "plannedDates": [
-    "2026-11-12"
+   "plannedDates": [],
+   "optionalDates": [
+    "2026-11-14"
    ],
-   "tentative": true,
    "hours": {
     "weekly": {}
    },
@@ -660,10 +664,10 @@
     "vinyl"
    ],
    "priority": "maybe",
-   "plannedDates": [
-    "2026-11-12"
+   "plannedDates": [],
+   "optionalDates": [
+    "2026-11-14"
    ],
-   "tentative": true,
    "tip": "Also listed as Recofan / RECOfan.",
    "hours": {
     "weekly": {}
@@ -685,10 +689,10 @@
     "vinyl"
    ],
    "priority": "maybe",
-   "plannedDates": [
-    "2026-11-12"
+   "plannedDates": [],
+   "optionalDates": [
+    "2026-11-14"
    ],
-   "tentative": true,
    "address": "1-22-14 Jinnan",
    "floor": "6F",
    "tip": "TOWER VINYL is the vinyl floor, not a separate shop.",
@@ -713,10 +717,10 @@
     "vinyl"
    ],
    "priority": "maybe",
-   "plannedDates": [
-    "2026-11-12"
+   "plannedDates": [],
+   "optionalDates": [
+    "2026-11-14"
    ],
-   "tentative": true,
    "tip": "Broad all-genre shop. Good for random finds.",
    "hours": {
     "weekly": {}
@@ -738,10 +742,10 @@
     "vinyl"
    ],
    "priority": "maybe",
-   "plannedDates": [
-    "2026-11-12"
+   "plannedDates": [],
+   "optionalDates": [
+    "2026-11-14"
    ],
-   "tentative": true,
    "tip": "Rock, prog, heavy metal, punk and J-pop.",
    "hours": {
     "weekly": {}
@@ -766,7 +770,6 @@
    "plannedDates": [
     "2026-11-12"
    ],
-   "tentative": true,
    "alternativeIds": [
     "tokyo-disk-union-ochanomizu",
     "osaka-s-a-music"
@@ -798,7 +801,6 @@
    "plannedDates": [
     "2026-11-12"
    ],
-   "tentative": true,
    "tip": "Top priority for vintage rock pressings.",
    "hours": {
     "weekly": {}
@@ -821,10 +823,10 @@
     "other"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-12"
    ],
-   "tentative": true,
    "address": "3-17-5 T&T III",
    "floor": "3F",
    "tip": "Record accessories and storage.",
@@ -849,10 +851,10 @@
     "vinyl"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-12"
    ],
-   "tentative": true,
    "address": "3-31-4 Shinjuku (Yamada Building)",
    "station": "Shinjuku-sanchome",
    "tip": "Eight floors, a genre each. 1F: anime and game music.",
@@ -908,10 +910,10 @@
     "vinyl"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-12"
    ],
-   "tentative": true,
    "tip": "Backup near the Disk Union cluster.",
    "hours": {
     "weekly": {}
@@ -1020,10 +1022,10 @@
     "merch"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-13"
    ],
-   "tentative": true,
    "hours": {
     "weekly": {}
    },
@@ -1045,10 +1047,10 @@
     "merch"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-13"
    ],
-   "tentative": true,
    "hours": {
     "weekly": {}
    },
@@ -1268,10 +1270,10 @@
     "other"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-11"
    ],
-   "tentative": true,
    "hours": {
     "weekly": {}
    },
@@ -1334,10 +1336,10 @@
     "other"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-03"
    ],
-   "tentative": true,
    "tip": "Food and souvenir market. Slotted near the first Kyoto day.",
    "hours": {
     "weekly": {}
@@ -1546,10 +1548,10 @@
     "vinyl"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-07"
    ],
-   "tentative": true,
    "tip": "Small used vinyl shop in Amerikamura.",
    "hours": {
     "weekly": {}
@@ -1573,6 +1575,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
+   "optionalDates": [
+    "2026-11-07"
+   ],
    "address": "Chayamachi 4-6",
    "hours": {
     "weekly": {}
@@ -1598,6 +1603,9 @@
     "2026-11-06"
    ],
    "tentative": true,
+   "optionalDates": [
+    "2026-11-07"
+   ],
    "alternativeIds": [
     "osaka-tower-knives-osaka",
     "tokyo-kama-asa-kappabashi"
@@ -1655,11 +1663,11 @@
     "merch",
     "other"
    ],
-   "priority": "must",
-   "plannedDates": [
+   "priority": "maybe",
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-07"
    ],
-   "tentative": true,
    "address": "1-15-14 Utsubo-honmachi, Nishi-ku, Osaka",
    "station": "Hommachi, exit 28, ~3 min",
    "tip": "Golf apparel and gear.",
@@ -1712,10 +1720,10 @@
     "other"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-07"
    ],
-   "tentative": true,
    "tip": "Sweatshirts, tees, flannel and workwear. Hommachi location from earlier research — verify.",
    "hours": {
     "weekly": {}
@@ -1738,10 +1746,10 @@
     "other"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-07"
    ],
-   "tentative": true,
    "tip": "Classic Osaka denim brand, alternative to Samurai. Minami-Horie location from earlier research — verify.",
    "hours": {
     "weekly": {}
@@ -1764,6 +1772,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
+   "optionalDates": [
+    "2026-11-07"
+   ],
    "tip": "Horie location from earlier research — verify.",
    "hours": {
     "weekly": {}
@@ -1789,7 +1800,6 @@
    "plannedDates": [
     "2026-11-07"
    ],
-   "tentative": true,
    "alternativeIds": [
     "osaka-studio-dartisan-osaka",
     "osaka-japan-blue-jeans-osaka",
@@ -1850,11 +1860,11 @@
    "categories": [
     "other"
    ],
-   "priority": "must",
-   "plannedDates": [
+   "priority": "maybe",
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-07"
    ],
-   "tentative": true,
    "tip": "Collabs and special pieces.",
    "hours": {
     "weekly": {}
@@ -1874,11 +1884,11 @@
    "categories": [
     "whisky"
    ],
-   "priority": "must",
-   "plannedDates": [
+   "priority": "maybe",
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-07"
    ],
-   "tentative": true,
    "tip": "Sealed bottles go in checked luggage. EU allowance: 1 L of spirits per person.",
    "hours": {
     "weekly": {}
@@ -1898,11 +1908,11 @@
    "categories": [
     "vinyl"
    ],
-   "priority": "must",
-   "plannedDates": [
+   "priority": "maybe",
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-07"
    ],
-   "tentative": true,
    "tip": "Near Namba. More of a spontaneous vinyl stop.",
    "hours": {
     "weekly": {}
@@ -1924,6 +1934,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
+   "optionalDates": [
+    "2026-11-07"
+   ],
    "tip": "Possible extra stop.",
    "hours": {
     "weekly": {}
@@ -1946,9 +1959,11 @@
    ],
    "priority": "must",
    "plannedDates": [
+    "2026-11-07"
+   ],
+   "optionalDates": [
     "2026-11-06"
    ],
-   "tentative": true,
    "tip": "Metal specialist and the key vinyl stop in Osaka. In Den Den Town, between Doguyasuji and Shinsekai.",
    "hours": {
     "weekly": {}
@@ -1969,11 +1984,11 @@
    "categories": [
     "vinyl"
    ],
-   "priority": "must",
-   "plannedDates": [
+   "priority": "maybe",
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-07"
    ],
-   "tentative": true,
    "alternativeIds": [
     "osaka-record-shop-naka-second-shop",
     "osaka-maru-ka-batsu"
@@ -2037,6 +2052,9 @@
     "2026-11-06"
    ],
    "tentative": true,
+   "optionalDates": [
+    "2026-11-07"
+   ],
    "alternativeIds": [
     "osaka-sakai-ichimonji-mitsuhide",
     "tokyo-kama-asa-kappabashi"
@@ -2094,10 +2112,10 @@
     "merch"
    ],
    "priority": "maybe",
-   "plannedDates": [
+   "plannedDates": [],
+   "optionalDates": [
     "2026-11-07"
    ],
-   "tentative": true,
    "tip": "Cap or merch as the Osaka souvenir. Shop name and branch to confirm.",
    "hours": {
     "weekly": {}
@@ -2120,6 +2138,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
+   "optionalDates": [
+    "2026-11-07"
+   ],
    "tip": "Metal on vinyl, CD and merch.",
    "hours": {
     "weekly": {}
@@ -2142,6 +2163,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
+   "optionalDates": [
+    "2026-11-07"
+   ],
    "hours": {
     "weekly": {}
    },
@@ -2163,6 +2187,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
+   "optionalDates": [
+    "2026-11-07"
+   ],
    "hours": {
     "weekly": {}
    },
@@ -2183,6 +2210,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
+   "optionalDates": [
+    "2026-11-07"
+   ],
    "tip": "Underground metal and punk.",
    "hours": {
     "weekly": {}
@@ -2204,6 +2234,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
+   "optionalDates": [
+    "2026-11-07"
+   ],
    "hours": {
     "weekly": {}
    },
@@ -2244,9 +2277,14 @@
    "categories": [
     "vinyl"
    ],
-   "priority": "maybe",
-   "plannedDates": [],
-   "tip": "Also listed as Borderline Records / ボーダーラインレコーズ福岡店. Vintage UK/US rock and Japanese pressings.",
+   "priority": "must",
+   "plannedDates": [
+    "2026-11-09"
+   ],
+   "optionalDates": [
+    "2026-11-10"
+   ],
+   "tip": "Also listed as Borderline Records / ボーダーラインレコーズ福岡店. Vintage UK/US rock and Japanese pressings. Check opening days before going.",
    "hours": {
     "weekly": {}
    },
@@ -2267,9 +2305,14 @@
     "jeans",
     "other"
    ],
-   "priority": "maybe",
-   "plannedDates": [],
-   "tip": "Suggested flagship, stop not locked in.",
+   "priority": "must",
+   "plannedDates": [
+    "2026-11-09"
+   ],
+   "optionalDates": [
+    "2026-11-10"
+   ],
+   "tip": "Suggested flagship, stop not locked in. Check opening days before going.",
    "hours": {
     "weekly": {}
    },
@@ -2291,6 +2334,10 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
+   "optionalDates": [
+    "2026-11-09",
+    "2026-11-10"
+   ],
    "tip": "Also listed as Record Store TICRO MARKET.",
    "hours": {
     "weekly": {}
@@ -2314,12 +2361,16 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
+   "optionalDates": [
+    "2026-11-10"
+   ],
    "hours": {
     "weekly": {}
    },
    "verified": {
     "hours": false
-   }
+   },
+   "tip": "Good group stop, the others may enjoy browsing here too."
   },
   {
    "id": "fukuoka-face-records-tenjin-one-fukuoka-bldg",
@@ -2334,10 +2385,15 @@
    "categories": [
     "vinyl"
    ],
-   "priority": "maybe",
-   "plannedDates": [],
+   "priority": "must",
+   "plannedDates": [
+    "2026-11-09"
+   ],
+   "optionalDates": [
+    "2026-11-10"
+   ],
    "station": "Tenjin Station",
-   "tip": "Also listed as Face Records Fukuoka / Tenjin ONE BLDG. Key for Japanese pressings.",
+   "tip": "Also listed as Face Records Fukuoka / Tenjin ONE BLDG. Key for Japanese pressings. Check opening days before going.",
    "hours": {
     "weekly": {
      "1": [
@@ -2389,6 +2445,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
+   "optionalDates": [
+    "2026-11-10"
+   ],
    "hours": {
     "weekly": {}
    },
@@ -2409,6 +2468,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
+   "optionalDates": [
+    "2026-11-10"
+   ],
    "hours": {
     "weekly": {}
    },
@@ -2429,6 +2491,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
+   "optionalDates": [
+    "2026-11-10"
+   ],
    "tip": "Listed as both a music bar and a record shop.",
    "hours": {
     "weekly": {}
@@ -2450,6 +2515,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
+   "optionalDates": [
+    "2026-11-10"
+   ],
    "tip": "Lower priority, can be skipped.",
    "hours": {
     "weekly": {}
@@ -2458,5 +2526,18 @@
     "hours": false
    }
   }
- ]
+ ],
+ "dayNotes": {
+  "2026-10-31": "Halloween Saturday. Meiji Shrine, Harajuku and Shibuya Sky come first.",
+  "2026-11-01": "Akihabara and Ginza day.",
+  "2026-11-06": "Travel day Kyoto → Nara → Osaka, so arrival time is uncertain. Knife shops close around 18:00–18:30, so these are tentative. If missed, move to Sat.",
+  "2026-11-07": "Main shopping day. Start at Samurai Jeans (opens 11:00, Nakatsu) and work south along the Midosuji line. Dinner is at 19:00 in Hozenji Yokocho, a hard stop. S.A.MUSIC hours are unverified.",
+  "2026-11-08": "Derby day. No shopping commitments.",
+  "2026-11-09": "Afternoon shopping around Tenjin and Daimyo. Opening hours and closed days are unverified; small shops may have a weekly closing day, check before going. Finish towards Nakasu for the regroup.",
+  "2026-11-10": "Sumo comes first if we get tickets. Otherwise free exploring.",
+  "2026-11-11": "Travel day. Nothing mandatory. Ochanomizu only if there is energy after the train.",
+  "2026-11-12": "Senso-ji early and Kappabashi in the morning, then Shinjuku from about 14:00 with time for proper browsing. Metal and rock shop hours are unverified.",
+  "2026-11-13": "Akihabara all day, then the game at 19:00. No vinyl or big purchases before the game: Tokyo Dome allows no large bags and has no cloakroom. Drop anything at the hotel first.",
+  "2026-11-14": "Last day, flexible. Choose Shibuya OR Jimbocho if time allows. Luggage, dinner and Haneda (~21:30) come first."
+ }
 }

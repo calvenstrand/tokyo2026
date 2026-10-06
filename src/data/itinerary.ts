@@ -461,7 +461,7 @@ export const cities: City[] = [
     name: 'Osaka',
     nameJa: '大阪',
     subtitle: '',
-    summary: 'The food city. Louder than Kyoto, cheaper than Tokyo, completely fine with both. Arrive via Nara on day one, walk straight into Dotonbori, eat everything. Day two: Katsuoji Temple in the Minoh mountains, covered in thousands of daruma dolls and autumn foliage, then Nipponbashi in the afternoon and a proper wagyu dinner at night. Third day is a relaxed morning at Osaka Castle before the Osaka Derby — Gamba Osaka vs Cerezo Osaka at Panasonic Stadium Suita, one of the most intense football atmospheres in Japan — then the group splits for the run down to Fukuoka via Hiroshima.',
+    summary: 'The food city. Louder than Kyoto, cheaper than Tokyo, completely fine with both. Arrive via Nara on day one, walk straight into Dotonbori, eat everything — knife shopping at Doguyasuji and Shinsekai if time allows. Day two is the main shopping day: Samurai Jeans in Nakatsu at opening, then south along the Midosuji line, ending with a proper wagyu dinner at Matsuzaka Gyu Yakiniku M. Day three is a free morning before the Osaka Derby — leave Namba about 11:15 for Gamba Osaka vs Cerezo Osaka at Panasonic Stadium Suita, one of the most intense football atmospheres in Japan — then the group splits for the run down to Fukuoka via Hiroshima.',
     dates: 'Nov 6–9',
     nights: 3,
     accentChar: '食',
@@ -502,6 +502,11 @@ export const cities: City[] = [
             description: 'Kintetsu line direct Nara → Osaka Namba (~50 min). Check into &Here OSAKA NAMBA, check-in from 15:00 — bags already waiting at the hotel. Freshen up, head straight out.',
           },
           {
+            time: 'Late afternoon',
+            title: 'Knife shopping — Doguyasuji and Shinsekai (tentative)',
+            description: 'Only if you reach Osaka in time — the knife shops close around 18:00–18:30. Sakai Ichimonji Mitsuhide on Doguyasuji, Tower Knives in Shinsekai. If it\'s too late, it moves to Saturday. Details on the Shopping page.',
+          },
+          {
             time: 'Evening',
             title: 'Dotonbori Food Crawl',
             description: 'Walk the length of Dotonbori and eat everything. Takoyaki from a street stall, eat standing at the canal. Loud, chaotic, completely correct for a first Osaka night.',
@@ -525,9 +530,9 @@ export const cities: City[] = [
         ],
         activities: [
           {
-            time: 'Morning',
-            title: 'Katsuoji Temple — Temple of Winner\'s Luck',
-            description: 'Leave hotel by 8am. Midosuji line to Minoh-Kayano Station (~35 min), then bus 30 to the temple (~25 min). ¥500 entry. 1,300-year-old temple known as the Temple of Winner\'s Luck, set high in the Minoh mountains. Thousands of daruma dolls covering every surface — walls, trees, lanterns, stacked as far as you can see. Scenic mountain setting with koi ponds, vermillion pagoda and mist-covered bridges. Early November autumn foliage in the surrounding mountains will be spectacular — go early before the crowds arrive, buses fill up fast on weekends. Allow 3–4 hours on site. Back in Osaka by 1pm. Nothing else on the trip looks like this.',
+            time: 'From 11:00',
+            title: 'Shopping day — see the Shopping page',
+            description: 'The main shopping day. Samurai Jeans in Nakatsu at opening, then work south along the Midosuji line. S.A.MUSIC is in Den Den Town. Targets and nice-to-haves are on the Shopping page — dinner at 19:00 is the hard stop.',
           },
           {
             time: 'Afternoon',
@@ -538,11 +543,6 @@ export const cities: City[] = [
             time: 'Evening',
             title: 'Wagyu Dinner — Matsuzaka Gyu Yakiniku M',
             description: 'Hozenji-Yokocho, 19:00. Booked in advance. Grill-your-own Matsuzaka beef, one of Japan\'s most prized wagyu grades alongside Kobe and Omi. A proper anchor dinner for the Osaka leg.',
-          },
-          {
-            time: 'Late',
-            title: 'Tennoji izakayas',
-            description: 'Different angle after dinner. Tennoji is the next neighbourhood over from Shinsekai — local salaryman izakayas, no English menus, almost no tourists. Pick somewhere that looks busy, point at what the next table is having. Cheap beer, end the night before midnight. One more day in Osaka tomorrow — the derby.',
           },
         ],
       },
@@ -555,12 +555,12 @@ export const cities: City[] = [
           {
             time: 'Morning',
             title: 'Free morning',
-            description: 'Kuromon Ichiba for a market graze, or Osaka Castle if you haven\'t done it. Keep it light — derby day, no rushing. Back at the hotel by 12:00.',
+            description: 'Kuromon Ichiba for a market graze. Keep it light — derby day, no rushing. Back at the hotel by 11:00.',
           },
           {
             time: 'Afternoon',
             title: 'OSAKA DERBY — Gamba Osaka vs Cerezo Osaka · TICKETS SECURED',
-            description: 'Panasonic Stadium Suita. Kick-off 15:00. One of the most intense football atmospheres in Japan — the stadium was funded by 45,000 individual supporter donations. Leave Namba ~13:00 (about 1 hour to the ground): Osaka Monorail to Banpaku-kinen-koen, then a short walk — verify the exact route closer to the date.',
+            description: 'Panasonic Stadium Suita. Kick-off 15:00. One of the most intense football atmospheres in Japan — the stadium was funded by 45,000 individual supporter donations. Leave Namba ~11:15 (about 1 hour to the ground): Osaka Monorail to Banpaku-kinen-koen, then a short walk — verify the exact route closer to the date.',
           },
           {
             time: 'Evening',
@@ -576,7 +576,7 @@ export const cities: City[] = [
     name: 'Fukuoka',
     nameJa: '福岡',
     subtitle: '',
-    summary: 'Two nights on Kyushu. Getting here is a split day — three of you take the Shinkansen via Hiroshima for Peace Memorial Park and okonomiyaki, Chris runs straight down for a solo loop through Hakata\'s Old Town temples and a bowl of tonkotsu ramen, everyone regroups in Hakata for yatai on the Naka River. Day two is Kyushu Basho Day 3 of the November sumo tournament — the group is still chasing tickets (BuySumoTickets refunded; trying official resale and Ticket Oozumo). If they land, it\'s a full day at Fukuoka Kokusai Center. If not, Fukuoka has plenty: Dazaifu, Ohori Park, Kushida Shrine, tonkotsu ramen, and the yatai stalls again.',
+    summary: 'Two nights on Kyushu. Getting here is a split day — three of you take the Shinkansen via Hiroshima for Peace Memorial Park and okonomiyaki, Chris runs straight down for a quick Old Town loop, a bowl of tonkotsu ramen and an afternoon of record and denim shops around Tenjin and Daimyo, everyone regroups in Hakata for yatai on the Naka River. Day two is Kyushu Basho Day 3 of the November sumo tournament — the group is still chasing tickets (BuySumoTickets refunded; trying official resale and Ticket Oozumo). If they land, it\'s a full day at Fukuoka Kokusai Center. If not, Fukuoka has plenty: Dazaifu, Ohori Park, Kushida Shrine, tonkotsu ramen, and the yatai stalls again.',
     dates: 'Nov 9–11',
     nights: 2,
     accentChar: '福',
@@ -615,12 +615,17 @@ export const cities: City[] = [
           {
             time: 'Afternoon',
             title: 'Solo — Hakata Old Town',
-            description: 'Tochoji first, five minutes from the station — home to the Fukuoka Daibutsu, one of Japan\'s largest wooden seated Buddhas, and a five-storey pagoda. Next door, Shofukuji: Japan\'s oldest Zen temple, quiet and nearly empty. Walk on to Kushida Shrine — Hakata\'s guardian shrine, famous for the towering Yamakasa festival floats on permanent display — then Kawabata Shopping Arcade right beside it, one of the city\'s oldest covered shopping streets. The whole loop is under an hour on foot.',
+            description: 'Short loop from the station: Tochoji for the Fukuoka Daibutsu and its five-storey pagoda, Shofukuji next door — Japan\'s oldest Zen temple — then Kushida Shrine and Kawabata Shopping Arcade. Under an hour, keep it brisk.',
           },
           {
             time: 'Afternoon',
             title: 'Solo Ramen — Hakata Tonkotsu',
             description: 'Hakata invented tonkotsu ramen, so have a bowl alone before the group descends on it tomorrow night. Hakata Issou is a solid bet near Old Town, or just follow the queue at whichever counter looks right.',
+          },
+          {
+            time: 'Afternoon',
+            title: 'Solo shopping — Tenjin and Daimyo (see Shopping page)',
+            description: 'Momotaro Jeans, Border Line Records and Face Records. Opening hours and closed days are unverified — check before going. Finish towards Nakasu for the regroup.',
           },
           {
             time: 'Late afternoon',
@@ -665,7 +670,7 @@ export const cities: City[] = [
     name: 'Tokyo II',
     nameJa: '東京',
     subtitle: 'Ueno · Akihabara',
-    summary: 'Back in Tokyo for the final leg, based in Ueno. Three nights, four days — the last one ends at Haneda. The Shinkansen from Hakata takes about 5 hours; right-side window for Mt Fuji. Check in, then Ameyoko street food and a cold beer. Day two: Senso-ji before 8am while it\'s empty, then Kappabashi for knives at Kama-Asa, free afternoon. Day three is Akihabara\'s full day — Super Potato, Yodobashi, Mandarake, Taito Station, SEGA — then the Japan vs South Korea Asia Professional Baseball Championship at Tokyo Dome, booked, 19:00. Last day is Ueno Park in autumn colour and Ameyoko one more time — farewell dinner unbooked, decide on the day.',
+    summary: 'Back in Tokyo for the final leg, based in Ueno. Three nights, four days — the last one ends at Haneda. The Shinkansen from Hakata takes about 5 hours; right-side window for Mt Fuji. Check in, then Ameyoko street food and a cold beer. Day two: Senso-ji before 8am while it\'s empty, then Kappabashi for knives at Kama-Asa, Shinjuku record shops in the afternoon. Day three is Akihabara\'s full day — Super Potato, Yodobashi, Mandarake, Taito Station, SEGA — then the Japan vs South Korea Asia Professional Baseball Championship at Tokyo Dome, booked, 19:00. Last day is Ueno Park in autumn colour and Ameyoko one more time — farewell dinner unbooked, decide on the day.',
     dates: 'Nov 11–14',
     nights: 3,
     accentChar: '二',
@@ -700,6 +705,11 @@ export const cities: City[] = [
             title: 'Ameyoko — street food and a beer',
             description: 'Walk Ameyoko market street under the train tracks — food stalls, fresh fish, cold beer. Easy first evening in Tokyo II.',
           },
+          {
+            time: 'Optional',
+            title: 'Optional — Ochanomizu record shops',
+            description: 'Only if there\'s energy after five hours on the train. Disk Union Ochanomizu, with Tohto Records in Yushima nearby. Nothing mandatory today.',
+          },
         ],
       },
       {
@@ -730,8 +740,8 @@ export const cities: City[] = [
           },
           {
             time: 'Afternoon',
-            title: 'Free afternoon',
-            description: 'Nothing fixed, on purpose. Wander Asakusa, shop, find coffee somewhere quiet, or head back to Ueno and rest. Akihabara tomorrow needs energy.',
+            title: 'Shinjuku record shops',
+            description: 'Shinjuku from about 14:00 with time for proper browsing — the Disk Union heavy metal and rock shops are the targets. Hours unverified, check before going. Akihabara tomorrow needs energy.',
           },
         ],
       },
@@ -753,8 +763,8 @@ export const cities: City[] = [
           },
           {
             time: 'Afternoon',
-            title: 'SEGA Arcade + record shops / shopping',
-            description: 'Free afternoon — record shops, more browsing, or just pace yourself before the game. SEGA arcade for a last session.',
+            title: 'SEGA Arcade — drop any purchases at the hotel before the game',
+            description: 'SEGA arcade for a last session, then pace yourself. Tokyo Dome allows no large bags and has no cloakroom — no vinyl or big purchases before the game, drop anything at the hotel first.',
           },
           {
             time: '19:00',
@@ -786,6 +796,11 @@ export const cities: City[] = [
             time: 'Afternoon',
             title: 'Ueno Park',
             description: '&Here TOKYO UENO checkout is 11:00 — pack before heading out, the hotel will hold bags for the day. Mid-November foliage in Tokyo will be peaking — Ueno Park is one of the best spots in the city for autumn colour. Walk slowly. You\'re leaving tonight.',
+          },
+          {
+            time: 'Optional',
+            title: 'Optional — Shibuya or Jimbocho shops',
+            description: 'Pick one if time allows: Shibuya\'s record shops or Jimbocho\'s books and prints. Luggage, dinner and Haneda come first.',
           },
           {
             time: 'Evening',

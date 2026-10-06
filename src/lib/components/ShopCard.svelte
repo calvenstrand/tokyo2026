@@ -64,7 +64,7 @@
       {#if shop.nameJa}<span class="shop-ja" lang="ja">{shop.nameJa}</span>{/if}
     </svelte:element>
     <div class="badges">
-      <span class="badge priority-{shop.priority}">{shop.priority === 'must' ? 'Must' : 'Maybe'}</span>
+      <span class="badge priority-{shop.priority}">{shop.priority === 'must' ? 'Priority' : 'Nice to have'}</span>
       {#if status}<span class="badge badge-status">{statusLabel[status]}</span>{/if}
     </div>
   </div>
@@ -75,11 +75,16 @@
     </p>
   {/if}
 
-  {#if shop.plannedDates.length}
-    <ul class="dates" aria-label="Planned">
+  {#if shop.plannedDates.length || shop.optionalDates?.length}
+    <ul class="dates" aria-label="Days">
       {#each shop.plannedDates as d}
         <li class="date-chip" class:tentative={shop.tentative}>
-          {[stageFor(d)?.label, formatDay(d), shop.tentative ? 'tentative' : null].filter(Boolean).join(' · ')}
+          {['Target', stageFor(d)?.label, formatDay(d), shop.tentative ? 'tentative' : null].filter(Boolean).join(' · ')}
+        </li>
+      {/each}
+      {#each shop.optionalDates ?? [] as d}
+        <li class="date-chip optional">
+          {['If time', stageFor(d)?.label, formatDay(d)].filter(Boolean).join(' · ')}
         </li>
       {/each}
     </ul>
@@ -240,6 +245,11 @@
   .date-chip.tentative {
     border-style: dashed;
     color: rgba(255,255,255,0.55);
+  }
+
+  .date-chip.optional {
+    border-color: rgba(255,255,255,0.08);
+    color: rgba(255,255,255,0.5);
   }
 
   .open {

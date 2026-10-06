@@ -27,9 +27,10 @@ export interface Shop {
   area: string // id in AREAS
   kind: Kind[]
   categories: Category[]
-  priority: 'must' | 'maybe'
-  plannedDates: string[] // ISO 'YYYY-MM-DD'
-  tentative?: boolean // plan not final
+  priority: 'must' | 'maybe' // overall importance, not a schedule
+  plannedDates: string[] // ISO 'YYYY-MM-DD' — days the shop is a target
+  tentative?: boolean // target plan not final
+  optionalDates?: string[] // days it's a nice-to-have because it's nearby; never the same date as plannedDates
   alternativeIds?: string[] // fallback shops
   address?: string
   station?: string
@@ -113,7 +114,7 @@ export const STAGES: Stage[] = cities.map((c, i) => {
 
 // ── Areas + shops — loaded from src/lib/data/shopping-data.json ──
 
-const data = shoppingData as unknown as { areas: Area[]; shops: Shop[] }
+const data = shoppingData as unknown as { areas: Area[]; shops: Shop[]; dayNotes: Record<string, string> }
 
 /** Catch-all area per city ("unsorted-tokyo", …) for shops without a confirmed branch. */
 export const isUnsortedArea = (id: string) => id.startsWith('unsorted-')
@@ -125,3 +126,33 @@ export const AREAS: Area[] = [
 ]
 
 export const shops: Shop[] = data.shops
+
+/** Short note shown above a day's list in "By day". */
+export const DAY_NOTES: Record<string, string> = data.dayNotes
+
+/** The priority shops — exactly these, checked in dev by validateShoppingData(). */
+export const PRIORITY_IDS = [
+  'osaka-samurai-jeans-osaka',
+  'osaka-s-a-music',
+  'osaka-sakai-ichimonji-mitsuhide',
+  'osaka-tower-knives-osaka',
+  'tokyo-disk-union-shinjuku-heavy-metal-cd-record-store',
+  'tokyo-disk-union-shinjuku-rock-record-store',
+  'fukuoka-momotaro-jeans-fukuoka',
+  'fukuoka-border-line-records-fukuoka',
+  'fukuoka-face-records-tenjin-one-fukuoka-bldg',
+]
+
+/** Route order for Osaka's optional list — north to south along the Midosuji line. */
+const OSAKA_ROUTE = [
+  'nakatsu', 'chayamachi', 'umeda', 'hommachi', 'minami-horie', 'shinsaibashi',
+  'amerikamura', 'namba', 'doguyasuji', 'nipponbashi', 'shinsekai',
+]
+
+/** Sort key for areas: Osaka follows the route, everything else the AREAS order; unsorted last. */
+export function areaRank(areaId: string): number {
+  const route = OSAKA_ROUTE.indexOf(areaId)
+  if (route !== -1) return route
+  const i = AREAS.findIndex((a) => a.id === areaId)
+  return i === -1 ? AREAS.length : 100 + i
+}
