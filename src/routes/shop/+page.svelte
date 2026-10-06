@@ -52,6 +52,9 @@
 
   function pickDate(d: string) {
     selectedDate = d
+    // Follow the trip: a day in Osaka shows the Osaka list below.
+    const s = stageFor(d)
+    if (s) city = s.city
     const url = new URL(location.href)
     if (clock && d === clock.date) url.searchParams.delete('date')
     else url.searchParams.set('date', d)
@@ -79,6 +82,9 @@
     if (hideDone && (statuses[shop.id] === 'bought' || statuses[shop.id] === 'skipped')) return false
     return true
   }
+
+  const areaLabel = (s: Shop) => AREAS.find((a) => a.id === s.area)?.label ?? s.area
+  const statusLabel: Record<ShopStatus, string> = { visited: 'Visited', bought: 'Bought', skipped: 'Skipped' }
 
   const priorityRank = (s: Shop) => (s.priority === 'must' ? 0 : 1)
   const firstDate = (s: Shop) => s.plannedDates.slice().sort()[0] ?? '9999'
@@ -154,6 +160,24 @@
   <meta name="robots" content="noindex,nofollow" />
 </svelte:head>
 
+<!-- Compact day row: the full card lives in the city list below, one tap away. -->
+{#snippet row(shop: Shop)}
+  {@const o = openFor(shop)}
+  <button type="button" class="row status-{statuses[shop.id] ?? 'todo'}" onclick={() => jumpTo(shop.id)}>
+    <span class="row-main">
+      <span class="row-name">{shop.name}</span>
+      <span class="row-sub">
+        {areaLabel(shop)}{#if o.open && o.openLabel}{' · '}<span class="row-open open-{o.open.state}">{o.openLabel}</span>{/if}
+      </span>
+    </span>
+    <span class="row-badges">
+      {#if shop.priority === 'must'}<span class="row-badge row-must">Must</span>{/if}
+      {#if statuses[shop.id]}<span class="row-badge row-status">{statusLabel[statuses[shop.id]]}</span>{/if}
+      <span class="row-arrow" aria-hidden="true">↓</span>
+    </span>
+  </button>
+{/snippet}
+
 <div class="page">
 
   <header class="header">
@@ -226,34 +250,22 @@
       {#if selectedDate}
         {#if planned.length}
           <h3 class="sub-heading">Planned · {planned.length}</h3>
-          {#each planned as shop (shop.id)}
-            <ShopCard
-              {shop}
-              status={statuses[shop.id]}
-              {...openFor(shop)}
-              showArea
-              headingLevel={4}
-              onStatus={setStatus}
-              onJump={jumpTo}
-            />
-          {/each}
+          <ul class="rows">
+            {#each planned as shop (shop.id)}
+              <li>{@render row(shop)}</li>
+            {/each}
+          </ul>
         {:else}
           <p class="empty">No shops planned for {formatDay(selectedDate)}.</p>
         {/if}
 
         {#if nearby.length}
           <h3 class="sub-heading">Still on your list nearby · {nearby.length}</h3>
-          {#each nearby as shop (shop.id)}
-            <ShopCard
-              {shop}
-              status={statuses[shop.id]}
-              {...openFor(shop)}
-              showArea
-              headingLevel={4}
-              onStatus={setStatus}
-              onJump={jumpTo}
-            />
-          {/each}
+          <ul class="rows">
+            {#each nearby as shop (shop.id)}
+              <li>{@render row(shop)}</li>
+            {/each}
+          </ul>
         {/if}
       {/if}
     </section>
@@ -488,6 +500,92 @@
     color: rgba(255,255,255,0.5);
     font-size: 0.9rem;
     padding: 1.5rem 0;
+  }
+
+  /* ── Day rows ── */
+  .rows { list-style: none; }
+
+  .row {
+    width: 100%;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .row:hover .row-name { color: #ff2d55; }
+
+  .row-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    min-width: 0;
+  }
+
+  .row-name {
+    font-family: var(--font-condensed);
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: white;
+    line-height: 1.15;
+    transition: color 0.15s;
+  }
+
+  .row-sub {
+    font-family: var(--font-condensed);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .row-open.open-open         { color: #4caf82; }
+  .row-open.open-closing-soon { color: #ff9600; }
+  .row-open.open-closed       { color: #ff2d55; }
+
+  .row.status-bought .row-name,
+  .row.status-skipped .row-name {
+    text-decoration: line-through;
+    text-decoration-color: rgba(255,255,255,0.3);
+  }
+
+  .row.status-skipped { opacity: 0.45; }
+
+  .row-badges {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .row-badge {
+    font-family: var(--font-condensed);
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid;
+    border-radius: 2px;
+  }
+
+  .row-must   { color: #ff2d55; border-color: rgba(255,45,85,0.35); }
+  .row-status { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.2); }
+  .row.status-bought  .row-status { color: #4caf82; border-color: rgba(76,175,130,0.3); }
+  .row.status-visited .row-status { color: #7d9bff; border-color: rgba(79,124,255,0.3); }
+
+  .row-arrow {
+    color: rgba(255,255,255,0.35);
+    font-size: 0.9rem;
   }
 
   /* ── Day picker ── */
