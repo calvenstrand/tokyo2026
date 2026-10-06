@@ -555,17 +555,17 @@ export const cities: City[] = [
           {
             time: 'Morning',
             title: 'Free morning',
-            description: 'Kuromon Ichiba for a market graze. Keep it light — derby day, no rushing. Back at the hotel by 11:00.',
+            description: 'Kuromon Ichiba for a market graze. Keep it light — derby day, no rushing. Leave the hotel about 11:15 and you\'re out until the evening, so take everything you need for the day.',
           },
           {
             time: 'Afternoon',
             title: 'OSAKA DERBY — Gamba Osaka vs Cerezo Osaka · TICKETS SECURED',
-            description: 'Panasonic Stadium Suita. Kick-off 15:00. One of the most intense football atmospheres in Japan — the stadium was funded by 45,000 individual supporter donations. Leave Namba ~11:15 (about 1 hour to the ground): Osaka Monorail to Banpaku-kinen-koen, then a short walk — verify the exact route closer to the date.',
+            description: 'Panasonic Stadium Suita. Kick-off 15:00. One of the most intense football atmospheres in Japan — the stadium was funded by 45,000 individual supporter donations. Leave the hotel in Namba ~11:15 — about 1 hour to the ground, which leaves time for food and the build-up before kick-off: Osaka Monorail to Banpaku-kinen-koen, then a short walk — verify the exact route closer to the date.',
           },
           {
             time: 'Evening',
             title: 'Post-match + pack',
-            description: 'Post-match food and drinks around Dotonbori or Shinsekai — take it easy. Pack tonight for the Shinkansen to Fukuoka tomorrow.',
+            description: 'Post-match food and drinks around Dotonbori or Shinsekai on the way back — take it easy. Back at the hotel in the evening, pack for the Shinkansen to Fukuoka tomorrow.',
           },
         ],
       },
