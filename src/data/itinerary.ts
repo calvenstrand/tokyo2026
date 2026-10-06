@@ -461,7 +461,7 @@ export const cities: City[] = [
     name: 'Osaka',
     nameJa: '大阪',
     subtitle: '',
-    summary: 'The food city. Louder than Kyoto, cheaper than Tokyo, completely fine with both. Arrive via Nara on day one, walk straight into Dotonbori, eat everything — knife shopping at Doguyasuji and Shinsekai if time allows. Day two is the main shopping day: Samurai Jeans in Nakatsu at opening, then south along the Midosuji line, ending with a proper wagyu dinner at Matsuzaka Gyu Yakiniku M. Day three is a free morning before the Osaka Derby — leave Namba about 11:15 for Gamba Osaka vs Cerezo Osaka at Panasonic Stadium Suita, one of the most intense football atmospheres in Japan — then the group splits for the run down to Fukuoka via Hiroshima.',
+    summary: 'The food city. Louder than Kyoto, cheaper than Tokyo, completely fine with both. Arrive via Nara on day one, walk straight into Dotonbori, eat everything — knife shopping at Doguyasuji and Shinsekai, both close to the hotel. Day two is the main shopping day: Samurai Jeans in Nakatsu at opening, then south along the Midosuji line, ending with a proper wagyu dinner at Matsuzaka Gyu Yakiniku M. Day three is a free morning before the Osaka Derby — leave Namba about 11:15 for Gamba Osaka vs Cerezo Osaka at Panasonic Stadium Suita, one of the most intense football atmospheres in Japan — then the group splits for the run down to Fukuoka via Hiroshima.',
     dates: 'Nov 6–9',
     nights: 3,
     accentChar: '食',
@@ -503,8 +503,8 @@ export const cities: City[] = [
           },
           {
             time: 'Late afternoon',
-            title: 'Knife shopping — Doguyasuji and Shinsekai (tentative)',
-            description: 'Only if you reach Osaka in time — the knife shops close around 18:00–18:30. Sakai Ichimonji Mitsuhide on Doguyasuji, Tower Knives in Shinsekai. If it\'s too late, it moves to Saturday. Details on the Shopping page.',
+            title: 'Knife shopping — Doguyasuji and Shinsekai',
+            description: 'Both knife shops are close to the hotel and close around 18:00–18:30, so go soon after check-in.',
           },
           {
             time: 'Evening',
@@ -670,7 +670,7 @@ export const cities: City[] = [
     name: 'Tokyo II',
     nameJa: '東京',
     subtitle: 'Ueno · Akihabara',
-    summary: 'Back in Tokyo for the final leg, based in Ueno. Three nights, four days — the last one ends at Haneda. The Shinkansen from Hakata takes about 5 hours; right-side window for Mt Fuji. Check in, then Ameyoko street food and a cold beer. Day two: Senso-ji before 8am while it\'s empty, then Kappabashi for knives at Kama-Asa, Shinjuku record shops in the afternoon. Day three is Akihabara\'s full day — Super Potato, Yodobashi, Mandarake, Taito Station, SEGA — then the Japan vs South Korea Asia Professional Baseball Championship at Tokyo Dome, booked, 19:00. Last day is Ueno Park in autumn colour and Ameyoko one more time — farewell dinner unbooked, decide on the day.',
+    summary: 'Back in Tokyo for the final leg, based in Ueno. Three nights, four days — the last one ends at Haneda. The Shinkansen from Hakata takes about 5 hours; right-side window for Mt Fuji. Check in, then Ameyoko street food and a cold beer. Day two: Senso-ji before 8am while it\'s empty, then Kappabashi for knives at Kama-Asa, free afternoon. Day three is Akihabara\'s full day — Super Potato, Yodobashi, Mandarake, Taito Station, SEGA — then the Japan vs South Korea Asia Professional Baseball Championship at Tokyo Dome, booked, 19:00. Last day is Ueno Park in autumn colour and Ameyoko one more time — farewell dinner unbooked, decide on the day.',
     dates: 'Nov 11–14',
     nights: 3,
     accentChar: '二',
@@ -705,11 +705,6 @@ export const cities: City[] = [
             title: 'Ameyoko — street food and a beer',
             description: 'Walk Ameyoko market street under the train tracks — food stalls, fresh fish, cold beer. Easy first evening in Tokyo II.',
           },
-          {
-            time: 'Optional',
-            title: 'Optional — Ochanomizu record shops',
-            description: 'Only if there\'s energy after five hours on the train. Disk Union Ochanomizu, with Tohto Records in Yushima nearby. Nothing mandatory today.',
-          },
         ],
       },
       {
@@ -740,8 +735,8 @@ export const cities: City[] = [
           },
           {
             time: 'Afternoon',
-            title: 'Shinjuku record shops',
-            description: 'Shinjuku from about 14:00 with time for proper browsing — the Disk Union heavy metal and rock shops are the targets. Hours unverified, check before going. Akihabara tomorrow needs energy.',
+            title: 'Free afternoon',
+            description: 'Nothing fixed, on purpose. Wander Asakusa, shop, find coffee somewhere quiet, or head back to Ueno and rest. Akihabara tomorrow needs energy.',
           },
         ],
       },
@@ -763,8 +758,8 @@ export const cities: City[] = [
           },
           {
             time: 'Afternoon',
-            title: 'SEGA Arcade — drop any purchases at the hotel before the game',
-            description: 'SEGA arcade for a last session, then pace yourself. Tokyo Dome allows no large bags and has no cloakroom — no vinyl or big purchases before the game, drop anything at the hotel first.',
+            title: 'SEGA Arcade + record shops / shopping',
+            description: 'Free afternoon — record shops, more browsing, or just pace yourself before the game. SEGA arcade for a last session.',
           },
           {
             time: '19:00',
@@ -796,11 +791,6 @@ export const cities: City[] = [
             time: 'Afternoon',
             title: 'Ueno Park',
             description: '&Here TOKYO UENO checkout is 11:00 — pack before heading out, the hotel will hold bags for the day. Mid-November foliage in Tokyo will be peaking — Ueno Park is one of the best spots in the city for autumn colour. Walk slowly. You\'re leaving tonight.',
-          },
-          {
-            time: 'Optional',
-            title: 'Optional — Shibuya or Jimbocho shops',
-            description: 'Pick one if time allows: Shibuya\'s record shops or Jimbocho\'s books and prints. Luggage, dinner and Haneda come first.',
           },
           {
             time: 'Evening',
