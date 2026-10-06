@@ -10,13 +10,14 @@
   import { describeOpenState, getOpenState } from '$lib/shopping/hours'
   import { loadStatuses, saveStatuses } from '$lib/shopping/storage'
   import type { ShopStatus, ShopStatuses } from '$lib/shopping/storage'
-  import { formatDay, resolveSelectedDate, stageFor, tokyoNow, weekdayShort } from '$lib/shopping/time'
+  import { formatDay, isTripDate, resolveSelectedDate, stageFor, tokyoNow, weekdayShort } from '$lib/shopping/time'
   import { validateShoppingData } from '$lib/shopping/validate'
 
   const CITIES: City[] = ['tokyo', 'kyoto', 'osaka', 'fukuoka']
-  const CATEGORIES = (Object.keys(CATEGORY_LABELS) as Category[]).filter((c) =>
-    shops.some((s) => s.categories.includes(c))
-  )
+  const CITY_TABS: { id: City | 'all'; label: string }[] = [
+    { id: 'all', label: 'All' },
+    ...CITIES.map((c) => ({ id: c, label: CITY_LABELS[c] })),
+  ]
   const KINDS: { id: Kind | 'all'; label: string }[] = [
     { id: 'all', label: 'All' },
     { id: 'clothes', label: 'Clothes' },
@@ -29,7 +30,7 @@
   let selectedDate = $state<string | null>(null)
   let statuses = $state<ShopStatuses>({})
 
-  let city = $state<City>('tokyo')
+  let city = $state<City | 'all'>('all')
   let kind = $state<Kind | 'all'>('all')
   let category = $state<Category | null>(null)
   let mustOnly = $state(false)
@@ -40,13 +41,29 @@
   const liveMinutes = $derived(isToday ? clock!.minutes : undefined)
   const stage = $derived(selectedDate ? stageFor(selectedDate) : undefined)
 
+  // Only categories that exist for the chosen kind — no "Clothes + Vinyl" dead ends.
+  const categories = $derived(
+    (Object.keys(CATEGORY_LABELS) as Category[]).filter((c) =>
+      shops.some((s) => s.categories.includes(c) && (kind === 'all' || s.kind.includes(kind)))
+    )
+  )
+
+  function pickKind(k: Kind | 'all') {
+    kind = k
+    if (category && !categories.includes(category)) category = null
+  }
+
   onMount(() => {
     if (dev) validateShoppingData()
     const param = new URL(location.href).searchParams.get('date')
-    selectedDate = resolveSelectedDate(param, tokyoNow().date)
+    const today = tokyoNow().date
+    selectedDate = resolveSelectedDate(param, today)
     statuses = loadStatuses()
-    const s = stageFor(selectedDate)
-    if (s && shops.some((shop) => shop.city === s.city)) city = s.city
+    // On a trip day (or a ?date= preview) open on that city; before and after the trip, show everything.
+    if (isTripDate(param) || isTripDate(today)) {
+      const s = stageFor(selectedDate)
+      if (s) city = s.city
+    }
     mounted = true
   })
 
@@ -96,7 +113,7 @@
   async function jumpTo(id: string) {
     const target = shops.find((s) => s.id === id)
     if (!target) return
-    city = target.city
+    if (city !== 'all') city = target.city
     if (!passes(target)) {
       kind = 'all'
       category = null
@@ -142,17 +159,21 @@
 
   // ── City list ──
   const cityCounts = $derived(
-    Object.fromEntries(CITIES.map((c) => [c, shops.filter((s) => s.city === c && passes(s)).length])) as Record<City, number>
+    Object.fromEntries(
+      CITY_TABS.map((t) => [t.id, shops.filter((s) => (t.id === 'all' || s.city === t.id) && passes(s)).length])
+    ) as Record<City | 'all', number>
   )
   const groups = $derived(
-    AREAS.filter((a) => a.city === city)
+    (city === 'all'
+      ? CITIES.flatMap((c) => AREAS.filter((a) => a.city === c))
+      : AREAS.filter((a) => a.city === city))
       .map((area) => ({
         area,
         shops: shops.filter((s) => s.area === area.id && passes(s)).sort(byPriorityThenDate),
       }))
       .filter((g) => g.shops.length > 0)
   )
-  const cityHasShops = $derived(shops.some((s) => s.city === city))
+  const cityHasShops = $derived(shops.some((s) => city === 'all' || s.city === city))
 </script>
 
 <svelte:head>
@@ -278,14 +299,14 @@
       </div>
 
       <div class="tabs" role="group" aria-label="City">
-        {#each CITIES as c}
+        {#each CITY_TABS as t}
           <button
             type="button"
             class="tab"
-            aria-pressed={city === c}
-            onclick={() => (city = c)}
+            aria-pressed={city === t.id}
+            onclick={() => (city = t.id)}
           >
-            {CITY_LABELS[c]} <span class="tab-count">{cityCounts[c]}</span>
+            {t.label} <span class="tab-count">{cityCounts[t.id]}</span>
           </button>
         {/each}
       </div>
@@ -293,17 +314,17 @@
       <div class="filters">
         <div class="filter-row" role="group" aria-label="Kind">
           {#each KINDS as k}
-            <button type="button" class="pill" aria-pressed={kind === k.id} onclick={() => (kind = k.id)}>
+            <button type="button" class="pill" aria-pressed={kind === k.id} onclick={() => pickKind(k.id)}>
               {k.label}
             </button>
           {/each}
-          <span class="filter-sep" aria-hidden="true"></span>
-          <button type="button" class="pill" aria-pressed={!mustOnly} onclick={() => (mustOnly = false)}>All</button>
-          <button type="button" class="pill" aria-pressed={mustOnly} onclick={() => (mustOnly = true)}>Must</button>
         </div>
 
         <div class="filter-row" role="group" aria-label="Category">
-          {#each CATEGORIES as c}
+          <button type="button" class="pill" aria-pressed={category === null} onclick={() => (category = null)}>
+            All
+          </button>
+          {#each categories as c}
             <button
               type="button"
               class="pill"
@@ -316,6 +337,10 @@
         </div>
 
         <div class="filter-row">
+          <button type="button" class="pill pill-toggle" aria-pressed={mustOnly} onclick={() => (mustOnly = !mustOnly)}>
+            <span class="check" aria-hidden="true">{mustOnly ? '✓' : ''}</span>
+            Must only
+          </button>
           <button type="button" class="pill pill-toggle" aria-pressed={hideDone} onclick={() => (hideDone = !hideDone)}>
             <span class="check" aria-hidden="true">{hideDone ? '✓' : ''}</span>
             Hide bought and skipped
@@ -324,11 +349,14 @@
       </div>
 
       {#if !cityHasShops}
-        <p class="empty">Nothing on the list in {CITY_LABELS[city]}.</p>
+        <p class="empty">Nothing on the list{city === 'all' ? '' : ` in ${CITY_LABELS[city]}`}.</p>
       {:else if groups.length === 0}
         <p class="empty">No shops match these filters.</p>
       {:else}
-        {#each groups as group (group.area.id)}
+        {#each groups as group, i (group.area.id)}
+          {#if city === 'all' && group.area.city !== groups[i - 1]?.area.city}
+            <p class="city-heading">{CITY_LABELS[group.area.city]}</p>
+          {/if}
           <div class="area">
             <h3 class="area-heading">{group.area.label} <span>{group.shops.length}</span></h3>
             {#each group.shops as shop (shop.id)}
@@ -665,7 +693,7 @@
   /* ── Tabs + filters ── */
   .tabs {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     border-bottom: 1px solid rgba(255,255,255,0.08);
     margin-bottom: 1.25rem;
   }
@@ -697,6 +725,23 @@
     margin-left: 0.2rem;
   }
 
+  /* Five tabs on a phone: stack the count under the name. */
+  @media (max-width: 480px) {
+    .tab { font-size: 0.75rem; letter-spacing: 0.06em; padding: 0.4rem 0; }
+    .tab-count { display: block; margin-left: 0; }
+  }
+
+  .city-heading {
+    font-family: var(--font-condensed);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #ff2d55;
+    padding-top: 2rem;
+  }
+
+  .city-heading:first-child { padding-top: 0.5rem; }
+
   .tab[aria-pressed='true'] .tab-count { color: #ff2d55; }
 
   .filters {
@@ -711,13 +756,6 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 0.4rem;
-  }
-
-  .filter-sep {
-    width: 1px;
-    height: 1.5rem;
-    background: rgba(255,255,255,0.12);
-    margin: 0 0.35rem;
   }
 
   .pill {
