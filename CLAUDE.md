@@ -2,17 +2,27 @@
 
 ## The project
 Website for a 15-night Japan trip, Oct 29 – Nov 15 2026.
-Built with Svelte + Vite + TypeScript. Deployed as static files.
-Live at riverbeach.se/tokyo26.
+Built with SvelteKit (Svelte 5, adapter-static) + Vite + TypeScript.
+Live at riverbeach.se/tokyo26. ./deploy.sh builds and copies dist/ into the
+riverbeach repo (public/tokyo26) and pushes that.
 Itinerary data lives in src/data/itinerary.ts — that is the source of truth.
 Dates and trip phase (before / live / after) come from src/data/trip.ts.
+
+Pages and their data:
+- / (itinerary) · src/data/itinerary.ts
+- /info (bookings + hotels) · src/data/bookings.ts
+- /shop (shopping tracker, noindex) · src/lib/data/shopping-data.json (+ src/data/shopping.ts)
+- /explore · src/data/explore.ts
+- /presentation
+
+Never publish reservation numbers or seat numbers on the site.
 
 Trip structure:
 - Departure · Oct 29 · ARN 09:35, lands Tokyo the morning of Oct 30
 - Tokyo I (Shinjuku) · 4 nights · Oct 30 – Nov 3
 - Kyoto · 3 nights · Nov 3 – 6
 - Osaka · 3 nights · Nov 6 – 9
-- Fukuoka · 2 nights · Nov 9 – 11 (Nov 9 split day: friends via Hiroshima, Chris direct)
+- Fukuoka · 2 nights · Nov 9 – 11 (Nov 9: all four on the same ~09:30 Shinkansen from Shin-Osaka; friends get off in Hiroshima and continue at 16:00, Chris direct to Hakata ~11:50; regroup at the yatai ~18:00)
 - Tokyo II (Ueno) · 3 nights · Nov 11 – 14
 - Fly home Sun Nov 15, 00:30 from Haneda
 - Day 1 = Fri Oct 30 … Day 16 = Sat Nov 14 (departure day is Day 0)
@@ -30,13 +40,15 @@ Assumes the group can navigate independently.
 ## Key decisions already made
 - Ueno over Akihabara as Tokyo II base (better neighborhood, one stop away)
 - Sumo tickets NOT secured (BuySumoTickets refunded); trying official resale
-- Knives bought at Kappabashi (Tokyo II, Day 14)
+- Knife shopping in Osaka (Doguyasuji + Shinsekai, Nov 6, firm) and at Kappabashi / Kama-Asa (Tokyo II, Nov 12)
 - Knife sharpening class and yakitori omakase in Kyoto dropped
 - No USJ (too touristy, long queues)
 - Osaka is 3 nights (derby on Nov 8, tickets secured); Kobe day trip dropped
 - Nikko dropped
 - Baseball BOOKED: Japan vs South Korea, Tokyo Dome, Nov 13 19:00
 - Sushi Kappo farewell dinner dropped; farewell dinner Nov 14 unbooked
+- Mt Fuji: seat E both ways (right side heading west Nov 3, left side heading east Nov 11, ~45 min before Tokyo)
+- Nov 5: teamLab 10:30 → Uji lunch/matcha → leave Uji by 15:05 → Nintendo Museum
 
 ## Confirmed bookings
 - Flights (ARN→HND, HND→ARN)
@@ -44,13 +56,13 @@ Assumes the group can navigate independently.
 - Shinkansen Tokyo→Kyoto Nov 3 (Nozomi 21, 09:30→11:44, SmartEX)
 - Samurai Restaurant Oct 30 16:20
 - Kyo-Yakiniku HIRO Nov 3 19:00
+- teamLab Biovortex Kyoto Nov 5 10:30
 - Nintendo Museum Nov 5 15:30–16:00 (PAID)
 - Matsuzaka Gyu Yakiniku M Nov 7 19:00
 - Osaka Derby Nov 8 15:00
 - Japan–Korea at Tokyo Dome Nov 13 19:00
 
 ## Still to book
-- Shinkansen Osaka→Fukuoka Nov 9 (opens Oct 9; friends Osaka→Hiroshima+Hiroshima→Hakata, Chris direct)
-- Shinkansen Fukuoka→Tokyo Nov 11 (opens Oct 11)
-- Shibuya Sky Oct 31 sunset (~Oct 17 opening, verify)
-- teamLab Biovortex Nov 5 morning
+- Shinkansen Osaka→Fukuoka Nov 9 (opens Oct 9; EX Hayatoku until ~Oct 19; friends Shin-Osaka→Hiroshima + Hiroshima→Hakata 16:00, Chris direct)
+- Shinkansen Fukuoka→Tokyo Nov 11, depart 09:30–10:30 (opens Oct 11; EX Hayatoku until ~Oct 21)
+- Shibuya Sky Oct 31, 16:00–16:30 entry for sunset (~Oct 17 opening, verify)
