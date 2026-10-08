@@ -1110,7 +1110,7 @@
    "name": "Batoner",
    "chain": "Batoner",
    "city": "tokyo",
-   "area": "unsorted-tokyo",
+   "area": "harajuku",
    "kind": [
     "clothes"
    ],
@@ -1119,6 +1119,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
+   "optionalDates": [
+    "2026-10-31"
+   ],
    "tip": "Branch not confirmed.",
    "hours": {
     "weekly": {}
@@ -2526,12 +2529,12 @@
   }
  ],
  "dayNotes": {
-  "2026-10-31": "Halloween Saturday. Meiji Shrine, Harajuku and Shibuya Sky come first.",
+  "2026-10-31": "Halloween Saturday. Short browsing stops only; Meiji Shrine, Takeshita Street and Shibuya Sky come first.",
   "2026-11-01": "Akihabara and Ginza day.",
   "2026-11-06": "Travel day Kyoto → Nara → Osaka. Both knife shops are close to the hotel but close around 18:00–18:30, so head there soon after check-in. If missed, move to Sat.",
   "2026-11-07": "Main shopping day. Start at Samurai Jeans (opens 11:00, Nakatsu) and work south along the Midosuji line. Dinner is at 19:00 in Hozenji Yokocho, a hard stop. S.A.MUSIC hours are unverified.",
   "2026-11-08": "Derby day. No shopping commitments.",
-  "2026-11-09": "Afternoon shopping around Tenjin and Daimyo. Opening hours and closed days are unverified; small shops may have a weekly closing day, check before going. Finish towards Nakasu for the regroup.",
+  "2026-11-09": "Arrive about 11:50, ramen first, then shopping around Tenjin and Daimyo until the regroup at about 18:00. Opening hours and closed days are unverified.",
   "2026-11-10": "Sumo comes first if we get tickets. Otherwise free exploring.",
   "2026-11-11": "Travel day. Nothing mandatory. Ochanomizu only if there is energy after the train.",
   "2026-11-12": "Senso-ji early and Kappabashi in the morning, then Shinjuku from about 14:00 with time for proper browsing. Metal and rock shop hours are unverified.",
