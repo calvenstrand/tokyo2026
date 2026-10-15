@@ -6,7 +6,7 @@
   import { base } from '$app/paths'
   import { cities } from '../../data/itinerary'
   import { now } from '../now.svelte'
-  import { tripStatus, dayId } from '../../data/trip'
+  import { tripStatus } from '../../data/trip'
 
   const status = $derived(tripStatus(now()))
 
@@ -22,6 +22,7 @@
   )
   const isInfo = $derived(page.url.pathname.startsWith(base + '/info'))
   const isShop = $derived(page.url.pathname.startsWith(base + '/shop'))
+  const isToday = $derived(page.url.pathname.startsWith(base + '/today'))
 
   $effect(() => {
     if (!isHome) activeId = ''
@@ -104,11 +105,7 @@
   <ul class="nav-links">
     {#if status.phase === 'live'}
       <li>
-        <a
-          class="nav-today"
-          href={isHome ? `#${dayId(status.day.day)}` : `${base}/#${dayId(status.day.day)}`}
-          onclick={(e) => scrollTo(e, dayId(status.day.day))}
-        >
+        <a class="nav-today" href="{base}/today/" class:active={isToday}>
           Today
         </a>
       </li>
@@ -160,11 +157,7 @@
     <ul>
       {#if status.phase === 'live'}
         <li>
-          <a
-            class="nav-today"
-            href={isHome ? `#${dayId(status.day.day)}` : `${base}/#${dayId(status.day.day)}`}
-            onclick={(e) => scrollTo(e, dayId(status.day.day))}
-          >
+          <a class="nav-today" href="{base}/today/" class:active={isToday} onclick={closeMenu}>
             <span class="mobile-num" aria-hidden="true">今日</span>
             Today
           </a>
