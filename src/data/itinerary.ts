@@ -497,7 +497,7 @@ export const cities: City[] = [
     name: 'Osaka',
     nameJa: '大阪',
     subtitle: '',
-    summary: 'The food city. Louder than Kyoto, cheaper than Tokyo, completely fine with both. Arrive via Nara on day one, walk straight into Dotonbori, eat everything — knife shopping at Doguyasuji and Shinsekai, both close to the hotel. Day two is the main shopping day: Samurai Jeans in Nakatsu at opening, then south along the Midosuji line, ending with a proper wagyu dinner at Matsuzaka Gyu Yakiniku M. Day three is a free morning before the Osaka Derby — leave Namba about 11:15 for Gamba Osaka vs Cerezo Osaka at Panasonic Stadium Suita, one of the most intense football atmospheres in Japan — then the group splits for the run down to Fukuoka via Hiroshima.',
+    summary: 'The food city. Louder than Kyoto, cheaper than Tokyo, completely fine with both. Arrive via Nara on day one, walk straight into Dotonbori, eat everything — knife shopping at Doguyasuji and Shinsekai, both close to the hotel. Day two is the main shopping day: Samurai Jeans in Nakatsu at opening, then south along the Midosuji line, ending with a proper wagyu dinner at Matsuzaka Gyu Yakiniku M. Day three starts at Osaka Castle in the morning, then straight on to the Osaka Derby — leave about 11:15 for Gamba Osaka vs Cerezo Osaka at Panasonic Stadium Suita, one of the most intense football atmospheres in Japan — then the group splits for the run down to Fukuoka via Hiroshima.',
     dates: 'Nov 6–9',
     nights: 3,
     accentChar: '食',
@@ -560,7 +560,6 @@ export const cities: City[] = [
         isoDate: '2026-11-07',
         label: 'Osaka',
         images: [
-          { src: imgOsakaCastleSrc, srcset: imgOsakaCastleSrcset },
           { src: imgShinsekaISrc, srcset: imgShinsekaISrcset },
           { src: imgDotonboriAsahiSrc, srcset: imgDotonboriAsahiSrcset },
         ],
@@ -588,19 +587,21 @@ export const cities: City[] = [
         day: 10,
         date: 'Sunday, Nov 8',
         isoDate: '2026-11-08',
-        label: 'Osaka Derby',
+        label: 'Osaka Castle + Derby',
+        images: [{ src: imgOsakaCastleSrc, srcset: imgOsakaCastleSrcset }],
         activities: [
           {
-            time: 'Morning',
-            title: 'Free morning',
-            description: 'Kuromon Ichiba for a market graze. Keep it light — derby day, no rushing. Leave the hotel about 11:15 and you\'re out until the evening, so take everything you need for the day.',
+            time: 'From 09:00',
+            title: 'Osaka Castle',
+            description: 'About 20 min from Namba by subway (Tanimachi 4-chome or Morinomiya). The moat, the giant stone walls and the park are the point; the museum inside the main keep (opens 09:00) is optional. Take everything you need for the day — you go straight from here to the stadium and don\'t come back to the hotel until the evening.',
+            mapsQuery: 'Osaka Castle',
           },
           {
             time: '15:00 (leave ~11:15)',
             title: 'OSAKA DERBY — Gamba Osaka vs Cerezo Osaka · TICKETS SECURED',
             kind: 'booked',
             mapsQuery: 'Panasonic Stadium Suita Osaka',
-            description: 'Panasonic Stadium Suita. Kick-off 15:00. One of the most intense football atmospheres in Japan — the stadium was funded by 45,000 individual supporter donations. Leave the hotel in Namba ~11:15 — about 1 hour to the ground, which leaves time for food and the build-up before kick-off: Osaka Monorail to Banpaku-kinen-koen, then a short walk — verify the exact route closer to the date.',
+            description: 'Panasonic Stadium Suita. Kick-off 15:00. One of the most intense football atmospheres in Japan — the stadium was funded by 45,000 individual supporter donations. Leave Osaka Castle ~11:15 — about 1 hour to the ground, which leaves time for food and the build-up before kick-off: Osaka Monorail to Banpaku-kinen-koen, then a short walk — verify the exact route closer to the date.',
           },
           {
             time: 'Evening',

@@ -137,7 +137,7 @@ export const bookings: Booking[] = [
     deadline: 'Booked',
     cost: 'Paid',
     description: 'Tickets secured. One of the most intense football atmospheres in Japan — the stadium was funded by 45,000 individual supporter donations.',
-    howTo: 'Booked via the J.League ticket system. Leave Namba ~11:15.',
+    howTo: 'Booked via the J.League ticket system. Osaka Castle in the morning, leave from there ~11:15.',
     defaultStatus: 'done',
   },
   {
