@@ -33,6 +33,9 @@
   <meta property="og:description" content="Leave Stockholm Oct 29, home Nov 15. 15 nights in Japan — shinkansen, sake, sumo, sushi and everything in between." />
   <meta property="og:locale" content="en_GB" />
   <meta property="og:image" content="https://riverbeach.se/tokyo26/og-image.jpg" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="541" />
+  <meta property="og:image:alt" content="Japan 2026 — Tokyo · Kyoto · Osaka · Fukuoka, over a neon-lit Tokyo alley at night" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Japan 2026 — Tokyo · Kyoto · Osaka · Fukuoka" />
   <meta name="twitter:description" content="Leave Stockholm Oct 29, home Nov 15. 15 nights in Japan — shinkansen, sake, sumo, sushi and everything in between." />
