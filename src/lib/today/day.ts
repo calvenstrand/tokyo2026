@@ -38,7 +38,7 @@ export function tripDayNow(at: Date = new Date()): string {
 /** ?date= wins (preview), then today if it's a trip day, then the first day before the trip or the last after it. */
 export function resolveDay(param: string | null, today: string): string {
   if (isTripDay(param)) return param
-  if (isTripDay(today)) return today
+  if (TODAY_DATES.includes(today)) return today
   return today < TODAY_DATES[0] ? TODAY_DATES[0] : TODAY_DATES[TODAY_DATES.length - 1]
 }
 
