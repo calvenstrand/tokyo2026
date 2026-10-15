@@ -515,6 +515,9 @@
    ],
    "priority": "maybe",
    "plannedDates": [],
+   "optionalDates": [
+    "2026-11-12"
+   ],
    "tip": "Knife backup. Most Kappabashi shops are closed on Sundays.",
    "hours": {
     "weekly": {}

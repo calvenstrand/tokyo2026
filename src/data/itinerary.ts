@@ -297,7 +297,7 @@ export const cities: City[] = [
           {
             time: 'Afternoon',
             title: 'Nakameguro + Daikanyama',
-            description: 'Walk the Nakameguro canal: boutiques, cafés, slow browsing. Daikanyama is a short walk on. Go for T-SITE, the bookstore, which is worth seeing for the building even if you can\'t read a word, and a few good record shops for anyone hunting vinyl.',
+            description: 'Walk the Nakameguro canal: boutiques, cafés, slow browsing. Daikanyama is a short walk on. Go for T-SITE, the bookstore, which is worth seeing for the building even if you can\'t read a word, then wander the neighbourhood around it.',
           },
           {
             time: 'Late afternoon',
@@ -740,8 +740,8 @@ export const cities: City[] = [
           },
           {
             time: 'Afternoon',
-            title: 'Free afternoon',
-            description: 'Nothing fixed, on purpose. Wander Asakusa, shop, find coffee somewhere quiet, or head back to Ueno and rest. Akihabara tomorrow needs energy.',
+            title: 'Shinjuku record shops',
+            description: 'From about 14:00, after Senso-ji and Kappabashi. Disk Union Heavy Metal and Rock are the targets; leave time for proper browsing. See the Shopping page.',
           },
         ],
       },
@@ -763,8 +763,8 @@ export const cities: City[] = [
           },
           {
             time: 'Afternoon',
-            title: 'SEGA Arcade + record shops / shopping',
-            description: 'Free afternoon — record shops, more browsing, or just pace yourself before the game. SEGA arcade for a last session.',
+            title: 'SEGA Arcade — drop any purchases at the hotel before the game',
+            description: 'No vinyl or big purchases before the game: Tokyo Dome allows no large bags and has no cloakroom.',
           },
           {
             time: '19:00',
@@ -801,6 +801,11 @@ export const cities: City[] = [
             time: 'Evening',
             title: 'Farewell dinner — decide on the day',
             description: 'Nothing booked. Pick somewhere that feels right — a favourite bar\'s kitchen, a ramen counter you haven\'t tried, or a record shop neighbourhood spot. Optional: Ramen Kamo to Negi again if one bowl wasn\'t enough.',
+          },
+          {
+            time: 'Optional',
+            title: 'Shibuya or Jimbocho shops',
+            description: 'Choose one if there is time. Luggage, dinner and Haneda (about 21:30) come first. See the Shopping page.',
           },
           {
             time: '~21:30',
