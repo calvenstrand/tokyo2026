@@ -78,6 +78,10 @@ export type Activity = {
   time?: string
   title: string
   description: string
+  /** Commitment level for /today. Missing = an ordinary plan item. */
+  kind?: 'booked' | 'fixed' | 'optional'
+  /** Plain-text Google Maps search. */
+  mapsQuery?: string
 }
 
 export type DayImage = {
@@ -155,6 +159,7 @@ export const cities: City[] = [
           {
             time: '09:35',
             title: 'Wheels up — ARN → Tokyo',
+            kind: 'fixed',
             description: 'The trip starts here. Japan is 8 hours ahead of Sweden, so you leave Thursday morning and land Friday morning. Set your watch to Tokyo time the moment you sit down and start living on it — sleep the back half of the flight, not the front.',
           },
           {
@@ -189,6 +194,8 @@ export const cities: City[] = [
           {
             time: '16:20',
             title: 'Samurai Restaurant — Kabukicho · BOOKED',
+            kind: 'booked',
+            mapsQuery: 'Samurai Restaurant Kabukicho Shinjuku Tokyo',
             description: 'High-energy show in Kabukicho, the spiritual successor to the old Robot Restaurant. Glittering costumes, choreographed sword fights, dance, lights, noise. Show ends around 17:30–18:00. It\'s on arrival day on purpose: loud and stimulating enough to keep everyone awake through the jet lag instead of crashing at 6pm. The food isn\'t the point, so eat after.',
           },
           {
@@ -233,6 +240,8 @@ export const cities: City[] = [
           {
             time: '16:00–16:30',
             title: 'Shibuya Sky — sunset · NOT YET BOOKED',
+            kind: 'fixed',
+            mapsQuery: 'Shibuya Sky Tokyo',
             description: 'Timed entry 16:00–16:30 for sunset at about 16:50, then the city lights coming on from 50 floors. Not booked yet — tickets open about two weeks ahead (~Oct 17, verify), and Saturday sunset slots go first.',
           },
           {
@@ -350,6 +359,8 @@ export const cities: City[] = [
           {
             time: '09:30',
             title: 'Shinkansen Tokyo → Kyoto · BOOKED',
+            kind: 'booked',
+            mapsQuery: 'Tokyo Station',
             description: 'Nozomi 21, Tokyo 09:30 → Kyoto 11:44. SmartEX, 4 adults. Grab an ekiben at Tokyo Station before boarding.',
           },
           {
@@ -370,16 +381,20 @@ export const cities: City[] = [
           {
             time: 'Afternoon — Option A',
             title: 'Teramachi & Shinkyogoku Arcades',
+            kind: 'optional',
             description: 'Covered shopping streets connected directly to Nishiki. Good for continuing to stroll and browse without anything scheduled.',
           },
           {
             time: 'Afternoon — Option B',
             title: 'Kyoto International Manga Museum',
+            kind: 'optional',
             description: '15–20 min walk from Nishiki. Large manga collection, lawn to sit and relax on, much slower pace than a castle. Check opening days before going — occasionally closed Tuesdays. Fits the gaming/pop-culture theme of the trip.',
           },
           {
             time: '19:00',
             title: 'Kyo-Yakiniku HIRO Pontocho Annex — BOOKED',
+            kind: 'booked',
+            mapsQuery: 'Kyo-Yakiniku HIRO Pontocho Annex Kyoto',
             description: 'Booked — 4 adults, Omakase Hiro course (¥8,000). Pontocho. A strong, relaxed start to Kyoto\'s food scene. Bar Pontostand nearby afterward for a nightcap — bilingual sake bar, run by Mako and Taku, rotating Kyoto sake selection.',
           },
         ],
@@ -422,6 +437,7 @@ export const cities: City[] = [
           {
             time: 'Evening options',
             title: 'Kodai-ji light-up · Nijo Castle night · Funaoka Onsen · K-Ya Bar',
+            kind: 'optional',
             description: 'Kodai-ji autumn night light-up: the temple garden lit after dark, ~¥600, runs roughly late Oct to mid Dec — dates unconfirmed for 2026, verify before going. Nijo Castle night illumination: check 2026 dates separately, different event. Funaoka Onsen: historic 1923 bathhouse in Kuramaguchi, Meiji-era wooden interior, mosaic tiles, outdoor bath, almost entirely local clientele. ~¥500, open until midnight, 20 min by bus from central Kyoto. Check the tattoo policy. K-Ya Bar in Pontocho to finish — vast single malt whisky list.',
           },
         ],
@@ -440,6 +456,8 @@ export const cities: City[] = [
           {
             time: '10:30',
             title: 'teamLab Biovortex Kyoto · BOOKED',
+            kind: 'booked',
+            mapsQuery: 'teamLab Biovortex Kyoto',
             description: '10:30 entry. Arrive about 10:00 — 7–8 min walk from Kyoto Station Hachijo East exit. Plan about 2 hours. No re-entry, so use the lockers first.',
           },
           {
@@ -455,11 +473,14 @@ export const cities: City[] = [
           {
             time: '15:05',
             title: 'HARD LIMIT — leave Uji',
+            kind: 'fixed',
             description: 'Leave Uji by 15:05 → JR Ogura, one stop, 2–3 min → 5–8 min walk to the museum.',
           },
           {
             time: '15:30–16:00',
             title: 'Nintendo Museum — Uji · CONFIRMED AND PAID',
+            kind: 'booked',
+            mapsQuery: 'Nintendo Museum Uji Kyoto',
             description: 'Entry window 15:30–16:00. Confirmed and paid. Passports required — names must match the tickets. Interactive exhibits spanning Nintendo\'s entire history, playable installations, exclusive merch. Opening hours differ between sources (18:00 or 20:00), so check the confirmation email.',
           },
           {
@@ -555,8 +576,10 @@ export const cities: City[] = [
             description: 'Osaka\'s electronics and anime district. Retro games, figures, manga, electronics — everything Akihabara has but less crowded and more local. Good for a few hours of browsing. For lunch, Kuromon Ichiba Market is a short walk away — a proper Osaka food market, graze the stalls for sushi, wagyu skewers, oysters. Keep it light — the big wagyu dinner is tonight.',
           },
           {
-            time: 'Evening',
+            time: '19:00',
             title: 'Wagyu Dinner — Matsuzaka Gyu Yakiniku M',
+            kind: 'booked',
+            mapsQuery: 'Matsuzaka Gyu Yakiniku M Hozenji Yokocho Osaka',
             description: 'Hozenji-Yokocho, 19:00. Booked in advance. Grill-your-own Matsuzaka beef, one of Japan\'s most prized wagyu grades alongside Kobe and Omi. A proper anchor dinner for the Osaka leg.',
           },
         ],
@@ -573,8 +596,10 @@ export const cities: City[] = [
             description: 'Kuromon Ichiba for a market graze. Keep it light — derby day, no rushing. Leave the hotel about 11:15 and you\'re out until the evening, so take everything you need for the day.',
           },
           {
-            time: 'Afternoon',
+            time: '15:00 (leave ~11:15)',
             title: 'OSAKA DERBY — Gamba Osaka vs Cerezo Osaka · TICKETS SECURED',
+            kind: 'booked',
+            mapsQuery: 'Panasonic Stadium Suita Osaka',
             description: 'Panasonic Stadium Suita. Kick-off 15:00. One of the most intense football atmospheres in Japan — the stadium was funded by 45,000 individual supporter donations. Leave the hotel in Namba ~11:15 — about 1 hour to the ground, which leaves time for food and the build-up before kick-off: Osaka Monorail to Banpaku-kinen-koen, then a short walk — verify the exact route closer to the date.',
           },
           {
@@ -615,6 +640,7 @@ export const cities: City[] = [
           {
             time: '~08:45',
             title: 'The group splits',
+            kind: 'fixed',
             description: 'Same Shinkansen for all four, about 09:30 from Shin-Osaka. Leave the hotel about 08:45 — &Here OSAKA NAMBA check-out is 11:00, so check out on the way.',
           },
           {
@@ -693,6 +719,7 @@ export const cities: City[] = [
           {
             time: 'Morning',
             title: 'Check out of Hakata — Shinkansen Hakata → Tokyo',
+            kind: 'fixed',
             description: 'About 5 hours. Target a departure between 09:30 and 10:30 and leave & Hotel Hakata 30–45 min before — it\'s a 15-min walk with bags. Book seat E for Mt Fuji: heading east it\'s on the left side, about 45 minutes before Tokyo. Mid-November is one of the best times to see it with clear skies and snow on the peak. Seats go on sale Oct 11. Buy a proper bento at Hakata Station before boarding.',
           },
           {
@@ -708,6 +735,7 @@ export const cities: City[] = [
           {
             time: 'Optional',
             title: 'Ochanomizu record shops',
+            kind: 'optional',
             description: 'Only with an early train. A short hop from Ueno — see the Shopping page.',
           },
         ],
@@ -769,6 +797,8 @@ export const cities: City[] = [
           {
             time: '19:00',
             title: 'Japan vs South Korea — Tokyo Dome · BOOKED',
+            kind: 'booked',
+            mapsQuery: 'Tokyo Dome',
             description: 'Asia Professional Baseball Championship 2026. Tokyo Dome. Booked. Stations: Suidobashi (JR Chuo-Sobu / Toei Mita line), Korakuen, or Kasuga — ~20–25 min from Ueno. Rosters are young prospects (U-24). Game ends ~22:00–22:30.',
           },
         ],
@@ -805,11 +835,14 @@ export const cities: City[] = [
           {
             time: 'Optional',
             title: 'Shibuya or Jimbocho shops',
+            kind: 'optional',
             description: 'Choose one if there is time. Luggage, dinner and Haneda (about 21:30) come first. See the Shopping page.',
           },
           {
             time: '~21:30',
             title: 'Haneda — Fly Home',
+            kind: 'fixed',
+            mapsQuery: 'Haneda Airport Terminal 3',
             description: 'Bags from hotel. Ueno → Shinagawa (JR), then Keikyu to Haneda Terminal 3 — allow ~50 min. Be at the airport by 21:30 for the 00:30 flight. Fly home Nov 15 00:30.',
           },
         ],
