@@ -1,10 +1,12 @@
 <script lang="ts">
+  import { cities } from '../../data/itinerary'
+  import { TRIP_RANGE } from '../../data/trip'
 </script>
 
 <footer>
   <div class="inner">
     <p class="footer-title">JAPAN '26</p>
-    <p class="footer-sub">Oct 29 – Nov 15 · Tokyo · Kyoto · Osaka · Fukuoka · Tokyo</p>
+    <p class="footer-sub">{TRIP_RANGE} · {cities.map((c) => c.name).join(' · ')}</p>
   </div>
 </footer>
 

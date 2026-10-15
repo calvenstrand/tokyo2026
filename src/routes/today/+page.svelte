@@ -3,7 +3,7 @@
   import { base } from '$app/paths'
   import { dev } from '$app/environment'
   import { replaceState } from '$app/navigation'
-  import { RETURN_FLIGHT, tripDays } from '../../data/trip'
+  import { RETURN_FLIGHT, monthDay, tripDays, validateTrip } from '../../data/trip'
   import type { Activity } from '../../data/itinerary'
   import { AREAS, DAY_NOTES, STAGES, areaRank, shops } from '../../data/shopping'
   import type { Shop } from '../../data/shopping'
@@ -74,7 +74,10 @@
   ]
 
   onMount(() => {
-    if (dev) validateItinerary()
+    if (dev) {
+      validateItinerary()
+      validateTrip()
+    }
     const param = new URL(location.href).searchParams.get('date')
     selected = resolveDay(param, tripDayNow())
     ticks = loadTicks()
@@ -131,9 +134,6 @@
     saveStatuses(next)
   }
 
-  const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-  /** '2026-11-06' → 'Nov 6' */
-  const monthDay = (iso: string) => `${MONTHS[Number(iso.slice(5, 7)) - 1]} ${Number(iso.slice(8))}`
 </script>
 
 <svelte:head>

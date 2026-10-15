@@ -2,6 +2,7 @@
   import { onMount } from 'svelte'
   import { gsap } from 'gsap'
   import { ScrollTrigger } from 'gsap/ScrollTrigger'
+  import { departure, homeFlight, monthDay, weekday } from '../../data/trip'
 
   let section: HTMLElement
 
@@ -10,8 +11,8 @@
       icon: '🛫',
       title: 'Before You Fly',
       items: [
-        'Out Thursday Oct 29, 09:35 from Arlanda Terminal 5 — be at the airport by 06:30',
-        'Home Sunday Nov 15, 00:30 out of Haneda — that is Saturday night, not Sunday daytime',
+        `Out ${weekday(departure.isoDate)} ${monthDay(departure.isoDate)}, ${departure.time} from Arlanda Terminal 5 — be at the airport by 06:30`,
+        `Home ${weekday(homeFlight.isoDate)} ${monthDay(homeFlight.isoDate)}, ${homeFlight.time} out of Haneda — that is Saturday night, not Sunday daytime`,
         'Register on Visit Japan Web and screenshot the immigration + customs QR codes',
         'Passport valid for the whole stay — check the expiry date now, not in October',
         'Bring passports daily — Samurai Restaurant checks ID (18+) and the Nintendo Museum checks names against tickets',

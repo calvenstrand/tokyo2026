@@ -6,28 +6,30 @@
   import '@fontsource/space-mono/700.css'
   import '@fontsource/noto-serif-jp/700.css'
   import '@fontsource/noto-serif-jp/900.css'
+  import { dateRange, dayLabel, departure, homeFlight, monthDay, stays, TOTAL_NIGHTS, TRIP_RANGE } from '../../data/trip'
+
+  /** '2026-11-03' → 'NOV 03' */
+  const posterDate = (iso: string) => monthDay(iso).toUpperCase().replace(/ (\d)$/, ' 0$1')
+  const NUMBER_WORDS = ['ZERO', 'ONE', 'TWO', 'THREE', 'FOUR', 'FIVE', 'SIX', 'SEVEN', 'EIGHT', 'NINE', 'TEN', 'ELEVEN', 'TWELVE', 'THIRTEEN', 'FOURTEEN', 'FIFTEEN', 'SIXTEEN']
 
   type Poster = {
     eyebrow: string
     name: string
     subtitle: string
     nameJa: string
-    dates: string
-    nights: number
     bg: string
     ink: string
     accent: string
     keywords: string[]
   }
 
-  const posters: Poster[] = [
+  // One per stay, in order — dates and nights come from the itinerary.
+  const posterEntries: Poster[] = [
     {
       eyebrow: 'STOP 01',
       name: 'TOKYO',
       subtitle: 'SHINJUKU',
       nameJa: '東京',
-      dates: 'OCT 30 — NOV 03',
-      nights: 4,
       bg: '#c8362a',
       ink: '#fbf4dc',
       accent: '#fff3c4',
@@ -45,8 +47,6 @@
       name: 'KYOTO',
       subtitle: '',
       nameJa: '京都',
-      dates: 'NOV 03 — NOV 06',
-      nights: 3,
       bg: '#1f3a2e',
       ink: '#f0ede0',
       accent: '#e8956c',
@@ -64,8 +64,6 @@
       name: 'OSAKA',
       subtitle: '',
       nameJa: '大阪',
-      dates: 'NOV 06 — NOV 09',
-      nights: 3,
       bg: '#e8b526',
       ink: '#1a1a1a',
       accent: '#7a1810',
@@ -82,8 +80,6 @@
       name: 'FUKUOKA',
       subtitle: '',
       nameJa: '福岡',
-      dates: 'NOV 09 — NOV 11',
-      nights: 2,
       bg: '#1a3a5c',
       ink: '#fbf4dc',
       accent: '#e8a23a',
@@ -99,8 +95,6 @@
       name: 'TOKYO',
       subtitle: 'UENO',
       nameJa: '東京',
-      dates: 'NOV 11 — NOV 14',
-      nights: 3,
       bg: '#4a1f3a',
       ink: '#fbf4dc',
       accent: '#e8a23a',
@@ -109,10 +103,21 @@
         'Tsukiji breakfast',
         'Akihabara full day',
         'Ueno parks + museums',
-        'Fly home Nov 15 · 00:30',
+        `Fly home ${monthDay(homeFlight.isoDate)} · ${homeFlight.time}`,
       ],
     },
   ]
+
+  const posters = posterEntries.map((p, i) => {
+    const stay = stays[i]
+    return {
+      ...p,
+      nights: stay.nights,
+      dates: `${posterDate(stay.checkIn)} — ${posterDate(stay.checkOut)}`,
+      /** 'Nov 3 — 6', 'Oct 30 — Nov 3' */
+      routeDates: dateRange(stay.checkIn, stay.checkOut).replace(' – ', ' — ').replace('–', ' — '),
+    }
+  })
 
   const TOTAL = 9
   let current = $state(0)
@@ -159,7 +164,7 @@
 
       <div class="welcome-rule"></div>
 
-      <p class="welcome-line">OCT 29 — NOV 15 · 15 NIGHTS · 5 CITIES</p>
+      <p class="welcome-line">{TRIP_RANGE.toUpperCase().replace(' – ', ' — ')} · {TOTAL_NIGHTS} NIGHTS · {stays.length} CITIES</p>
 
       <div class="corner-mark bottom-left">FOR THE BOYS</div>
       <div class="corner-mark bottom-right">PRESENTED BY CHRIS</div>
@@ -170,43 +175,21 @@
   <section class="slide overview" class:active={current === 1} aria-hidden={current !== 1}>
     <div class="paper">
       <div class="corner-mark top-left">ROUTE</div>
-      <div class="corner-mark top-right">FIVE STOPS · FIFTEEN NIGHTS</div>
+      <div class="corner-mark top-right">{NUMBER_WORDS[stays.length]} STOPS · {NUMBER_WORDS[TOTAL_NIGHTS]} NIGHTS</div>
 
       <ul class="route">
-        <li>
-          <span class="rt-num">01</span>
-          <span class="rt-name">TOKYO <em class="rt-sub">Shinjuku</em></span>
-          <span class="rt-nights">4 nights</span>
-          <span class="rt-dates">Oct 30 — Nov 3</span>
-        </li>
-        <li>
-          <span class="rt-num">02</span>
-          <span class="rt-name">KYOTO</span>
-          <span class="rt-nights">3 nights</span>
-          <span class="rt-dates">Nov 3 — 6</span>
-        </li>
-        <li>
-          <span class="rt-num">03</span>
-          <span class="rt-name">OSAKA</span>
-          <span class="rt-nights">3 nights</span>
-          <span class="rt-dates">Nov 6 — 9</span>
-        </li>
-        <li>
-          <span class="rt-num">04</span>
-          <span class="rt-name">FUKUOKA</span>
-          <span class="rt-nights">2 nights</span>
-          <span class="rt-dates">Nov 9 — 11</span>
-        </li>
-        <li>
-          <span class="rt-num">05</span>
-          <span class="rt-name">TOKYO <em class="rt-sub">Ueno</em></span>
-          <span class="rt-nights">3 nights</span>
-          <span class="rt-dates">Nov 11 — 14</span>
-        </li>
+        {#each posters as p, i}
+          <li>
+            <span class="rt-num">{String(i + 1).padStart(2, '0')}</span>
+            <span class="rt-name">{p.name}{#if p.subtitle} <em class="rt-sub">{p.subtitle[0]}{p.subtitle.slice(1).toLowerCase()}</em>{/if}</span>
+            <span class="rt-nights">{p.nights} {p.nights === 1 ? 'night' : 'nights'}</span>
+            <span class="rt-dates">{p.routeDates}</span>
+          </li>
+        {/each}
       </ul>
 
-      <div class="corner-mark bottom-left">FLY OUT · OCT 29 · 09:35</div>
-      <div class="corner-mark bottom-right">FLY HOME · NOV 15 · 00:30</div>
+      <div class="corner-mark bottom-left">FLY OUT · {monthDay(departure.isoDate).toUpperCase()} · {departure.time}</div>
+      <div class="corner-mark bottom-right">FLY HOME · {monthDay(homeFlight.isoDate).toUpperCase()} · {homeFlight.time}</div>
     </div>
   </section>
 
@@ -238,7 +221,7 @@
         </ul>
 
         <div class="corner-mark bottom-left">JAPAN '26</div>
-        <div class="corner-mark bottom-right">No. {String(i + 1).padStart(2, '0')} / 05</div>
+        <div class="corner-mark bottom-right">No. {String(i + 1).padStart(2, '0')} / {String(posters.length).padStart(2, '0')}</div>
       </div>
     </section>
   {/each}
@@ -255,14 +238,14 @@
         <div class="ticket">
           <div class="ticket-no">N° 01</div>
           <div class="ticket-name">NINTENDO MUSEUM</div>
-          <div class="ticket-meta">Kyoto · Day 7 · Nov 5</div>
+          <div class="ticket-meta">Kyoto · {dayLabel('2026-11-05')}</div>
           <div class="ticket-action">CONFIRMED — 15:30 entry, bring passports</div>
           <div class="ticket-stamp">PRIORITY</div>
         </div>
         <div class="ticket">
           <div class="ticket-no">N° 02</div>
           <div class="ticket-name">OSAKA DERBY</div>
-          <div class="ticket-meta">Osaka · Day 10 · Nov 8</div>
+          <div class="ticket-meta">Osaka · {dayLabel('2026-11-08')}</div>
           <div class="ticket-action">ON SALE OCT 3 — 03:00 Swedish time</div>
           <div class="ticket-stamp">PRIORITY</div>
         </div>

@@ -5,12 +5,13 @@
   import { ScrollTrigger } from 'gsap/ScrollTrigger'
   import type { City } from '../../data/itinerary'
   import { now } from '../now.svelte'
-  import { tripStatus, dayId } from '../../data/trip'
+  import { tripStatus, dayId, stayFor } from '../../data/trip'
 
   let { city, index }: { city: City; index: number } = $props()
 
   let section: HTMLElement
   const t = city.theme
+  const stay = stayFor(city)
   const isAkihabara = t.layout === 'akihabara'
 
   const status = $derived(tripStatus(now()))
@@ -115,7 +116,7 @@
     <div class="hero-content">
       <div class="hero-meta">
         <span class="hero-num">0{index + 1}</span>
-        <span class="hero-dates">{city.dates}</span>
+        <span class="hero-dates">{stay.dates}</span>
         <span class="hero-nights">{city.nights} {city.nights === 1 ? 'night' : 'nights'}</span>
       </div>
       <div class="hero-title">

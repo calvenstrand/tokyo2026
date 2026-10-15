@@ -1,4 +1,5 @@
 import { cities } from './itinerary'
+import { addDays } from './trip'
 import shoppingData from '../lib/data/shopping-data.json'
 
 // Personal shopping tracker for /shop. Types, stages and holidays live here;
@@ -82,18 +83,12 @@ export const PUBLIC_HOLIDAYS = ['2026-11-03']
 
 // ── Stages — derived from the itinerary so the dates live in one place ──
 
-const STAGE_META: Record<string, { city: City; label: string }> = {
-  'tokyo-i':  { city: 'tokyo',   label: 'Tokyo I' },
-  'kyoto':    { city: 'kyoto',   label: 'Kyoto' },
-  'osaka':    { city: 'osaka',   label: 'Osaka' },
-  'fukuoka':  { city: 'fukuoka', label: 'Fukuoka' },
-  'tokyo-ii': { city: 'tokyo',   label: 'Tokyo II' },
-}
-
-function addDays(iso: string, n: number): string {
-  const d = new Date(`${iso}T00:00:00Z`)
-  d.setUTCDate(d.getUTCDate() + n)
-  return d.toISOString().slice(0, 10)
+const STAGE_CITY: Record<string, City> = {
+  'tokyo-i':  'tokyo',
+  'kyoto':    'kyoto',
+  'osaka':    'osaka',
+  'fukuoka':  'fukuoka',
+  'tokyo-ii': 'tokyo',
 }
 
 /** Every day on the ground in Japan — Day 1 (Oct 30) to Day 16 (Nov 14). Departure day is not one. */
@@ -106,7 +101,8 @@ export const STAGES: Stage[] = cities.map((c, i) => {
   const next = cities[i + 1]?.days.find((d) => d.day >= 1)?.isoDate
   return {
     id: c.id,
-    ...STAGE_META[c.id],
+    city: STAGE_CITY[c.id],
+    label: c.stayName,
     start,
     end: next ?? addDays(c.days[c.days.length - 1].isoDate, 1),
   }

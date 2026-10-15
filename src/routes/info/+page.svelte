@@ -2,6 +2,7 @@
   import { base } from '$app/paths'
   import { bookings, hotels, STORAGE_KEY } from '../../data/bookings'
   import type { BookingStatus } from '../../data/bookings'
+  import { TOTAL_NIGHTS, TRIP_RANGE } from '../../data/trip'
   import PracticalInfoSection from '$lib/sections/PracticalInfoSection.svelte'
 
   function loadStatuses(): Record<string, BookingStatus> {
@@ -162,7 +163,7 @@
     <section class="section">
       <div class="section-header">
         <h2>Hotels</h2>
-        <p>Kyoto books out fastest — October is peak foliage season.</p>
+        <p>{hotels.length} hotels · {TOTAL_NIGHTS} nights</p>
       </div>
 
       <ul class="hotel-list">
@@ -217,7 +218,7 @@
   </main>
 
   <footer class="page-footer">
-    <span>Japan '26 · Oct 29 – Nov 15</span>
+    <span>Japan '26 · {TRIP_RANGE}</span>
     <a href="{base}/">← Back to itinerary</a>
   </footer>
 

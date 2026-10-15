@@ -4,6 +4,7 @@
   import { dev } from '$app/environment'
   import { replaceState } from '$app/navigation'
   import { AREAS, CATEGORY_LABELS, CITY_LABELS, DAY_NOTES, STAGES, TRIP_DATES, areaRank, shops } from '../../data/shopping'
+  import { dateRange } from '../../data/trip'
   import type { Category, City, Kind, Shop } from '../../data/shopping'
   import ShopCard from '$lib/components/ShopCard.svelte'
   import { now } from '$lib/now.svelte'
@@ -391,7 +392,7 @@
   </main>
 
   <footer class="page-footer">
-    <span>Japan '26 · Shopping days Oct 30 – Nov 14</span>
+    <span>Japan '26 · Shopping days {dateRange(TRIP_DATES[0], TRIP_DATES[TRIP_DATES.length - 1])}</span>
     <a href="{base}/">← Back to itinerary</a>
   </footer>
 

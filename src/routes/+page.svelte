@@ -1,5 +1,6 @@
 <script lang="ts">
   import { cities } from '../data/itinerary'
+  import { departure, homeFlight, monthDay, TOTAL_NIGHTS } from '../data/trip'
   import CitySection from '$lib/sections/CitySection.svelte'
   import Hero from '$lib/sections/Hero.svelte'
   import Footer from '$lib/sections/Footer.svelte'
@@ -20,17 +21,17 @@
     { src: img4Src, srcset: img4Srcset },
   ]
 
-
+  const description = `Leave Stockholm ${monthDay(departure.isoDate)}, home ${monthDay(homeFlight.isoDate)}. ${TOTAL_NIGHTS} nights in Japan — shinkansen, sake, sumo, sushi and everything in between.`
 </script>
 
 <svelte:head>
   <title>Japan 2026 — Tokyo · Kyoto · Osaka · Fukuoka</title>
-  <meta name="description" content="Leave Stockholm Oct 29, home Nov 15. 15 nights in Japan — shinkansen, sake, sumo, sushi and everything in between." />
+  <meta name="description" content={description} />
   <link rel="canonical" href="https://riverbeach.se/tokyo26/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://riverbeach.se/tokyo26/" />
   <meta property="og:title" content="Japan 2026 — Tokyo · Kyoto · Osaka · Fukuoka" />
-  <meta property="og:description" content="Leave Stockholm Oct 29, home Nov 15. 15 nights in Japan — shinkansen, sake, sumo, sushi and everything in between." />
+  <meta property="og:description" content={description} />
   <meta property="og:locale" content="en_GB" />
   <meta property="og:image" content="https://riverbeach.se/tokyo26/og-image.jpg" />
   <meta property="og:image:width" content="1024" />
@@ -38,7 +39,7 @@
   <meta property="og:image:alt" content="Japan 2026 — Tokyo · Kyoto · Osaka · Fukuoka, over a neon-lit Tokyo alley at night" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Japan 2026 — Tokyo · Kyoto · Osaka · Fukuoka" />
-  <meta name="twitter:description" content="Leave Stockholm Oct 29, home Nov 15. 15 nights in Japan — shinkansen, sake, sumo, sushi and everything in between." />
+  <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content="https://riverbeach.se/tokyo26/og-image.jpg" />
 </svelte:head>
 

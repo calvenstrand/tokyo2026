@@ -4,9 +4,10 @@
   import { ScrollTrigger } from 'gsap/ScrollTrigger'
   import Countdown from '../components/Countdown.svelte'
   import { now } from '../now.svelte'
-  import { tripStatus, tripDays, dayId } from '../../data/trip'
+  import { tripStatus, tripDays, dayId, departure, stays, TOTAL_NIGHTS, TRIP_RANGE, monthDay, weekday } from '../../data/trip'
 
   const status = $derived(tripStatus(now()))
+  const landing = tripDays.find((d) => d.day === 1)!.isoDate
 
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -44,7 +45,7 @@
   </div>
 
   <div class="hero-content">
-    <div class="hero-tag">oct 29 – nov 15 · 2026</div>
+    <div class="hero-tag">{TRIP_RANGE.toLowerCase()} · 2026</div>
 
     <h1 class="sr-only">Japan Trip 2026</h1>
 
@@ -72,7 +73,7 @@
         {#if status.phase === 'before'}
           <p class="countdown-label">Departure in</p>
           <Countdown theme="dark" />
-          <p class="countdown-note">ARN 09:35 · Thu Oct 29 · land Tokyo Fri Oct 30</p>
+          <p class="countdown-note">ARN {departure.time} · {weekday(departure.isoDate)} {monthDay(departure.isoDate)} · land Tokyo {weekday(landing)} {monthDay(landing)}</p>
         {:else if status.phase === 'live'}
           <p class="countdown-label">You are here</p>
           <a class="live-day" href="#{dayId(status.day.day)}">
@@ -85,7 +86,7 @@
         {:else}
           <p class="countdown-label">That's a wrap</p>
           <p class="live-num">Home</p>
-          <p class="countdown-note">15 nights · 5 cities · Oct 29 – Nov 15 2026</p>
+          <p class="countdown-note">{TOTAL_NIGHTS} nights · {stays.length} cities · {TRIP_RANGE} 2026</p>
         {/if}
       </div>
     </div>
