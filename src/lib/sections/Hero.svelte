@@ -1,13 +1,47 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import { fly } from 'svelte/transition'
+  import { quartOut } from 'svelte/easing'
   import { gsap } from 'gsap'
   import { ScrollTrigger } from 'gsap/ScrollTrigger'
   import Countdown from '../components/Countdown.svelte'
   import { now } from '../now.svelte'
+  import { cities } from '../../data/itinerary'
+  import type { City } from '../../data/itinerary'
   import { tripStatus, tripDays, dayId, departure, stays, TOTAL_NIGHTS, TRIP_RANGE, monthDay, weekday } from '../../data/trip'
 
   const status = $derived(tripStatus(now()))
   const landing = tripDays.find((d) => d.day === 1)!.isoDate
+
+  // ── On the road: the hero takes on the current city ──
+  const live = $derived(status.phase === 'live' ? status.day : null)
+  const city = $derived(live ? cities.find((c) => c.id === live.cityId)! : null)
+  /** No city yet on departure day — you're in the air. */
+  const inTheAir = $derived(live?.day === 0)
+  const currentStop = $derived(live && !inTheAir ? cities.findIndex((c) => c.id === live.cityId) : -1)
+
+  /** 'Tokyo' for both Tokyo legs — the route shows the city, the highlight shows which visit. */
+  const placeName = (c: City) => c.cityKey[0].toUpperCase() + c.cityKey.slice(1)
+
+  /** The brighter of a city's two theme colours, so it reads on the dark hero. */
+  function heroColor(c: City): string {
+    const lum = (hex: string) => {
+      const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16))
+      return 0.2126 * r + 0.7152 * g + 0.0722 * b
+    }
+    return lum(c.theme.bg) > lum(c.theme.accent) ? c.theme.bg : c.theme.accent
+  }
+
+  const accent = $derived(city && !inTheAir ? heroColor(city) : '#ff2d55')
+  /** 'NIGHT 2 OF 3' — or 'LAST DAY' on the checkout day before the flight home. */
+  const nightLine = $derived.by(() => {
+    if (!live || !city) return ''
+    const stay = stays.find((st) => st.cityId === city.id)!
+    const night = (Date.parse(live.isoDate) - Date.parse(stay.checkIn)) / 86_400_000 + 1
+    return night > stay.nights ? 'LAST DAY' : `NIGHT ${night} OF ${stay.nights}`
+  })
+
+  const titleKey = $derived(live ? `${live.cityId}-${live.day}` : 'before')
 
   onMount(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -39,35 +73,51 @@
   })
 </script>
 
-<section class="hero" id="top" aria-label="Japan Trip 2026 overview">
+<section class="hero" class:is-live={!!live} id="top" aria-label="Japan Trip 2026 overview" style="--hero-accent: {accent}">
   <div class="hero-bg">
-    <span class="hero-bg-ja" aria-hidden="true">日本</span>
+    <span class="hero-bg-ja" aria-hidden="true">{city && !inTheAir ? city.nameJa : '日本'}</span>
   </div>
 
   <div class="hero-content">
-    <div class="hero-tag">{TRIP_RANGE.toLowerCase()} · 2026</div>
+    {#if live}
+      <div class="hero-tag"><span class="live-dot" aria-hidden="true"></span>on the road · {live.date}</div>
+    {:else}
+      <div class="hero-tag">{TRIP_RANGE.toLowerCase()} · 2026</div>
+    {/if}
 
     <h1 class="sr-only">Japan Trip 2026</h1>
 
-    <div class="hero-title" aria-hidden="true">
-      <div class="hero-clip"><span class="hero-line">JAPAN</span></div>
-      <div class="hero-clip"><span class="hero-line">TRIP</span></div>
-      <div class="hero-clip hero-line-small"><span class="hero-line">2026</span></div>
-    </div>
+    {#key titleKey}
+      <div class="hero-title" aria-hidden="true">
+        {#if live && inTheAir}
+          <div class="hero-clip"><span class="hero-line" in:fly={{ y: '110%', duration: 900, easing: quartOut }}>ON OUR WAY</span></div>
+          <div class="hero-clip hero-line-small"><span class="hero-line" in:fly={{ y: '110%', duration: 900, delay: 80, easing: quartOut }}>{live.label}</span></div>
+        {:else if live && city}
+          <div class="hero-clip"><span class="hero-line" in:fly={{ y: '110%', duration: 900, easing: quartOut }}>{placeName(city).toUpperCase()}</span></div>
+          <div class="hero-clip hero-line-small"><span class="hero-line" in:fly={{ y: '110%', duration: 900, delay: 80, easing: quartOut }}>{nightLine}</span></div>
+        {:else}
+          <div class="hero-clip"><span class="hero-line">JAPAN</span></div>
+          <div class="hero-clip"><span class="hero-line">TRIP</span></div>
+          <div class="hero-clip hero-line-small"><span class="hero-line">2026</span></div>
+        {/if}
+      </div>
+    {/key}
 
     <div class="hero-bottom">
       <div class="hero-meta">
-        <div class="hero-route" aria-label="Route: Tokyo, Kyoto, Osaka, Fukuoka, Tokyo">
-          <span>Tokyo</span>
-          <span class="arrow" aria-hidden="true">→</span>
-          <span>Kyoto</span>
-          <span class="arrow" aria-hidden="true">→</span>
-          <span>Osaka</span>
-          <span class="arrow" aria-hidden="true">→</span>
-          <span>Fukuoka</span>
-          <span class="arrow" aria-hidden="true">→</span>
-          <span>Tokyo</span>
-        </div>
+        <ol class="hero-route" aria-label="Route">
+          {#each cities as c, i (c.id)}
+            <li
+              class="stop"
+              class:past={currentStop > i || status.phase === 'after'}
+              class:current={currentStop === i}
+              aria-current={currentStop === i ? 'location' : undefined}
+            >
+              <span class="stop-name">{placeName(c)}</span>
+              {#if i < cities.length - 1}<span class="arrow" aria-hidden="true">→</span>{/if}
+            </li>
+          {/each}
+        </ol>
       </div>
       <div class="hero-countdown">
         {#if status.phase === 'before'}
@@ -153,8 +203,24 @@
     font-size: clamp(0.75rem, 1.5vw, 1rem);
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #ff2d55;
+    color: var(--hero-accent);
     margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .live-dot {
+    width: 0.55em;
+    height: 0.55em;
+    border-radius: 50%;
+    background: var(--hero-accent);
+    animation: livePulse 1.8s ease-out infinite;
+  }
+
+  @keyframes livePulse {
+    0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--hero-accent) 60%, transparent); }
+    100% { box-shadow: 0 0 0 0.8em transparent; }
   }
 
   .hero-title {
@@ -179,7 +245,7 @@
 
   .hero-line-small .hero-line {
     font-size: clamp(3rem, 9vw, 11rem);
-    color: #ff2d55;
+    color: var(--hero-accent);
   }
 
   .hero-bottom {
@@ -192,9 +258,11 @@
   }
 
   .hero-route {
+    list-style: none;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 0.75rem;
+    row-gap: 0.4rem;
     font-family: var(--font-condensed);
     font-size: clamp(1rem, 2vw, 1.4rem);
     letter-spacing: 0.1em;
@@ -202,8 +270,36 @@
     color: rgba(255,255,255,0.5);
   }
 
+  .stop {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-right: 0.75rem;
+    white-space: nowrap;
+    transition: color 0.4s, opacity 0.4s;
+  }
+
+  .stop.past { opacity: 0.35; }
+
+  .stop.current .stop-name {
+    color: white;
+    font-weight: 700;
+    padding-bottom: 0.15em;
+    border-bottom: 2px solid var(--hero-accent);
+  }
+
   .arrow {
-    color: #ff2d55;
+    color: var(--hero-accent);
+  }
+
+  /* Small phones: keep all five stops on one line. */
+  @media (max-width: 480px) {
+    .hero-route { font-size: 0.85rem; letter-spacing: 0.06em; }
+    .stop { gap: 0.4rem; margin-right: 0.4rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .live-dot { animation: none; }
   }
 
   .hero-countdown {
@@ -239,7 +335,7 @@
     font-size: clamp(0.9rem, 2vw, 1.2rem);
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #ff2d55;
+    color: var(--hero-accent);
   }
 
   .countdown-note {

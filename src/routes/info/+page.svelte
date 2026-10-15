@@ -40,12 +40,21 @@
     4: '#c084fc',
   }
 
-  const tierLabel: Record<number, string> = {
-    1: 'Tier 1 — Book immediately',
-    2: 'Tier 2 — Before leaving Sweden',
-    3: 'Tier 3 — 1–2 months before',
-    4: 'Watch — buy when announced',
-  }
+  // Grouped by where things stand, not by when they had to be booked.
+  const bookingGroups = $derived([
+    {
+      label: 'Still open',
+      items: bookings.filter(b => b.tier <= 2 && getStatus(b.id, b.defaultStatus) !== 'done'),
+    },
+    {
+      label: 'Booked',
+      items: bookings.filter(b => getStatus(b.id, b.defaultStatus) === 'done'),
+    },
+    {
+      label: 'Optional',
+      items: bookings.filter(b => b.tier >= 3 && getStatus(b.id, b.defaultStatus) !== 'done'),
+    },
+  ].filter(g => g.items.length > 0))
 
   const doneCount = $derived(
     bookings.filter(b => getStatus(b.id, b.defaultStatus) === 'done').length +
@@ -76,7 +85,7 @@
     <!-- Priority bookings -->
     <section class="section">
       <div class="section-header">
-        <h2>Priority Bookings</h2>
+        <h2>Bookings</h2>
         <div class="booking-stats">
           <div class="stat">
             <span class="stat-num done">{doneCount}</span>
@@ -91,8 +100,10 @@
         <p>Click a row to mark as confirmed.</p>
       </div>
 
+      {#each bookingGroups as group (group.label)}
+      <h3 class="group-label">{group.label} <span>{group.items.length}</span></h3>
       <ul class="booking-list">
-        {#each bookings as booking}
+        {#each group.items as booking (booking.id)}
           {@const status = getStatus(booking.id, booking.defaultStatus)}
           {@const clickable = status !== 'watching'}
           <li
@@ -118,9 +129,6 @@
                   {/if}
                 </span>
                 <div class="booking-badges">
-                  <span class="urgency-badge" style="color: {tierColors[booking.tier]}; border-color: {tierColors[booking.tier]}40">
-                    {tierLabel[booking.tier]}
-                  </span>
                   <span class="status-badge status-{status}">
                     {#if status === 'pending'}Pending
                     {:else if status === 'done'}Done
@@ -157,6 +165,7 @@
           </li>
         {/each}
       </ul>
+      {/each}
     </section>
 
     <!-- Hotels -->
@@ -342,6 +351,23 @@
   }
 
   /* ── Booking list ── */
+  .group-label {
+    font-family: var(--font-condensed);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: white;
+    margin: 2.5rem 0 0.75rem;
+  }
+
+  .group-label:first-of-type { margin-top: 0; }
+
+  .group-label span {
+    color: rgba(255,255,255,0.4);
+    margin-left: 0.4rem;
+  }
+
   .booking-list {
     list-style: none;
     display: flex;

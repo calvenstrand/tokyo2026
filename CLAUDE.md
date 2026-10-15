@@ -7,13 +7,15 @@ Live at riverbeach.se/tokyo26. ./deploy.sh builds and copies dist/ into the
 riverbeach repo (public/tokyo26) and pushes that.
 Itinerary data lives in src/data/itinerary.ts — that is the source of truth.
 Dates and trip phase (before / live / after) come from src/data/trip.ts.
+Don't type dates into components or bookings: bookings carry an ISO `date`,
+hotels a `cityId`, and labels come from trip.ts helpers (dayLabel, dateRange,
+monthDay, stays, TRIP_RANGE). Nights per city live only in itinerary.ts.
 
 Pages and their data:
 - / (itinerary) · src/data/itinerary.ts
 - /info (bookings + hotels) · src/data/bookings.ts
 - /shop (shopping tracker, noindex) · src/lib/data/shopping-data.json (+ src/data/shopping.ts)
 - /explore · src/data/explore.ts
-- /presentation
 
 Never publish reservation numbers or seat numbers on the site.
 
@@ -61,8 +63,10 @@ Assumes the group can navigate independently.
 - Matsuzaka Gyu Yakiniku M Nov 7 19:00
 - Osaka Derby Nov 8 15:00
 - Japan–Korea at Tokyo Dome Nov 13 19:00
+- Shinkansen Osaka→Fukuoka Nov 9 (~09:30 from Shin-Osaka; friends via Hiroshima, on to Hakata 16:00; Chris direct)
+- Shinkansen Fukuoka→Tokyo Nov 11, depart 09:30–10:30
+- Shibuya Sky Oct 31, 16:00–16:30 entry for sunset
 
-## Still to book
-- Shinkansen Osaka→Fukuoka Nov 9 (opens Oct 9; EX Hayatoku until ~Oct 19; friends Shin-Osaka→Hiroshima + Hiroshima→Hakata 16:00, Chris direct)
-- Shinkansen Fukuoka→Tokyo Nov 11, depart 09:30–10:30 (opens Oct 11; EX Hayatoku until ~Oct 21)
-- Shibuya Sky Oct 31, 16:00–16:30 entry for sunset (~Oct 17 opening, verify)
+## Still open
+- Sumo Nov 10 — not secured, trying official resale
+- Optional: Yebisu guided tour (Nov 2), Yamazaki tour (watching for slots)

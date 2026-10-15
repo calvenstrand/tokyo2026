@@ -1,5 +1,6 @@
 import { STAGES, TRIP_DATES } from '../../data/shopping'
 import type { Stage, Weekday } from '../../data/shopping'
+import { monthDay, weekday } from '../../data/trip'
 
 const tokyoParts = new Intl.DateTimeFormat('en-CA', {
   timeZone: 'Asia/Tokyo',
@@ -52,16 +53,10 @@ export function stageFor(iso: string): Stage | undefined {
   return STAGES.find((s) => iso >= s.start && iso < s.end)
 }
 
-const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-
 /** '2026-11-12' → 'Thu, Nov 12' — month first, like the itinerary. */
 export function formatDay(iso: string): string {
-  const [, m, d] = iso.split('-').map(Number)
-  return `${WEEKDAYS[weekdayOf(iso)]}, ${MONTHS[m - 1]} ${d}`
+  return `${weekday(iso)}, ${monthDay(iso)}`
 }
 
 /** '2026-11-12' → 'Thu' */
-export function weekdayShort(iso: string): string {
-  return WEEKDAYS[weekdayOf(iso)]
-}
+export const weekdayShort = weekday

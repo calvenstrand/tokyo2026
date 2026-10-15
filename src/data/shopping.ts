@@ -1,4 +1,5 @@
 import { cities } from './itinerary'
+import type { CityKey } from './itinerary'
 import { addDays } from './trip'
 import shoppingData from '../lib/data/shopping-data.json'
 
@@ -8,7 +9,7 @@ import shoppingData from '../lib/data/shopping-data.json'
 // unverified shops always read "Hours unverified", whatever their weekly says.
 
 export type Weekday = 0 | 1 | 2 | 3 | 4 | 5 | 6 // 0 = Sunday
-export type City = 'tokyo' | 'kyoto' | 'osaka' | 'fukuoka'
+export type City = CityKey
 export type Kind = 'clothes' | 'things'
 export type Category =
   'knives' | 'vinyl' | 'jeans' | 'golf' | 'whisky' | 'posters' | 'merch' | 'other'
@@ -83,14 +84,6 @@ export const PUBLIC_HOLIDAYS = ['2026-11-03']
 
 // ── Stages — derived from the itinerary so the dates live in one place ──
 
-const STAGE_CITY: Record<string, City> = {
-  'tokyo-i':  'tokyo',
-  'kyoto':    'kyoto',
-  'osaka':    'osaka',
-  'fukuoka':  'fukuoka',
-  'tokyo-ii': 'tokyo',
-}
-
 /** Every day on the ground in Japan — Day 1 (Oct 30) to Day 16 (Nov 14). Departure day is not one. */
 export const TRIP_DATES: string[] = cities.flatMap((c) =>
   c.days.filter((d) => d.day >= 1).map((d) => d.isoDate)
@@ -101,7 +94,7 @@ export const STAGES: Stage[] = cities.map((c, i) => {
   const next = cities[i + 1]?.days.find((d) => d.day >= 1)?.isoDate
   return {
     id: c.id,
-    city: STAGE_CITY[c.id],
+    city: c.cityKey,
     label: c.stayName,
     start,
     end: next ?? addDays(c.days[c.days.length - 1].isoDate, 1),

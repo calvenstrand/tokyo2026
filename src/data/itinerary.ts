@@ -111,6 +111,9 @@ export type CityTheme = {
   layout: 'tokyo-i' | 'kyoto' | 'osaka' | 'fukuoka' | 'akihabara'
 }
 
+/** The city itself, whichever leg — Tokyo I and Tokyo II are both 'tokyo'. */
+export type CityKey = 'tokyo' | 'kyoto' | 'osaka' | 'fukuoka'
+
 export type City = {
   id: string
   name: string
@@ -119,6 +122,7 @@ export type City = {
   summary: string
   /** Short name for this leg — 'Tokyo I', 'Kyoto', … */
   stayName: string
+  cityKey: CityKey
   /** Nights in this city's hotel. Dates are derived in trip.ts. */
   nights: number
   accentChar: string
@@ -132,8 +136,9 @@ export const cities: City[] = [
     name: 'Tokyo',
     nameJa: '東京',
     subtitle: 'Shinjuku',
-    summary: 'It starts at Arlanda, 09:35 on Thursday Oct 29 — you land in Tokyo the next morning. Four nights in Shinjuku from there. Suica at the airport, capsule hotel for a few hours, then Shinjuku. Samurai Restaurant in Kabukicho at 16:20 (booked) to beat the jet lag, then Omoide Yokocho for a short first evening: smoky yakitori alley, cold Sapporo, strangers. Day two hits hard: Meiji Shrine first thing, Harajuku and Omotesando through the morning, tonkatsu at Maisen, then Shibuya in the evening — cross the scramble at street level and up to Shibuya Sky for the city lights from 50 floors. Book timed entry in advance. Day three is the gaming deep-dive: Akihabara in the morning — Super Potato, Yodobashi, Mandarake — then Ginza in the afternoon for the total change of pace, Hokosha Tengoku turning the main street pedestrian-only on Sundays. Evening: Korea Town in Shin-Okubo, one stop north of Shinjuku, for a spontaneous dinner, then Golden Gai — karaoke if there\'s energy. Day four goes south: kimukatsu in Ebisu at opening, the Yebisu Museum of Beer at noon, then the Nakameguro canal and Daikanyama through the afternoon. Back through Shinjuku for Nakano Broadway, the serious collectors\' version of Akihabara, then ramen wherever looks good for dinner. Last evening before the Shinkansen west.',
+    summary: 'It starts at Arlanda, 09:35 on Thursday Oct 29 — you land in Tokyo the next morning. Four nights in Shinjuku from there. Suica at the airport, capsule hotel for a few hours, then Shinjuku. Samurai Restaurant in Kabukicho at 16:20 (booked) to beat the jet lag, then Omoide Yokocho for a short first evening: smoky yakitori alley, cold Sapporo, strangers. Day two hits hard: Meiji Shrine first thing, Harajuku and Omotesando through the morning, tonkatsu at Maisen, then Shibuya in the evening — cross the scramble at street level and up to Shibuya Sky for the city lights from 50 floors — sunset slot booked. Day three is the gaming deep-dive: Akihabara in the morning — Super Potato, Yodobashi, Mandarake — then Ginza in the afternoon for the total change of pace, Hokosha Tengoku turning the main street pedestrian-only on Sundays. Evening: Korea Town in Shin-Okubo, one stop north of Shinjuku, for a spontaneous dinner, then Golden Gai — karaoke if there\'s energy. Day four goes south: kimukatsu in Ebisu at opening, the Yebisu Museum of Beer at noon, then the Nakameguro canal and Daikanyama through the afternoon. Back through Shinjuku for Nakano Broadway, the serious collectors\' version of Akihabara, then ramen wherever looks good for dinner. Last evening before the Shinkansen west.',
     stayName: 'Tokyo I',
+    cityKey: 'tokyo',
     nights: 4,
     accentChar: '一',
     theme: {
@@ -241,10 +246,10 @@ export const cities: City[] = [
           },
           {
             time: '16:00–16:30',
-            title: 'Shibuya Sky — sunset · NOT YET BOOKED',
-            kind: 'fixed',
+            title: 'Shibuya Sky — sunset · BOOKED',
+            kind: 'booked',
             mapsQuery: 'Shibuya Sky Tokyo',
-            description: 'Timed entry 16:00–16:30 for sunset at about 16:50, then the city lights coming on from 50 floors. Not booked yet — tickets open about two weeks ahead (~Oct 17, verify), and Saturday sunset slots go first.',
+            description: 'Booked — timed entry 16:00–16:30 for sunset at about 16:50, then the city lights coming on from 50 floors.',
           },
           {
             time: 'Evening',
@@ -336,6 +341,7 @@ export const cities: City[] = [
     subtitle: '',
     summary: 'Three nights arriving Tuesday Nov 3 (Culture Day, public holiday) — on the Nozomi 21, Tokyo 09:30 → Kyoto 11:44, booked. Drop bags at TSUGU Kyoto Sanjo first, then Nishiki Market for lunch — 5–6 min walk from the hotel — and a soft landing into the city. Teramachi arcades or the Manga Museum after, depending on energy. Evening: wagyu counter in Pontocho (booked), drinks at Bar Pontostand. Day two starts at Fushimi Inari at 6am before anyone shows up, sake district after, Kiyomizu-dera as the maples begin to turn — then the afternoon is yours. Simple dinner, no booking, and Funaoka Onsen or the Kodai-ji night light-up if there\'s anything left. Day three: teamLab Biovortex at 10:30, then Uji for lunch and matcha, then the Nintendo Museum at 15:30 and an evening walk through Gion. Bags go ahead to Osaka by takkyubin that day (hand them to reception in the morning), so the last night is light.',
     stayName: 'Kyoto',
+    cityKey: 'kyoto',
     nights: 3,
     accentChar: '古',
     theme: {
@@ -501,6 +507,7 @@ export const cities: City[] = [
     subtitle: '',
     summary: 'The food city. Louder than Kyoto, cheaper than Tokyo, completely fine with both. Arrive via Nara on day one, walk straight into Dotonbori, eat everything — knife shopping at Doguyasuji and Shinsekai, both close to the hotel. Day two is the main shopping day: Samurai Jeans in Nakatsu at opening, then south along the Midosuji line, ending with a proper wagyu dinner at Matsuzaka Gyu Yakiniku M. Day three starts at Osaka Castle in the morning, then straight on to the Osaka Derby — leave about 11:15 for Gamba Osaka vs Cerezo Osaka at Panasonic Stadium Suita, one of the most intense football atmospheres in Japan — then the group splits for the run down to Fukuoka via Hiroshima.',
     stayName: 'Osaka',
+    cityKey: 'osaka',
     nights: 3,
     accentChar: '食',
     theme: {
@@ -621,6 +628,7 @@ export const cities: City[] = [
     subtitle: '',
     summary: 'Two nights on Kyushu. All four leave Osaka on the same Shinkansen; three get off in Hiroshima for the Dome, the Peace Museum and okonomiyaki, Chris continues to Hakata for ramen and an afternoon of record and denim shops, and everyone regroups at the yatai on the Naka River around 18:00. Day two is Kyushu Basho Day 3 of the November sumo tournament — the group is still chasing tickets (BuySumoTickets refunded; trying official resale and Ticket Oozumo). If they land, it\'s a full day at Fukuoka Kokusai Center. If not, Fukuoka has plenty: Dazaifu, Ohori Park, Kushida Shrine, tonkotsu ramen, and the yatai stalls again.',
     stayName: 'Fukuoka',
+    cityKey: 'fukuoka',
     nights: 2,
     accentChar: '福',
     theme: {
@@ -642,9 +650,9 @@ export const cities: City[] = [
         activities: [
           {
             time: '~08:45',
-            title: 'The group splits',
-            kind: 'fixed',
-            description: 'Same Shinkansen for all four, about 09:30 from Shin-Osaka. Leave the hotel about 08:45 — &Here OSAKA NAMBA check-out is 11:00, so check out on the way.',
+            title: 'Shinkansen west, the group splits · BOOKED',
+            kind: 'booked',
+            description: 'Booked — same Shinkansen for all four, about 09:30 from Shin-Osaka. Leave the hotel about 08:45 — &Here OSAKA NAMBA check-out is 11:00, so check out on the way.',
           },
           {
             time: '~11:00',
@@ -701,6 +709,7 @@ export const cities: City[] = [
     subtitle: 'Ueno · Akihabara',
     summary: 'Back in Tokyo for the final leg, based in Ueno. Three nights, four days — the last one ends at Haneda. The Shinkansen from Hakata takes about 5 hours; window seat E for Mt Fuji — it shows up on the left side about 45 minutes before Tokyo. Check in, then Ameyoko street food and a cold beer. Day two: Senso-ji before 8am while it\'s empty, then Kappabashi for knives at Kama-Asa, free afternoon. Day three is Akihabara\'s full day — Super Potato, Yodobashi, Mandarake, Taito Station, SEGA — then the Japan vs South Korea Asia Professional Baseball Championship at Tokyo Dome, booked, 19:00. Last day is Ueno Park in autumn colour and Ameyoko one more time — farewell dinner unbooked, decide on the day.',
     stayName: 'Tokyo II',
+    cityKey: 'tokyo',
     nights: 3,
     accentChar: '二',
     theme: {
@@ -721,9 +730,9 @@ export const cities: City[] = [
         activities: [
           {
             time: 'Morning',
-            title: 'Check out of Hakata — Shinkansen Hakata → Tokyo',
-            kind: 'fixed',
-            description: 'About 5 hours. Target a departure between 09:30 and 10:30 and leave & Hotel Hakata 30–45 min before — it\'s a 15-min walk with bags. Book seat E for Mt Fuji: heading east it\'s on the left side, about 45 minutes before Tokyo. Mid-November is one of the best times to see it with clear skies and snow on the peak. Seats go on sale Oct 11. Buy a proper bento at Hakata Station before boarding.',
+            title: 'Check out of Hakata — Shinkansen Hakata → Tokyo · BOOKED',
+            kind: 'booked',
+            description: 'Booked. About 5 hours, leaving between 09:30 and 10:30 — leave & Hotel Hakata 30–45 min before, it\'s a 15-min walk with bags. Seat E for Mt Fuji: heading east it\'s on the left side, about 45 minutes before Tokyo. Mid-November is one of the best times to see it with clear skies and snow on the peak. Buy a proper bento at Hakata Station before boarding.',
           },
           {
             time: 'Afternoon',

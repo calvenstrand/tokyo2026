@@ -4,7 +4,7 @@
   import { dev } from '$app/environment'
   import { replaceState } from '$app/navigation'
   import { AREAS, CATEGORY_LABELS, CITY_LABELS, DAY_NOTES, STAGES, TRIP_DATES, areaRank, shops } from '../../data/shopping'
-  import { dateRange } from '../../data/trip'
+  import { dateRange, monthDay } from '../../data/trip'
   import type { Category, City, Kind, Shop } from '../../data/shopping'
   import ShopCard from '$lib/components/ShopCard.svelte'
   import { now } from '$lib/now.svelte'
@@ -159,7 +159,6 @@
     stage,
     dates: TRIP_DATES.filter((d) => d >= stage.start && d < stage.end),
   }))
-  const monthShort = (d: string) => (d.slice(5, 7) === '10' ? 'Oct' : 'Nov')
 
   // ── City list ──
   const cityCounts = $derived(
@@ -257,7 +256,7 @@
                   onclick={() => pickDate(d)}
                 >
                   <span class="day-wd">{weekdayShort(d)}</span>
-                  <span class="day-num">{monthShort(d)} {Number(d.slice(8))}</span>
+                  <span class="day-num">{monthDay(d)}</span>
                   {#if t || o}
                     <span class="day-count" class:none={!t}>{plural(t, 'target')}</span>
                     <span class="day-count day-count-opt" class:none={!o}>{o} optional</span>

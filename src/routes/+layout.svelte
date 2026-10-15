@@ -1,8 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import { afterNavigate } from '$app/navigation'
-  import { page } from '$app/state'
-  import { base } from '$app/paths'
   import '../app.css'
   import Nav from '$lib/sections/Nav.svelte'
 
@@ -11,8 +9,6 @@
   let creditEl: HTMLDivElement | undefined = $state()
   let creditHeight = $state(0)
   let firstNav = true
-
-  const isPresentation = $derived(page.url.pathname.startsWith(base + '/presentation'))
 
   afterNavigate(() => {
     if (firstNav) {
@@ -33,21 +29,17 @@
   })
 </script>
 
-{#if isPresentation}
+<div id="top" class="page-content">
+  <Nav />
   {@render children()}
-{:else}
-  <div id="top" class="page-content">
-    <Nav />
-    {@render children()}
-  </div>
-  <div class="credit-spacer" style="height: {creditHeight}px"></div>
-  <div class="site-credit" bind:this={creditEl}>
-    <p class="credit-name">Christoffer Älvenstrand</p>
-    <p class="credit-tagline">I'm a creative developer based in Sweden. I build websites and digital experiences — and sometimes I take trips like this one.</p>
-    <a class="credit-site" href="https://riverbeach.se/" target="_blank" rel="noopener noreferrer">riverbeach.se</a>
-    <a class="credit-email" href="mailto:christoffer.alvenstrand@gmail.com">christoffer.alvenstrand@gmail.com</a>
-  </div>
-{/if}
+</div>
+<div class="credit-spacer" style="height: {creditHeight}px"></div>
+<div class="site-credit" bind:this={creditEl}>
+  <p class="credit-name">Christoffer Älvenstrand</p>
+  <p class="credit-tagline">I'm a creative developer based in Sweden. I build websites and digital experiences — and sometimes I take trips like this one.</p>
+  <a class="credit-site" href="https://riverbeach.se/" target="_blank" rel="noopener noreferrer">riverbeach.se</a>
+  <a class="credit-email" href="mailto:christoffer.alvenstrand@gmail.com">christoffer.alvenstrand@gmail.com</a>
+</div>
 
 <style>
   .site-credit {
